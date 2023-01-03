@@ -20,10 +20,18 @@
 2. Apex : Salesforce language for programming
 3. Visualforce : Markup Language (.vfp)
 
+**Automation Tools Salesforce:**
+
+1. Process Builder (Active)
+2. Workflow Rules
+3. Flows
+
 **Relationship types:**
 
 1. Master-Detail Relationship : Like inheritance, if parent object deleted than child object will also delete (cascade delete).
 2. Lookup Relationship : Same as MD but without cascade delete. Inherited record don't get affected even if parent data is changed.
+
+---
 
 ### Info
 
@@ -34,20 +42,24 @@
 Standard App are inbuilt app of salesforce & Custom app which we create.  
 
 
-* We store data on Objects (like table).  
-* Fields are like columns with different datatype.  
-* Records are like all info & Values of User (like Row).
-* Validation Rule: if Validation rule contain error detection formula so if validation rule detect something than generate error.
+> We store data on Objects (like table).  
+> Fields are like columns with different datatype.  
+> Records are like all info & Values of User (like Row).
+  
+* **Validation Rule**: if Validation rule contain error detection formula so if validation rule detect something than generate error.
 * We can use 1 Profile to assign it to multiple Users.
 * Roles we can use for hierarchy for profiles.
-* Profiles : User can access only the things which there profile allows.
-* Permission Set: We can assign access to things.
-* Workflow Rule : Automation Purpose & it get triggered if rule criteria met.
 * Trigger.new : for New Data & Trigger.old : for Old Data.
+
+> Profiles : User can access only the things which there profile allows.  
+> Permission Set: We can assign access to things.  
+> Workflow Rule : Automation Purpose & it get triggered if rule criteria met.
 
 **To create Apex class, Triggers, Visualforce Page, components we can use :**
 
-  1. Developer Console
-  2. Notepad Editor
-  3. Inline Editor (Can see the edited output result)
+1. Developer Console
+2. Notepad Editor
+3. Inline Editor (Can see the edited output result)
+
+
 
