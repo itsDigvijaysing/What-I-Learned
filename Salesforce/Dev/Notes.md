@@ -11,6 +11,25 @@ LWC supports Explicit DOM (Manual) & Automatic DOM (Automatic Changes).
 
 **Aura and LWC** are two popular frameworks for building web applications. Aura is a framework for creating components that can be used in any web application. LWC is a framework for creating Lightning Web Components, which are components that are designed to work with the Lightning platform.
 
+**Decorator**:  
+The Lightning Web Components programming model has three decorators that add functionality to a property or function.
+
+1. @api : To Expose Public Property.
+2. @track : It observe changes in some interval & If Field changes then it rerenders & display new value. 
+3. @wire : Used to make connection with method of Apex Controller & to read salesforce data.
+
+**Lifecycle Hooks**:  
+A lifecycle hook is a callback method triggered at a specific phase of a component instance’s lifecycle.
+
+[Lifecycle Hooks Link](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/reference_lifecycle_hooks)
+
+- constructor()
+- connectedCallback()
+- renderedCallback()
+- render()
+- disconnectedCallback()
+- errorCallback(error, stack)
+
 ---
 
 ## Apex Language
@@ -70,7 +89,9 @@ Apex offers multiple ways for running your Apex code **Synchronously** & **Async
     It's Method: global void execute (SchedulableCotext ctx){}   
     For Scheduling: System.schedule('txt',vartime,instance class)   
 
+**Wrapper Class**: is an object created in Apex code. This data lives only in code during your transaction and does not consume database storage. It’s a data structure or an abstract data type that can contain different objects or collections of objects as its members. We can store any different datatype or sObject inside Wrapper. It act like container to store data.
 
+**Static Method**: Method that belongs to class & can be called without creating instance.  
 
 ---
 
@@ -140,7 +161,7 @@ trigger ApexTrigger on Opportunity (before update)
 
 ## Visualforce
 
-Visualforce is a framework that allows developers to build sophisticated, custom user interfaces that can be hosted natively on the Lightning platform. The Visualforce framework includes a tag-based markup language, similar to HTML, and a set of server-side “standard controllers” that make basic database operations, such as queries and saves, very simple to perform.
+Visualforce is a framework that allows developers to build sophisticated, custom user interfaces that can be hosted natively on the Lightning platform. The Visualforce framework includes a tag-based markup language, similar to HTML, and a set of server-side “standard controllers” that make basic database operations, such as queries and saves, very simple to perform.  
 
 1. **Visualforce Markup:** Visualforce markup consists of Visualforce tags, HTML, JavaScript, or any other Web-enabled code embedded within a single <apex:page> tag. The markup defines the user interface components that should be included on the page, and the way they should appear.
 2. **Visualforce Controller:** A Visualforce controller is a set of instructions that specify what happens when a user interacts with the components specified in associated Visualforce markup, such as when a user clicks a button or link. Controllers also provide access to the data that should be displayed on a page, and can modify component behaviour.
