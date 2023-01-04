@@ -64,15 +64,16 @@ Standard App are inbuilt app of salesforce & Custom app which we create.
 ## Access
 > ![Access](../Assets/Access.png)
 
----
-
-## Profiles
+- **Org Access:** IP Range/Login hrs.
+- **Object Access:** Control Profile Access/R/W permissions, Permission Set.
+- **Record Access:** Role Hierarchy, Sharing Rule, Manual Sharing, OWD.
+- **Field Access:** Field Level Control & Accessibility.
 
 **Profiles:** User can access only the things which there profile allows. Profile are mandatory to access any object, field or other permission needed things. One User can have only one profile & through profile we can set all permissions.
 
-## Permission Set
-
 **Permission Set:** They are used to give extra permission at User Level. They are not Mandatory. Multiple User can have same permission set & One User can have multiple permission set.
+
+**Sharing Rules:** Use sharing rules to extend sharing access to users in public groups, roles, or territories. Sharing rules give particular users greater access by making automatic exceptions to your org-wide sharing settings.
 
 **Sharing Model**  
 > ![Security Model](../Assets/Security%20Model.png)
