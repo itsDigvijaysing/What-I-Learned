@@ -1,8 +1,15 @@
 # Salesforce Dev Notes
 
-## Lightning Web Components [LWC]:
+## Lightning Components
 
+Now you can build Lightning components using two programming models: **Lightning Web Components**, and the original model, **Aura Components**. Lightning web components are custom HTML elements built using HTML and modern JavaScript. Lightning web components and Aura components can coexist and interoperate on a page. To admins and end users, they both appear as Lightning components.
 
+> **Lightning Web Components** uses core Web Components standards and provides only what’s necessary to perform well in browsers supported by Salesforce. Because it’s built on code that runs natively in browsers, Lightning Web Components is lightweight and delivers exceptional performance. Most of the code you write is standard JavaScript and HTML.  
+LWC supports Explicit DOM (Manual) & Automatic DOM (Automatic Changes).  
+
+> **Aura components** are the self-contained and reusable units of an app. They represent a reusable section of the UI, and can range in granularity from a single line of text to an entire app. Events. Event-driven programming is used in many languages and frameworks, such as JavaScript and Java Swing. An Aura component is a combination of markup, JavaScript, and CSS.
+
+**Aura and LWC** are two popular frameworks for building web applications. Aura is a framework for creating components that can be used in any web application. LWC is a framework for creating Lightning Web Components, which are components that are designed to work with the Lightning platform.
 
 ---
 
@@ -16,6 +23,7 @@ We can use apex prog language to add custom logic to our application. like Compl
 
 Trigger is an Apex Code that executes before or after changes occurs to Salesforce records.  
 These changes includes operations like Insert, Update, Delete, Merge, Upsert and Undelete.  
+Callout Process should be made Asynchronously from trigger so trigger process will not be blocked.  
 
 **Trigger Order of Execution:**  
 Before Trigger -> System Validation Rule -> Record Saved -> After Trigger -> Assignment Rules -> Auto Response Rules -> Workflow Rules... 
@@ -42,20 +50,22 @@ Where **trigger-events** can be a comma-separated list of one or more of the fol
 - After update
 - After delete
 - After undelete
+- merge,upsert
 
 **Types of Context Variable:**
 
-1. Trigger.new: For New Data for insert, update & undelete trigger.
-2. Trigger.old: It returns old version of records for update & delete trigger.
-3. Trigger.newMap: It returns a map of Ids to the new versions of records.
-4. Trigger.oldMap: Map of Ids to the old version of records.
-5. isInsert: Returns true if the trigger was fired due to an insert operation.
-6. isUpdate: Returns true if the trigger was fired due to an update operation.
-7. isDelete: Returns true if the trigger was fired due to a delete operation.
-8. isUndelete: Returns true if the trigger is fired after a record is recovered from recycle bin.
-9. isBefore: Returns true if the trigger was fired before any record was saved.
-10. isAfter: Returns true if the trigger was fired after all records were saved.
-11. Size: Returns the total number of records in a trigger invocation, both old and new.
+1. **Trigger.new**: For New Data for insert, update & undelete trigger.
+2. **Trigger.old**: It returns old version of records for update & delete trigger.
+3. **Trigger.newMap**: It returns a map of Ids to the new versions of records.
+4. **Trigger.oldMap**: Map of Ids to the old version of records.
+5. **Trigger.isExecuting**: True if trigger Context Executing.
+6. **Trigger.isInsert**: Returns true if the trigger was fired due to an insert operation.
+7. **Trigger.isUpdate**: Returns true if the trigger was fired due to an update operation.
+8. **Trigger.isDelete**: Returns true if the trigger was fired due to a delete operation.
+9. **Trigger.isUndelete**: Returns true if the trigger is fired after a record is recovered from recycle bin.
+10. **Trigger.isBefore**: Returns true if the trigger was fired before any record was saved.
+11. **Trigger.isAfter**: Returns true if the trigger was fired after all records were saved.
+12. **Trigger.size**: Returns the total number of records in a trigger invocation, both old and new.
 
 ```java
 trigger ApexTrigger on Opportunity (before update) 
@@ -78,7 +88,35 @@ trigger ApexTrigger on Opportunity (before update)
 Visualforce is a framework that allows developers to build sophisticated, custom user interfaces that can be hosted natively on the Lightning platform. The Visualforce framework includes a tag-based markup language, similar to HTML, and a set of server-side “standard controllers” that make basic database operations, such as queries and saves, very simple to perform.
 
 1. **Visualforce Markup:** Visualforce markup consists of Visualforce tags, HTML, JavaScript, or any other Web-enabled code embedded within a single <apex:page> tag. The markup defines the user interface components that should be included on the page, and the way they should appear.
-2. **Visualforce Controller:** A Visualforce controller is a set of instructions that specify what happens when a user interacts with the components specified in associated Visualforce markup, such as when a user clicks a button or link. Controllers also provide access to the data that should be displayed in a page, and can modify component behaviour.
+2. **Visualforce Controller:** A Visualforce controller is a set of instructions that specify what happens when a user interacts with the components specified in associated Visualforce markup, such as when a user clicks a button or link. Controllers also provide access to the data that should be displayed on a page, and can modify component behaviour.
+
+A developer can either use a **standard controller** provided by the Lightning platform, or add **custom controller** logic with a class written in Apex.
+
+> **Standard controller** consists of the same functionality and logic that is used for a standard Salesforce page. For example, if you use the standard Accounts controller, clicking a Save button in a Visualforce page results in the same behavior as clicking Save on a standard Account edit page.  
+>If user doesn't have access to the object, the page will display an insufficient privileges error message. You can avoid this by checking the user's accessibility for an object and displaying components appropriately.
+
+> **Custom controller** is a class written in Apex that implements all of a page's logic, without benefits of standard controller. If you use a custom controller, you can define new navigation elements or behaviors, but you must also reimplement any functionality that was already provided in a standard controller.  
+> Like other Apex classes, custom controllers execute entirely in system mode, in which the object and field-level permissions of the current user are ignored. You can specify whether a user can execute methods in a custom controller based on the user's profile.
+
+---
+
+## Governor Limit
+
+**Governor limits** are runtime limits enforced by the Apex runtime engine to ensure that code does not throw error.  
+As Apex runs in a shared, multi tenant environment, the Apex runtime engine strictly enforces a number of limits to ensure that code does **not monopolize** shared resources. Resources such as CPU, processor, and bandwidth are shared by Apex on the Salesforce server.
+
+[Governor Limit Sync/Async Link](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_apexgov.htm)
+
+Governor Limits:  
+1. Monitor and manage platform resources such as memory, database resources, etc.
+2. Enable multi tenancy by ensuring the resources are available for all tenants on the platform.
+3. Can issue program-terminating runtime exceptions when limit is exceeded.
+   
+Governor Limits basically cover:
+1. Memory.
+2. Database Resources.
+3. Number of script statements.
+4. Number of records processed
 
 ---
 
@@ -165,5 +203,23 @@ sObject s1 = new Account(Name = ‘DIsney’);
 sObject s2 = new Contact(lastName = ‘Sharma’);
 sObject s3 = new Student__c(Name = ‘Arnold’)
 ```
+
+---
+
+## Salesforce Best Practices
+
+- Create a code with mindset of using it for Bulk of data, so the code should be able to handle multiple record at once effectivery.
+- Use Single Trigger per Object as in multiple trigger order of execution can not be determined.
+- Rather than storing value in variable & than using it for loop we can directly assign SOQL query inside loop condition.
+- Don't copy paste same code everywhere, we can just create it at one location and create reusable class & call it where we need.
+- Avoid Nested loops & think about strategies to optimize for Time Complexity, Space Complexity & Limits.
+- Avoid Business Logic in triggers, we can just write that logic somewhere & call it when we need to execute.
+- Avoid Returning JSON to Lightning components because when we convert and store info it uses lot of heap memory. so, we might reach governor limit due to it. so, we can just send 'this object' directly & let platform handle it automatically for us.
+- Good Naming to methods & variables.
+- Add detailed Commit when something is sophisticated in code.
+- Create Ticket everytime when i modify something & add it's details in the log.
+- In Test classes for sample data use TestSetup Annotation Method & always test Batch of data for cases.
+- Always Write Code in Alignement & Remember to take backup of your data everyday in cognizant onedrive. **<-Important**
+- While working make sure you are working on updated code because if your code is old one then when you make changes & update it, then it will overwrite new code.
 
 ---
