@@ -17,6 +17,24 @@ LWC supports Explicit DOM (Manual) & Automatic DOM (Automatic Changes).
 
 We can use apex prog language to add custom logic to our application. like Complex Validation, Transactional logic, Complex business process, logic actions, etc. It's OOP Language & allows execution of flow & control statement.
 
+Apex offers multiple ways for running your Apex code **Synchronously** & **Asynchronously**.
+
+> **Synchronous Apex :**  
+> Synchronous term means existing or occurring at the same time. Synchronous Apex means entire Apex code is executed in one single go. In a Synchronous call, the thread will wait until it completes its tasks before proceeding to next. In a Synchronous call, the code runs in single thread.
+
+> **Asynchronous Apex :**  
+> Asynchronous term means not existing or occurring at the same time. Asynchronous apex is executed when resources are available. So any calling method which calls Asynchronous apex wont wait for outcome of Asynchronous call. Calling method will go on further execution in code. And Asynchronous execution happens in separate thread and then it will return to main program.
+
+**Types of Async Apex:**  
+1. Queueable Apex
+2. Scheduled Apex
+3. Batch Apex
+4. Future Methods
+
+![Async Apex Types](../Assets/Async%20Apex.png)
+
+
+
 ---
 
 ## Trigger
