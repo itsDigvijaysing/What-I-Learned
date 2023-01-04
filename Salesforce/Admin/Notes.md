@@ -25,12 +25,6 @@
 > [Salesforce Feature Allocation per Edition link](https://help.salesforce.com/s/articleView?id=sf.overview_limits_general.htm&type=5&language=en_US)
 
 
-**Automation Tools Salesforce:**
-
-1. Process Builder (Active)
-2. Workflow Rules
-3. Flows
-
 **Relationship types:**
 
 1. Master-Detail Relationship : Like inheritance, if parent object deleted than child object will also delete (cascade delete).
@@ -67,9 +61,10 @@ Standard App are inbuilt app of salesforce & Custom app which we create.
 
 ---
 
-**Sharing Model**  
+## Access
+> ![Access](../Assets/Access.png)
 
-> ![Security Model](../Assets/Security%20Model.png)
+---
 
 ## Profiles
 
@@ -79,6 +74,31 @@ Standard App are inbuilt app of salesforce & Custom app which we create.
 
 **Permission Set:** They are used to give extra permission at User Level. They are not Mandatory. Multiple User can have same permission set & One User can have multiple permission set.
 
+**Sharing Model**  
+> ![Security Model](../Assets/Security%20Model.png)
+
+---
+
+## Automation Tools Salesforce:
+>[Flows, Workflow Rules, Process Builder Info Link](https://www.manras.com/salesforce-flow-vs-process-builders-and-workflow/)
+
+1. Process Builder (Retiring)
+2. Workflow Rules (Retiring)
+3. Flows (Active)
+
+**Interactive Experience Automation**:  
+- Screen Flow
+- AutoLaunched Flow
+- Approval Process
+- Lightning Components
+- Visualforce Page
+
+**Background Process Automation**:  
+- Record Triggered Flow
+- Schedule Triggered Flow
+- Platform Event Triggered Flow
+- Apex Code
+  
 
 
 
