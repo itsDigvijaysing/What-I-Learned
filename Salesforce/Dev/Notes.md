@@ -23,15 +23,52 @@ Apex offers multiple ways for running your Apex code **Synchronously** & **Async
 > Synchronous term means existing or occurring at the same time. Synchronous Apex means entire Apex code is executed in one single go. In a Synchronous call, the thread will wait until it completes its tasks before proceeding to next. In a Synchronous call, the code runs in single thread.
 
 > **Asynchronous Apex :**  
-> Asynchronous term means not existing or occurring at the same time. Asynchronous apex is executed when resources are available. So any calling method which calls Asynchronous apex wont wait for outcome of Asynchronous call. Calling method will go on further execution in code. And Asynchronous execution happens in separate thread and then it will return to main program.
+> Asynchronous term means not existing or occurring at the same time. Asynchronous apex is executed when resources are available. So any calling method which calls Asynchronous apex wont wait for outcome of Asynchronous call. Calling method will go on further execution in code. And Asynchronous execution happens in separate thread and then it will return to main program.  
+> To Test makesure to enclose test code in startTest() & stopTest().  
 
 **Types of Async Apex:**  
-1. Queueable Apex
-2. Scheduled Apex
-3. Batch Apex
-4. Future Methods
 
 ![Async Apex Types](../Assets/Async%20Apex.png)
+
+1. **Future Methods** :  
+    We use @Future Annotation & method should be static, as it only return Void type.  
+    Can only accept Primitive Datatype & sObject not allowed in paramenter.  
+    It can not call another Future Method & (Callout=True) to make API callout.  
+    Max 50 Future Method per class.
+
+2. **Batch Apex** :  
+    To use it we need to write Batch Class & it should be global class/Method.  
+    chunks is like Packet of Data. It can be scheduled through UI & It can also call Future Method.
+
+    It include 3 main Methods :  
+
+       1. Start (Return Chunk) :
+            It Execute only Once.
+            Collects the records or Objects to pass to the interface method (Execute).  
+            Its First Method called when Batch Apex Runs.  
+            It returns Database.QueryLocator Object that contains the record passed as chunks.   
+
+       2. Execute (Void) :
+            It Execute multiple times as per chunks amount.  
+            Use it to do required processing/Action on each chunk of data.  
+            We use Database.BatchableContext object & list.
+
+       3. Finish (Void) :
+            It Execute only once.  
+            Called after all batches are processed by Execute.  
+            Normally used to do post processing or general email confirmation after execution.
+
+3. **Queueable Apex** :  
+    In Queueable Apex We can chain Jobs & monitor using JobID, It also support sObject & Non-Primitive Data type.  
+    It's Superset of Future Methods & It will work as combination of future & Batch Apex.  
+    Max 50 Jobs can b eadded in queue for single transaction & Max Stack depth (nested) for chained Job is 5.
+    To Submit Job we use System.enqueueJob method & it returns JobID.
+
+4. **Scheduled Apex** :  
+    Using Scheduled Apex we can run Apex class at Specific Time. e.g. Run Maintenance tasks on scheduled daily/weekly time. Scope should be Global class & Methods, We can schedule through Apex & Salesforce UI.  
+    Time Sequence: Seconds_Min_Hours_DayofMonth_Month_DayofWeek_Year    
+    It's Method: global void execute (SchedulableCotext ctx){}   
+    For Scheduling: System.schedule('txt',vartime,instance class)   
 
 
 
