@@ -118,6 +118,9 @@ Standard App are inbuilt app of salesforce & Custom app which we create.
 - Setup audit trail -  Used to check any salesforce metadata (any backend config) changes in our salesforce org (last changes to org (logs))
 - Salesforce Path - its component in which we see the progress of current task and at the end we will see closed won or closed lost for opportunity.
 - Actions - Global Action & Record Action (Object specific action) (easy way to do things (check google IMG))
+- Opportunity splits - Used to split revenue credit for opportunities. (If multiple people (Team) working on same opp then after closed won it will split credit as set values (total of splits do not need to add up 100%))
+- Quotes - They are basically like template on which we can add extra sales details. & opportunity can have multiple quotes but only 1 quote will synced to opportunity. (Quote Template, Quote PDF)
+- Multiple things are by default disable so we have to enable it to use it.
 
 ## Security:
 
@@ -150,6 +153,46 @@ Standard App are inbuilt app of salesforce & Custom app which we create.
 
 - Standard Object- Can not be deleted but can be renamed or hidden. They normally come with standard fields.
 - Custom Object - either from SpreadSheet or Standard. We can use a custom tab if we forget to create a tab at the time of the custom object.
+
+### Opportunities:  
+It's used to track and manage your potential deals with salesforce opportunities.
+
+### Sales Process (Path for Opportunity):  
+The Process Opportunity goes through…  
+e.g. B2B, B2C, Tender (reflect in opp stage field)  
+We can assign sales process by selecting it in record types of opportunities.  
+
+### Forecases: 
+Used to predict future sales revenue and such things…  
+Forecast 5 type: omitted, pipeline, Best Case , Commit, closed.  
+
+### Orders:
+Used to Track fulfilment of product and services.  
+To create order we need to have contract.  
+- Reduction Orders - Return / Cancellation of Order
+- Negative Quantity Settings - Negative amount of products.
+- Zero Quantity - Order with Zero amount of products.
+- others....
+
+### Contracts:
+Used to store information about a Contractual Agreement between Parties.
+- Contract is Linked to Account (Required Field) & it also has its Status & Contract Term (Months Period) as required field.
+
+### Products:
+Used to represent Products or services sold.
+- Can be linked to Opportunity, Quotes, Orders, etc.
+- Product must have standard price set while accessing it with price book.
+- It also has price book which store multiple products while linking.
+- Price book determines at what price product will be sold at.
+- When we set Products in Opportunity then it become Opportunity Line Item.
+
+> Product Scheduling  
+> Used for Payment and delivery cycles of products or services.  
+> Quanitity Scheduling / Revenue Scheduling.
+
+### PriceBooks:
+Contains the Prices (Price book entries) that product should be sold at.
+- 1 Standard PB & Multiple Custom Price Books.
 
 ## Fields:
 - Field data type can be changed for custom field only not standard field. there are some restrictions
