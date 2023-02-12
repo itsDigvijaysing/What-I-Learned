@@ -121,6 +121,21 @@ Standard App are inbuilt app of salesforce & Custom app which we create.
 - Opportunity splits - Used to split revenue credit for opportunities. (If multiple people (Team) working on same opp then after closed won it will split credit as set values (total of splits do not need to add up 100%))
 - Quotes - They are basically like template on which we can add extra sales details. & opportunity can have multiple quotes but only 1 quote will synced to opportunity. (Quote Template, Quote PDF)
 - Multiple things are by default disable so we have to enable it to use it.
+- Lead Scoring - Score a Lead based on Criteria.
+- Einstein Lead Scoring - Uses AI to Score leads based on company successful conversion pattern. (Score 0 to 99)(Use Org Model or Global Model)
+- Einstein Opportunity Scoring - AI to score opp based on your successful conversion patterns in company. (Score 0 to 99)(Use Org Model or Global Model)
+- Opportunity Team Selling - Used when multiple users of team want to work on same opportunity. (It's required for Opportunity Split)
+- System Admin - Have Acess to all records.
+- Contact Roles in Opp - It's used to link Contact roles to opportunity.
+- Lead Queue - It's holding area for leads until they are assigned owner. While creating Lead Queue we can give its access as per users, Public Groups, Roles...
+- Lead Assignment Rules - Automatically assign leads to users or queues based on criteria we define.
+- Web to Leads - Leads are created from online forms. (Can also use reCaptcha to reduce Spam)
+- Campaign - Used to Track Marketing Efforts.
+- Campaign  Influence - Used to Track Impact of Campaign 
+- Data Import Wizard - Used to Import Data.
+- Data Loader - Used to Export Data.
+- Macros - Users can run macros to complete repetitive tasks—selecting an email template, sending an email to a customer, updating the case status—all in a single click. A macro is a set of instructions that tells the system how to complete a task.
+- Single Sign On (SSO) - Even if we click on forgot password for resetting password admin is required, directly by user not happen.
 
 ## Security:
 
@@ -148,6 +163,7 @@ Standard App are inbuilt app of salesforce & Custom app which we create.
 - Profile - One and only profile to each user. & standard profile can not be edited we can clone them and create custom ones. We can activate enhanced profile interfaces from User management settings. Very important for access management & permission sets can  be used to grant more access.
 - Permission Sets - Used to grant more functionality to users than their profile permits. New permission set is very restricted then we open up as per our requirement.
 - Permission set group - Its group of permission sets which we can assign to users rather than doing it manually for each permission set. We also have muted permission set so if we don’t want our assigned user to do some tasks of which was previously granted by permission set then we can create muted permission set which will mute the thing so assigned user will not be able to do it (removing permission granted by permission set group by using muted permission set).
+- Validation Rule will be first process to execute. (Don't Apply if Quick Create Used.)
 
 ## Objects:
 
@@ -186,13 +202,24 @@ Used to represent Products or services sold.
 - Price book determines at what price product will be sold at.
 - When we set Products in Opportunity then it become Opportunity Line Item.
 
-> Product Scheduling  
+> **Product Scheduling**  
 > Used for Payment and delivery cycles of products or services.  
 > Quanitity Scheduling / Revenue Scheduling.
 
 ### PriceBooks:
 Contains the Prices (Price book entries) that product should be sold at.
 - 1 Standard PB & Multiple Custom Price Books.
+
+### Leads:
+Leads are potential Customers.
+- Leads are then converted.
+- On conversion Account and contact get created.
+- leads can also create opportunity on conversion.
+
+> **Lead Convert** - We can convert Leads with Account and Contacts & If there is genuine selling chance then we can also create opportunity for it.  
+> 
+> **Lead Mapping** - Where fields are mapped from Leads to Accounts, Contacts & Opportunity. Basically we choose after lead conversion which fields will be converted in those objects. Also need to create a custom field for other objects if mapping any custom field.
+
 
 ## Fields:
 - Field data type can be changed for custom field only not standard field. there are some restrictions
@@ -243,3 +270,284 @@ used to specify which picklist values are available to users based on the record
 [//]: <> (Work on it...)
 
 - Lightning Page -  App Page (1 pg for salesforce lightning & Mobile App) , Home Page (Lightning Experience Home Page), Record Page (when we see record info)
+
+
+## Case Management Overview:
+
+### Service Console: 
+It's little change in UI where we can do our record changes quickly with help of UI layout. (Good for fast working)(have Split View)
+
+### Case Overview:
+Case is Customer service Issue. It help to track the Cases in Object.  
+Support Settings hold many features which we can enable.  
+We also have merge cases which are merged in related list location.  
+Every case has unique case number.  
+We also have Case Queue which can be created from queue. we can add case by changing owner to queue name.  
+By Selecting Parent Case we can have case hierarchy.  
+Case Team Roles - Teams with Read, Write permission selected.  (Set using predefined case Team)
+Contact Roles - We can add multiple Contacts for case.
+
+### Case Assignment Rules:
+Automatically assign Case to users or queues based on criteria we define.
+
+### Email to Case:
+
+Cases can be created automatically from email sent to specific address.  
+**Email to Case** - (Need Software & limited mails & Large Attachment Support)  
+**On Demand Email to Case** - (No Software need & Higer mail limit & Smaller Attachment Size)  
+
+
+### Web to Case:
+Cases can be created from website form.
+
+### Case Auto Response:
+Automatically replies to Customers who raise the case. Different email as per the criteria.
+
+### Support Processes:
+It's Process through which Case goes through till being closed / Resolved.  
+Support Processes are assigned to record types.  
+We can specifically choose which status picklist values can we use and later on we assign it with record types.
+
+### Escalation Rules:
+Automatically reroutes a case and can notify a user or assign them to users/queues.  
+We can also assign time like after 24hrs send notification & assign case to queue/user.  
+We can also set business hours or start time & can monitor the potential Escalation.  
+
+## Productivity & Collaboration:
+
+### Activity Intro:
+Activity come as Task, Events, Log a call, Emails.  
+We see activity when we are watching any record (Used...).  
+Activity Timeline is Important place where we can see all activity related info.
+
+### Activity Settings:
+It has it's own Object, so we can customize it as per our need.  
+While Setting Tasks it has many options like repeat, time, & many more.  
+Activity Settings holds features which we can enable as per need.  
+We can also activate email tracking...
+
+### Email Integration & Einstein Activity Capture:
+There are various ways to Integrate Emails in Salesforce - Outlook, Gmail, Lightning Sync, Einstein Activity Capture.  
+We basically can sync Emails, Events, Contacts, etc.  
+
+### Chatter:
+It's Twitter of Salesforce  
+- Groups
+- Approval Requests
+- Out of Office
+- Various Settings & Features
+
+There are multiple settings for it in Chatter Settings.  
+Chatter also has it's own licenses which we can use to gain or assign access of chatter.(Usually given to customers who want to connect on chatter)
+
+### App Exchange:
+It's Collection of Salesforce & Third Party add ons.
+- Apps
+- Bolt Solutions
+- Flow Solutions
+- Lightning Data
+- Components
+
+> **2 Type of Packages**  
+> Managed - Created & Supported by Vendors - Non Customisable  
+> Unmanaged - Not Supported or Upgraded - Customisable
+
+Always Install app in Sandbox First before in Production Org.
+
+## Data & Analysis:
+
+### Data:
+Data Quality is Important.  
+Duplicate Management.  
+Managing Data - Data Import Wizard, Data Loader, Mass Tools.  
+Salesforce Data Storage - Data Storage, File Storage & Big Objects.
+
+### Data Import Wizard: 
+
+Key Points:  
+- Limited Object Supports
+- 50K record Limit
+- Insert, Update, Upsert Function.
+- Duplicate Management 
+- Validation Rules & Trigger will cross check
+- No Downloader Required.
+- Can only import csv.
+- Admin & Users can use it.
+
+### Data Loader: 
+
+Key points:
+- More Powerful
+- all Objects supported
+- 5 Million Record limit
+- Import, Upsert, Delete, Hard Delete, Export & Export all Function (maybe undo as well)
+- Can Schedule Data Jobs.
+- No Duplicate Management
+- Validation Rule, Workflow Rules & Trigger Fire.
+- Only be used by Admin
+- Software Download Required.
+- Can only import CSV Files.
+- Only Admin can use it.
+
+### Record ID's & External ID's:
+
+Record ID's  
+- Record ID's Always going to be same.
+- Record ID's will be unique.
+
+External ID's  
+- Used with Integrations
+- External ID Checkbox when creating a Field.
+- We can create it as field in Object with Text type & can set as Unique and Case Sensitive.
+
+### Mass Tools:
+
+Carry out action in Mass  
+- Mass Delete.
+- Mass Reassign Account Teams.
+- Mass Reassign Opportunity Teams.
+- Mass Reassign Approval Requests.
+- Mass Transfer Records.
+- Mass Update Addresses.
+
+### Data Exports:
+
+Data Backup / Data Export  
+- Data Loader.
+    - More Regular Exports Using CLI.
+    - More Powerful.
+- Data Export Service. 
+    - Scheduled Export
+    - One Month or Once a Week Limit
+
+### Duplicate Management:
+
+Protect Against Duplicate
+- Matching Rule
+  - Criteria to Cross check Matching / Duplicates.
+  - Matching can be Fuzzy or Exact.
+
+- Duplicate Rule
+  - Thing to do if Duplicate Found.
+  - Block or Alert User for Duplicate.
+
+### Reports:
+
+Collection of Records based on our Criteria.  
+It can be Standard Report and Custom Report Type.  
+Report only show values which user have access to.  
+Report Folder can be modified as Public, Private & have there own access as per user permissions.  
+
+- Standard Report Type
+  - They can use Any Objects
+  - normally use.
+- Custom Report Type
+  - It have 1 Primary Object & upto 3 Related Objects. 
+  - It is More Complex.
+
+> **Report Builder** used to easily customize Reports.  
+> **Conditional Formating** - It need summary field with Grouping to use it. With Conditional Formating we can assign highlighting.  
+> **Row Level Formula** - We use Formula & calculate based on record (Row) then receive the response value which we can view in column.(Max 1 in Report)  
+> **Summary Formula** - We use Formula & calculate based on whole Group Opportunity & give reponse.  
+> **Bucket Field** - Bucket field basically used to create bucket category which we can later on use to assign if value is High, Low, etc based on amount & can group by them.
+> **Subscribe** - Receive Copy of Report (Details) at specified criteria timing.
+> **Reporting Snapshot** - Need Custom Object to store Snapshot with Fields. It let us store set of records & their Data for future reference. Field Maping also needed here & can select how often snapshots will be taken. It's Used to report Historical Data & Spot Trends.
+
+
+Report Formats
+- Tabular Report - Column / Row Format.
+- Summary Report - It has Grouping Rows with Tabular Report.
+- Matrix Report - It has Grouping with Rows & Columns with Tabular Report & It also has Chart Feature.
+- Joined Report - Reports of Reports biggest Report. We can add multiple Objects Blocks & Use there records in same Report.
+
+
+### Dashboards:
+
+Easy way to view Data in Summary like Reports.  
+Dashboard will show results as per the user access permissions to data.  
+We add Components based on present Reports & their data is used in component. We can customize Chart & show Data as per our requirement.  
+Fixed Dashboard - View Same Data based on Specific User predefined. Data is visible as per present report data access.
+Dynamic Dashboard (Dashboard as Dashboard Viewer) - Dashboard show data based on viewer data.  
+
+## Workflow / Process Automation:
+
+Order of Execution:  
+**Very Awesome Admins want Excellent People (VAAWEP)**  
+- Validation Rules (Intial)
+- Assignment Rules
+- Auto-Response Rules
+- Workflow
+- Escalation Rules
+- Processing / Flow Automation (At End)
+
+Automatin Summary:  
+
+- Workflow Rules
+  - Simple Automation & we can also schedule it.
+  - Sigle If then Statements way.
+  - Enter Criteria : 
+    - Created 
+    - Created & every time Edited
+    - Created & any time edited to subsequently meet criteria.
+  - Workflow Actions :
+    - New Task
+    - New Email Alert
+    - New Field Update
+    - New Outbound Message (Send the Info to end-point service in XML format)
+    - Select existing Action
+  - Can only update it's object record or parent.
+
+- Approval Process
+  - Used when Record Needs to be approved.
+  - Sigle If then Statements way.
+  - It can consist series of steps for approval.
+  - Once record sent to approval it can be edited by admin or other as per our settings.
+  - Enter Criteria / Launched by:
+    - Submit for approval
+    - Multiple Criteria met
+    - Formula evaluate to be true
+  - Approval will receive email & Notification regarding approval request.
+  - Actions :
+    - New Task
+    - New Email Alert
+    - New Field Update
+    - New Outbound Message (Send the Info to end-point service in XML format)
+  - There can be Approval Actions or Rejection Actions.
+  - Can only update it's object record or parent.
+
+- Process Builder
+  - It's made up of multiple If this then do this type statements.
+  - It can not send Outbound Messages.
+  - Enter Criteria / Launched by:
+    - Launched by another process
+    - Platform Event Message.
+    - Only when record created.
+    - when record created or edited.
+  - We set criteria every time & if it met then it will run immediate Actions.
+  - Actions : There are multiple actions which we can perform (Outbound msg not present)
+  - Can update any related Object records.
+
+- Flows / Flow Builder (New Most Advanced Automation Tool)
+  - Flows can be started by number of ways.
+  - Flow work on Complex Logic.
+  - Enter Criteria / Launched By:
+    - Records Created
+    - Records updated
+    - Records deleted
+    - quick actions
+    - custom buttons
+    - custom links
+    - Process Builders
+    - From Apex
+    - by flows
+    - platform events.
+  - They can also be scheduled to run at specific times and can be set on custom tabs, lightning pages and visual force pages, and they can be triggered from there as well.
+  - The actions that they can carry out can either run immediately or delayed, or they can even be resumed from post flows and the actions that are available to flows are numerous.
+  - Actions : They have highest amount of Actions present which you can do.
+  - Types Core :
+    - Screen Flow
+    - Record Triggered Flow
+    - Scheduled - Triggered Flow
+    - Platform Event - Triggered Flow
+    - AutoLaunched Flow (No Trigger)
+  - Can Update Any Object Records.
