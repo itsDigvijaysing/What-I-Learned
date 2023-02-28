@@ -41,3 +41,9 @@
   withoutVariableType = 'Hello World';
   console.log(withoutVariableType);
   ```
+- Assignment Operators:  
+  ```x=y, x+=y, x-=y, x++, x--```
+- Comparison Operators:  
+  ```>, <, <=, >=```
+- Assignment Operator, Exponential are right-to-left & other mathematical operator are left-to-right direction. [Full Operator Precedence](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
+- 
