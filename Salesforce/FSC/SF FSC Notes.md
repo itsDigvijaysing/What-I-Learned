@@ -47,4 +47,26 @@ can customize the associated compact layout. & We can also Personalize Life Even
   - e.g.  
   ![Referral Eg.](Assets/referrals%20eg.png)
 
-- 
+- We have to Modify some setting of our Org to use Referrals.
+- It is best practice to assign referrals to a queue, so managers can assign each referral to the employee with the most time and experience. You can create an approval process to automate the way referrals are approved.
+- After receiving the referrals the recipient can:  
+    ● Accepts the referral and gets to work  
+    ● Rejects the referral and sends it back to the referrer for more information  
+- When there are many referrals in queue than they can use Salesforce Inbuilt Priority Tools.
+- Referral Converstion : When a referral is qualified, it’s ready to be converted & Common qualifying steps include confirming client interest, completing all client information, or pre-qualifying the client for a mortgage.
+- Your top referrers are a key part of your business. A referrer is someone who creates a referral, and your top referrers are the ones who create the referrals that are most likely to convert.
+- The Referrals view shows details about the number of referrals, the number converted and rejected, the conversion rate, and a list of people referred. To keep your top referrers happy, they consider creating an incentive program to reward them with financial or other incentives.
+- We can also track Track Referral Activity & Customize Referral Path.
+- Actionable Relationship Center (ARC) : The ARC interface shows account, contacts, and related records in one view, letting users navigate among related records. ARC supports B2C and B2B relationships.
+  - using ARC we can:
+    - Get a 360 degree view of the client
+    - Explore complex business hierarchical relationships
+    - See related information such as Financial Accounts, Opportunities, Cases, etc.
+    - Create new visualization UIs and associated experiences
+    - Discover new areas of opportunity and influence
+    - Take quick action on records (Add / Edit / Remove )
+    - Expand hierarchy and Account relationships to allow group to group relationships
+    - Model those Account to Account relationships
+ 
+- The Actionable Relationship Center (ARC) interface lets you create, edit, and remove account-account and account-contact relationships. The ARC shows both Financial Services Cloud relationships and related list relationships in one view and it lets users navigate among related records.
+-  Compliant Data Sharing : Compliant Data Sharing features make it easier to control who can access specific records. CDS works seamlessly with existing Salesforce data sharing features. It provides extra access rules, but otherwise does not override sharing behavior from existing features.
