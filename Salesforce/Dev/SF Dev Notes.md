@@ -1,5 +1,27 @@
 # Salesforce Dev Notes
 
+## Aura vs LWC
+
+- Aura: 
+    1. Too much Code to write
+    2. Rendertinf wasn't optimized
+    3. Modern features were not available like modules, classes, premises
+    4. ES5(2009) old JS version
+
+- LWC:
+    1. Shadow DOM
+    2. Web Components
+    3. Custom Elements
+    4. template & slots
+    5. Better Performance / Faster Development
+    6. Compatibility across browser
+
+Lightning web components is a new programming model for building Lightning Components. It uses core conceps of web standards.
+
+> We can compose aura components from Lightning web components but not other way around.  
+
+> Aura Components & LWC can coexist on same page. for admin & end user they both appear as lightning component
+
 ## Lightning Components
 
 Now you can build Lightning components using two programming models: **Lightning Web Components**, and the original model, **Aura Components**. Lightning web components are custom HTML elements built using HTML and modern JavaScript. Lightning web components and Aura components can coexist and interoperate on a page. To admins and end users, they both appear as Lightning components.
@@ -36,6 +58,10 @@ A lifecycle hook is a callback method triggered at a specific phase of a compone
 
 We can use apex prog language to add custom logic to our application. like Complex Validation, Transactional logic, Complex business process, logic actions, etc. It's OOP Language & allows execution of flow & control statement.
 
+The Apex programming language is similar to one you probably already know and love—C#. Apex is saved, compiled, and executed directly on the Lightning Platform. Like C#, it’s object oriented.
+  
+![Invoking Apex](../Assets/Invoking%20Apex.png)
+  
 Apex offers multiple ways for running your Apex code **Synchronously** & **Asynchronously**.
 
 > **Synchronous Apex :**  
@@ -282,6 +308,34 @@ sObject s3 = new Student__c(Name = ‘Arnold’)
 
 ---
 
+## Local Properties & Data Binding
+
+- In Lightning component each component is class.
+- Class contains properties and methods.
+- Properties are variable to store data can be of type (undefined, number, string, objects, boolean, array/list).
+- The properties are avaiable inside class only & to which you can't access outside the class are called Local properties.
+
+
+---
+
+## Debug
+
+The Apex Replay Debugger can be used with all unmanaged code in all orgs. It works with Apex classes, triggers, anonymous Apex, and log files. This is an easy-to-use debugger that fits the majority of debugging use cases  .
+
+Apex Replay Debugger is a free tool that allows you to debug your Apex code by inspecting debug logs using Visual Studio Code as the client. Running the replay debugger gives you the same features you expect from other debuggers. You can view variables, set breakpoints, and hover over variables to see their current value. 
+
+Checkpoints are similar to breakpoints in that they reveal a lot of detailed execution information about a line of code. They just don’t stop execution on that line.
+
+---
+
+## Salesforce Developer Experience (SFDX)
+
+**Scratch Org** : It's source driven and disposable deployment of SF code and metadata. Scratch orgs are driven by source, sandboxes are copies of Production. They do not replace sandboxes.
+
+**Dev Hub** : It is the main salesforce org that you will use to create and manage your scracth orgs. (Like Developer Org)
+
+---
+
 ## Salesforce Best Practices
 
 - Create a code with mindset of using it for Bulk of data, so the code should be able to handle multiple record at once effectivery.
@@ -297,5 +351,5 @@ sObject s3 = new Student__c(Name = ‘Arnold’)
 - In Test classes for sample data use TestSetup Annotation Method & always test Batch of data for cases.
 - Always Write Code in Alignement & Remember to take backup of your data everyday in cognizant onedrive. **<-Important**
 - While working make sure you are working on updated code because if your code is old one then when you make changes & update it, then it will overwrite new code.
-
+- There are lots of limits to be aware of, and they tend to change with each major release. Additionally, it’s not uncommon for limits to get looser rather than tighter, so be sure to check out the latest by looking at the Execution Governors and Limits link in Resources.
 ---

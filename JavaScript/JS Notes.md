@@ -189,10 +189,78 @@
   ```
   - Note : If we want varuable name as same name as property then go with destructuring
 
-# Object / JSON Opertations
+## Object / JSON Opertations
 1. Object.Keys() = returns the key/property of obj
 2. Object.Values() = returns the values of obj
 3. JSON.Stringify = Converts the obj into string
 4. JSON.Parse = converts the string into obj
 
-## Array Method //Check it by yourself
+## Array Method 
+
+- map() : loop over the array & return new array based on given range, value return
+- every() : true if every element of array satisfy the codition
+- filter() : return new array with only the values which satify condition
+- some() : true if at least one element of array satisfy the condition
+- sort() : sort the elements of array
+- reduce() : Reduces the array to single values left to right
+- forEach() : call for each element of array
+
+```js
+array.methodName(Function(currentItem, Index, actualArray){
+  //check example online
+})
+```
+
+## Query Selector
+
+Queryselector() method returns the first element that matches a specific css selector in the document.  
+
+To return all elements using selector use QuerySelectorAll() method.  
+```js
+document.queryselector(selector);
+```
+
+
+## Events
+
+### HTML Event Handler Attribute :  
+When we add event through HTML, event always begin with on keyword like onclick, onchange, onkeyup, etc.
+
+### Event Listener :  
+Provides two methods for registering & deregisterin event listener.
+
+  1. addEventListener()
+  2. removeEventListener()
+
+## Event Propagation
+
+Event Propagation determines in which order the elements receive the event. There are two ways to handle this event propagation order of HTML DOM is Event Bubbling and Event Capturing.
+
+1. Bubbling (Bottom to top) : When an event happens on a component, it first runs the event handler on it, then on its parent component, then all the way up on other ancestors’ components. By default, all event handles through this order from center component event to outermost component event.
+   
+2. Capturing (Top to Bottom) : It is the opposite of bubbling. The event handler is first on its parent component and then on the component where it was actually wanted to fire that event handler. In short, it means that the event is first captured by the outermost element and propagated to the inner elements. It is also called trickle down.
+
+Custom Events are also present in JavaScript.
+
+## Arrow Function
+
+Normal Code  
+```js
+hello = function() {
+  return "Hello World!";
+}
+```
+
+With Arrow Function
+```js
+// Arrow Functions Return Value by Default.
+hello = () => {
+  return "Hello World!";
+}
+```
+
+### this keyword
+
+In regular functions the **this** keyword represented the object that called the function, which could be the window, the document, a button or whatever.
+
+With arrow functions the **this** keyword always represents the object that defined the arrow function.  
