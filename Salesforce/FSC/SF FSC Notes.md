@@ -1,6 +1,6 @@
 # Some Topics from FSC Workbook
 
-- [FSC Video Links](https://quip.com/hMviAKe9T10M)
+- [FSC Videos Links](https://quip.com/hMviAKe9T10M)
 - My Domain is required before you can use Lightning components.
 - Check Advisor, Personal Banker and Relationship Manager Profiles.
 - Person Accounts store information about people by combining certain account and contact fields into a single record. 
