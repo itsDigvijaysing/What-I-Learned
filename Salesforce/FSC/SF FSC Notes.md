@@ -39,6 +39,9 @@ can customize the associated compact layout. & We can also Personalize Life Even
 - Action Plans Templates: We can create Action Plan template using existing Template. We can make Different Versions of Actions plan Template.
 - Action Plan Template Packaging: We can deploy our template to different organization with ease.(Test in Sandbox then Deploy in Production Org (Use Case))
 - Action Plan Templates can now include document checklist items. An action plan template can have tasks, document checklist items or combination.
+- We can create action plans for tasks associated with Account, Campaign, Case, Contact, Contract, Lead, or Opportunity records . 
+- We can also create Action Plans for tasks associated with custom objects with Activities enabled.
+- We have to assign the permission set licenses to the profiles of users that need access to Action Plans. 
 - Intelligent Referrals: Intelligent need-based Referrals & scoring is referral management workflow that helps check & select referrals in business.
   - User create & automatically route referrals based on customners expressed Interest.
   - Dashboard & reports make it very easy to identify & Reward top referrers.
@@ -69,4 +72,10 @@ can customize the associated compact layout. & We can also Personalize Life Even
     - Model those Account to Account relationships
  
 - The Actionable Relationship Center (ARC) interface lets you create, edit, and remove account-account and account-contact relationships. The ARC shows both Financial Services Cloud relationships and related list relationships in one view and it lets users navigate among related records.
+- The Actionable Relationship Center (ARC) interface lets you create, edit, and remove account-account and account-contact relationships.
+- To view an ARC graph, users must have read access to the fields on the Contact, Account, Reciprocal Role, Account-Contact Relationship, Account-Account Relationship, and Contact-Contact Relationship objects.
+- ARC is supported for orgs that have implemented the Person account Model. ARC isn’t supported for orgs that use the Individual Model. ARC requires that the Association Type field of the Account-Account Relationship object has active picklist values with the following API Names: Group, Member, and Peer.
+- ARC isn't available in the Salesforce mobile app.
+- Record cards only show the first two fields that appear on the associated record’s compact layout.
+- Custom actions can be added to record previews, but not to record cards.
 -  Compliant Data Sharing : Compliant Data Sharing features make it easier to control who can access specific records. CDS works seamlessly with existing Salesforce data sharing features. It provides extra access rules, but otherwise does not override sharing behavior from existing features.
