@@ -315,6 +315,34 @@ sObject s3 = new Student__c(Name = ‘Arnold’)
 - Properties are variable to store data can be of type (undefined, number, string, objects, boolean, array/list).
 - The properties are avaiable inside class only & to which you can't access outside the class are called Local properties.
 
+**Data Binding** - In LWC is the synchronization between the controller JS and the template (HTML). basically when we map data from backend (js)(like server side apex) to frontend (html) that's called data binding.
+
+```
+<!-- One Way Data Binding -->
+
+fullname = "Champ"  --> JS (Controller)
+My Full Name is {fullname} --> Template (HTML)
+```
+
+- In template we can access property value directly if it's primitive or object.
+- DOT notation is used to access the peroperty from an object
+- LWC doesn't allow computed expressions like Names[2] or {2+2}.
+- The property in {} must be a valid JS identifier or memver expressions. Like {name} or {user.name}
+- Avoid adding spaces around the property, for example {data}
+- Two way data binding also present. 
+
+---
+
+## Component Composition
+
+Composition is adding component within the body of another component.
+Composition enables you to build complex component from simpler building-block components.
+
+- Advantages :
+    - Composing, applications, and components from a collection of smaller components make code reusable and maintainable.
+    - Reduces the code size and improves code readability
+
+[Details & Example](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/create_components_compose_intro)
 
 ---
 
