@@ -45,6 +45,8 @@ Standard App are inbuilt app of salesforce & Custom app which we create.
 > Records are like all info & Values of User (like Row).
   
 * **Validation Rule :** Validation rule contain error detection formula so if validation rule detect something than generate error.
+* Validation Rule : check entered data & if data makes the validation syntax (error condition formula) true then it will throw error (validation msg) (useful for data restriction)  
+* We can also use REGEX values in validation rule syntax (Eg. Enter valid Phone No. ( REGEX(Phone, "\\D*?(\\d\\D*?){10}")) )  
 * We can use 1 Profile to assign it to multiple Users.
 * Roles we can use for roles hierarchy.
 * Trigger.new : for New Data & Trigger.old : for Old Data.
@@ -113,6 +115,7 @@ Standard App are inbuilt app of salesforce & Custom app which we create.
 - We can add multiple users using Add Multiple User (up to 10 users) or Data Loader (More than 10 users).
 - In the user record overview we can do user related tasks such as unlocking users, freezing users and deactivating users. (User Delete not possible)
 - User license (sets the baseline features as user can use), permission set license (for access to variety of tools & function) & feature license (for access of additional features).
+- To access object we use tabs & bunch of this tabs are used in application & they can be accessed by profiles (profile control visibility of app)
 - Delegated Administrator grants user admin access for some time (to share admin duties for some time)
 - Login as any user (It can be helpful for admin to exp exactly what particular user is facing by login as that user) (Go to Login access policies & allow this option then login by going to users section as any user)
 - Setup audit trail -  Used to check any salesforce metadata (any backend config) changes in our salesforce org (last changes to org (logs))
@@ -229,7 +232,13 @@ Leads are potential Customers.
 # Salesforce Relations:
 
 > Relations are used to link records or objects with each other.  
-> Schema builder is a good way to know the related objects in UI..
+> Schema builder is a good way to know the related objects in UI.  
+> We can use Schema Builder to create new fields. We need to add a newly created field on the page using Page Layout & Schema Builder also show us the relationship between different objects using UI.  
+> Using Lookup / MasterDetails relationship we can create associated records  
+> One to Many & Many to many -> Lookup , Master Details Rel  
+> Relation between External Object -> External Lookup, Indirect Lookup Rel  
+> Only with USER Objects we have Hierarchical Relationship we use it for relating one user to another user.  
+
 
 **Master Detail Relation**:
 - Tight relationship - 1 to 1, 1 to many, many to many using Junction object (fix cascade delete) it have rollup summary feature
@@ -237,6 +246,11 @@ Leads are potential Customers.
 - we create relationships on child/Detail objects.
 - In MD relationship detail objects inherit security & sharing from masters object.
 - Master always required while creating records in details object in MD but not needed in Lookup relationship.
+- In MD Relationship the The Visibility & Sharing Setting of Parent object is inherited by child object.
+- Many to many Relationship Two objects can be related when a record from one object has a relationship with multiple records of another object and vice versa.
+- We can use Two Master Detail relationship to create many to many relationship between objects.
+- In order to create many to many relationship we need Third Object Junction Object (It’s object with two Master Detail Relationship linked to both of our objects)
+
 
 **Lookup Relationship**:
 - Loose Relationship - 1 to 1,1 to many,Self,  External, Indirect, Hierarchical. (LR don't have rollup summary field).
@@ -244,6 +258,9 @@ Leads are potential Customers.
 - Master is not required while creating child record.
 
 **Extra Info**:
+- External Objects - Similar to Custom Object but they map data outside of the salesforce Org (Data source outside salesforce). We need to form connection for the data table to access the data & we can define the access type as well. Using External Data is actually good if we have a huge amount of data & we only use small amounts of data to work with. External objects do not waste any storage & resources to keep data in sync. We access real time data.
+- External Relationship -> External Lookup Rel (Parent Object always will be External Object, child can be External Object, Standard, Custom Object) & Indirect Relationship (Use to link Child External Object with Parent Standard or Custom Object)
+- External ID’s :-> It's a field that contains a unique ID for external Data present outside of salesforce. (Identifier coming from external system) External ID field are indexed so they can be searched more quickly (only number, text & email fields can be external id)
 - Create relationships at child objects in parent child relationships.
 - we can create lookup then convert it master detail
 
@@ -354,6 +371,15 @@ It's Collection of Salesforce & Third Party add ons.
 > Unmanaged - Not Supported or Upgraded - Customisable
 
 Always Install app in Sandbox First before in Production Org.
+
+## Data Importing & Exporting:
+
+- For Import - Data Loader(external exe file software)(For Large Data 5 Million record)(support Repetitive & complex operations) / Data Import Wizard (Only limited Objects are present)(Present Inside Salesforce Org)(only up to 50K record)
+- Data Loader -  After mapping the data & start for data import at the end we will receive two file success file (contain record which are imported) & Error file(records which are not imported with the reason) (validation rule also act here if validation rule is true then it will generate error & data will not get imported in salesforce org)(We can also update & upsert & delete our record from data loader, need ID for doing this operations )
+- Data Loader - Export -> Export only Current Available / Visible records & ExportAll -> Export Current, archive, recycle bin records (all records)
+- For Export - Data Loader(external exe file software) / Exporting data via reports(present inside Salesforce Org)
+- Data Export Wizard -> We can schedule the data export for weekly and monthly basis (the time, start date & end date can be specified)
+
 
 ## Data & Analysis:
 
@@ -515,6 +541,8 @@ Automatin Summary:
     - New Outbound Message (Send the Info to end-point service in XML format)
   - There can be Approval Actions or Rejection Actions.
   - Can only update it's object record or parent.
+  - Approval Process in salesforce is an automated process that automates how salesforce records are approved in your org. AP is combination of steps for record to be approved / rejected either by user, queue or public group
+
 
 - Process Builder
   - It's made up of multiple If this then do this type statements.

@@ -18,6 +18,9 @@
 - We can use JS on web browser (Frontend Apps) or we can use Web Server (Backend Apps) like NodeJS to run JS without browser.
 - React Native, Ionic apps are also using JS & using them we can build Native or Hybrid Apps.
 - JS is also updating as per their new releases (updates) ECMAScript (ES Update) (Yearly Update).
+- var is has global scope & function scope limit but not block scope (In global scope it's under 'window.varname')
+- let has function scope & block scope & global scope
+- const support global scope, function scope, block level scope
 - We can write Script tag & either in body, head or separate because it work as inline code but when we define file.js & we want to link it then we link it in head (good Practice) same way as we link css file.
 - We should use camelCasing(start with lowercase letter) in JS even when naming variables & If something is constant or fixed then we start that variable name with upper case letter.
 - We can not use reserved words or some symbols or starting with no. while naming.

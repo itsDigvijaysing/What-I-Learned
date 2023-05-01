@@ -379,5 +379,6 @@ Checkpoints are similar to breakpoints in that they reveal a lot of detailed exe
 - In Test classes for sample data use TestSetup Annotation Method & always test Batch of data for cases.
 - Always Write Code in Alignement & Remember to take backup of your data everyday in cognizant onedrive. **<-Important**
 - While working make sure you are working on updated code because if your code is old one then when you make changes & update it, then it will overwrite new code.
-- There are lots of limits to be aware of, and they tend to change with each major release. Additionally, it’s not uncommon for limits to get looser rather than tighter, so be sure to check out the latest by looking at the Execution Governors and Limits link in Resources.
+- There are lots of limits to be aware of, and they tend to change with each major release. Additionally, it’s not uncommon for limits to get looser rather than tighter, so be sure to check out the latest by looking at the Execution Governors and Limits link in Resources.  
+- CDNJS holds multiple libraries so I can use it (Check It out)
 ---
