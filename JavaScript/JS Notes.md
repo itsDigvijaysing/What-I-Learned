@@ -30,6 +30,7 @@
   let me = {
     name: 'Champ'
   };
+  console.log(typeof name); //Output - Object
 
   // Primitive Value
   let firstName = 'Champ';
@@ -52,7 +53,7 @@
 - Comparison Operators:  
   ```>, <, <=, >=```
 - Assignment Operator, Exponential are right-to-left & other mathematical operator are left-to-right direction. [Full Operator Precedence](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
-- Template Literals are helpful if we want to insert multiple variables & **expressions** (Not Statement) in the line of string.
+- Template Literals are helpful if we want to insert multiple variables & **expressions** (Not Statement) in the line of string. (String Interpolation)  
   ```js 
   // We write Template Literals in `` & it's easy way to write long string with expressions.
   const name = 'Digvijaysing';
@@ -158,6 +159,7 @@
 
 - Spread Operator (...)  
   The operators shape is three consecurtive dots and is written as -> ...  
+  It generatea shallow copy if we refer it to another variable.(It will not pass the reference but actual data)  
   Usage: 
   1. Expanding String: convert string into list of array
   2. Combining Array: Combine array or add value to array
@@ -169,6 +171,11 @@
   let greeting = "Hello";
   let charlist = [...greeting];
   console.log(charlist); // "H","E","L","L","O"
+
+  let greeting = ["Hello","Hy"];
+  let response = ["fine","Hello"];
+  let charlist = [...greeting, ...response];
+  console.log(charlist); // "Hello","Hy","fine","Hello"
   ```
 
 - Destructuring : The two most used data structure in JS are object and array.  
@@ -193,6 +200,7 @@
   - Note : If we want varuable name as same name as property then go with destructuring
 
 ## Object / JSON Opertations
+JSON itself is Form of Object  
 1. Object.Keys() = returns the key/property of obj
 2. Object.Values() = returns the values of obj
 3. JSON.Stringify = Converts the obj into string
@@ -214,6 +222,36 @@ array.methodName(Function(currentItem, Index, actualArray){
 })
 ```
 
+### setTimeout
+The setTimeout() is method of the window object. The setTimout() sets a timer and executes a callback function after the timer expires.
+
+### setInterval
+The setInverva() is a method of the window object. The setInterval() repeatedly calls a function with fixed delay between each call.
+
+## Promise
+
+Promise is an object that may produce a single value sometime in the future.  
+Promise are used to handle asynchronous operations in JS.  
+
+**Promise has three states**
+1. pending()
+2. fulfilled()
+3. rejected()
+  
+**Use case from LWC point of view**
+1. Fetching data from server
+2. Loading file from system
+
+## QuerySelector
+
+- QuerySelector
+  - The QuerySelector() method returns the first element that matches a specified CSS Selector in the document.
+  - document.querySelector(selector);
+
+- QuerySelectorAll
+  - The queryselectorAll() method returns all elements in the docuemnt that matches a specified CSS selector(s), as static NodeList object.
+  - document.querySelectorAll(selector);
+
 ## Query Selector
 
 Queryselector() method returns the first element that matches a specific css selector in the document.  
@@ -227,7 +265,7 @@ document.queryselector(selector);
 ## Events
 
 ### HTML Event Handler Attribute :  
-When we add event through HTML, event always begin with on keyword like onclick, onchange, onkeyup, etc.
+When we add event through HTML, event always begin with on keyword like onclick, onchange, onkeyup, etc. (always begin with on keyword)
 
 ### Event Listener :  
 Provides two methods for registering & deregisterin event listener.
@@ -260,6 +298,11 @@ With Arrow Function
 hello = () => {
   return "Hello World!";
 }
+```
+More Efficient way with arrow function
+```js
+// Arrow Functions Return Value by Default.
+hello = () => "Hello World!";
 ```
 
 ### this keyword
