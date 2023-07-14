@@ -4,35 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "640a4e93e9797a6f",
+        "id": "48a6215014a9008a",
         "type": "tabs",
         "children": [
           {
-            "id": "2bff2c0848b6a593",
+            "id": "a414a77b2d28fcd5",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Salesforce/Admin/SF Admin Notes.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "cf786296ca36e46c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Salesforce/Admin/README.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Salesforce/Admin/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Salesforce/Admin/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Salesforce/Admin/README.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -157,10 +136,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "cf786296ca36e46c",
+  "active": "a414a77b2d28fcd5",
   "lastOpenFiles": [
     "Salesforce/Admin/SF Admin Notes.md",
-    "Salesforce/Admin/README.md",
+    "README.md",
     "Archive/Attachment/Access.png",
     "Archive/Attachment/Async Apex.png",
     "Archive/Attachment/Deployment Process.jpg",
