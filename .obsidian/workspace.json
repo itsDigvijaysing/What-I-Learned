@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "cf786296ca36e46c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Salesforce/Admin/README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -48,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "access.png",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,8 +78,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -86,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Salesforce/Admin/SF Admin Notes.md",
+                "file": "Salesforce/Admin/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Salesforce/Admin/SF Admin Notes.md",
+                "file": "Salesforce/Admin/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Salesforce/Admin/SF Admin Notes.md"
+                "file": "Salesforce/Admin/README.md"
               }
             }
           }
@@ -145,8 +157,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2bff2c0848b6a593",
+  "active": "cf786296ca36e46c",
   "lastOpenFiles": [
+    "Salesforce/Admin/SF Admin Notes.md",
+    "Salesforce/Admin/README.md",
     "Archive/Attachment/Access.png",
     "Archive/Attachment/Async Apex.png",
     "Archive/Attachment/Deployment Process.jpg",
@@ -158,7 +172,6 @@
     "Archive/Attachment/Ticket Process.jpg",
     "Salesforce/FSC/SF FSC Notes.md",
     "Salesforce/Dev/SF Dev Notes.md",
-    "Salesforce/Admin/SF Admin Notes.md",
     "JavaScript/JS Notes.md",
     "Salesforce/Process.md",
     "Assets/History of JS.png.md",
