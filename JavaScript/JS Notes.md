@@ -3,14 +3,15 @@
 ## Notes
 
 - History of JavaScript  
-  ![History of JS](Assets/History%20of%20JS.png)
+  ![](History%20of%20JS.png)
+
 - During Production: to make your app Compatible to all Browser, developer convert code to ES5 or ES6 JS version using BABEL.
-- JS is High-Level, Object-Oriented, Mult-Paradigm Programming Language.
+- JS is High-Level, Object-Oriented, Multi-Paradigm Programming Language.
 - JS is High Level lang because we don't need to worry about complex stuff like memory management.
 - JS is Multi Paradigm means we can use different styles of programming.
 - JS is also Object oriented means it's based on objects, for storing most kinds of data.
 - Role of JS in Web Development:
-  - HTML - Contect of Page (Frontend)
+  - HTML - Content of Page (Frontend)
   - CSS - Presentation & styling
   - JS - Programming Lang for Dynamics & Interactive Tasks (Backend)
 - React, Angular, VueJS this framework is based on JS.
@@ -25,6 +26,7 @@
 - We should use camelCasing(start with lowercase letter) in JS even when naming variables & If something is constant or fixed then we start that variable name with upper case letter.
 - We can not use reserved words or some symbols or starting with no. while naming.
 - Value can be either Object or Primitive.
+
   ```js
   // Object Value
   let me = {
@@ -43,18 +45,21 @@
 - **const** variable is immutable variable so we need to assign value when defining const.
 - **let** are only available inside the block where they're defined. **var** are available throughout the function in which they're declared.
 - We can write variable without declaring let, var, const type by directly giving it name & value but it's very bad practise.
+
   ```js
   //It's bad practise as it create it on property on global level.
   withoutVariableType = 'Hello World';
   console.log(withoutVariableType);
   ```
+
 - Assignment Operators:  
   ```x=y, x+=y, x-=y, x++, x--```
 - Comparison Operators:  
   ```>, <, <=, >=```
 - Assignment Operator, Exponential are right-to-left & other mathematical operator are left-to-right direction. [Full Operator Precedence](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
 - Template Literals are helpful if we want to insert multiple variables & **expressions** (Not Statement) in the line of string. (String Interpolation)  
-  ```js 
+
+  ```js
   // We write Template Literals in `` & it's easy way to write long string with expressions.
   const name = 'Digvijaysing';
   const myName = `My Name is ${name} & I'm ${80-57} years old Engineer!`;
@@ -64,8 +69,10 @@
   Multiple 
   Lines`);
   ```
+
 - We can also use Multiple Lines using ```\n\``` in string.
 - Ternary Conditional Operator are used rather than if else statement to do simple conditional Operations & it produces value as expressions so we can also use them at place of expressions.
+
   ```js
   // tip is using ternary operator method & giving tip based on condition of bill amount.
   const bill = 275;
@@ -74,8 +81,10 @@
   console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill+tip}`);
 
   ```
+
 - **String + No** = It will concatenate as string but **String - No** = it will perform as normal operation.
 - Type Coercion refers to the process of automatic or implicit conversion of values from one data type to another. This includes conversion from Number to String, String to Number, Boolean to Number etc
+
   ```js
   console.log('9'-'5'); // Output: 4
   console.log('19'-'13'+'17'); // Output: 617 because Int + String means Concatenation.
@@ -83,10 +92,12 @@
   console.log('123'<57); // Output: false
   console.log(5+6+'4'+9-4-2); // Output: 1143
   ```
+
 - NaN = Not a Number, e.g. when we convert string with alphabet to Number.
-- We can convert type to Number(),String(),Boolean(). 
+- We can convert type to Number(),String(),Boolean().
 - falsy values : 0, '', undefined, null, NaN.
 - truthly value : any string or non falsy value.
+
   ```js
   // We can use falsy values in coditional statement
   // We cam also use it to check if variable defined or not
@@ -98,10 +109,12 @@
       console.log('You should Earn Money');
   }
   ```
+
 - Strict Equality Operator (Coercion Blocked): ```===``` (Type also checked)  
   Loose Equality Operator (Coercion Happen): ```==``` (Type not checked)
 - Easy way to take input from user through Browser ```let inputValue = prompt("String");```
 - Switch Conditional Statement in JS & we can also convert switch to multiple if else.  
+
   ```js
   switch (key) {
     case value1: //Here case will be checked key === value1 (Strict Equality Operator)
@@ -118,8 +131,10 @@
       break;
   }
   ```
+
 - We use AND by using **&&**, OR by using **||**, Not by using **!**.
-- Expression: Any unit of code that can be evaluated (produce) to a value is an expression. Since expressions produce values, they can appear anywhere in a program where JavaScript expects a value such as the arguments. 
+- Expression: Any unit of code that can be evaluated (produce) to a value is an expression. Since expressions produce values, they can appear anywhere in a program where JavaScript expects a value such as the arguments.
+
   ```
   Expressions
   1 → produces 1
@@ -129,8 +144,10 @@
   isHappy ? "🙂" : "🙁" → produces an emoji
   [1, 2, 3].pop() → produces the number 3
   ```
+
 - Statement & Expressions of JS in [Details](https://www.joshwcomeau.com/javascript/statements-vs-expressions/)
 - Statement: A statement is an instruction to perform a specific action. We use expressions in statement to perform action, Such actions include creating a variable or a function, looping through an array of elements, evaluating code based on a specific condition etc. JavaScript programs are actually a sequence of statements.\
+
   ```
   Statements
   let hi = 5;
@@ -152,6 +169,7 @@
 - undefined === null //false
 
 - **Var** : When you declare a var variable it automatically assigns to window object  
+
   ```js
   var course = "Zero to Hero"; //global scope
   console.log(window.course); //Zero to Hero
@@ -160,13 +178,14 @@
 - Spread Operator (...)  
   The operators shape is three consecurtive dots and is written as -> ...  
   It generatea shallow copy if we refer it to another variable.(It will not pass the reference but actual data)  
-  Usage: 
+  Usage:
   1. Expanding String: convert string into list of array
   2. Combining Array: Combine array or add value to array
   3. Combining Object: Combine object or add value to Object
   4. Creating new shallow copy of arrays and objects
 
   e.g.  
+
   ```js
   let greeting = "Hello";
   let charlist = [...greeting];
@@ -179,34 +198,40 @@
   ```
 
 - Destructuring : The two most used data structure in JS are object and array.  
-  Destructuring is a special syntax that allows us to "unpack" arrays or objects into a bunch of varuables, as sometimes that's more convenient.
+  Destructuring is a special syntax that allows us to "unpack" arrays or objects into a bunch of varuables, as sometimes that's more convenient.  
+  
   1. Array Destructuring:
+
   ```js
   let arr = ["amazon","google"];
   let [company1,company2] = arr;
   console.log(company1); // amazon
   console.log(company2); // google
   ```
+  
+  2. Object Destructuring:
 
-  2. Object Destructuring
   ```js
-  let options = { 	
+  let options = {  
         title: "Zero to Hero", type: "CRM"
       }
   let {title,type} = options;
   console.log(title) // Zero to Hero
   console.log(type) // CRM
   ```
+
   - Note : If we want varuable name as same name as property then go with destructuring
 
 ## Object / JSON Opertations
+
 JSON itself is Form of Object  
+
 1. Object.Keys() = returns the key/property of obj
 2. Object.Values() = returns the values of obj
 3. JSON.Stringify = Converts the obj into string
 4. JSON.Parse = converts the string into obj
 
-## Array Method 
+## Array Method
 
 - map() : loop over the array & return new array based on given range, value return
 - every() : true if every element of array satisfy the codition
@@ -223,9 +248,11 @@ array.methodName(Function(currentItem, Index, actualArray){
 ```
 
 ### setTimeout
+
 The setTimeout() is method of the window object. The setTimout() sets a timer and executes a callback function after the timer expires.
 
 ### setInterval
+
 The setInverva() is a method of the window object. The setInterval() repeatedly calls a function with fixed delay between each call.
 
 ## Promise
@@ -234,11 +261,13 @@ Promise is an object that may produce a single value sometime in the future.
 Promise are used to handle asynchronous operations in JS.  
 
 **Promise has three states**
+
 1. pending()
 2. fulfilled()
 3. rejected()
   
 **Use case from LWC point of view**
+
 1. Fetching data from server
 2. Loading file from system
 
@@ -257,17 +286,19 @@ Promise are used to handle asynchronous operations in JS.
 Queryselector() method returns the first element that matches a specific css selector in the document.  
 
 To return all elements using selector use QuerySelectorAll() method.  
+
 ```js
 document.queryselector(selector);
 ```
 
-
 ## Events
 
-### HTML Event Handler Attribute :  
+### HTML Event Handler Attribute  
+
 When we add event through HTML, event always begin with on keyword like onclick, onchange, onkeyup, etc. (always begin with on keyword)
 
-### Event Listener :  
+### Event Listener  
+
 Provides two methods for registering & deregisterin event listener.
 
   1. addEventListener()
@@ -278,7 +309,7 @@ Provides two methods for registering & deregisterin event listener.
 Event Propagation determines in which order the elements receive the event. There are two ways to handle this event propagation order of HTML DOM is Event Bubbling and Event Capturing.
 
 1. Bubbling (Bottom to top) : When an event happens on a component, it first runs the event handler on it, then on its parent component, then all the way up on other ancestors’ components. By default, all event handles through this order from center component event to outermost component event.
-   
+
 2. Capturing (Top to Bottom) : It is the opposite of bubbling. The event handler is first on its parent component and then on the component where it was actually wanted to fire that event handler. In short, it means that the event is first captured by the outermost element and propagated to the inner elements. It is also called trickle down.
 
 Custom Events are also present in JavaScript.
@@ -286,6 +317,7 @@ Custom Events are also present in JavaScript.
 ## Arrow Function
 
 Normal Code  
+
 ```js
 hello = function() {
   return "Hello World!";
@@ -293,13 +325,16 @@ hello = function() {
 ```
 
 With Arrow Function
+
 ```js
 // Arrow Functions Return Value by Default.
 hello = () => {
   return "Hello World!";
 }
 ```
+
 More Efficient way with arrow function
+
 ```js
 // Arrow Functions Return Value by Default.
 hello = () => "Hello World!";

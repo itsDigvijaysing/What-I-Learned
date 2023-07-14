@@ -21,8 +21,8 @@
 
 **Salesforce Edition** 
 
-> ![Salesforce Edition](../Assets/Salesforce%20Editions.png)
-> [Salesforce Feature Allocation per Edition link](https://help.salesforce.com/s/articleView?id=sf.overview_limits_general.htm&type=5&language=en_US)
+[Salesforce Feature per Edition link](https://help.salesforce.com/s/articleView?id=sf.overview_limits_general.htm&type=5&language=en_US)
+>![SF Edition](Salesforce%20Editions.png)
 
 
 **Relationship types:**
@@ -46,7 +46,8 @@ Standard App are inbuilt app of salesforce & Custom app which we create.
   
 * **Validation Rule :** Validation rule contain error detection formula so if validation rule detect something than generate error.
 * Validation Rule : check entered data & if data makes the validation syntax (error condition formula) true then it will throw error (validation msg) (useful for data restriction)  
-* We can also use REGEX values in validation rule syntax (Eg. Enter valid Phone No. ( REGEX(Phone, "\\D*?(\\d\\D*?){10}")) )  
+* We can also use REGEX values in validation rule syntax 
+  (E.g.. Enter valid Phone No. ( REGEX(Phone, "\\D*?(\\d\\D*?){10}")) )  
 * We can use 1 Profile to assign it to multiple Users.
 * Roles we can use for roles hierarchy.
 * Trigger.new : for New Data & Trigger.old : for Old Data.
@@ -64,7 +65,7 @@ Standard App are inbuilt app of salesforce & Custom app which we create.
 ---
 
 ## Access
-> ![Access](../Assets/Access.png)
+> ![Access](Access.png)
 
 - **Org Access:** IP Range/Login hrs.
 - **Object Access:** Control Profile Access/R/W permissions, Permission Set.
@@ -78,8 +79,7 @@ Standard App are inbuilt app of salesforce & Custom app which we create.
 **Sharing Rules:** Use sharing rules to extend sharing access to users in public groups, roles, or territories. Sharing rules give particular users greater access by making automatic exceptions to your org-wide sharing settings.
 
 **Sharing Model**  
-> ![Security Model](../Assets/Security%20Model.png)
-
+>![Security Model](Security%20Model.png)
 ---
 
 ## Automation Tools Salesforce:

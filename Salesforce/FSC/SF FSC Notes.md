@@ -23,7 +23,7 @@ household level.
 	-  can only set rollups to the primary group. If the Primary Group field is not enabled, the option to roll up is restricted.  
 - Financial Services Cloud comes with Multiple Relationship Groups enabled. This lets advisors add a person to more than one relationship group. For data security reasons some clients may want to disable this feature.
 - The Relationship Map and Group Builder can be used to manage visibility to the right level of Account & Contact data for the user. This is controlled by the users’ Profiles (e.g. Advisor, Banker, Teller, etc.).
-- Reciporcal Roles: Groups or Households sometimes have relationships with people who don’t live in the same household. Financial Services Cloud provides several reciprocal roles, including lawyer/client, accountant/client, parent/dependent, business/proprietor, and more. If those roles don’t cover your business needs, it’s easy to add new roles.
+- Reciprocal Roles: Groups or Households sometimes have relationships with people who don’t live in the same household. Financial Services Cloud provides several reciprocal roles, including lawyer/client, accountant/client, parent/dependent, business/proprietor, and more. If those roles don’t cover your business needs, it’s easy to add new roles.
 - FSC has Life Events or Business Milestones Lightning component that can be displayed on the Account record page to create a more personal, need-based customer engagement by capturing and visualizing important life events, such as having a baby, changing jobs, or buying a home. It shows Life Events for a person account record page and business milestones for a business account record page.
 	- If you add the component to a Person Account record page to show Life Events.
 	- If you add the component to a Business Account record page to show business milestones.
@@ -48,7 +48,7 @@ can customize the associated compact layout. & We can also Personalize Life Even
   - Referrals are modeled on the Lead Object & all salesforce Lead Scoring are also present for referrals. (e.g. Einstein Lead Scoring, Lead Routing, Lead Assignemnt)
   - Referrals can be as easy as if someone is shifting to another location so he need some money for home but we don't give mortages so I will send referral to my friend & give her information so he will provide mortage to that person.
   - e.g.  
-  ![Referral Eg.](Assets/referrals%20eg.png)
+![referrals](referrals%20eg.png)
 
 - We have to Modify some setting of our Org to use Referrals.
 - It is best practice to assign referrals to a queue, so managers can assign each referral to the employee with the most time and experience. You can create an approval process to automate the way referrals are approved.

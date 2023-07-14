@@ -4,7 +4,7 @@
 
 - Aura: 
     1. Too much Code to write
-    2. Rendertinf wasn't optimized
+    2. Rendering wasn't optimized
     3. Modern features were not available like modules, classes, premises
     4. ES5(2009) old JS version
 
@@ -16,7 +16,7 @@
     5. Better Performance / Faster Development
     6. Compatibility across browser
 
-Lightning web components is a new programming model for building Lightning Components. It uses core conceps of web standards.
+Lightning web components is a new programming model for building Lightning Components. It uses core concepts of web standards.
 
 > We can compose aura components from Lightning web components but not other way around.  
 
@@ -26,8 +26,7 @@ Lightning web components is a new programming model for building Lightning Compo
 
 Now you can build Lightning components using two programming models: **Lightning Web Components**, and the original model, **Aura Components**. Lightning web components are custom HTML elements built using HTML and modern JavaScript. Lightning web components and Aura components can coexist and interoperate on a page. To admins and end users, they both appear as Lightning components.
 
-> **Lightning Web Components** uses core Web Components standards and provides only what’s necessary to perform well in browsers supported by Salesforce. Because it’s built on code that runs natively in browsers, Lightning Web Components is lightweight and delivers exceptional performance. Most of the code you write is standard JavaScript and HTML.  
-LWC supports Explicit DOM (Manual) & Automatic DOM (Automatic Changes).  
+> **Lightning Web Components** uses core Web Components standards and provides only what’s necessary to perform well in browsers supported by Salesforce. Because it’s built on code that runs natively in browsers, Lightning Web Components is lightweight and delivers exceptional performance. Most of the code you write is standard JavaScript and HTML. LWC supports Explicit DOM (Manual) & Automatic DOM (Automatic Changes).  
 
 > **Aura components** are the self-contained and reusable units of an app. They represent a reusable section of the UI, and can range in granularity from a single line of text to an entire app. Events. Event-driven programming is used in many languages and frameworks, such as JavaScript and Java Swing. An Aura component is a combination of markup, JavaScript, and CSS.
 
@@ -60,7 +59,7 @@ We can use apex prog language to add custom logic to our application. like Compl
 
 The Apex programming language is similar to one you probably already know and love—C#. Apex is saved, compiled, and executed directly on the Lightning Platform. Like C#, it’s object oriented.
   
-![Invoking Apex](../Assets/Invoking%20Apex.png)
+![Invoking apex](Invoking%20Apex.png)
   
 Apex offers multiple ways for running your Apex code **Synchronously** & **Asynchronously**.
 
@@ -73,7 +72,7 @@ Apex offers multiple ways for running your Apex code **Synchronously** & **Async
 
 **Types of Async Apex:**  
 
-![Async Apex Types](../Assets/Async%20Apex.png)
+![Async](Async%20Apex.png)
 
 1. **Future Methods** :  
     We use @Future Annotation & method should be static, as it only return Void type.  
