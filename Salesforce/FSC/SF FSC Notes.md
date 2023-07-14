@@ -15,7 +15,7 @@
     - A professional group such as a medical practice or a law firm
     - The trustees and beneficiaries of a trust
 
-- Primary group : A client’s data can also be summarized with the data of others by making a client part of a group.When a group is a client’s Primary group, all the client’s financial information is usually rolled up into that group.
+- Primary group : A client’s data can also be summarized with the data of others by making a client part of a group. When a group is a client’s Primary group, all the client’s financial information is usually rolled up into that group.
 - Household: A household represents a group of clients and businesses whose financials are summarized at the
 household level.
 - In Financial Services Cloud client data like Tasks, Events, and Financial Accounts is aggregated or “rolled up” into the client’s financial summary to view summarized data. We are using the custom objects Rollup By Lookup Config and Rollup By Lookup Filter Criteria. These objects enable calculation of rollup summaries based on lookup field.
@@ -48,7 +48,7 @@ can customize the associated compact layout. & We can also Personalize Life Even
   - Referrals are modeled on the Lead Object & all salesforce Lead Scoring are also present for referrals. (e.g. Einstein Lead Scoring, Lead Routing, Lead Assignemnt)
   - Referrals can be as easy as if someone is shifting to another location so he need some money for home but we don't give mortages so I will send referral to my friend & give her information so he will provide mortage to that person.
   - e.g.  
-![referrals](referrals%20eg.png)
+![Referrals](../../Archive/Attachment/referrals%20eg.png)
 
 - We have to Modify some setting of our Org to use Referrals.
 - It is best practice to assign referrals to a queue, so managers can assign each referral to the employee with the most time and experience. You can create an approval process to automate the way referrals are approved.

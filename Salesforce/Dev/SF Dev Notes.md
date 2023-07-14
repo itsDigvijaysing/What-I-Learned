@@ -59,7 +59,7 @@ We can use apex prog language to add custom logic to our application. like Compl
 
 The Apex programming language is similar to one you probably already know and love—C#. Apex is saved, compiled, and executed directly on the Lightning Platform. Like C#, it’s object oriented.
   
-![Invoking apex](Invoking%20Apex.png)
+![Invoking Apex](../../Archive/Attachment/Invoking%20Apex.png)
   
 Apex offers multiple ways for running your Apex code **Synchronously** & **Asynchronously**.
 
@@ -72,7 +72,7 @@ Apex offers multiple ways for running your Apex code **Synchronously** & **Async
 
 **Types of Async Apex:**  
 
-![Async](Async%20Apex.png)
+![Async Apex](../../Archive/Attachment/Async%20Apex.png)
 
 1. **Future Methods** :  
     We use @Future Annotation & method should be static, as it only return Void type.  

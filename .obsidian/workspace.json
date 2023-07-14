@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Salesforce/Process.md",
+                "file": "Salesforce/Admin/SF Admin Notes.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "asset",
+                "query": "access.png",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,11 +65,12 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 227.50260543823242
+    "width": 326.5
   },
   "right": {
     "id": "90b19e3db6fd2757",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Salesforce/Process.md",
+                "file": "Salesforce/Admin/SF Admin Notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Salesforce/Process.md",
+                "file": "Salesforce/Admin/SF Admin Notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Salesforce/Process.md"
+                "file": "Salesforce/Admin/SF Admin Notes.md"
               }
             }
           }
@@ -133,8 +134,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -147,13 +147,22 @@
   },
   "active": "2bff2c0848b6a593",
   "lastOpenFiles": [
+    "Archive/Attachment/Access.png",
+    "Archive/Attachment/Async Apex.png",
+    "Archive/Attachment/Deployment Process.jpg",
+    "Archive/Attachment/History of JS.png",
+    "Archive/Attachment/Invoking Apex.png",
+    "Archive/Attachment/referrals eg.png",
+    "Archive/Attachment/Salesforce Editions.png",
+    "Archive/Attachment/Security Model.png",
+    "Archive/Attachment/Ticket Process.jpg",
+    "Salesforce/FSC/SF FSC Notes.md",
+    "Salesforce/Dev/SF Dev Notes.md",
+    "Salesforce/Admin/SF Admin Notes.md",
     "JavaScript/JS Notes.md",
     "Salesforce/Process.md",
-    "Salesforce/Admin/SF Admin Notes.md",
-    "Salesforce/Dev/SF Dev Notes.md",
     "Assets/History of JS.png.md",
     "Assets",
-    "Salesforce/FSC/SF FSC Notes.md",
     "Assets/Deployment Process.jpg.md",
     "Salesforce/Dev",
     "Salesforce/Admin",
@@ -162,16 +171,7 @@
     "JavaScript",
     "My First Note.md",
     "Salesforce",
-    "Archive/Attachment/referrals eg.png",
-    "Archive/Attachment/Access.png",
-    "Archive/Attachment/Ticket Process.jpg",
-    "Archive/Attachment/Security Model.png",
-    "Archive/Attachment/Salesforce Editions.png",
-    "Archive/Attachment/Invoking Apex.png",
-    "Archive/Attachment/Deployment Process.jpg",
     "Archive/Attachment/Deployment Process.drawio",
-    "Archive/Attachment/Async Apex.png",
-    "Archive/Attachment/History of JS.png",
     "Archive/Attachment",
     "Archive"
   ]

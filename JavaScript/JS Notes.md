@@ -2,8 +2,8 @@
 
 ## Notes
 
-- History of JavaScript  
-  ![](History%20of%20JS.png)
+- History of JavaScript 
+  ![History of JS](../Archive/Attachment/History%20of%20JS.png)
 
 - During Production: to make your app Compatible to all Browser, developer convert code to ES5 or ES6 JS version using BABEL.
 - JS is High-Level, Object-Oriented, Multi-Paradigm Programming Language.

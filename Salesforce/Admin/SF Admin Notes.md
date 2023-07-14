@@ -22,7 +22,7 @@
 **Salesforce Edition** 
 
 [Salesforce Feature per Edition link](https://help.salesforce.com/s/articleView?id=sf.overview_limits_general.htm&type=5&language=en_US)
->![SF Edition](Salesforce%20Editions.png)
+>![SF Edition](../../Archive/Attachment/Salesforce%20Editions.png)
 
 
 **Relationship types:**
@@ -65,7 +65,7 @@ Standard App are inbuilt app of salesforce & Custom app which we create.
 ---
 
 ## Access
-> ![Access](Access.png)
+> ![Access](../../Archive/Attachment/Access.png)
 
 - **Org Access:** IP Range/Login hrs.
 - **Object Access:** Control Profile Access/R/W permissions, Permission Set.
@@ -79,7 +79,7 @@ Standard App are inbuilt app of salesforce & Custom app which we create.
 **Sharing Rules:** Use sharing rules to extend sharing access to users in public groups, roles, or territories. Sharing rules give particular users greater access by making automatic exceptions to your org-wide sharing settings.
 
 **Sharing Model**  
->![Security Model](Security%20Model.png)
+>![Security](../../Archive/Attachment/Security%20Model.png)
 ---
 
 ## Automation Tools Salesforce:
