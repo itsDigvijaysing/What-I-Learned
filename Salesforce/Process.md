@@ -1,7 +1,7 @@
 # Company Task Process
 
 ## Deployment Process
->![Deployment Process](Deployment%20Process.jpg)
+>![Deployment Process](../Archive/Attachment/Deployment%20Process.jpg)
 
 ## Ticket Process
 >![](Ticket%20Process.jpg)
