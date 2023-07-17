@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 326.5
+    "width": 257.5026054382324
   },
   "right": {
     "id": "90b19e3db6fd2757",
@@ -137,6 +137,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "daily-notes:Open today's daily note": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
