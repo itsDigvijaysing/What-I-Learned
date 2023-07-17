@@ -53,7 +53,7 @@ A lifecycle hook is a callback method triggered at a specific phase of a compone
 
 ---
 
-## Apex Language
+## Apex Code Language
 
 We can use apex prog language to add custom logic to our application. like Complex Validation, Transactional logic, Complex business process, logic actions, etc. It's OOP Language & allows execution of flow & control statement.
 

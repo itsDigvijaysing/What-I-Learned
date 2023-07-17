@@ -1,4 +1,4 @@
-# JavaScript Course Udemy
+# [JavaScript] Course
 
 ## Notes
 

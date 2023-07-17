@@ -11,8 +11,12 @@
             "id": "a414a77b2d28fcd5",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "README.md"
+              }
             }
           }
         ]
@@ -138,8 +146,11 @@
   },
   "active": "a414a77b2d28fcd5",
   "lastOpenFiles": [
+    "Salesforce/Dev/SF Dev Notes.md",
     "Salesforce/Admin/SF Admin Notes.md",
+    "JavaScript/JS Notes.md",
     "README.md",
+    "Salesforce/Process.md",
     "Archive/Attachment/Access.png",
     "Archive/Attachment/Async Apex.png",
     "Archive/Attachment/Deployment Process.jpg",
@@ -150,9 +161,6 @@
     "Archive/Attachment/Security Model.png",
     "Archive/Attachment/Ticket Process.jpg",
     "Salesforce/FSC/SF FSC Notes.md",
-    "Salesforce/Dev/SF Dev Notes.md",
-    "JavaScript/JS Notes.md",
-    "Salesforce/Process.md",
     "Assets/History of JS.png.md",
     "Assets",
     "Assets/Deployment Process.jpg.md",
