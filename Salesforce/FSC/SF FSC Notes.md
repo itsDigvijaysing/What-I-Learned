@@ -1,4 +1,4 @@
-# Some Topics from FSC Workbook
+# Topics from FSC Workbook [Salesforce](../Salesforce.md)
 
 - [FSC Videos Links](https://quip.com/hMviAKe9T10M)
 - My Domain is required before you can use Lightning components.
@@ -56,7 +56,7 @@ can customize the associated compact layout. & We can also Personalize Life Even
     ● Accepts the referral and gets to work  
     ● Rejects the referral and sends it back to the referrer for more information  
 - When there are many referrals in queue than they can use Salesforce Inbuilt Priority Tools.
-- Referral Converstion : When a referral is qualified, it’s ready to be converted & Common qualifying steps include confirming client interest, completing all client information, or pre-qualifying the client for a mortgage.
+- Referral Conversion : When a referral is qualified, it’s ready to be converted & Common qualifying steps include confirming client interest, completing all client information, or pre-qualifying the client for a mortgage.
 - Your top referrers are a key part of your business. A referrer is someone who creates a referral, and your top referrers are the ones who create the referrals that are most likely to convert.
 - The Referrals view shows details about the number of referrals, the number converted and rejected, the conversion rate, and a list of people referred. To keep your top referrers happy, they consider creating an incentive program to reward them with financial or other incentives.
 - We can also track Track Referral Activity & Customize Referral Path.

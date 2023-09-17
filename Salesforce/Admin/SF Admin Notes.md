@@ -1,17 +1,4 @@
-# Salesforce Admin Notes
-
-## Product & Services of Salesforce:
-
-1. Sales
-2. IOT
-3. Marketing
-4. Service Cloud
-5. App
-6. Community
-7. Analytics
-8. Health
-9. Commerce
-10. Others...
+# [[Salesforce]] Admin Notes
 
 **Programming Technologies Salesforce:**
 
@@ -64,7 +51,7 @@ Standard App are inbuilt app of salesforce & Custom app which we create.
 
 ---
 
-## Access
+## #Access
 > ![Access](../../Archive/Attachment/Access.png)
 
 - **Org Access:** IP Range/Login hrs.
