@@ -1,0 +1,4 @@
+- #NodeJS is Server-Side JavaScript Runtime
+- We normally use it to run JS code outside the Browser
+- We can also execute server side logic
+- 

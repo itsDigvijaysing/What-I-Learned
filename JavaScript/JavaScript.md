@@ -1,8 +1,8 @@
-# #JavaScript Course
+# JavaScript Course
 
 ## Notes
 
-- History of JavaScript 
+- History of #JavaScript 
   ![History of JS](../Archive/Attachment/History%20of%20JS.png)
 
 - During Production: to make your app Compatible to all Browser, developer convert code to ES5 or ES6 JS version using BABEL.

@@ -24,7 +24,7 @@ Lightning web components is a new programming model for building Lightning Compo
 
 ## Lightning Components
 
-Now you can build Lightning components using two programming models: **Lightning Web Components**, and the original model, **Aura Components**. Lightning web components are custom HTML elements built using HTML and modern JavaScript. Lightning web components and Aura components can coexist and interoperate on a page. To admins and end users, they both appear as Lightning components.
+Now you can build Lightning components using two programming models: **Lightning Web Components**, and the original model, **Aura Components**. Lightning web components are custom HTML elements built using [HTML & CSS](../../HTML%20&%20CSS/HTML%20&%20CSS.md) and modern [JavaScript](../../JavaScript/JavaScript.md). Lightning web components and Aura components can coexist and interoperate on a page. To admins and end users, they both appear as Lightning components.
 
 > **Lightning Web Components** uses core Web Components standards and provides only what’s necessary to perform well in browsers supported by Salesforce. Because it’s built on code that runs natively in browsers, Lightning Web Components is lightweight and delivers exceptional performance. Most of the code you write is standard JavaScript and HTML. LWC supports Explicit DOM (Manual) & Automatic DOM (Automatic Changes).  
 
