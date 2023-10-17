@@ -1,6 +1,5 @@
 - It's Virtualization software, by packaging application with all the necessary dependencies, config, system tools & runtimes in Docker Artifact.
-
-> ![Docker Cycle](../Archive/Attachment/Docker%20Cycle.png)
+ ![Docker Cycle](../Archive/Attachment/Docker%20Cycle.png)
 - Reasons to use 
 	1. Different Developers working with Different OS.
 	2. Can solve the problem of versions of Software's.
