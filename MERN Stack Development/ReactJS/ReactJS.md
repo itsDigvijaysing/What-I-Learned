@@ -37,4 +37,14 @@ function AboutPage() {
 ```
 - Hooks: Functions starting with `use` are called _Hooks_, Hooks are more restrictive than other functions. You can only call Hooks _at the top_ of your components (or other Hooks).
 - The code in `App.js` creates a _component_. In React, a component is a piece of reusable code that represents a part of a user interface. Components are used to render, manage, and update the UI elements in your application
+- When Importing something like Images/files from parent folders to src folder react have some issues. The `App.js` file is located in the `src/` directory, so the `../` prefix tries to import the `Example.js` file from outside the `src/` directory which causes the error. All of the files you import in a React.js project have to be located under the `src/` directory.
+	1. Either we have to move files inside `src` folder or where the `code.js` present, so we assign value to variable & use it. `e.g. logo`
+	2. Or we use Importing files from the public/ directory with absolute imports, to import below directory `cat.png` we can use `img src="/cat.png"` directly & it's allowed as per absolute import in react.
+```shel
+	bobbyhadz-react/
+		  └──src/
+		    └── App.js
+		  └──public/
+		    └── cat.png
+```
 - 

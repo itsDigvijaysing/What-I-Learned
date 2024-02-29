@@ -359,13 +359,22 @@ Checkpoints are similar to breakpoints in that they reveal a lot of detailed exe
 
 **Scratch Org** : It's source driven and disposable deployment of SF code and metadata. Scratch orgs are driven by source, sandboxes are copies of Production. They do not replace sandboxes.
 
-**Dev Hub** : It is the main salesforce org that you will use to create and manage your scracth orgs. (Like Developer Org)
+**Dev Hub** : It is the main salesforce org that you will use to create and manage your scratch orgs. (Like Developer Org)
+
+---
+
+## Unit Testing & End-to-End Testing
+
+- Unit testing focuses on testing small, discrete pieces of functionality in an application. To facilitate unit testing, build your application using small, testable units, instead of writing a single long Apex method or class.
+
+- End-to-end tests focus on testing an entire application or user journey. For web applications, this often involves testing in a browser to validate how the code and components on a page work together in a test environment, such as a sandbox or a scratch org.
+
 
 ---
 
 ## Salesforce Best Practices
 
-- Create a code with mindset of using it for Bulk of data, so the code should be able to handle multiple record at once effectivery.
+- Create a code with mindset of using it for Bulk of data, so the code should be able to handle multiple record at once effectively.
 - Use Single Trigger per Object as in multiple trigger order of execution can not be determined.
 - Rather than storing value in variable & than using it for loop we can directly assign SOQL query inside loop condition.
 - Don't copy paste same code everywhere, we can just create it at one location and create reusable class & call it where we need.

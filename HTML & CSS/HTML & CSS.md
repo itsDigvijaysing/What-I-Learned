@@ -121,14 +121,12 @@ Open up the **2 - Tags** folder, and add this piece of code right after your hea
 
 Open page1.html in a browser and click on it!  BEAUTIFUL.
 
-Okay, so let's take a look at this.  First of all, you can see the `<a>` tag there contained in the paragraph.  Beautiful.
-But what's that funky milk `href=`?  Well, that syntax called an *attribute*.  Attributes change the way a tag works, and are not visible to the website's user.  You only add attributes to the opening tag, not a closing tag.  Tags can have multiple attributes, for example:
+Okay, so let's take a look at this.  First of all, you can see the `<a>` tag there contained in the paragraph.
+But what's that `href=`?  Well, that syntax called an *attribute*.  Attributes change the way a tag works, and are not visible to the website's user.  You only add attributes to the opening tag, not a closing tag.  Tags can have multiple attributes, for example:
 
 ```html
 <tag attribute="value1" attribute2="value2">Content of tag</tag>`
 ```
-
-Got it?  Good.  You're so good looking.
 
 So, anyway, the attribute 'href' tells us where the link is going to go when the user clicks on it (and for those curious, it stands for *hyperreference*).  Try adding some more links to the page to different websites!  
 
