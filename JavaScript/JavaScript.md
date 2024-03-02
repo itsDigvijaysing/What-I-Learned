@@ -19,8 +19,8 @@
 - We can use JS on web browser (Frontend Apps) or we can use Web Server (Backend Apps) like NodeJS to run JS without browser.
 - React Native, Ionic apps are also using JS & using them we can build Native or Hybrid Apps.
 - JS is also updating as per their new releases (updates) ECMAScript (ES Update) (Yearly Update).
-- ![JS Scope](../Archive/Attachment/Pasted%20image%2020240122013207.png)
->  ==var== is has global scope & function scope limit but not block scope (In global scope it's under "window.varname")
+- ![JS Scope](../Archive/Attachment/let%20scope.png)
+>  ==var== has global scope & function scope limit but not block scope (In global scope it's under "window.varname")
 >  ==let== has function scope & block scope & global scope
 >  ==const== support global scope, function scope, block level scope
 - We can write Script tag & either in body, head or separate because it work as inline code but when we define file.js & we want to link it then we link it in head (good Practice) same way as we link CSS file.
@@ -248,6 +248,36 @@ array.methodName(Function(currentItem, Index, actualArray){
 })
 ```
 
+- We can create new JS File as module so that we can use that file code in our main JS code.
+```js
+export let a = 1;
+export let b = 2;
+
+// myFunction.js
+export default function myFunction() {
+    return "Hello, World!";
+}
+```
+- If we import statement of this on our file than we can execute exported values or functions.
+```js
+import {a,b} from 'file.path';
+import helperfunction from 'file.path'; //myFunction is Default export so matchning name is not required here.
+```
+### Try Catch Block in JS
+
+```js
+try {
+    // Try to execute this code
+    let a = 5;
+    let b = 0;
+    let c = a / b;
+    if(b === 0) throw new Error("Division by zero is not allowed.");
+    console.log(c);
+} catch(error) {
+    // If there is an error in the try block, catch it and execute this code
+    console.log("An error occurred: " + error.message);
+}
+```
 ### setTimeout
 
 The setTimeout() is method of the window object. The setTimout() sets a timer and executes a callback function after the timer expires.
@@ -272,6 +302,10 @@ Promise are used to handle asynchronous operations in JS.
 1. Fetching data from server
 2. Loading file from system
 
+## DOM
+
+![DOM Structure](../Archive/Attachment/DOM.png)
+
 ## QuerySelector
 
 - QuerySelector
@@ -282,14 +316,17 @@ Promise are used to handle asynchronous operations in JS.
   - The queryselectorAll() method returns all elements in the docuemnt that matches a specified CSS selector(s), as static NodeList object.
   - document.querySelectorAll(selector);
 
-## Query Selector
+### Query Selector
 
 Queryselector() method returns the first element that matches a specific css selector in the document.  
 
 To return all elements using selector use QuerySelectorAll() method.  
 
 ```js
-document.queryselector(selector);
+
+// If we set selector as button then it will select any HTML element with same Class Name, Tag Name or Id & select it
+
+document.queryselector(selector); //selector can be '.button'
 ```
 
 ## Events
@@ -300,11 +337,37 @@ When we add event through HTML, event always begin with on keyword like onclick,
 
 ### Event Listener  
 
-Provides two methods for registering & deregisterin event listener.
+Provides two methods for registering & deregistering event listener. In JavaScript, `addEventListener()` and `removeEventListener()` are methods used to handle events.
 
-  1. addEventListener()
-  2. removeEventListener()
+1. `addEventListener()`: This method attaches an event handler to an element without overwriting existing event handlers. You can add many event handlers to one element. You can also add many event handlers of the same type to one element, i.e., two "click" events.
 
+   Here's an example:
+
+   ```javascript
+   let button = document.querySelector('button');
+   button.addEventListener('click', function() {
+     alert('Button clicked!');
+   });
+   ```
+
+   In this example, a click event listener is added to a button. When the button is clicked, an alert box will appear.
+
+2. `removeEventListener()`: This method removes an event handler that has been attached with the `addEventListener()` method.
+
+   Here's an example:
+
+   ```javascript
+   let button = document.querySelector('button');
+
+   function alertFunction() {
+     alert('Button clicked!');
+   }
+
+   button.addEventListener('click', alertFunction);
+   button.removeEventListener('click', alertFunction);
+   ```
+
+   In this example, the click event listener is added and then immediately removed. Therefore, clicking the button won't do anything.
 ## Event Propagation
 
 Event Propagation determines in which order the elements receive the event. There are two ways to handle this event propagation order of HTML DOM is Event Bubbling and Event Capturing.
@@ -314,7 +377,6 @@ Event Propagation determines in which order the elements receive the event. Ther
 2. Capturing (Top to Bottom) : It is the opposite of bubbling. The event handler is first on its parent component and then on the component where it was actually wanted to fire that event handler. In short, it means that the event is first captured by the outermost element and propagated to the inner elements. It is also called trickle down.
 
 Custom Events are also present in JavaScript.
-
 ## Arrow Function
 
 Normal Code  
@@ -363,3 +425,23 @@ const user = {
   },
 };
 ```
+
+### Call Back in JS
+
+- In our day to day life JS is mostly used asynchronously. Call back Function is also the way to run JS functions after sometime so that main functions will get executed first, we can also assign timeout Time or pass argument as function name.
+```js
+function greeting(name) {
+    console.log('Hello ' + name);
+}
+
+function processUserInput(callback) {  //callback is Parameter to receive argument
+    let name = prompt('Please enter your name.');
+    setTimeout(function() {
+        callback(name);
+    }, 2000); // 2000 milliseconds = 2 seconds
+}
+
+processUserInput(greeting); //Argument is Function Name
+```
+> In this example, `greeting` is a callback function. It's passed as an argument to the `processUserInput` function. When `processUserInput` is called, it prompts the user for their name, then it waits for 2 seconds before calling the `greeting` function, passing in the name the user entered as an argument. The `setTimeout` function is used to create the delay.
+
