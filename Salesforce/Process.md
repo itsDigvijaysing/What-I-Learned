@@ -1,7 +1,7 @@
 # [[Company]] Task Process
 
-## Current Deployment Process
-
+## Deployment Process
+>![New Deployment Process](../Archive/Attachment/Processs.jpg)
 
 ## OLD Deployment Process
 >![Deployment Process](../Archive/Attachment/Deployment%20Process.jpg)
