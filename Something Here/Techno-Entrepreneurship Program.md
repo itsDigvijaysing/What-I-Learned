@@ -17,12 +17,34 @@ The portal will also provide information on higher studies, including college ra
 
 ## Unique Value Proposition (UVP) / Unique Selling Point (USP):
 
-
+Existing ERP tools for schools focus on data management but lack the ability to analyze student progress and provide personalized support for improvement. Our educational portal goes beyond data management by utilizing AI to analyze student data, identify areas for improvement, and provide personalized strategies to unlock their full potential. Our platform also offers features like a personal AI teacher, automatic question generation, and career guidance based on student interests. By providing API services, we ensure seamless integration with existing Schools Management Platforms, making it easier for schools to leverage our advanced features to enhance student learning and development.
 
 ## Market Research:
 
+### Competitors:
 
+**Khan Academy AI** : [How AI Could Save (Not Destroy) Education | Sal Khan | TED (youtube.com)](https://www.youtube.com/watch?v=hJP5GqnTrNo)
 
+What if we use free books and education content like text & use ai to generate question so that students will answer & rather than saying only no for wrong ans. But give response like what you should focus on or any support. and rather than just answering questions making student think about answers by giving some hints to them will be better approach.
+
+Think how AI can help Human Intelligence (HI) & Humans Potential..
+
+**Entab Portal:** [Best School Management System | School ERP Software (entab.in)](https://www.entab.in/our-story.html)
+
+This portal has services like noting down students performance data & have eLearning portal where students can revise there concepts but they lack the AI features like analysis & personal recommendation & they have portal to ans student questions but they use teachers directly without using AI to solve queries or giving some hints to students.  
+
+**SIS Student Integrated System**: [Samagra Shiksha (education.gov.in)](https://samagra.education.gov.in/)
+
+This portal  provides access to digital resources for teachers, students, and parents across India. The resources include e-books, lesson plans, videos, and other educational materials.
+
+**Bodhami** : [Bodhami | National Award winning platform | Best career guidance platform 2023 | Top career counselling company](https://www.bodhami.com/)
+
+Advanced Career Counselling & skills assessment platform. They have wide range of user base Students, Professionals, Partners & user can also find job. 
+## Free Data Available for Schools:
+
+1. Swayam: Free Online Education (Courses Model)
+2. Pathshala: eTextbook for all school books
+3. Diksha: eBooks & eContent
 ## Business Model:
 
 Here are possible business model:
@@ -43,6 +65,31 @@ Here are possible business model:
 
 8. **Training and Workshops:** Conduct training sessions and workshops for teachers, students, and parents on using the portal effectively, generating revenue through registration fees.
 
+## Target Audience:
+
+**Data of 2022** ([School Numbers, Enrolment & Teacher Distribution (2023)](https://educationforallinindia.com/education-landscape-india-udiseplus-2021-22/))
+Total Primary Schools in India: 12 Lakhs  
+Total Secondary Schools in India: 1.5 Lakhs
+Total Senior Secondary Schools in India: 1.5 Lakhs
+
+Total Schools in Maharashtra: 1.10 Lakhs
+
+Total 20 Lakhs Students appeared for CBSE Exam for 10th. (Feb 2024)
+
+| Number of Schools in Rural India | 12.34 lakhs |
+| -------------------------------- | ----------- |
+| Number of Schools in Urban India | 2.54 lakhs  |
+### Students / Schools:
+
+1. ~~**Kindergarten** – Kindergarten classes are divided into lower KG and Upper KG. Lower KG is meant for 3-4 years old whereas upper KG is meant for children between 4-5 years old. (Not Target)~~
+
+2. ~~**Primary School** – Primary school is from first to fifth class wherein students. Here they are imparted with basics of different subjects that help them to become proficient in further classes. (Not Target)~~
+
+3. **Middle School**- Middle school includes classes from fifth to eighth standard. Children in these classes move from learning basics to a little higher level of concepts of subjects. **(Target)**
+
+4. **Secondary School**- This level of education includes classes from ninth to tenth standard. They get to learn higher-level concepts and get to make decisions for themselves about which subjects to take in further classes according to their interest areas. **(Target)**
+
+5. **Senior Secondary**- Senior secondary level of education includes classes 11th-12th. Students get to study subjects of their choice and get an opportunity to make up a decision about which course to pursue after their 12th class. **(Target)**
 ## Intro
 
 Hello, everyone. My name is Digvijaysing Bhatesing Rajput from Maharashtra. I have been working as a Salesforce Developer at Cognizant Technology Solutions for the last 2 years. I completed my Bachelor's degree in Computer Engineering 2022 with 9.15 CGPA from Sinhgad College of Education in Pune.
