@@ -31,7 +31,7 @@ Think how AI can help Human Intelligence (HI) & Humans Potential..
 
 **Entab Portal:** [Best School Management System | School ERP Software (entab.in)](https://www.entab.in/our-story.html)
 
-This portal has services like noting down students performance data & have eLearning portal where students can revise there concepts but they lack the AI features like analysis & personal recommendation & they have portal to ans student questions but they use teachers directly without using AI to solve queries or giving some hints to students.  
+This portal has services like noting down students performance data & have eLearning portal where students can revise there concepts but they lack the AI features like analysis & personal recommendation & they have portal to answer student questions but they use teachers directly without using AI to solve queries or giving some hints to students.  
 
 **SIS Student Integrated System**: [Samagra Shiksha (education.gov.in)](https://samagra.education.gov.in/)
 
