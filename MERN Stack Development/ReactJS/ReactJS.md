@@ -47,4 +47,3 @@ function AboutPage() {
 		  └──public/
 		    └── cat.png
 ```
-- 

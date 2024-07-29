@@ -1,4 +1,4 @@
-- #MongoDB is #NoSQL #Database Solution
+- #MongoDB is NoSQL #Database Solution
 - Store them as Documents in Collections (as Records in Tables)
 - We can connect to [[NodeJS]] / [ExpressJS](../ExpressJS/ExpressJS.md)
 - 

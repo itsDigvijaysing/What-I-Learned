@@ -8,7 +8,7 @@
     3. Modern features were not available like modules, classes, premises
     4. ES5(2009) old JS version
 
-- #LWC:
+- LWC:
     1. Shadow DOM
     2. Web Components
     3. Custom Elements
@@ -120,7 +120,7 @@ Apex offers multiple ways for running your Apex code **Synchronously** & **Async
 
 ---
 
-## #Trigger
+## Trigger
 
 Trigger is an Apex Code that executes before or after changes occurs to Salesforce records.  
 These changes includes operations like Insert, Update, Delete, Merge, Upsert and Undelete.  

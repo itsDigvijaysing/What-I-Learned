@@ -51,7 +51,7 @@ Standard App are inbuilt app of salesforce & Custom app which we create.
 
 ---
 
-## #Access
+## Access
 > ![Access](../../Archive/Attachment/Access.png)
 
 - **Org Access:** IP Range/Login hrs.
