@@ -45,7 +45,7 @@
 	- Regular and context-free languages
 	- Pumping lemma
 	- Turing machines and undecidability.
-	
+
 5. [[COA & DBMS]]
 	- Machine instructions and addressing modes
 	- ALU, data‐path and control unit
