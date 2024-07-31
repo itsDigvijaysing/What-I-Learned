@@ -40,7 +40,7 @@ The OSI model is a conceptual framework used to understand and design network sy
 
 The TCP/IP model is a more simplified and practical framework compared to the OSI model. It has four layers, each corresponding to one or more OSI layers:
 
-![TCP/IP Model](../Archive/Attachment/TCPIP%20Model.png)
+![TCP/IP Model](../Archive/Attachment/TCPIP%20Model-1.png)
 
 1. **Network Interface Layer (Link Layer):**
    - **Function:** Corresponds to the OSI's Physical and Data Link layers. It handles the physical transmission of data over network media.
