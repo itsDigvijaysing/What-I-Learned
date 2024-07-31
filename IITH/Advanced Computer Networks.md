@@ -92,9 +92,38 @@ Total packet delay is the sum of these delays and affects overall network perfor
 6. **Telnet/SSH:** Protocols for remote system access; SSH is secure.
 7. **RTSP/RTP:** Protocols for streaming media delivery.
 
-## Physical Layer Devices:
+## Physical Layer Devices Types:
 
+1. **Twisted Pair Cables:**
+   - **Types:** Unshielded Twisted Pair (UTP), Shielded Twisted Pair (STP).
+   - **Usage:** Common in Ethernet networks.
+   - **Example:** Cat5e, Cat6 cables.
 
+2. **Coaxial Cables:**
+   - **Usage:** Used for cable TV and older Ethernet networks.
+   - **Example:** RG-6, RG-59 cables.
+
+3. **Fiber Optic Cables:**
+   - **Types:** Single-mode, Multi-mode.
+   - **Usage:** High-speed, long-distance data transmission.
+   - **Example:** OM3, OM4 cables for multi-mode; OS1, OS2 cables for single-mode.
+
+4. **Wireless Media:**
+   - **Types:** Radio Waves, Infrared.
+   - **Usage:** Wi-Fi, Bluetooth, satellite communication.
+   - **Example:** Wi-Fi routers, Bluetooth devices, satellite dishes.
+
+5. **Serial and Parallel Ports:**
+   - **Usage:** Older interfaces for connecting peripherals.
+   - **Example:** RS-232 serial ports, IEEE 1284 parallel ports.
+
+6. **Satellites:**
+   - **Usage:** Provide communication over long distances, including global and remote areas.
+   - **Example:** Communication satellites for TV broadcasting and Internet services.
+
+7. **Wireless Radios:**
+   - **Usage:** Facilitate wireless communication over short and long distances.
+   - **Example:** Wi-Fi routers, cellular base stations.
 
 ## Extra
 
@@ -102,4 +131,3 @@ Total packet delay is the sum of these delays and affects overall network perfor
 - `Internet Standard` Set by:
 	- RFC: Request for Comment
 	- IETF: Internet Engineering Task Force
-- 
