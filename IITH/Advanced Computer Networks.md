@@ -29,7 +29,7 @@ Links: [IIT Hyderabad](IIT%20Hyderabad.md), [Computer Networks](../GATE%20Prep/C
 - **Function:** Facilitates the entry and exit of data to and from the network, connecting end-users to the network core.
 ### Edge Computing
 
-**Edge Computing** is a distributed computing paradigm where data processing and storage occur closer to the data source or end-users rather than in a centralized data center.
+**Edge Computing** is a distributed computing paradigm where data processing and storage occur closer to the data source (Mini Processing Devices) or end-users rather than in a centralized data center. It can help to complete the small tasks which require real time changes, Later on that data can be sent to the cloud for later on usage.
 
 **Key Points:**
 
@@ -37,3 +37,5 @@ Links: [IIT Hyderabad](IIT%20Hyderabad.md), [Computer Networks](../GATE%20Prep/C
 - **Improves Performance:** Enhances the speed and efficiency of applications, especially for real-time data processing.
 - **Increases Reliability:** Reduces dependency on central servers, improving resilience to network outages.
 - **Use Cases:** IoT devices, autonomous vehicles, smart cities, and remote monitoring systems.
+
+# 
