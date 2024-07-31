@@ -68,4 +68,38 @@ Total packet delay is the sum of these delays and affects overall network perfor
 ## Services & Protocols of Internet
 
 - `Protocol` define the format, order of message sent/received among network entities & action it tool on message transmission receipt
+- **Duplex** refers to the mode of communication in a network:
+	- **Simplex:** One-way communication (e.g., radio broadcasts).
+	- **Half-Duplex:** Two-way communication, but not simultaneous (e.g., walkie-talkies).
+	- **Full-Duplex:** Two-way communication, simultaneous (e.g., telephone conversations).
+
+### **Internet Services:**
+
+1. **Web Browsing:** Access and view web pages.
+2. **Email:** Send and receive electronic mail.
+3. **File Sharing:** Transfer files between systems.
+4. **Domain Name Resolution:** Convert domain names to IP addresses.
+5. **Remote Access:** Access and control systems from a distance.
+6. **Streaming Media:** Deliver audio and video content in real-time.
+
+### **Internet Protocols:**
+
+1. **HTTP/HTTPS:** Protocols for web page transfer; HTTPS includes encryption.
+2. **SMTP:** Protocol for sending emails.
+3. **POP3/IMAP:** Protocols for retrieving and managing emails.
+4. **FTP/SFTP:** Protocols for file transfer; SFTP includes encryption.
+5. **DNS:** Protocol for resolving domain names to IP addresses.
+6. **Telnet/SSH:** Protocols for remote system access; SSH is secure.
+7. **RTSP/RTP:** Protocols for streaming media delivery.
+
+## Physical Layer Devices:
+
+
+
+## Extra
+
+- Physical Layer also use electromagnetic waves same as wireless network & Optical fiber uses light pulses.
+- `Internet Standard` Set by:
+	- RFC: Request for Comment
+	- IETF: Internet Engineering Task Force
 - 
