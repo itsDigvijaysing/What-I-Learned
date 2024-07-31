@@ -1,3 +1,4 @@
+Links: [Advanced Computer Networks](../IITH/Advanced%20Computer%20Networks.md)
 ## Concepts of Layering: OSI & TCP/IP Protocols Stack
 
 The concept of layering in networking refers to the division of the network architecture into discrete layers, each responsible for specific functions. This modular approach simplifies the design, implementation, and troubleshooting of network protocols. The two most widely recognized protocol stacks that use this concept are the OSI (Open Systems Interconnection) model and the TCP/IP (Transmission Control Protocol/Internet Protocol) model.
@@ -75,6 +76,7 @@ The Current TCP/IP model is depicted with 5 layers to include the Network Access
 - **Use:** Connect multiple networks, determine the best path for data to travel.
 - **Example:** Connecting a home network to the internet.
 
+![Routers & Switches](../Archive/Attachment/Routers%20&%20Switches.png)
 ### **Switches**:
 - **Function:** Connect devices within the same network.
 - **Use:** Forward data to specific devices based on MAC addresses.
