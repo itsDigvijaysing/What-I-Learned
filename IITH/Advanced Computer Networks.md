@@ -52,17 +52,20 @@ Links: [IIT Hyderabad](IIT%20Hyderabad.md), [Computer Networks](../GATE%20Prep/C
 **Packet Delay** refers to the time it takes for a data packet to travel from its source to its destination in a network. It includes several components:
 
 1. **Transmission Delay:** Time required to push the packet's bits into the transmission medium.
-	- In the context of packet delay, **L / R** represents a simplified formula to calculate the transmission delay:
+	- In the context of `packet delay`, **L / R** represents a simplified formula to calculate the transmission delay:
 		- **L**: Packet Length (in bits)
 		- **R**: Transmission Rate (in bits per second or bps)
-		
-		**Transmission Delay Formula:**
-		
-		$ [ text{Transmission Delay} = frac{L}{R} ] $
-		
-		This formula calculates the time it takes to push the entire packet of length **L** into the network link with a rate of **R** bits per second. For example, if a packet is 1,000,000 bits long and the transmission rate is 1,000,000 bps, the transmission delay would be 1 second.
-1. **Propagation Delay:** Time for a packet to travel through the physical medium (e.g., cables, fiber optics).
-2. **Queuing Delay:** Time a packet spends waiting in queue at network devices (e.g., routers, switches) before being processed.
-3. **Processing Delay:** Time needed for routers or switches to process the packet's header and routing information.
+			- **Transmission Delay Formula:**
+				$$ Transmission Delay = \frac{L}{R} $$
+				> This formula calculates the time it takes to push the entire packet of length **L** into the network link with a rate of **R** bits per second. For example, if a packet is 1,000,000 bits long and the transmission rate is 1,000,000 bps, the transmission delay would be 1 second.
+				> 
+2. **Propagation Delay:** Time for a packet to travel through the physical medium (e.g., cables, fiber optics).
+3. **Queuing Delay:** Time a packet spends waiting in queue at network devices (e.g., routers, switches) before being processed.
+4. **Processing Delay:** Time needed for routers or switches to process the packet's header and routing information.
 
 Total packet delay is the sum of these delays and affects overall network performance and user experience.
+
+## Services & Protocols of Internet
+
+- `Protocol` define the format, order of message sent/received among network entities & action it tool on message transmission receipt
+- 
