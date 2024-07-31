@@ -125,6 +125,26 @@ Total packet delay is the sum of these delays and affects overall network perfor
    - **Usage:** Facilitate wireless communication over short and long distances.
    - **Example:** Wi-Fi routers, cellular base stations.
 
+## Shannon Capacity Theorem:
+
+**Shannon's Theorem** (Shannon-Hartley Theorem) relates to the maximum data rate of a communication channel. It defines the theoretical upper limit of data transmission capacity, given the channel's bandwidth and signal-to-noise ratio.
+
+**Formula:**
+
+$$[C = B \log_2 \left(1 + \frac{S}{N}\right) ]$$
+
+**Where:**
+- **C** = Channel capacity (in bits per second)
+- **B** = Bandwidth of the channel (in hertz)
+- **S/N** = Signal-to-noise ratio (power ratio)
+
+**Key Points:**
+- **Channel Capacity (C):** Maximum data rate that can be transmitted over the channel with no errors.
+- **Bandwidth (B):** Range of frequencies available for transmission.
+- **Signal-to-Noise Ratio (S/N):** Ratio of signal power to noise power, affecting the clarity of the signal.
+
+Shannon's Theorem provides the foundation for understanding and optimizing communication systems.
+
 ## Extra
 
 - Physical Layer also use electromagnetic waves same as wireless network & Optical fiber uses light pulses.
