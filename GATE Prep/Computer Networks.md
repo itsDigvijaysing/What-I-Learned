@@ -65,6 +65,25 @@ The Current TCP/IP model is depicted with 5 layers to include the Network Access
 ### Comparison and Key Points
 
 - **Layering Concept:** Both models use a layered approach to separate concerns and functions, making network design and troubleshooting more manageable.
-- **Number of Layers:** The OSI model has seven layers, while the TCP/IP model has four.
 - **Development Purpose:** The OSI model is more of a theoretical framework, while the TCP/IP model was developed based on practical implementation.
 - **Layer Functions:** Each layer in both models serves distinct functions, though the OSI model provides a more detailed separation of responsibilities.
+
+## Routers & Switches
+
+### **Routers**:
+- **Function:** Direct data between different networks.
+- **Use:** Connect multiple networks, determine the best path for data to travel.
+- **Example:** Connecting a home network to the internet.
+
+### **Switches**:
+- **Function:** Connect devices within the same network.
+- **Use:** Forward data to specific devices based on MAC addresses.
+- **Example:** Connecting computers within an office network.
+
+### **Difference**:
+- **Scope:** Routers operate at the network layer (Layer 3) and can route data between different networks. Switches operate at the data link layer (Layer 2) and manage data flow within a single network.
+- **Addressing:** Routers use IP addresses to route data. Switches use MAC addresses to forward data.
+- Routers Connect to multiple switches and then switches are used for Internal Network. (IIT Hyderabad uses Switches inside Lecture Hall)
+- **Scope:** Routers provide broader security controls for entire networks, including external traffic. Switches focus on internal network security.
+- **Threat Protection:** Routers offer more comprehensive protection against external threats, while switches prevent unauthorized access within the network.
+- **Tools:** Routers use firewalls, ACLs, and NAT, whereas switches use port security, VLANs, and MAC filtering.
