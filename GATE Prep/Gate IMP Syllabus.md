@@ -62,8 +62,10 @@
 
 - [Mega Link](https://mega.nz/folder/CVpmFSiB#7iF1YBhGUtCxOg-UvW_DFA)
 - ChatGPT and Google
+- `COA & OS Videos` & `Notes` by roommate
 
 ## Process
 
 - It's not like I need to revise everything, only main topics are what i need to revise.
 - Understand the Topics and If possible create Notes about them as well.
+- Do revision of this topics, It's very important.
