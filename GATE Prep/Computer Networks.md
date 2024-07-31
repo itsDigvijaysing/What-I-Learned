@@ -38,25 +38,29 @@ The OSI model is a conceptual framework used to understand and design network sy
 
 ### TCP/IP Model
 
-The TCP/IP model is a more simplified and practical framework compared to the OSI model. It has four layers, each corresponding to one or more OSI layers:
+The Current TCP/IP model is depicted with 5 layers to include the Network Access layer as two separate layers: Physical and Data Link. Here’s the 5-layer version of the TCP/IP model:
 
 ![TCP/IP Model](../Archive/Attachment/TCPIP%20Model-1.png)
 
-1. **Network Interface Layer (Link Layer):**
-   - **Function:** Corresponds to the OSI's Physical and Data Link layers. It handles the physical transmission of data over network media.
-   - **Protocols/Technologies:** Ethernet, Wi-Fi, ARP (Address Resolution Protocol).
+1. **Physical Layer:**
+   - **Function:** Deals with the physical connection between devices and the transmission of raw bit streams over a physical medium.
+   - **Examples:** Ethernet cables, Wi-Fi, modems, network interface cards (NICs).
 
-2. **Internet Layer:**
-   - **Function:** Corresponds to the OSI's Network layer. It manages logical addressing, routing, and packet forwarding.
-   - **Protocols/Technologies:** IP, ICMP, IGMP (Internet Group Management Protocol).
+2. **Data Link Layer:**
+   - **Function:** Provides node-to-node data transfer, error detection, and correction. It handles MAC addresses and framing.
+   - **Examples:** Ethernet, PPP (Point-to-Point Protocol), switches.
 
-3. **Transport Layer:**
-   - **Function:** Corresponds to the OSI's Transport layer. It provides end-to-end communication services, error handling, and flow control.
-   - **Protocols/Technologies:** TCP, UDP.
+3. **Network Layer:**
+   - **Function:** Manages logical addressing, routing, and packet forwarding. It determines the best path for data to travel.
+   - **Examples:** IP (Internet Protocol), ICMP (Internet Control Message Protocol), routers.
 
-4. **Application Layer:**
-   - **Function:** Corresponds to the OSI's Session, Presentation, and Application layers. It includes high-level protocols used by applications for network communication.
-   - **Protocols/Technologies:** HTTP, FTP, SMTP, DNS, Telnet.
+4. **Transport Layer:**
+   - **Function:** Provides reliable data transfer services to the upper layers, including flow control, error detection, and correction.
+   - **Examples:** TCP (Transmission Control Protocol), UDP (User Datagram Protocol).
+
+5. **Application Layer:**
+   - **Function:** Provides network services directly to end-user applications. It includes high-level protocols used by applications for communication.
+   - **Examples:** HTTP, FTP, SMTP, DNS, Telnet.
 
 ### Comparison and Key Points
 
