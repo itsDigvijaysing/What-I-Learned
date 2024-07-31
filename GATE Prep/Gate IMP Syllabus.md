@@ -11,7 +11,7 @@
 	- Binary heaps
 	- Graphs
 	- Searching
-	- Sorting
+	- Sorting ✅
 	- Hashing
 	- Asymptotic worst-case time and space complexity
 	- Algorithm design techniques: greedy, dynamic programming and divide‐and‐conquer
@@ -20,7 +20,7 @@
 	- Shortest paths
 
 2. [[Computer Networks]]
-	- Concept of layering: OSI and TCP/IP Protocol Stacks
+	- Concept of layering: OSI and TCP/IP Protocol Stacks ✅
 	- Basics of packet, circuit and virtual circuit-switching
 	- Data link layer: framing, error detection, Medium Access Control, Ethernet bridging
 	- Routing protocols: shortest path, flooding, distance vector and link-state routing
