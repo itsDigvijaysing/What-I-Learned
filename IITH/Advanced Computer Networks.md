@@ -38,4 +38,22 @@ Links: [IIT Hyderabad](IIT%20Hyderabad.md), [Computer Networks](../GATE%20Prep/C
 - **Increases Reliability:** Reduces dependency on central servers, improving resilience to network outages.
 - **Use Cases:** IoT devices, autonomous vehicles, smart cities, and remote monitoring systems.
 
-# 
+## Packet Switching
+
+**Packet Switching** is a method of data transmission where data is broken into small packets and sent independently over a network. 
+
+**Key Points:**
+- **Data Division:** Large messages are divided into smaller packets.
+- **Routing:** Packets are sent via different paths and reassembled at the destination.
+- **Efficiency:** Utilizes network resources more efficiently and handles variable traffic loads.
+- **Reliability:** Ensures data delivery even if some packets are lost or delayed, with retransmission mechanisms.
+### Types of Delays in Packet Switching
+
+**Packet Delay** refers to the time it takes for a data packet to travel from its source to its destination in a network. It includes several components:
+
+1. **Propagation Delay:** Time for a packet to travel through the physical medium (e.g., cables, fiber optics).
+2. **Transmission Delay:** Time required to push the packet's bits into the transmission medium.
+3. **Queuing Delay:** Time a packet spends waiting in queue at network devices (e.g., routers, switches) before being processed.
+4. **Processing Delay:** Time needed for routers or switches to process the packet's header and routing information.
+
+Total packet delay is the sum of these delays and affects overall network performance and user experience.
