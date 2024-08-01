@@ -16,3 +16,9 @@ Links: [IIT Hyderabad](IIT%20Hyderabad.md)
   
 **Example:**
 - **Maximizing Profit:** Determining the best mix of products to produce to maximize profit given constraints like limited resources or production capacity.
+## Matrix Theory
+
+- Matrix theory helps in organizing and solving linear optimization problems efficiently.
+- It uses matrices to represent linear equations and inequalities, making it easier to perform calculations and find optimal solutions.
+  
+![Matrix Problem](../Archive/Attachment/Linear%20Optimization%20Matrix%20Prolem.png) 
