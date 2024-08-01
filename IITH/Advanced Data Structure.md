@@ -48,4 +48,4 @@ In practice, **LLMs often operate in a randomized mode** to provide varied and c
 	- Upper Bound Max Time Needed (Worst Time Complexity)
 	  $$ O = Big O $$
 	- Average Time Complexity
-	  $$\theta = Theta(Average)$$
+	  $$\theta = Theta(Average \space Time \space Complexity)$$
