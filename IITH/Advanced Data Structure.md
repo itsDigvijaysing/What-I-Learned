@@ -39,3 +39,8 @@ Large Language Models (LLMs) like GPT-4 can exhibit both deterministic and rando
   - This allows for more diverse and creative responses.
 
 In practice, **LLMs often operate in a randomized mode** to provide varied and contextually rich responses.
+
+## Extra
+
+- Sorting Algo
+- Lower / Upper Bound -> Lower Bound Lowest Time needed (Best Time Complexity  ) & Upper Bound Max Time Needed (Worst Time Complexity)
