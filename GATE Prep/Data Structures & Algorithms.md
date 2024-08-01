@@ -1,3 +1,4 @@
+Links: [Gate IMP Syllabus](Gate%20IMP%20Syllabus.md), [Advanced Data Structure](../IITH/Advanced%20Data%20Structure.md)
 ## Sorting Algorithms
 
 Sorting algorithms are used to arrange the elements of a list or array in a certain order, typically in ascending or descending order. Here are some common sorting algorithms along with a brief explanation of each:
