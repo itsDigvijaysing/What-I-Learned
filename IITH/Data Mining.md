@@ -17,7 +17,8 @@ Link: [IIT Hyderabad](IIT%20Hyderabad.md)
 | **Tools**      | MySQL, RDBMS | NoSQL                               |
 
 - ACID Property
-- 
+  ![ACID Property](../Archive/Attachment/ACID%20Property.png)
+  
 - Data mining Overlaps with ML, AI & DBMS
 - Data Mining created for Database Management system using Data Science
 - Data Types
