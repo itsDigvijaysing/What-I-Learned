@@ -43,4 +43,9 @@ In practice, **LLMs often operate in a randomized mode** to provide varied and c
 ## Extra
 
 - Sorting Algo
-- Lower / Upper Bound -> Lower Bound Lowest Time needed (Best Time Complexity  ) & Upper Bound Max Time Needed (Worst Time Complexity)
+- Lower / Upper Bound -> 
+	- Lower Bound Lowest Time needed (Best Time Complexity) $$ \Omega = Omega $$
+	- Upper Bound Max Time Needed (Worst Time Complexity)
+	  $$ O = Big O $$
+	- Average Time Complexity
+	  $$\theta = Theta(Average)$$
