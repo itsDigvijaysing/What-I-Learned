@@ -1,5 +1,7 @@
 Links: [IIT Hyderabad](IIT%20Hyderabad.md), [Computer Networks](../GATE%20Prep/Computer%20Networks.md)
 
+Resources: [CN: Top Down Approach](https://gaia.cs.umass.edu/kurose_ross/online_lectures.htm)
+
 # ACN - 01
 
 - Language we are going to use C, [Cpp](../Cpp/Cpp.md), [Python](../Python/Python.md)
