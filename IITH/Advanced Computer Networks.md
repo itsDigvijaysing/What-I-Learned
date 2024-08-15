@@ -289,7 +289,7 @@ Packet Switching have two different types:
 ### Problem & Solution:
 
 ![Circuit & Packet Switching](../Archive/Attachment/ACN%20Circuit%20&%20Packet%20switching.png)
-
+- It shows that in packet Switching performs much better then circuit switching in such cases.
 ### Binomial Distribution Overview
 
 **Definition**: The binomial distribution models the number of successes in a fixed number of independent trials, where each trial has two possible outcomes: success (with probability p) and failure (with probability 1−p).
@@ -307,4 +307,4 @@ $$P(X=r)=(^nCr)p^r(1−p)^{(n−r)}$$
 Where:
 
 - (nCr) is the binomial coefficient, representing the number of ways to choose r successes from n trials.
-- r is the number of successes (where 0≤k≤n0 \leq k \leq n0≤k≤n).
+- r is the number of successes (where 0≤r≤n).
