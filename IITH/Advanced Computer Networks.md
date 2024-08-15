@@ -202,3 +202,21 @@ https://classroom.google.com/u/3/c/NjkxNjk0OTAyNDE0
 # ACN - 04
 
 ## Network Core:
+- mesh of interconnected routers
+- packet-switching: hosts break application-layer messages into packets
+- network forwards packets from one router to the next, across links on path from source to destination
+- Two main Function of Network Core are:
+	- Forwarding: (Switching) Moving router packet to appropriate router point.
+	- Routing: Determines source & Destination path which will be taken by packets.
+
+![Packet Switching](../Archive/Attachment/ACN%20Packet%20Switching.png)
+
+## Packet Switching
+Packet Switching have two different types:
+1. Store & Forward Switching:
+   Entire Packet must be travelled to next router before transferring to next packet
+   $$\frac{L}{R}+\frac{D}{S}$$
+2. Cut-Through Switching (Pass Through): 
+   Router starts transmitting to destination & do not wait to receive complete packet.
+   $$\frac{1}{R}$$
+   
