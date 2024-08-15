@@ -64,6 +64,7 @@ In practice, **LLMs often operate in a randomized mode** to provide varied and c
 ## Notations: Omega, Theta, Big O
 
 Yes, each of these time complexity notations is defined mathematically with specific equations.
+> 	n_0 means that after certain value of n the equation will be always true, that value is point of n(input) which decides the time complexity of function (Graphs are also available.)
 
 ### 1. **Big-O Notation \( O(g(n)) \)**:
    - **Definition**: A function \( f(n) \) is \( O(g(n)) \) if there exist positive constants \( c \) and \( n_0 \) such that:
@@ -87,6 +88,8 @@ Yes, each of these time complexity notations is defined mathematically with spec
    ]$$
    - **Interpretation**: \( f(n) \) grows at least as fast as \( g(n) \) for sufficiently large \( n \).
 
+![Time Complexity Notation](../Archive/Attachment/ADS%20Time%20Complexity%20Notation.png)
+
 ### **Summary of the Equations:**
 
 - **Big-O $$( O(g(n)) ): ( f(n) \leq c \cdot g(n) )$$
@@ -94,4 +97,5 @@ Yes, each of these time complexity notations is defined mathematically with spec
 - **Omega $$( \Omega(g(n)) ): ( f(n) \geq c \cdot g(n) )$$
 
 These mathematical definitions formalize the relationships between \( f(n) \) and \( g(n) \) in terms of growth rates, where \( f(n) \) represents the actual time complexity of an algorithm and \( g(n) \) is the comparison function. Lower the value means lower the time Complexity of Equation.
-> We are comparing the them & based on notation we know that 
+> We are comparing the them & based on notation we know that after certain n value equation will be always true for future scenario.
+
