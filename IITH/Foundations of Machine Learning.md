@@ -107,5 +107,89 @@ Links: [IIT Hyderabad](IIT%20Hyderabad.md)
 
 # FoML - 02
 
-- Training is the process of making the system able to learn.
-- 
+## Training is the process of making the system able to learn.
+### Resources: [FoML PDF 2](https://classroom.google.com/u/3/c/NzAyODg3MDIxNTQw/m/NzAzNDUxMjI5NDEx/details)
+#### 1. **No Free Lunch Rule**
+- **Concept**: There is no single model or algorithm that works best for every problem. The effectiveness of a model depends on the specific problem and data at hand.
+- **Implication**: It's essential to experiment with different models and approaches, as no one model will universally outperform others across all tasks.
+
+#### 2. **Training Set & Testing Set Distribution**
+- **Concept**: The training set (used to train the model) and the testing set (used to evaluate the model) may not always come from the same data distribution.
+- **Challenge**: If the distributions differ, the model's performance on the testing set may not accurately reflect its performance in real-world scenarios.
+- **Solution**: We may need to make assumptions about the data or employ techniques to handle distribution shifts (e.g., domain adaptation).
+
+---
+
+## Types of Models
+
+#### 1. **Inductive vs. Transductive Learning**
+- **Inductive Learning**:
+  - The model learns a general rule from the training data and applies it to unseen data.
+  - **Example**: Most traditional machine learning models.
+- **Transductive Learning**:
+  - The model focuses on making predictions only for the specific examples in the testing set without deriving a general rule.
+  - **Example**: Semi-supervised learning where the testing set is partially known during training.
+
+#### 2. **Online vs. Offline Learning**
+- **Online Learning**:
+  - The model is updated continuously as new data arrives.
+  - Suitable for environments where data comes in streams.
+  - **Example**: Spam filtering in email.
+- **Offline Learning**:
+  - The model is trained on a fixed dataset before being deployed.
+  - **Example**: Traditional batch learning algorithms.
+
+#### 3. **Generative vs. Discriminative Models**
+- **Generative Models**:
+  - Learn the joint probability distribution \( P(X, Y) \) and can generate new data points.
+  - **Example**: Naive Bayes, Gaussian Mixture Models.
+- **Discriminative Models**:
+  - Focus on learning the decision boundary between classes by modeling \( P(Y|X) \).
+  - **Example**: Logistic Regression, Support Vector Machines.
+
+#### 4. **Parametric vs. Non-Parametric Models**
+- **Parametric Models**:
+  - Characterized by a finite number of parameters, often with assumptions about the data distribution.
+  - **Example**: Linear Regression, Logistic Regression.
+- **Non-Parametric Models**:
+  - Do not assume a fixed number of parameters, and the model complexity can grow with the data.
+  - **Example**: k-Nearest Neighbors, Decision Trees.
+
+---
+
+## Classifier Evaluation Concepts
+
+![Model Selection](../Archive/Attachment/Estimating%20ML.png)
+
+#### 1. **Training Error**
+- **Definition**: The error rate of a model on the training set.
+- **Goal**: Minimizing training error is necessary but not sufficient for good generalization.
+
+#### 2. **Generalization Error**
+- **Definition**: The error rate of a model on unseen data (testing set).
+- **Goal**: A low generalization error indicates that the model is performing well on new, unseen data.
+
+#### 3. **Vector Space**
+- **Concept**: In many models, particularly in text classification and natural language processing, data is represented in a high-dimensional vector space.
+- **Importance**: The representation of data in vector space affects model performance and interpretation.
+
+#### 4. **Underfitting and Overfitting**
+- **Underfitting**:
+  - Occurs when a model is too simple and fails to capture the underlying structure of the data.
+  - Leads to high training and generalization errors.
+- **Overfitting**:
+  - Occurs when a model is too complex and captures noise in the training data.
+  - Leads to low training error but high generalization error.
+
+#### 5. **Training Set, Validation Set, Testing Set**
+- **Training Set**: The data used to train the model.
+- **Validation Set**: The data used to tune model parameters (e.g., hyperparameters) and prevent overfitting.
+- **Testing Set**: The data used to evaluate the final model's performance.
+
+#### 6. **Stratified Sampling**
+- **Concept**: Ensuring that each class is represented proportionally in the training, validation, and testing sets.
+- **Importance**: This technique is particularly useful when dealing with imbalanced datasets.
+
+#### 7. **K-Fold Cross Validation**
+- **Concept**: A technique to assess model performance by dividing the dataset into \( k \) equal parts (folds). The model is trained on \( k-1 \) folds and tested on the remaining fold. This process is repeated \( k \) times, each time with a different fold as the testing set.
+- **Benefit**: Provides a more robust evaluation of model performance by reducing variance and bias in the error estimate.
