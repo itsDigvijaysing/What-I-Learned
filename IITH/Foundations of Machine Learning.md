@@ -64,7 +64,7 @@ Links: [IIT Hyderabad](IIT%20Hyderabad.md)
   - 2 * **v** = 2 * [1, 2] = [2, 4]
   
 - **Dot Product**: Multiply corresponding components and sum them.
-  - **v** · **w** = [1, 2] · [3, 4] = (1*3) + (2*4) = 11
+  - **v** · **w** = [1, 2] · [3, 4] = (1 * 3) + (2 * 4) = 11
   
 - **Norm**: The length or magnitude of a vector.
   - ||**v**|| = √(1² + 2²) = √5
