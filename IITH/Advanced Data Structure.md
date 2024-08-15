@@ -60,4 +60,38 @@ In practice, **LLMs often operate in a randomized mode** to provide varied and c
 		- **Higher-order term:** 5n^2 (5 is Multiple, so we are only taking n^2 in account)
 		- **Lower-order term:** 3n
 		- **Constant:** 7
-- 
+
+## Notations: Omega, Theta, Big O
+
+Yes, each of these time complexity notations is defined mathematically with specific equations.
+
+### 1. **Big-O Notation \( O(g(n)) \)**:
+   - **Definition**: A function \( f(n) \) is \( O(g(n)) \) if there exist positive constants \( c \) and \( n_0 \) such that:
+   - 
+ $$  [
+   f(n) \leq c \cdot g(n) \quad \text{for all } n \geq n_0
+   ]$$
+   - **Interpretation**: \( f(n) \) grows at most as fast as \( g(n) \) for sufficiently large \( n \).
+
+### 2. **Theta Notation \( \Theta(g(n)) \)**:
+   - **Definition**: A function \( f(n) \) is \( \Theta(g(n)) \) if there exist positive constants \( c_1 \), \( c_2 \), and \( n_0 \) such that:
+  $$ [
+   c_1 \cdot g(n) \leq f(n) \leq c_2 \cdot g(n) \quad \text{for all } n \geq n_0
+   ]$$
+   - **Interpretation**: \( f(n) \) grows exactly as fast as \( g(n) \) for sufficiently large \( n \).
+
+### 3. **Omega Notation \( \Omega(g(n)) \)**:
+   - **Definition**: A function \( f(n) \) is \( \Omega(g(n)) \) if there exist positive constants \( c \) and \( n_0 \) such that:
+   $$[
+   f(n) \geq c \cdot g(n) \quad \text{for all } n \geq n_0
+   ]$$
+   - **Interpretation**: \( f(n) \) grows at least as fast as \( g(n) \) for sufficiently large \( n \).
+
+### **Summary of the Equations:**
+
+- **Big-O $$( O(g(n)) ): ( f(n) \leq c \cdot g(n) )$$
+- **Theta $$( \Theta(g(n)) ): ( c_1 \cdot g(n) \leq f(n) \leq c_2 \cdot g(n) )$$
+- **Omega $$( \Omega(g(n)) ): ( f(n) \geq c \cdot g(n) )$$
+
+These mathematical definitions formalize the relationships between \( f(n) \) and \( g(n) \) in terms of growth rates, where \( f(n) \) represents the actual time complexity of an algorithm and \( g(n) \) is the comparison function. Lower the value means lower the time Complexity of Equation.
+> We are comparing the them & based on notation we know that 
