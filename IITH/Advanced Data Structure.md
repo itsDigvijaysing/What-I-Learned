@@ -131,3 +131,4 @@ $$Algo A = \theta (n^2)$$$$Algo B = \theta(n)$$
    - **Explanation**: Insertion Sort compares each element with the previous elements and places it in the correct position. On average, it requires \(O(n^2)\) comparisons and swaps, where \(n\) is the number of elements in the list.
 
 # ADS - 04
+
