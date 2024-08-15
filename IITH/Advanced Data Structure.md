@@ -132,3 +132,95 @@ $$Algo A = \theta (n^2)$$$$Algo B = \theta(n)$$
 
 # ADS - 04
 
+### Advanced Data Structures & Algorithms Concepts
+
+---
+
+#### 1. **Big O and Small o Notation**
+
+- **Big O Notation**:
+  - **Definition**: Big O notation, \( O(f(n)) \), describes the upper bound of an algorithm's runtime. It provides the worst-case scenario, showing how the runtime grows as the input size \( n \) increases.
+  - **Example**: If an algorithm's time complexity is \( O(n^2) \), its runtime grows quadratically with the input size.
+
+- **Small o Notation**:
+  - **Definition**: Small o notation, \( o(f(n)) \), describes a stricter upper bound than Big O. It indicates that the algorithm's runtime grows slower than \( f(n) \) as the input size increases.
+  - **Example**: If \( T(n) = o(n^2) \), the runtime grows slower than \( n^2 \), but it doesn’t reach \( n^2 \) as \( n \) becomes large.
+
+---
+
+#### 2. **Average Case Analysis of Insertion Sort**
+
+- **Insertion Sort Overview**:
+  - Insertion Sort is a simple sorting algorithm that builds the final sorted array one element at a time.
+  - It works by repeatedly taking the next element and inserting it into the correct position in the already sorted part of the array.
+
+- **Average Case Analysis**:
+  - The average case occurs when the elements are in a random order.
+  - **Key Insight**: On average, half of the elements in the sorted portion of the array need to be compared and shifted for each insertion.
+  - **Average Case Time Complexity**: 
+    \[
+    T_{avg}(n) = O(n^2)
+    \]
+  - **Steps**:
+    1. For each element, the inner loop may have to shift, on average, \( n/2 \) elements.
+    2. Summing over all elements gives an average complexity of \( O(n^2) \).
+
+---
+
+#### 3. **Randomized Quick Sort**
+
+- **Quick Sort Overview**:
+  - Quick Sort is a divide-and-conquer sorting algorithm. It picks a "pivot" element, partitions the array around the pivot, and then recursively sorts the subarrays.
+
+- **Randomized Quick Sort**:
+  - **Randomization**: Instead of always choosing a fixed pivot (e.g., the first or last element), Randomized Quick Sort picks a pivot at random from the current subarray.
+  - **Advantage**: Randomizing the pivot selection helps avoid the worst-case scenario (which is \( O(n^2) \) for a non-randomized Quick Sort when the array is already sorted or nearly sorted).
+  - **Expected Time Complexity**:
+    \[
+    T_{avg}(n) = O(n \log n)
+    \]
+  - **Reasoning**: The expected depth of the recursion tree is \( \log n \), and each level of the tree requires \( O(n) \) work for partitioning.
+
+---
+
+#### 4. **Probability & Permutation**
+
+- **Probability**:
+  - **Basic Definition**: Probability measures the likelihood of a specific event occurring, defined as:
+    $$[
+    P(A) = \frac{\text{Number of favorable outcomes}}{\text{Total number of possible outcomes}}
+    ]$$
+  - **Example**: The probability of rolling a 4 on a 6-sided die is $( \frac{1}{6} ).$
+
+- **Permutation**:
+  - **Definition**: A permutation is an arrangement of all or part of a set of objects. The number of permutations of \( n \) distinct objects taken \( r \) at a time is given by:
+    $$[
+    P(n, r) = \frac{n!}{(n-r)!}
+    ]$$
+  - **Example**: The number of ways to arrange 3 letters out of the set \{A, B, C, D\} is \( P(4, 3) = 24 \).
+
+---
+
+#### 5. **Binary Search Tree (BST)**
+
+- **Definition**:
+  - A Binary Search Tree is a binary tree where each node has at most two children.
+  - For any node \( N \):
+    - All elements in the left subtree of \( N \) are less than \( N \).
+    - All elements in the right subtree of \( N \) are greater than \( N \).
+
+![Binary Search Tree](../Archive/Attachment/Binary%20Search%20tree.png)
+- **Key Operations**:
+  - **Insertion**: Start from the root and insert the new node in the correct position such that the BST property is maintained.
+  - **Search**: Start from the root and recursively move left or right, depending on whether the value is smaller or larger than the current node.
+  - **Deletion**: There are three cases to handle:
+    1. Node to be deleted is a leaf (has no children).
+    2. Node to be deleted has one child.
+    3. Node to be deleted has two children (replace with the in-order successor or predecessor).
+
+- **Time Complexity**:
+  - **Best Case** (balanced tree): \( O(\log n) \)
+  - **Worst Case** (unbalanced tree, e.g., a linked list): \( O(n) \)
+
+# ADS - 05
+
