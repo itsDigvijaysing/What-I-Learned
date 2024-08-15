@@ -20,9 +20,11 @@ Links: [IIT Hyderabad](IIT%20Hyderabad.md)
 
 - Predict 'Y' when given an input 'X' (X: Labelled data):
 	- For Categorical Y: Classification
+		- Discrete Values, e.g. Male or Female, we give input X with Tag 
 	- For Real-Valued Y: Regression
 
 ## Unsupervised Learning:
 
 - Predict 'Y' when given raw data input 'X' (Non Labelled data):
-	- Create an internal representation of the i
+	- Create an internal representation of the input (e.g. Clustering, dimensionality)
+	- This is imp in machine learning as getting labelled data is expensive & difficult.
