@@ -164,10 +164,12 @@ Links: [IIT Hyderabad](IIT%20Hyderabad.md)
 #### 1. **Training Error**
 - **Definition**: The error rate of a model on the training set.
 - **Goal**: Minimizing training error is necessary but not sufficient for good generalization.
+- ![Training Error](../Archive/Attachment/Training%20error.png)
 
 #### 2. **Generalization Error**
 - **Definition**: The error rate of a model on unseen data (testing set).
 - **Goal**: A low generalization error indicates that the model is performing well on new, unseen data.
+- $$E_{gen}\underbrace{=\int}_{\text{over all possible x,y}}\underbrace{error(f_D(\mathbf{x}),y)}_{\text{error as before}}\underbrace{p(y,\mathbf{x})}_{\text{how often we expect to see such x and y}}d\mathbf{x}$$
 
 #### 3. **Vector Space**
 - **Concept**: In many models, particularly in text classification and natural language processing, data is represented in a high-dimensional vector space.
@@ -177,17 +179,21 @@ Links: [IIT Hyderabad](IIT%20Hyderabad.md)
 - **Underfitting**:
   - Occurs when a model is too simple and fails to capture the underlying structure of the data.
   - Leads to high training and generalization errors.
+
+![Under fitting & Over fitting](../Archive/Attachment/Overfitting%20and%20Overfitting.png)
+
 - **Overfitting**:
   - Occurs when a model is too complex and captures noise in the training data.
   - Leads to low training error but high generalization error.
 
 #### 5. **Training Set, Validation Set, Testing Set**
 - **Training Set**: The data used to train the model.
-- **Validation Set**: The data used to tune model parameters (e.g., hyperparameters) and prevent overfitting.
+- **Validation Set**: The data used to tune model parameters (e.g., hyper parameters) and prevent overfitting.
 - **Testing Set**: The data used to evaluate the final model's performance.
 
 #### 6. **Stratified Sampling**
 - **Concept**: Ensuring that each class is represented proportionally in the training, validation, and testing sets.
+![Stratified Sampling](../Archive/Attachment/Stratified%20Sampling.png)
 - **Importance**: This technique is particularly useful when dealing with imbalanced datasets.
 
 #### 7. **K-Fold Cross Validation**
