@@ -176,9 +176,9 @@ $$Algo A = \theta (n^2)$$$$Algo B = \theta(n)$$
   - **Randomization**: Instead of always choosing a fixed pivot (e.g., the first or last element), Randomized Quick Sort picks a pivot at random from the current subarray.
   - **Advantage**: Randomizing the pivot selection helps avoid the worst-case scenario (which is \( O(n^2) \) for a non-randomized Quick Sort when the array is already sorted or nearly sorted).
   - **Expected Time Complexity**:
-    \[
+    $$[
     T_{avg}(n) = O(n \log n)
-    \]
+    ]$$
   - **Reasoning**: The expected depth of the recursion tree is \( \log n \), and each level of the tree requires \( O(n) \) work for partitioning.
 
 ---
@@ -224,3 +224,9 @@ $$Algo A = \theta (n^2)$$$$Algo B = \theta(n)$$
 
 # ADS - 05
 
+## Randomized Quick Sort:
+### Info
+
+- **Randomized Quick Sort Expected Time Complexity**: $$O(nlog⁡n)$$
+- **Probability of Selecting Any Specific Number as Pivot**: $$\frac{1}{n}​$$
+- 
