@@ -231,6 +231,8 @@ $$Algo A = \theta (n^2)$$$$Algo B = \theta(n)$$
 - **Probability of Selecting Any Specific Number as Pivot**: $$\frac{1}{n}​$$
 ### A[i] & A[j] not being compared
 
-- If we take into account that List is already sorted & then we select A[i] & A[j] element in randomized Quick sort algorithm they will only not get compared.
-$$A=[1,3,5,7,9,10]$$
-- If the pivot point is in between this no.
+- If we take into account that List is already sorted & then we select A[i] & A[j] element in **randomized Quick sort algorithm** they will only not get compared. If the pivot point is in between this no.
+$$A=\left[ 1, \frac{3}{i} ,5,7, \frac{9}{j} ,10 \right]$$
+- Here A[i]=3 & A[j]=9, they will not get compared if Pivot is = [5 , 7].
+- **Correctness**: The formula $$\frac{2}{j - i + 1}$$​ provides the probability that two specific elements A[i] and A[j] are compared during a single partitioning step. It is accurate for calculating the probability of comparison in that specific context.
+- **Asymptotic Complexity**: The total expected number of comparisons for all pairs in Randomized Quick Sort is Θ(nlog⁡n)\Theta(n \log n)Θ(nlogn), which reflects the overall complexity of the algorithm.
