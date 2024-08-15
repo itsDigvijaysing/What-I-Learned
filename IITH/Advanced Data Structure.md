@@ -99,3 +99,4 @@ Yes, each of these time complexity notations is defined mathematically with spec
 These mathematical definitions formalize the relationships between \( f(n) \) and \( g(n) \) in terms of growth rates, where \( f(n) \) represents the actual time complexity of an algorithm and \( g(n) \) is the comparison function. Lower the value means lower the time Complexity of Equation.
 > We are comparing the them & based on notation we know that after certain n value equation will be always true for future scenario.
 
+![My Notes on Time Complexity](../Archive/Attachment/Time%20Complexity%20Notes.png)
