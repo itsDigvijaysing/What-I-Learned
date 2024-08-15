@@ -174,7 +174,11 @@ https://classroom.google.com/u/3/c/NjkxNjk0OTAyNDE0
 	- Generally Down link Bandwidth is set to be higher because majority or time we only download from internet.
 - frequency division multiplexing (FDM) (Hybrid Cable): different TV channels & data transmitted in different frequency bands on the shared coaxial cable
 
-
+- **Access Network Wireless/WiFi**: Provides wireless connectivity for devices, commonly used in homes, offices, and public spaces.
+- **Access Network Homes (FTTH)**: Fiber-to-the-Home (FTTH) delivers high-speed internet via optical fiber directly to residences.
+- **Access Network Enterprises (Wired/Wireless)**: Enterprises may use a mix of wired connections (Ethernet) for stability and wireless networks (WiFi/WLAN) for flexibility.
+- **Access Network Data Centers**: Typically rely on high-speed, wired connections for data transfer and management.
+- **Access Network Satellites**: Used for internet access in remote or rural areas, and for global communication networks, offering connectivity where traditional infrastructure is unavailable.
 
 ##  Network speed
 
