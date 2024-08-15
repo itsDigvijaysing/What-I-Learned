@@ -24,7 +24,7 @@
 - Can give different results or take different steps on the same input.
 
   **Examples:**
-  - **Randomized QuickSort:** Uses a randomly chosen pivot, which can lead to different performance on the same data.
+  - **Randomized Quick Sort:** Uses a randomly chosen pivot, which can lead to different performance on the same data.
   - **Monte Carlo Method:** Uses random sampling to solve problems that might be deterministic in nature.
 
 ### LLM Example:
