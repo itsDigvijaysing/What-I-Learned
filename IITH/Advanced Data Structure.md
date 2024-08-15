@@ -107,4 +107,29 @@ These mathematical definitions formalize the relationships between \( f(n) \) an
 - But Theta (Avg Case) Time Complexity of those algorithms are
 $$Algo A = \theta (n^2)$$$$Algo B = \theta(n)$$
 - Then that means that the Algo B is much better than Algo A.
-- $$\alpha$$
+### Quick Overview
+
+1. **Alpha Probability**: 
+   - Alpha probability typically refers to the likelihood (or probability) that a particular element is in a given list. This concept is often used in searching algorithms and statistical analysis.
+
+2. **AVL Tree**:
+   - **Definition**: A self-balancing binary search tree where the difference in heights between the left and right sub trees (known as the balance factor) is at most 1 for every node.
+   - **Operations**: 
+     - Insertion, deletion, and search operations take \(O(\log n)\) time because the tree maintains balance after each operation.
+   - **Use**: AVL trees are used when you need efficient lookups, insertions, and deletions.
+
+3. **Expected Value \(E(X)\)**:
+   - **Formula**: $$E(X) = \sum_{i=1}^{n} P(X_i) \times X_i$$
+   - **Explanation**: The expected value of a random variable \(X\) is the sum of each possible value of \(X\) weighted by its probability. For example, if a dice has faces 1 to 6, and each face has an equal probability, \(E(X)\) is the average of all possible outcomes.
+
+4. **Randomized Algorithm/Value**:
+   - **Definition**: An algorithm that uses randomness as part of its logic, often to achieve better average-case performance or to simplify implementation.
+   - **Example**: QuickSort's pivot selection can be randomized to avoid worst-case scenarios on sorted input.
+   
+5. **Uniform Distribution \(2x/n\)**:
+   - **Definition**: A probability distribution where all outcomes are equally likely. For a uniform distribution over \(n\) outcomes, each outcome has a probability of \(1/n\).
+   - **Example**: Rolling a fair die, where each face has an equal probability of \(1/6\).
+
+6. **Insertion Sort Average Time Complexity**:
+   - **Time Complexity**: \(O(n^2)\)
+   - **Explanation**: Insertion Sort compares each element with the previous elements and places it in the correct position. On average, it requires \(O(n^2)\) comparisons and swaps, where \(n\) is the number of elements in the list.
