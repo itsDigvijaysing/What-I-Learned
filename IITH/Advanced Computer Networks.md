@@ -162,3 +162,11 @@ https://classroom.google.com/u/3/c/NjkxNjk0OTAyNDE0
 ## Physical Link Media:
 
 ![Physical Media](../Archive/Attachment/Physical%20Media.png)
+- BW = f2 (Max Range) - f1 (Min Range)
+## Access Network: Digital Subscriber Line (DSL)
+
+- Telephone require point to point connection dedicated line to central office.
+![DSL](../Archive/Attachment/DSL.png)
+- ADSL : Async Digital Subscriber Line
+	- One Line Holds Voice (B1), Up Link (B2), Down Link(B3)
+	- 
