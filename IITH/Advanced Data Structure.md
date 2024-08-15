@@ -125,11 +125,7 @@ $$Algo A = \theta (n^2)$$$$Algo B = \theta(n)$$
 4. **Randomized Algorithm/Value**:
    - **Definition**: An algorithm that uses randomness as part of its logic, often to achieve better average-case performance or to simplify implementation.
    - **Example**: QuickSort's pivot selection can be randomized to avoid worst-case scenarios on sorted input.
-   
-5. **Uniform Distribution \(2x/n\)**:
-   - **Definition**: A probability distribution where all outcomes are equally likely. For a uniform distribution over \(n\) outcomes, each outcome has a probability of \(1/n\).
-   - **Example**: Rolling a fair die, where each face has an equal probability of \(1/6\).
 
-6. **Insertion Sort Average Time Complexity**:
+5. **Insertion Sort Average Time Complexity**:
    - **Time Complexity**: \(O(n^2)\)
    - **Explanation**: Insertion Sort compares each element with the previous elements and places it in the correct position. On average, it requires \(O(n^2)\) comparisons and swaps, where \(n\) is the number of elements in the list.
