@@ -56,8 +56,8 @@ In practice, **LLMs often operate in a randomized mode** to provide varied and c
 - We have to check the performance based on High value of n (Input value), so that we can view the graph on how well it actually performs & how much time it needed. e.g. n>10^4 , 10^1000 ...
 - while checking for time taken by algorithm we generally neglect constant values, because if value of n increases exponentially suppose 10^5 or more than constant value time does not matter that much.
 	- **So we remove lower order term & constant values & multiples and just take the higher order of n for checking.**
-	- f(n)=5n^2+3n+7
-	- **Higher-order term:** 5n25n^25n2
-	- **Lower-order term:** 3n3n3n
-	- **Constant:** 777
+		- f(n)=5n^2+3n+7
+		- **Higher-order term:** 5n^2 (5 is Multiple, so we are only taking n^2 in account)
+		- **Lower-order term:** 3n
+		- **Constant:** 7
 - 
