@@ -105,4 +105,4 @@ These mathematical definitions formalize the relationships between \( f(n) \) an
 - Algo A: O (n^2) &  Algo B: O (n^3)
 - In Given case we will think that Algo A is better than Algo B, because of Worst case time complexity
 - But Theta (Avg Case) Time Complexity of those algorithms are
-- Algo A: 
+$$Algo A = \theta (n^2)$$Algo B = \theta(n)$$
