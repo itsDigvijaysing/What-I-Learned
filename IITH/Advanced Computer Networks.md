@@ -156,3 +156,9 @@ Shannon's Theorem provides the foundation for understanding and optimizing commu
 
 # ACN - 03
 
+## Resources:
+https://classroom.google.com/u/3/c/NjkxNjk0OTAyNDE0
+
+## Physical Link Media:
+
+![Physical Media](../Archive/Attachment/Physical%20Media.png)
