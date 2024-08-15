@@ -212,7 +212,11 @@ https://classroom.google.com/u/3/c/NjkxNjk0OTAyNDE0
 ![Packet Switching](../Archive/Attachment/ACN%20Packet%20Switching.png)
 
 ## Packet Switching
-Packet Switching have two different types:
+Packet Switching have two different types: 
+> L = Length of Packet
+> R = Speed of Transfer bits/sec
+> D = Distance
+> S = Speed of Light
 1. Store & Forward Switching:
    Entire Packet must be travelled to next router before transferring the next packet, it will wait till complete packet transfer. Solved E.g. in Notebook.
    $$\frac{L}{R}+\frac{D}{S}$$
@@ -221,4 +225,24 @@ Packet Switching have two different types:
    $$\frac{1}{R}+\frac{D}{S}$$
    > L=1, because it send 1-bit without waiting that's why it's fast, but it's used in very specific networks (Enterprises), because there can be in between packet loss but will not be verified & it require network to work at similar speed because if not switch will struggle to handle the data.
    
-   
+   ![Store and Forward working](../Archive/Attachment/Store%20and%20Forward%20working.png)
+## Circuit Switching
+
+**Definition**: Circuit switching is a method of communication where a dedicated communication path or circuit is established between the source and the destination for the duration of the communication session.
+
+**Key Features**:
+- **Dedicated Path**: A fixed path is reserved exclusively for the entire communication session.
+- **Phases**:
+  1. **Setup Phase**: The circuit is established before data transmission begins.
+  2. **Data Transfer Phase**: Data is transmitted through the reserved circuit.
+  3. **Teardown Phase**: The circuit is released once the communication is complete.
+- **Example**: Traditional telephone networks, where a call sets up a dedicated line between the caller and the receiver.
+
+**Advantages**:
+- **Guaranteed Bandwidth**: The circuit provides a consistent and guaranteed bandwidth.
+- **Low Latency**: Minimal delay once the circuit is established.
+
+**Disadvantages**:
+- **Inefficient Use of Resources**: The dedicated path remains reserved even if no data is being transmitted, leading to potential wastage.
+- **Setup Time**: Time is required to establish the circuit before data transmission can begin.
+

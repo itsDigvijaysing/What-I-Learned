@@ -104,3 +104,8 @@ Links: [IIT Hyderabad](IIT%20Hyderabad.md)
 - **Model Parameters**: Weights and biases in models.
 - **Dimensionality Reduction**: Techniques like PCA use eigenvalues and eigenvectors to reduce the number of features.
 - **Transformations**: Used for operations like scaling, rotation, and projection.
+
+# FoML - 02
+
+- Training is the process of making the system able to learn.
+- 
