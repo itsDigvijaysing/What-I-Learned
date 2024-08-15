@@ -229,4 +229,8 @@ $$Algo A = \theta (n^2)$$$$Algo B = \theta(n)$$
 
 - **Randomized Quick Sort Expected Time Complexity**: $$O(nlog⁡n)$$
 - **Probability of Selecting Any Specific Number as Pivot**: $$\frac{1}{n}​$$
-- 
+### A[i] & A[j] not being compared
+
+- If we take into account that List is already sorted & then we select A[i] & A[j] element in randomized Quick sort algorithm they will only not get compared.
+$$A=[1,3,5,7,9,10]$$
+- If the pivot point is in between this no.
