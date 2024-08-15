@@ -50,3 +50,6 @@ In practice, **LLMs often operate in a randomized mode** to provide varied and c
 	- Average Time Complexity
 	  $$\theta = Theta(Average \space Time \space Complexity)$$
 
+# ADS - 02
+## Good Algorithms:
+- 
