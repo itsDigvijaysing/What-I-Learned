@@ -214,9 +214,9 @@ https://classroom.google.com/u/3/c/NjkxNjk0OTAyNDE0
 ## Packet Switching
 Packet Switching have two different types:
 1. Store & Forward Switching:
-   Entire Packet must be travelled to next router before transferring to next packet
+   Entire Packet must be travelled to next router before transferring the next packet, it will wait till complete packet transfer.
    $$\frac{L}{R}+\frac{D}{S}$$
 2. Cut-Through Switching (Pass Through): 
    Router starts transmitting to destination & do not wait to receive complete packet.
-   $$\frac{1}{R}$$
-   
+   $$\frac{1}{R}+\frac{D}{S}$$
+   > L=1, because it send 1-bit without waiting that's why it's fast, but it's used in very specific networks (Enterprises), because there can be in between packet loss but will not be verified & it require network to work at similar speed because if not switch will struggle to handle the data.
