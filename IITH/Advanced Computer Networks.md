@@ -166,7 +166,31 @@ https://classroom.google.com/u/3/c/NjkxNjk0OTAyNDE0
 ## Access Network: Digital Subscriber Line (DSL)
 
 - Telephone require point to point connection dedicated line to central office.
+- In Below connection user can only use Either Internet or Telephone at one time. User can't use both at same time.
 ![DSL](../Archive/Attachment/DSL.png)
 - ADSL : Async Digital Subscriber Line
 	- One Line Holds Voice (B1), Up Link (B2), Down Link(B3)
-	- 
+	- Total Bandwidth B=B1+B2+B3. (B1= Voice require very less data(10 to 16 kbps) so we can also neglect it)
+	- Generally Down link Bandwidth is set to be higher because majority or time we only download from internet.
+- frequency division multiplexing (FDM) (Hybrid Cable): different TV channels & data transmitted in different frequency bands on the shared coaxial cable
+
+
+
+##  Network speed
+
+**Ethernet:**
+- **10BASE-T:** 10 Mbps
+- **100BASE-TX:** 100 Mbps
+- **1000BASE-T:** 1 Gbps
+- **10GBASE-T:** 10 Gbps
+- **25GBASE-T:** 25 Gbps
+- **40GBASE-T:** 40 Gbps
+
+**Wi-Fi:**
+- **Wi-Fi 1 (802.11b):** Up to 11 Mbps
+- **Wi-Fi 2 (802.11a):** Up to 54 Mbps
+- **Wi-Fi 3 (802.11g):** Up to 54 Mbps
+- **Wi-Fi 4 (802.11n):** Up to 600 Mbps
+- **Wi-Fi 5 (802.11ac):** Up to 3.5 Gbps
+- **Wi-Fi 6 (802.11ax):** Up to 9.6 Gbps
+- **Wi-Fi 7 (802.11be):** Up to 30 Gbps
