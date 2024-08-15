@@ -64,3 +64,66 @@ Links: [IIT Hyderabad](IIT%20Hyderabad.md)
 
 5. **Solve**:
    - Use an optimization method to find the best solution that satisfies all constraints.
+
+### Tabular Method (for Boolean Functions)
+The **Tabular Method**, also known as the **Quine-McCluskey Algorithm**, is used for simplifying Boolean functions. It systematically reduces a Boolean expression to its simplest form, similar to how Karnaugh maps are used.
+
+#### Steps in the Tabular Method:
+1. **List Minterms**: Start by listing all minterms of the Boolean function that correspond to the output "1".
+2. **Group Minterms**: Group the minterms by the number of 1s in their binary representation.
+3. **Compare and Combine**: Compare minterms in adjacent groups (groups differing by only one 1 in their binary representation) and combine them if they differ in only one bit position, marking the difference with a dash `-`.
+4. **Prime Implicants**: Continue combining until no further combinations are possible. The resulting expressions are called prime implicants.
+5. **Prime Implicant Chart**: Construct a chart with prime implicants and minterms, identifying which implicants cover which minterms.
+6. **Select Essential Prime Implicants**: Identify essential prime implicants (those that cover a minterm not covered by any other prime implicant).
+7. **Minimized Expression**: Combine the essential prime implicants to form the simplest Boolean expression.
+#### Example Problem for Tabular:
+
+- **Problem:** Simplify the Boolean function f(A,B,C)=∑m(1,3,7)f(A, B, C) = \sum m(1, 3, 7)f(A,B,C)=∑m(1,3,7), where m m m denotes the minterms.
+- Minterms: m(1)=001, m(3)=011, m(7)=111.
+
+### Simplex Algorithm (for Linear Programming)
+The **Simplex Algorithm** is a popular method for solving linear programming problems, which involve optimizing (maximizing or minimizing) a linear objective function subject to linear equality and inequality constraints.
+
+#### Steps in the Simplex Algorithm:
+1. **Convert to Standard Form**:
+   - Express the problem in standard form where all constraints are equalities, and all variables are non-negative.
+   - Add slack variables to convert inequalities to equalities.
+
+2. **Set Up Initial Simplex Tableau**:
+   - The simplex tableau is a tabular representation of the linear programming problem.
+   - It includes the coefficients of the variables in the objective function and constraints.
+
+3. **Identify the Pivot Element**:
+   - The pivot element is selected from the tableau to improve the solution. 
+   - It is chosen from the column with the most negative indicator (for maximization problems) and the row that allows the smallest positive ratio of the right-hand side to the pivot column value.
+
+4. **Pivot Operation**:
+   - Perform row operations to make the pivot column a unit column (i.e., it has 1 in the pivot row and 0s elsewhere).
+   - This step moves to a new basic feasible solution in the search space.
+
+5. **Check for Optimality**:
+   - If all the indicators (in the objective function row) are non-negative (for a maximization problem), the current solution is optimal.
+   - If not, repeat the process by selecting a new pivot element.
+
+6. **Obtain the Solution**:
+   - Once the optimal tableau is reached, the solution can be read from the tableau.
+   - The values of the decision variables correspond to the right-hand side values in the final tableau.
+
+#### Example Problem for Simplex:
+Maximize \( Z = 3x_1 + 5x_2 \)
+Subject to:
+$$[
+x_1 + 2x_2 \leq 6
+]$$
+$$[
+2x_1 + x_2 \leq 8
+]$$
+$$[
+x_1, x_2 \geq 0
+]$$
+
+The Simplex Algorithm helps in finding the values of \(x_1\) and \(x_2\) that maximize \(Z\) under the given constraints.
+
+### Comparison:
+- **Tabular Method** is used for minimizing Boolean expressions, useful in digital logic design.
+- **Simplex Algorithm** is used for solving linear programming problems, useful in optimization problems across various fields like operations research, economics, and engineering.
