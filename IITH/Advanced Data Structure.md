@@ -95,8 +95,14 @@ Yes, each of these time complexity notations is defined mathematically with spec
 - **Big-O $$( O(g(n)) ): ( f(n) \leq c \cdot g(n) )$$
 - **Theta $$( \Theta(g(n)) ): ( c_1 \cdot g(n) \leq f(n) \leq c_2 \cdot g(n) )$$
 - **Omega $$( \Omega(g(n)) ): ( f(n) \geq c \cdot g(n) )$$
+![My Notes on Time Complexity](../Archive/Attachment/Time%20Complexity%20Notes.png)
 
 These mathematical definitions formalize the relationships between \( f(n) \) and \( g(n) \) in terms of growth rates, where \( f(n) \) represents the actual time complexity of an algorithm and \( g(n) \) is the comparison function. Lower the value means lower the time Complexity of Equation.
 > We are comparing the them & based on notation we know that after certain n value equation will be always true for future scenario.
 
-![My Notes on Time Complexity](../Archive/Attachment/Time%20Complexity%20Notes.png)
+# ADS - 03
+
+- Algo A: O (n^2) &  Algo B: O (n^3)
+- In Given case we will think that Algo A is better than Algo B, because of Worst case time complexity
+- But Theta (Avg Case) Time Complexity of those algorithms are
+- Algo A: 
