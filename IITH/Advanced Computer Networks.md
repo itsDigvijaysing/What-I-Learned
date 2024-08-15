@@ -198,3 +198,7 @@ https://classroom.google.com/u/3/c/NjkxNjk0OTAyNDE0
 - **Wi-Fi 5 (802.11ac):** Up to 3.5 Gbps
 - **Wi-Fi 6 (802.11ax):** Up to 9.6 Gbps
 - **Wi-Fi 7 (802.11be):** Up to 30 Gbps
+
+# ACN - 04
+
+## Network Core:
