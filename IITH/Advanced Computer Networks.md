@@ -246,3 +246,42 @@ Packet Switching have two different types:
 - **Inefficient Use of Resources**: The dedicated path remains reserved even if no data is being transmitted, leading to potential wastage.
 - **Setup Time**: Time is required to establish the circuit before data transmission can begin.
 
+# ACN - 05
+
+## Packet Switching vs. Circuit Switching
+
+#### **Packet Switching**
+- **How it Works**: Data is broken into small packets that are sent independently over the network. Each packet can take a different path to the destination, where they are reassembled.
+- **Flexibility**: Efficient use of network resources since the same paths can be shared by multiple connections.
+- **Example**: The Internet (e.g., emails, web browsing).
+
+**Benefits:**
+- **Efficient Resource Utilization**: Multiple users can share the same network paths, making better use of available bandwidth.
+- **Scalability**: Easily accommodates a large number of users and data transmissions.
+- **Robustness**: If one path fails, packets can be rerouted through alternative paths, making the network more resilient to failures.
+- **Cost-Effective**: No need for dedicated lines, reducing infrastructure costs.
+
+**Disadvantages:**
+- **Potential for Delay**: Packets can take different routes and may arrive out of order, causing potential delays and the need for reassembly.
+- **Variable Latency**: Since packets may follow different paths, the time they take to reach the destination can vary.
+- **Complexity**: Requires sophisticated protocols to handle packet routing, reassembly, and error checking.
+
+#### **Circuit Switching**
+- **How it Works**: A dedicated communication path (circuit) is established between the source and destination for the entire duration of the communication session.
+- **Reliability**: Provides consistent and reliable communication with guaranteed bandwidth, but can be inefficient since the circuit is reserved even if no data is being sent.
+- **Example**: Traditional telephone networks.
+
+**Benefits:**
+- **Consistent Performance**: Provides a guaranteed, dedicated bandwidth with predictable latency, making it ideal for real-time communication (e.g., voice calls).
+- **Reliability**: Once the circuit is established, the connection is stable and secure throughout the communication session.
+- **Low Latency**: Since the path is dedicated, data is transmitted without delays or interruptions.
+
+**Disadvantages:**
+- **Inefficient Resource Utilization**: The dedicated circuit remains reserved even when no data is being transmitted, leading to potential wastage of network resources.
+- **Setup Time**: Establishing the circuit can take time, leading to delays before communication begins.
+- **Cost**: Requires dedicated infrastructure and maintenance, which can be expensive compared to packet-switched networks.
+
+## Circuit Switching Types:
+
+- Frequency Division Multiplexing & Time Division Multiplexing
+![FDM & TDM](../Archive/Attachment/FDM%20&%20TDM.png)
