@@ -52,4 +52,4 @@ In practice, **LLMs often operate in a randomized mode** to provide varied and c
 
 # ADS - 02
 ## Good Algorithms:
-- 
+- We should take multiple comparisons to mark it as good
