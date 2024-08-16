@@ -311,3 +311,53 @@ Suppose we have graph (Node and edges), we want to find the minimum cuts (edges 
 - **Correctness Proof:** Algorithms like insertion sort have clear, deterministic proofs of correctness, ensuring that they always produce the correct result.
 
 - **Verification:** Some algorithms (especially randomized ones) may require additional steps to verify that their output is correct.
+
+### Recursive Programs
+
+**Recursive Programs** are those that solve a problem by solving smaller instances of the same problem. In recursion, a function calls itself to solve these smaller instances, usually with a base case to terminate the recursion and avoid infinite loops.
+
+#### Key Components of Recursion:
+1. **Base Case**: The condition under which the recursion stops. It's crucial to prevent infinite recursion. For example, in calculating factorial, the base case is \( n = 0 \) or \( n = 1 \), where the function returns 1.
+
+2. **Recursive Case**: The part of the function where it calls itself with a modified argument to reduce the problem size. 
+
+#### Example: Factorial Function
+
+function to calculate the factorial of a number \( n \):
+
+```python
+def factorial(n):
+    if n == 0:  # Base case
+        return 1
+    else:       # Recursive case
+        return n * factorial(n - 1)
+```
+
+### Invariants
+
+**Invariants** are properties or conditions that remain true throughout the execution of an algorithm or during a particular part of a program. They are used to reason about the correctness of algorithms, especially in loops and recursive functions.  We can also call it as pseudo code which will be same as logic irrespective of language.
+
+#### Types of Invariants:
+
+1. **Loop Invariant**: A condition that holds true before and after each iteration of a loop. It's used to prove the correctness of iterative algorithms.
+
+2. **Recursive Invariant**: A condition that remains true across recursive calls. It helps in proving the correctness of recursive algorithms.
+
+3. **Data Invariants**: Data invariants are properties that must always hold true for the data structures used in a program.
+
+### Constructs
+
+**Constructs** refer to the fundamental building blocks or elements used in programming to create algorithms and programs. These include:
+
+1. **Conditional Constructs**: Used for decision-making. Examples are `if`, `else`, and `switch` statements.
+
+2. **Loop Constructs**: Used for repeating tasks. Examples include `for`, `while`, and `do-while` loops.
+
+3. **Function Constructs**: Define reusable blocks of code. Examples include function declarations and definitions.
+
+4. **Data Structures**: Constructs for storing and organizing data. Examples include arrays, linked lists, stacks, and queues.
+
+5. **Object-Oriented Constructs**: Used in object-oriented programming (OOP) to model real-world entities. Examples include classes, objects, inheritance, and polymorphism.
+
+# ADS - 08
+
