@@ -247,5 +247,27 @@ The **min-cut problem** in graph theory involves finding the smallest set of edg
 Suppose we have graph (Node and edges), we want to find the minimum cuts (edges remove) so that that will divide into two graphs.
 
 ![Min Cut Problem](../Archive/Attachment/Min%20Cut%20Problem.png)
-**To Solve it :**
-- We will use - Randomized alg
+### **To Solve it :**
+- We will use **Karger's Algorithm**, a randomized algorithm used to solve the **min-cut problem** in an undirected, unweighted graph. 
+
+### Steps of Karger's Algorithm:
+
+1. **Pick a Random Edge**: 
+   - Uniformly pick an edge at random from the graph.
+
+2. **Contract the Edge**:
+   - Merge the two vertices connected by the selected edge into a single vertex.
+   - This contraction may create self-loops (edges that connect the vertex to itself), which should be removed.
+   - Any other edges between the merged vertex and other vertices are retained.
+
+3. **Repeat the Process**:
+   - Continue picking random edges and contracting them until only two vertices remain in the graph.
+
+4. **Count the Edges**:
+   - The number of edges between the last two remaining vertices is the size of a cut that separates the graph into two parts.
+
+![Kargers Algo Min-Cut](../Archive/Attachment/Kargers%20Algo.png)
+
+### Result:
+- The edges left between the final two vertices represent a cut in the original graph. But that answer is not exact answer true minimum cut can be different.
+- The algorithm is repeated multiple times to increase the probability of finding the true minimum cut, as it's a randomized algorithm.
