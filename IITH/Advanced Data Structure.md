@@ -245,6 +245,8 @@ The **min-cut problem** in graph theory involves finding the smallest set of edg
 
 ## Min-Cut Problem:
 Suppose we have graph (Node and edges), we want to find the minimum cuts (edges remove) so that that will divide into two graphs.
+- A **graph** is a mathematical structure consisting of **nodes** (vertices) and **edges** (connections between nodes).
+- The Graph is a pictorial representation or a diagram that represents data or values in an organized manner.
 
 ![Min Cut Problem](../Archive/Attachment/Min%20Cut%20Problem.png)
 ### **To Solve it :**
