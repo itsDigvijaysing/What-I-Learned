@@ -383,3 +383,51 @@ def factorial(n):
   - **Interference**: Quantum algorithms use interference to amplify the probability of correct answers and cancel out incorrect ones.
   - **Probability of Correctness**: Quantum algorithms can be designed to reduce or eliminate the probability of incorrect answers by strategically using quantum operations. For example, quantum algorithms can cancel out the probability of incorrect answers (\( \alpha_2 \)) and ensure that the output is correct with high probability (\( \alpha_1 \)).
   - **Example**: Shor's algorithm for factoring large numbers and Grover's algorithm for searching an unsorted database are examples where quantum algorithms offer significant speedups over classical algorithms.
+The discussion in your lecture about checking if a number is prime and the use of the square root of \( N \) in algorithms is quite relevant in number theory and algorithm design. Here's a structured note on this topic:
+
+---
+
+## Prime Number Testing and the Square Root Method
+
+#### **1. Prime Number Testing**
+
+**Definition**: A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself.
+
+**Goal**: To determine if a given number \( N \) is prime.
+
+#### **2. Basic Approach**
+
+- **Direct Method**: Check if \( N \) is divisible by any number from 2 up to \( N-1 \). If it is, \( N \) is not prime. This approach is inefficient for large numbers.
+
+#### **3. Optimized Approach Using Square Root**
+
+**Concept**: A more efficient method involves checking divisibility only up to \( $$\sqrt{N} $$\). The rationale is based on the following observation:
+
+- **Observation**: If \( N \) is divisible by some number \( d \), then \( N = d \times k \), where \( k \) is also a divisor. If both \( d \) and \( k \) were greater than \( \sqrt{N} \), their product \( d \times k \) would be greater than \( N \). Hence, at least one of these divisors must be less than or equal to \( \sqrt{N} \).
+
+**Pseudocode**:
+
+```python
+import math
+
+def is_prime(N):
+    if N <= 1:
+        return False
+    if N <= 3:
+        return True
+    if N % 2 == 0 or N % 3 == 0:
+        return False
+    i = 5 # because We already checked till 4
+    while i * i <= N:
+        if N % i == 0 or N % (i + 2) == 0:
+            return False
+        i += 6 # bec already checked //2 //3 and +2 so, +6 here
+    return True
+```
+
+**Algorithm**:
+1. **Handle Small Cases**: Check if \( N \) is less than 2. If so, it is not prime.
+2. **Check Divisibility**:
+   - For each integer \( i \) from 2 up to \( \sqrt{N} \):
+     - If \( N \) is divisible by \( i \), then \( N \) is not a prime.
+   - If no divisors are found in this range, \( N \) is a prime.
