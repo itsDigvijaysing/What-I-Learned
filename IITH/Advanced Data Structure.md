@@ -297,23 +297,12 @@ Suppose we have graph (Node and edges), we want to find the minimum cuts (edges 
        - If \( P(r) \neq 0 \), declare \( f(x) \neq g(x) \) (not identical).
      - **Correctness:** The correctness of this randomized approach depends on how likely it is that the functions are identical or not. If the algorithm says "identical," it is checking whether \( r \) is a root of \( P(x) \). The probability of falsely declaring functions identical is minimized by testing multiple roots.
 
-#### 2. **Randomized Algorithms:**
-   - **Randomized Quick Sort:**
-     - A variant of quicksort where the pivot element is chosen randomly to ensure a good average-case performance, reducing the likelihood of worst-case scenarios.
-   
-   - **Randomized Min-Cut:**
-     - Karger's algorithm was likely discussed here, where random edges are contracted to find the minimum cut in a graph. The randomness helps avoid local minima and improves the chances of finding the global minimum cut.
-
-   - **Polynomial Identity Testing (PIT):**
-     - This is the process where the algorithm checks if \( f(x) = g(x) \) by evaluating at random points. PIT is used in algorithms to probabilistically determine if two polynomials are identical without explicitly expanding them.
+#### 2. **Polynomial Identity Testing (PIT):**
+- This is the process where the algorithm checks if \( f(x) = g(x) \) by evaluating at random points. PIT is used in algorithms to probabilistically determine if two polynomials are identical without explicitly expanding them.
 
 #### 3. **Correctness of Algorithms:**
-   - **Insertion Sort:**
-     - Discussed as a deterministic algorithm. The lecture might have covered how insertion sort works and how to prove its correctness (i.e., it correctly sorts the input).
-     - **Correctness Proof:** Likely involves showing that after each insertion, the array remains sorted.
-
    - **Verifier for Algorithm Output:**
-     - They might have discussed the concept of using a verifier to check if the output of an algorithm is correct. For instance, in sorting, a verifier would check that the output list is sorted and contains all the elements of the original list.
+     - To check if the output of an algorithm is correct. For instance, in sorting, a verifier would check that the output list is sorted and contains all the elements of the original list.
 
 ### Key Takeaways:
 
@@ -322,5 +311,3 @@ Suppose we have graph (Node and edges), we want to find the minimum cuts (edges 
 - **Correctness Proof:** Algorithms like insertion sort have clear, deterministic proofs of correctness, ensuring that they always produce the correct result.
 
 - **Verification:** Some algorithms (especially randomized ones) may require additional steps to verify that their output is correct.
-
-This lecture likely aimed to illustrate different ways of ensuring and proving the correctness of both deterministic and randomized algorithms.
