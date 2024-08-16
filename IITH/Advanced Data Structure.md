@@ -238,5 +238,14 @@ $$A=\left[ 1, \frac{3}{i} ,5,7, \frac{9}{j} ,10 \right]$$
 - **Asymptotic Complexity**: The total expected number of comparisons for all pairs in Randomized Quick Sort is $$Θ(nlog⁡n)$$, which reflects the overall complexity of the algorithm.
 
 ### Min-Cut Problem:
-The **min-cut problem** in graph theory involves finding the smallest set of edges that, when removed, separates the graph into two disconnected components (subgraphs).
+The **min-cut problem** in graph theory involves finding the smallest set of edges that, when removed, separates the graph into two disconnected components (subgraphs). 
+> We are going to discuss it in next lecture
 
+# ADS - 06
+
+## Min-Cut Problem:
+Suppose we have graph (Node and edges), we want to find the minimum cuts (edges remove) so that that will divide into two graphs.
+
+![Min Cut Problem](../Archive/Attachment/Min%20Cut%20Problem.png)
+**To Solve it :**
+- We will use - Randomized alg
