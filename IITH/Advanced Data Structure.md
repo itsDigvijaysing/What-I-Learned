@@ -237,3 +237,6 @@ $$A=\left[ 1, \frac{3}{i} ,5,7, \frac{9}{j} ,10 \right]$$
 - **Correctness**: The formula $$\frac{2}{j - i + 1}$$​ provides the probability that two specific elements A[i] and A[j] are compared during a single partitioning step. It is accurate for calculating the probability of comparison in that specific context.
 - **Asymptotic Complexity**: The total expected number of comparisons for all pairs in Randomized Quick Sort is $$Θ(nlog⁡n)$$, which reflects the overall complexity of the algorithm.
 
+### Min-Cut Problem:
+The **min-cut problem** in graph theory involves finding the smallest set of edges that, when removed, separates the graph into two disconnected components (subgraphs).
+
