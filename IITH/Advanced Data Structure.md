@@ -271,3 +271,15 @@ Suppose we have graph (Node and edges), we want to find the minimum cuts (edges 
 ### Result:
 - The edges left between the final two vertices represent a cut in the original graph. But that answer is not exact answer true minimum cut can be different.
 - The algorithm is repeated multiple times to increase the probability of finding the true minimum cut, as it's a randomized algorithm.
+
+### Claim:
+
+1. **Intermediate Graphs & Min-Cut:**
+   - In Karger's algorithm, every intermediate graph has a minimum cut size that is **at least** the size of the original graph's minimum cut.
+
+2. **Number of Edges (|G| = k):**
+   - **Conditionally True:** The number of edges in the graph ( G ) is at least $$( \frac{nk}{2} )$$ (where ( n ) is the number of nodes and ( k ) is the min-cut value). This relationship depends on the graph's structure and may not apply universally.
+3. Probability that an edge 'X' (which is required for minimum cut) is not picked in first time is 1 - (2/n).
+
+# ADS - 07
+
