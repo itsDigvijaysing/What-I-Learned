@@ -361,3 +361,25 @@ def factorial(n):
 
 # ADS - 08
 
+## Algorithms Overview
+
+#### 1. **Deterministic Algorithms**
+- **Definition**: Algorithms that produce the same output for a given input every time they are executed.
+- **Characteristics**:
+  - Predictable results.
+  - Often straightforward but can be less efficient in certain cases.
+
+#### 2. **Randomized Algorithms**
+- **Definition**: Algorithms that use randomization to make decisions or solve problems, and may produce different outputs on different runs with the same input.
+- **Characteristics**:
+  - **Probability of Correctness**: They have a certain probability of providing a correct answer. For instance, if the algorithm has a probability \( \alpha_1 \) of giving the correct answer and \( \alpha_2 \) of giving the wrong answer, \( \alpha_1 + \alpha_2 = 1 \).
+  - **Optimization**: By optimizing the randomized algorithm (e.g., using more samples or better random choices), it is often possible to increase the probability of obtaining a correct result and potentially achieve better performance than some deterministic algorithms.
+  - **Efficiency**: In practice, randomized algorithms can be more efficient than deterministic ones, especially for complex problems where deterministic approaches are too slow or infeasible.
+
+#### 3. **Quantum Algorithms**
+- **Definition**: Algorithms that leverage principles of quantum mechanics to solve problems, using quantum bits (qubits) and quantum operations.
+- **Characteristics**:
+  - **Quantum Superposition**: Quantum algorithms can process a superposition of states, allowing them to explore many possible solutions simultaneously.
+  - **Interference**: Quantum algorithms use interference to amplify the probability of correct answers and cancel out incorrect ones.
+  - **Probability of Correctness**: Quantum algorithms can be designed to reduce or eliminate the probability of incorrect answers by strategically using quantum operations. For example, quantum algorithms can cancel out the probability of incorrect answers (\( \alpha_2 \)) and ensure that the output is correct with high probability (\( \alpha_1 \)).
+  - **Example**: Shor's algorithm for factoring large numbers and Grover's algorithm for searching an unsorted database are examples where quantum algorithms offer significant speedups over classical algorithms.
