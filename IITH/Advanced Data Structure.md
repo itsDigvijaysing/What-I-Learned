@@ -434,4 +434,72 @@ def is_prime(N):
 
 # ADS - 09
 
-## Correctness of Algorithm
+### 1. **Correctness of Algorithms**
+   - **Correctness** refers to proving that an algorithm produces the correct output for all valid inputs.
+   - **Correctness proof** usually involves:
+     1. **Partial correctness**: Showing that if an algorithm terminates, it produces the correct output.
+     2. **Termination**: Showing that the algorithm always terminates.
+
+### 2. **Loop Invariants**
+   - A **loop invariant** is a property or condition that holds true before and after each iteration of a loop.
+   - It is crucial in proving the correctness of algorithms, especially those involving loops.
+
+### 3. **Algorithm for Finding Maximum Element in a List**
+   - You described an algorithm to find the maximum element in a list `L` of positive distinct integers.
+   - The algorithm iterates through the list, updating a variable `Max` whenever a larger element is found.
+
+#### **Pseudocode:**
+```python
+Max = L[0]  # Initialize Max with the first element of L
+for i in range(1, len(L)):
+    if L[i] > Max:
+        Max = L[i]
+# At the end of this loop, Max contains the maximum element in L
+```
+
+### 4. **Correctness Proof Using Loop Invariants**
+   - **Invariant:** A statement that is true before and after each iteration of the loop.
+   - **INV:** This refers to the loop invariant in your context.
+
+#### **Invariants for Maximum Algorithm:**
+   - **Invariant 1:** For all `j` in `[0, i]`, `L[j] <= Max`.
+     - **Meaning:** The variable `Max` always contains the largest value among the elements seen so far.
+   - **Invariant 2:** `Max >= 0`.
+     - **Meaning:** Since all elements are positive, `Max` is always non-negative.
+
+#### **Proof:**
+   - **Initialization:** Before the loop starts, `Max` is set to `L[0]`, so the invariant holds because the first element is the largest seen so far.
+   - **Maintenance:** If the invariant is true before iteration `i`, then after the loop body executes, it remains true. If `L[i] > Max`, then `Max` is updated, so it still holds.
+   - **Termination:** When the loop ends, the invariant and the loop condition imply that `Max` contains the largest element in the list.
+
+#### **Correctness Statement:**
+   - For all `i` in `[0, |L|-1]`, `L[i] <= Max`. This ensures that the algorithm correctly finds the maximum element.
+
+### 5. **Insertion Sort Algorithm**
+   - **Insertion Sort** works by building a sorted section of the list one element at a time.
+
+#### **Pseudocode:**
+```python
+for i in range(1, len(L)):
+    key = L[i]
+    j = i - 1
+    while j >= 0 and L[j] > key:
+        L[j + 1] = L[j]
+        j -= 1
+    L[j + 1] = key
+```
+
+#### **Correctness Proof Using Invariants:**
+   - **Invariant:** After the `i`th iteration, the subarray `L[0:i+1]` is sorted.
+   - **Proof:**
+     - **Initialization:** Before the first iteration, the subarray `L[0:1]` is trivially sorted.
+     - **Maintenance:** If the subarray `L[0:i]` is sorted before the iteration, the insertion of `L[i]` into the correct position within this subarray maintains the sorted order of `L[0:i+1]`.
+     - **Termination:** When the loop terminates, the entire array `L[0:|L|-1]` is sorted.
+
+### 6. **Correctness Statement for Insertion Sort:**
+   - For all `i` in `[0, |L|-2]`, `L[i] <= L[i+1]`. This ensures that the list is sorted in non-decreasing order.
+
+### **Summary:**
+- **Loop Invariants** are key to proving the correctness of iterative algorithms.
+- For the maximum element algorithm, the loop invariant ensures that `Max` is always the largest value encountered so far.
+- For **Insertion Sort**, the invariant guarantees that the sorted portion of the list remains sorted after each insertion.
