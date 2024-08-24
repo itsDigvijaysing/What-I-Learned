@@ -477,7 +477,7 @@ for i in range(1, len(L)):
 
 ### 5. **Insertion Sort Algorithm**
    - **Insertion Sort** works by building a sorted section of the list one element at a time.
-
+$$\forall \epsilon $$
 #### **Pseudocode:**
 ```python
 for i in range(1, len(L)):
