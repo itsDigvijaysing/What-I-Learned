@@ -474,10 +474,13 @@ for i in range(1, len(L)):
 
 #### **Correctness Statement:**
    - For all `i` in `[0, |L|-1]`, `L[i] <= Max`. This ensures that the algorithm correctly finds the maximum element.
+$$
+\forall i \; \epsilon [0,\dots,|L|] $$
+
 
 ### 5. **Insertion Sort Algorithm**
    - **Insertion Sort** works by building a sorted section of the list one element at a time.
-$$\forall \epsilon $$
+
 #### **Pseudocode:**
 ```python
 for i in range(1, len(L)):
