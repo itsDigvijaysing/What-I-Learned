@@ -314,3 +314,6 @@ Where:
 - Resource Sharing so High Users can use simultaneously.
 - Simpler and No High Presetup.
 - Excessive Congestion Possible (Packet Delay, Packet loss due to buffer overflow, so need protocols for reliability(Congestion Control))
+
+# ACN - 06
+
