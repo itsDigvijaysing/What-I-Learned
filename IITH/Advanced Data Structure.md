@@ -536,6 +536,7 @@ for i in range(1, len(L)):
 
 ### Linked Lists
 - A **linear data structure** where elements are stored in nodes, and each node points to the next one.
+> We have to Linearly search & can't access specific index dired
 - Easier to insert and delete elements compared to arrays, but access by index is slower.
 
 ### Trees
