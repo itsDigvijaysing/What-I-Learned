@@ -512,3 +512,70 @@ for i in range(1, len(L)):
 - **Loop Invariants** are key to proving the correctness of iterative algorithms.
 - For the maximum element algorithm, the loop invariant ensures that `Max` is always the largest value encountered so far.
 - For **Insertion Sort**, the invariant guarantees that the sorted portion of the list remains sorted after each insertion.
+
+# ADS - 10
+
+## Abstract Data Types (ADT) vs. Normal Data Types
+
+### What is an Abstract Data Type (ADT)?
+- **Abstract Data Types** are not concerned with how data is stored or implemented, but rather with what operations can be performed on data.
+- Examples of Abstract Data types: Stack, Queue, List, etc.
+
+### Normal Data Types
+- **Normal Data Types** (like int, float, char) are concrete data types that are defined by a specific way of storing data in memory.
+
+### Struct and Object (Not Abstract Data type)
+- **Struct**: A way to group different types of data together in a single unit. Not considered an abstract data type.
+- **Object**: A more complex data structure that includes both data and methods to operate on the data. Also, not considered an ADT.
+
+## Arrays, Linked Lists, and Trees
+
+### Arrays
+- A **linear data structure** that stores elements in contiguous memory locations.
+- Easy to access elements by index but resizing is difficult.
+
+### Linked Lists
+- A **linear data structure** where elements are stored in nodes, and each node points to the next one.
+- Easier to insert and delete elements compared to arrays, but access by index is slower.
+
+### Trees
+- A **non-linear data structure** with a root node and children nodes forming a hierarchy.
+- Efficient for operations like search, insert, and delete.
+
+## Binary Search Tree (BST)
+- A tree where each node has at most two children, with the left child being less than the parent and the right child being greater.
+- Allows efficient searching, but can become unbalanced.
+
+## AVL Tree
+- A self-balancing binary search tree where the height difference between the left and right subtree (balance factor) is at most 1.
+- Ensures O(log N) time complexity for search, insert, and delete operations.
+
+## Red-Black Tree
+- A type of self-balancing binary search tree with an additional property of node colors (red or black).
+- Ensures that the tree remains balanced and provides O(log N) time complexity for search, insert, and delete operations.
+
+## Height of Trees
+- For a balanced binary search tree with **N nodes**, the desired height is **O(log₂N)**.
+- Height plays a crucial role in determining the efficiency of operations in a tree.
+
+### Example: Height Visualization
+
+Consider a tree with **N = 8 nodes**.
+
+The height **H** of a balanced binary tree with **N nodes** is:
+
+\[ H = \log_2 N = \log_2 8 = 3 \]
+
+Here’s a simple diagram to visualize this:
+
+```plaintext
+       4
+      / \
+     2   6
+    / \ / \
+   1  3 5  7
+            \
+             8
+```
+
+- **Height = 3**, which matches the formula **O(log₂N)**.
