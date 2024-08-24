@@ -536,7 +536,7 @@ for i in range(1, len(L)):
 
 ### Linked Lists
 - A **linear data structure** where elements are stored in nodes, and each node points to the next one.
-> We have to Linearly search & can't access specific index dired
+> We have to Linearly search & can't access specific index directly like array
 - Easier to insert and delete elements compared to arrays, but access by index is slower.
 
 ### Trees
@@ -554,6 +554,16 @@ for i in range(1, len(L)):
 ## Red-Black Tree
 - A type of self-balancing binary search tree with an additional property of node colors (red or black).
 - Ensures that the tree remains balanced and provides O(log N) time complexity for search, insert, and delete operations.
+### Red-Black Tree Properties
+
+1. Binary Search Tree Property
+2. All nodes are either Red Black Colour
+3. Root is always black
+4. All leaves are black
+5. Red nodes can have only black children & black nodes can have Black/Red children
+6. For any node, the number of black nodes to any leaf is same
+
+![Red Black Tree](../Archive/Attachment/Red-Black%20Tree.png)
 
 ## Height of Trees
 - For a balanced binary search tree with **N nodes**, the desired height is **O(log₂N)**.
@@ -565,7 +575,7 @@ Consider a tree with **N = 8 nodes**.
 
 The height **H** of a balanced binary tree with **N nodes** is:
 
-\[ H = \log_2 N = \log_2 8 = 3 \]
+$$[ H = \log_2 N = \log_2 8 = 3 ]$$
 
 Here’s a simple diagram to visualize this:
 

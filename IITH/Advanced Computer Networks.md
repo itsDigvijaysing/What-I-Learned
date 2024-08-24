@@ -308,3 +308,9 @@ Where:
 
 - (nCr) is the binomial coefficient, representing the number of ways to choose r successes from n trials.
 - r is the number of successes (where 0≤r≤n).
+
+## Why Packet Sharing:
+
+- Resource Sharing so High Users can use simultaneously.
+- Simpler and No High Presetup.
+- Excessive Congestion Possible (Packet Delay, Packet loss due to buffer overflow, so need protocols for reliability(Congestion Control))
