@@ -481,7 +481,8 @@ L[i]\leq max
 $$
 $$(\forall j \; \epsilon [0 \dots i+1] , L[j] \leq max) \cap (P)
 % For All j from 0 to i+1 \left( i is index max will be equal to or greater than them )
-$$P = 
+$$$$
+P = (\exists K|max=L[K])
 $$
 ### 5. **Insertion Sort Algorithm**
    - **Insertion Sort** works by building a sorted section of the list one element at a time.
