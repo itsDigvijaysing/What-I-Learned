@@ -324,6 +324,8 @@ Where:
 - Networks are organized hierarchically, with access ISPs, regional ISPs, and global transit ISPs.
 - **Hybrid Topologies** can be created by connecting access ISPs to global transit ISPs.
 
+![ISP](../Archive/Attachment/ISP.png)
+
 ### Example of Hybrid Topologies
 - **Hybrid Topology**: A combination of different network topologies (e.g., star, mesh, bus) to optimize performance and scalability.
   - **Example**: Connecting each Access ISP to a Global Transit ISP.
@@ -331,6 +333,7 @@ Where:
 ## 2. Network Typologies (Network Structure)
 
 - **Network Topology**: The structure/layout of how nodes (e.g., computers, routers) are interconnected in a network.
+![Network Topologies](../Archive/Attachment/Network%20Topologies.png)
   - **Types**:
     - **Bus**: All devices share a common communication line.
     - **Star**: All devices are connected to a central hub.
@@ -349,17 +352,17 @@ Where:
     - **Propagation Delay (d_prop)**: Time it takes for the signal to propagate from one end of the medium to the other.
 
 ### Total Delay (d_total)
-\[
+$$[
 d_{\text{total}} = d_{\text{process}} + d_{\text{queue}} + d_{\text{tran}} + d_{\text{prop}}
-\]
+]$$
 
 ## 4. Total Loss Occurrence
 
 - **Total Loss Occurrence**: The rate at which packets are lost due to congestion.
   - **Formula**: 
-    \[
+    $$
     \frac{L \cdot a}{R} 
-    \]
+    $$
     - **L**: Number of bits in the packet.
     - **a**: Arrival rate of bits to the queue (bits/sec).
     - **R**: Service rate of bits by the router or network device (bits/sec).
