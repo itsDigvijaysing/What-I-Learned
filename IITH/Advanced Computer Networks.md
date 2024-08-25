@@ -453,3 +453,41 @@ $$  [
 
 # ACN - 09
 
+## Services, Layering, and Encapsulation in TCP/IP
+
+### 1. Application Layer
+- **Function**: The application layer exchanges messages to implement a specific application service.
+- **Interaction**: Uses the services provided by the transport layer to facilitate communication.
+
+### 2. Transport Layer
+- **Function**: Transfers the message (M) from one process to another.
+  - **Reliability**: Ensures reliable transfer of data (e.g., TCP).
+- **Interaction**: Uses the services provided by the network layer to move data between processes on different hosts.
+
+### 3. Network Layer
+- **Function**: Transfers the transport-layer segment \([Ht | M]\) from one host to another.
+- **Interaction**: Utilizes the link layer services to facilitate host-to-host communication.
+
+### 4. Link Layer
+- **Function**: Transfers the datagram \([Hn| [Ht |M]]\) from a host to a neighboring router.
+- **Interaction**: Uses the services of the physical layer to transmit data between devices.
+
+### 5. Physical Layer
+- **Function**: Provides the physical means of transmitting raw bits over a communication link.
+
+## Encapsulation
+
+- **Concept**: Each layer adds its own header information (H) to the data received from the layer above before passing it to the layer below.
+- **Process**:
+  1. **Message (M)**: Application data.
+  2. **Segment**: Transport layer encapsulates the message into a segment with a transport header ([Ht | M]).
+  3. **Datagram**: Network layer encapsulates the segment into a datagram with a network header ([Hn| [Ht | M]]).
+  4. **Frame**: Link layer encapsulates the datagram into a frame for transmission.
+![Packet Transfer](../Archive/Attachment/Packet%20Transfer.png)
+- **Matryoshka Dolls**: Encapsulation is like stacking Matryoshka dolls, where each layer adds its own information, wrapping the previous layer's data.
+
+### Summary of Encapsulation Terms
+- **Message**: Data at the application layer.
+- **Segment**: Data at the transport layer.
+- **Datagram**: Data at the network layer.
+- **Frame**: Data at the link layer.
