@@ -428,7 +428,9 @@ $$[
 $$  [
   \text{Tput} = R_c \text{ (Rate after calculation)}
   ]$$
+  
 - **Bottlenecks**: The throughput is often limited by the slower of the two rates:
+![Through put](../Archive/Attachment/Through%20put.png)
   - **R_client**: Rate of the client.
   - **R_server**: Rate of the server.
 
@@ -437,6 +439,7 @@ $$  [
 - **Concept**: The link between a pair of nodes can be visualized as a hollow pipe.
   - **Latency**: The length of the pipe (time delay).
   - **Bandwidth**: The width of the pipe (amount of data that can be transmitted per unit time).
+![Delay X Bandwidth](../Archive/Attachment/Delay%20X%20Bandwidth.png)
 
 ### Key Points
 - **Delay × Bandwidth Product**: 
