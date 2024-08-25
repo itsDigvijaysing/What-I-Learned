@@ -374,10 +374,12 @@ d_{\text{total}} = d_{\text{process}} + d_{\text{queue}} + d_{\text{tran}} + d_{
 
 ## Packet Queue Delay
 
+![Packet delay](../Archive/Attachment/Packet%20Delay.png)
 ### Scenario 1: Packets Arrive Simultaneously
 - **Time (t = t1):** All 5 packets arrive at the same time (Inter-Arrival Time, IAT = 0).
 - **Consequence:** Every subsequent packet has to wait for the previous ones to be transmitted.
-  - **Wait Time:** Each packet after the first has to wait \((n-1) \times \frac{L}{R}\) for its turn to be transmitted.
+  - **Wait Time:** Each packet after the first has to wait ((n-1){L} / {R}) for its turn to be transmitted.
+  $$\frac{[n-1]L}{R}$$
 
 ### Scenario 2: Packets Arrive Late
 - **Time (t = t2):** All 5 packets arrive with a delay (IAT > Transmission Delay).
@@ -408,3 +410,6 @@ d_{\text{total}} = d_{\text{process}} + d_{\text{queue}} + d_{\text{tran}} + d_{
 - Packet delays can occur due to congestion in queues.
 - Packet loss can be caused by buffer overflow or TTL expiration.
 - Traceroute helps diagnose delay and packet loss issues in a network.
+
+# ACN - 08
+
