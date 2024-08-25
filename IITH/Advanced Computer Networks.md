@@ -371,3 +371,40 @@ d_{\text{total}} = d_{\text{process}} + d_{\text{queue}} + d_{\text{tran}} + d_{
 ![Service Requirements](../Archive/Attachment/Service%20Requirements.png)
 
 # ACN - 07
+
+## Packet Queue Delay
+
+### Scenario 1: Packets Arrive Simultaneously
+- **Time (t = t1):** All 5 packets arrive at the same time (Inter-Arrival Time, IAT = 0).
+- **Consequence:** Every subsequent packet has to wait for the previous ones to be transmitted.
+  - **Wait Time:** Each packet after the first has to wait \((n-1) \times \frac{L}{R}\) for its turn to be transmitted.
+
+### Scenario 2: Packets Arrive Late
+- **Time (t = t2):** All 5 packets arrive with a delay (IAT > Transmission Delay).
+- **Consequence:** Depending on the delay, packets may experience reduced waiting time or none at all if the link is idle.
+
+### Queue Dynamics
+- If packets queue in router buffers, they wait their turn for transmission.
+  - **Queue Length Growth:** Occurs when the arrival rate to the link temporarily exceeds the output link capacity.
+  - **Packet Loss:** Happens when the memory allocated for queued packets is full, leading to packet drops.
+
+## Real Internet Delay & Routes
+
+### Traceroute Program
+- **Function:** Provides delay measurement from the source to the destination.
+- **Types of Packets Supported:** TCP, UDP, ICMP.
+- **Time to Live (TTL):** Default is set to 64.
+
+### Packet Loss Scenarios
+- **TTL Expiration:**
+  - **Option 1:** Router replies by creating a "Time Exceeded" error; the result is visible as `***`.
+  - **Option 2:** Router does not reply if set by the router's policy.
+
+- **Buffer Size Limit Exceeded:**
+  - **Cause:** Packet loss can occur if the buffer size limit is exceeded, leading to a full queue.
+  - **Consequence:** Dropped or lost packets during transmission.
+
+### Key Points
+- Packet delays can occur due to congestion in queues.
+- Packet loss can be caused by buffer overflow or TTL expiration.
+- Traceroute helps diagnose delay and packet loss issues in a network.
