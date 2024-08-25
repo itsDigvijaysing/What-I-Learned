@@ -317,3 +317,49 @@ Where:
 
 # ACN - 06
 
+## 1. Internet Structure: Network of Networks
+
+- The Internet is a **"network of networks"** where multiple networks interconnect.
+- Each network is owned and operated by different organizations (e.g., ISPs, enterprises, universities).
+- Networks are organized hierarchically, with access ISPs, regional ISPs, and global transit ISPs.
+- **Hybrid Topologies** can be created by connecting access ISPs to global transit ISPs.
+
+### Example of Hybrid Topologies
+- **Hybrid Topology**: A combination of different network topologies (e.g., star, mesh, bus) to optimize performance and scalability.
+  - **Example**: Connecting each Access ISP to a Global Transit ISP.
+
+## 2. Network Typologies (Network Structure)
+
+- **Network Topology**: The structure/layout of how nodes (e.g., computers, routers) are interconnected in a network.
+  - **Types**:
+    - **Bus**: All devices share a common communication line.
+    - **Star**: All devices are connected to a central hub.
+    - **Ring**: Devices are connected in a circular fashion.
+    - **Mesh**: Devices are interconnected, providing multiple paths for data.
+    - **Hybrid**: A combination of two or more topologies.
+
+## 3. Packet Queue: Delay in Packets
+
+- **Packet Queue**: Packets waiting in line to be processed by a router or network device.
+  - **Delay** occurs when packets are waiting due to **congestion** in the queue.
+  - **Types of Delays**:
+    - **Processing Delay (d_process)**: Time to examine the packet header and determine where to direct the packet.
+    - **Queueing Delay (d_queue)**: Time the packet spends waiting in the queue before it can be processed.
+    - **Transmission Delay (d_tran)**: Time required to push all of the packet's bits onto the wire.
+    - **Propagation Delay (d_prop)**: Time it takes for the signal to propagate from one end of the medium to the other.
+
+### Total Delay (d_total)
+\[
+d_{\text{total}} = d_{\text{process}} + d_{\text{queue}} + d_{\text{tran}} + d_{\text{prop}}
+\]
+
+## 4. Total Loss Occurrence
+
+- **Total Loss Occurrence**: The rate at which packets are lost due to congestion.
+  - **Formula**: 
+    \[
+    \frac{L \cdot a}{R} 
+    \]
+    - **L**: Number of bits in the packet.
+    - **a**: Arrival rate of bits to the queue (bits/sec).
+    - **R**: Service rate of bits by the router or network device (bits/sec).
