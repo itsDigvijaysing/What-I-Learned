@@ -366,3 +366,8 @@ d_{\text{total}} = d_{\text{process}} + d_{\text{queue}} + d_{\text{tran}} + d_{
     - **L**: Number of bits in the packet.
     - **a**: Arrival rate of bits to the queue (bits/sec).
     - **R**: Service rate of bits by the router or network device (bits/sec).
+
+#### Service Requirements
+![Service Requirements](../Archive/Attachment/Service%20Requirements.png)
+
+# ACN - 07
