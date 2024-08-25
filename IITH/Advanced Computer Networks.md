@@ -475,6 +475,8 @@ $$  [
 ### 5. Physical Layer
 - **Function**: Provides the physical means of transmitting raw bits over a communication link.
 
+![ACN Pic](../Archive/Attachment/ACN%20Pic.png)
+
 ## Encapsulation
 
 - **Concept**: Each layer adds its own header information (H) to the data received from the layer above before passing it to the layer below.
@@ -491,3 +493,6 @@ $$  [
 - **Segment**: Data at the transport layer.
 - **Datagram**: Data at the network layer.
 - **Frame**: Data at the link layer.
+
+# ACN - 10
+
