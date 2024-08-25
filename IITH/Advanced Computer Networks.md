@@ -413,3 +413,33 @@ d_{\text{total}} = d_{\text{process}} + d_{\text{queue}} + d_{\text{tran}} + d_{
 
 # ACN - 08
 
+## Throughput
+
+- **Throughput**: The rate at which bits are being sent from the sender to the receiver.
+  - **Instantaneous Throughput**: The rate at a given point in time.
+  - **Average Throughput**: The rate over a longer period of time.
+
+### Throughput Calculation
+- **Formula**:
+$$[
+  \text{Throughput (Tput)} = \frac{\text{Message Size (M)}}{\text{Message Delay (D)}} = \frac{M}{\text{Transmission Delay} + \text{Propagation Delay}}
+  ]$$
+- **Result**:
+$$  [
+  \text{Tput} = R_c \text{ (Rate after calculation)}
+  ]$$
+- **Bottlenecks**: The throughput is often limited by the slower of the two rates:
+  - **R_client**: Rate of the client.
+  - **R_server**: Rate of the server.
+
+## Delay × Bandwidth Product
+
+- **Concept**: The link between a pair of nodes can be visualized as a hollow pipe.
+  - **Latency**: The length of the pipe (time delay).
+  - **Bandwidth**: The width of the pipe (amount of data that can be transmitted per unit time).
+
+### Key Points
+- **Delay × Bandwidth Product**: 
+  - **Meaning**: It indicates how many bits the sender must transmit before the first bit arrives at the receiver if the sender wants to keep the pipe full.
+  - **Response Time**: Takes another one-way latency to receive a response (ACK) from the receiver.
+  - **Utilization**: If the sender does not send a full delay × bandwidth product’s worth of data before waiting for an ACK, the network’s capacity will not be fully utilized.
