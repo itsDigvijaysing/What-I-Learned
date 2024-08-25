@@ -446,3 +446,10 @@ $$  [
   - **Meaning**: It indicates how many bits the sender must transmit before the first bit arrives at the receiver if the sender wants to keep the pipe full.
   - **Response Time**: Takes another one-way latency to receive a response (ACK) from the receiver.
   - **Utilization**: If the sender does not send a full delay × bandwidth product’s worth of data before waiting for an ACK, the network’s capacity will not be fully utilized.
+
+### Layering TCP
+
+![TCP Layering](../Archive/Attachment/TCP%20Layering.png)
+
+# ACN - 09
+
