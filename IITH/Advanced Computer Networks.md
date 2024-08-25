@@ -496,3 +496,186 @@ $$  [
 
 # ACN - 10
 
+## What is a Socket?
+
+- A **socket** is an API (Application Programming Interface) that allows networking applications to use the services of the transport layer.
+- It acts like a pipe, providing communication between the transport layers of two hosts within a network.
+![Socket](../Archive/Attachment/Socket.png)
+### Key Characteristics of Sockets:
+- **API between application and transport layers:**
+  - **Berkeley sockets interface**: Originally provided by BSD 4.1 around 1982.
+- **Socket Operations:**
+  - **Creating a socket**: Initialize a socket for communication.
+  - **Binding the socket**: Attach the socket to a network (e.g., bind to an IP address and port).
+  - **Sending/receiving data**: Use the socket to transmit or receive data between hosts.
+  - **Closing the socket**: Properly terminate the communication by closing the socket.
+
+## Socket Programming
+
+### Goal:
+- The primary goal of socket programming is to learn how to build client/server applications that communicate using sockets.
+
+### Definition:
+- A **socket** is a door or interface between an application process and the end-to-end transport protocol (TCP/UDP).
+
+### Types of Sockets:
+- **UDP Sockets**: 
+  - Unreliable, datagram-based communication.
+- **TCP Sockets**: 
+  - Reliable, byte stream-oriented communication.
+
+## Application Example
+
+### Example: Simple Client/Server Communication
+
+1. **Client**:
+   - Reads a line of characters (data) from its keyboard.
+   - Sends the data to the server.
+   
+2. **Server**:
+   - Receives the data from the client.
+   - Converts the characters to uppercase.
+   - Sends the modified data back to the client.
+   
+3. **Client**:
+   - Receives the modified data from the server.
+   - Displays the modified line on its screen.
+
+### Example in Python:
+
+#### Server Code:
+```python
+import socket
+
+# Create a TCP socket
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# Bind the socket to an IP address and port
+server_socket.bind(('localhost', 12345))
+
+# Listen for incoming connections
+server_socket.listen(1)
+print("Server is listening...")
+
+# Accept a connection
+connection, address = server_socket.accept()
+print(f"Connection from {address} has been established!")
+
+# Receive data from the client
+data = connection.recv(1024).decode('utf-8')
+print(f"Received data: {data}")
+
+# Convert data to uppercase
+modified_data = data.upper()
+
+# Send modified data back to the client
+connection.send(modified_data.encode('utf-8'))
+
+# Close the connection
+connection.close()
+```
+
+#### Client Code:
+```python
+import socket
+
+# Create a TCP socket
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# Connect to the server
+client_socket.connect(('localhost', 12345))
+
+# Read a line of data from the keyboard
+data = input("Enter a line of text: ")
+
+# Send the data to the server
+client_socket.send(data.encode('utf-8'))
+
+# Receive the modified data from the server
+modified_data = client_socket.recv(1024).decode('utf-8')
+print(f"Modified data from server: {modified_data}")
+
+# Close the socket
+client_socket.close()
+```
+
+### Example in C++:
+
+#### Server Code:
+```cpp
+#include <iostream>
+#include <cstring>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <unistd.h>
+
+int main() {
+    int server_socket = socket(AF_INET, SOCK_STREAM, 0);
+
+    sockaddr_in server_addr;
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_port = htons(12345);
+    server_addr.sin_addr.s_addr = INADDR_ANY;
+
+    bind(server_socket, (sockaddr*)&server_addr, sizeof(server_addr));
+
+    listen(server_socket, 1);
+    std::cout << "Server is listening..." << std::endl;
+
+    int client_socket = accept(server_socket, nullptr, nullptr);
+    
+    char buffer[1024];
+    memset(buffer, 0, sizeof(buffer));
+    
+    read(client_socket, buffer, sizeof(buffer));
+    std::cout << "Received data: " << buffer << std::endl;
+
+    // Convert to uppercase
+    for(int i = 0; buffer[i]; i++) {
+        buffer[i] = toupper(buffer[i]);
+    }
+
+    send(client_socket, buffer, strlen(buffer), 0);
+
+    close(client_socket);
+    close(server_socket);
+
+    return 0;
+}
+```
+
+#### Client Code:
+```cpp
+#include <iostream>
+#include <cstring>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+
+int main() {
+    int client_socket = socket(AF_INET, SOCK_STREAM, 0);
+
+    sockaddr_in server_addr;
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_port = htons(12345);
+    inet_pton(AF_INET, "127.0.0.1", &server_addr.sin_addr);
+
+    connect(client_socket, (sockaddr*)&server_addr, sizeof(server_addr));
+
+    std::string data;
+    std::cout << "Enter a line of text: ";
+    std::getline(std::cin, data);
+
+    send(client_socket, data.c_str(), data.size(), 0);
+
+    char buffer[1024];
+    memset(buffer, 0, sizeof(buffer));
+
+    read(client_socket, buffer, sizeof(buffer));
+    std::cout << "Modified data from server: " << buffer << std::endl;
+
+    close(client_socket);
+
+    return 0;
+}
+```
