@@ -156,3 +156,46 @@ The Simplex Algorithm helps in finding the values of \(x_1\) and \(x_2\) that ma
 
 # LO - 05
 
+## Vector Space
+- A vector space \( V \) over a field Real Number ( R ) (or any field) is a set of vectors that follows specific laws.
+
+### Vector Space Laws
+1. **Associative Law**: $$( (u + v) + w = u + (v + w) )$$
+2. **Identity Element**: $$\mathbf{v} + \mathbf{0} = \mathbf{v} $$
+3. **Inverse Element**: $$( \mathbf{v} \in V ),\;\;\; there exists ( -\mathbf{v} ) such that ( \mathbf{v} + (-\mathbf{v}) = \mathbf{0} )$$
+4. **Commutative Law**: $$( \mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u} )$$
+
+### Scalar Multiplication Laws
+1. **Multiplication by 0**: $$\( 0 \cdot \mathbf{v} = \mathbf{0} \)$$
+2. **Multiplication by 1**: $$\( 1 \cdot \mathbf{v} = \mathbf{v} \)$$
+3. **Identity Multiplication**: $$\( \alpha \cdot (\beta \cdot \mathbf{v}) = (\alpha \beta) \cdot \mathbf{v} \)$$
+4. **Distributivity of Vector Sum**: $$\( \alpha \cdot (\mathbf{u} + \mathbf{v}) = \alpha \cdot \mathbf{u} + \alpha \cdot \mathbf{v} \)$$
+5. **Distributivity of Scalar Sum**: $$\( (\alpha + \beta) \cdot \mathbf{v} = \alpha \cdot \mathbf{v} + \beta \cdot \mathbf{v} \)$$
+6. **Associativity of Scalar Multiplication**: $$\( \alpha \cdot (\beta \cdot \mathbf{v}) = (\alpha \beta) \cdot \mathbf{v} \)$$
+
+## Subspace
+- A subspace \( U \) of \( V \) is a subset of \( V \) that is itself a vector space.
+
+## Linear Dependence and Independence
+- **Definition 1**: Vectors \( \mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n \) are linearly dependent if there exist scalars \( \alpha_1, \alpha_2, \ldots, \alpha_n \in \mathbb{R} \) (not all zero) such that:
+$$  [
+  \alpha_1 \mathbf{v}_1 + \alpha_2 \mathbf{v}_2 + \cdots + \alpha_n \mathbf{v}_n = \mathbf{0}
+  ]$$
+
+- **Definition 2**: Vectors \( \mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n \) are linearly independent if the only solution to:
+$$  [
+  \alpha_1 \mathbf{v}_1 + \alpha_2 \mathbf{v}_2 + \cdots + \alpha_n \mathbf{v}_n = \mathbf{0}
+  ]$$
+  is \( \alpha_1 = \alpha_2 = \cdots = \alpha_n = 0 \).
+
+- **Definition 3**: Vectors \( \mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n \) from vector space \( V \) form a basis if:
+  1. They are linearly independent.
+  2. Every vector \( \mathbf{w} \in V \) can be written as:
+    $$ [
+     \mathbf{w} = \sum_{i=1}^n \beta_i \mathbf{v}_i
+     ]$$
+     where \( \beta_i \in \mathbb{R} \).
+
+## Additional Notes
+- Adding a new vector \( \mathbf{w} \) to a set of vectors in \( V \) can change the set from independent to dependent.
+
