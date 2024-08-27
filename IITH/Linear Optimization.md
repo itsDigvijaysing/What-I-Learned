@@ -127,3 +127,32 @@ The Simplex Algorithm helps in finding the values of \(x_1\) and \(x_2\) that ma
 ### Comparison:
 - **Tabular Method** is used for minimizing Boolean expressions, useful in digital logic design.
 - **Simplex Algorithm** is used for solving linear programming problems, useful in optimization problems across various fields like operations research, economics, and engineering.
+
+# LO - 04
+
+## Basic Operations on Matrices
+1. **Row Exchange**: Swap rows in the matrix.
+2. **Column Exchange**: Swap columns in the matrix.
+3. **Multiply by Non-Zero Constant**: Multiply a row or column by any non-zero constant.
+4. **Row Addition**: Update row ( R_i ) using another row ( R_j ):
+   - $$( R_i \leftarrow R_i + \alpha R_j )$$
+   - Here, $$( \alpha )$$ is a constant (Non Zero Element).
+
+## Cross Elimination Method
+- **Rank of Matrix**: The number of independent rows is equal to the number of independent columns.
+  - **Rank** = Number of independent rows = Number of independent columns
+
+- **Key Matrix Concepts**:
+  - **Independent Rows**: Rows that cannot be formed by a linear combination of other rows.
+  - **Independent Columns**: Columns that cannot be formed by a linear combination of other columns.
+
+## Matrix Operations
+- **Row Operations**: Include row exchange, multiplying by a constant, and adding multiples of other rows.
+- **Column Operations**: Include column exchange, multiplying by a constant, and adding multiples of other columns.
+
+## Practical Application
+- Use these operations to simplify matrices and solve linear systems.
+- The rank of a matrix helps in determining the solution of linear equations and the consistency of systems.
+
+# LO - 05
+
