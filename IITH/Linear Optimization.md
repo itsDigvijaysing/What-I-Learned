@@ -208,33 +208,34 @@ Linear Optimization, also known as Linear Programming (LP), involves finding the
 - **Feasible Region**: The set of all points that satisfy the constraints.
 - **Optimal Solution**: The point in the feasible region that maximizes or minimizes the objective function.
 
-## 2. **Basis (B1, B2) and Basis Union**
+## 2. **Basis (B1, B2) and Intersection**
 In linear programming, a **basis** is a set of linearly independent vectors that span the space where the solution lies. The bases are often denoted as `B1`, `B2`, etc.
 
-### Basis Union:
-- If you have two bases, `B1` and `B2`, their union (`B1 ∪ B2`) represents the combined set of vectors from both bases.
-- The union of bases is significant in defining the feasible region and determining if a new vector can be expressed as a linear combination of existing basis vectors.
+### Basis Explanation:
+- **B1** and **B2** represent two different bases, each consisting of vectors that can span a part of the solution space.
+- The intersection of two bases, `B1 ∩ B2`, consists of the common vectors shared by both bases. This intersection might represent a subspace common to both bases.
 
 ### Example:
 - Consider two bases `B1` and `B2`:
   - `B1 = {w1, w2, ..., wk, vk+1, vk+2, ..., vm}`
   - `B2 = {w1, w2, ..., wk, uk+1, uk+2, ..., un}`
-  - The union `B1 ∪ B2 = K`.
+  - The Intersection, It represent subspace shared by both bases.
+    $$B1 \cap B2 = K$$
 
 ## 3. **Linear Combinations and New Vectors**
 A vector `Vk+1` can be expressed as a linear combination of other vectors, including those from a different basis.
 
 ### Example:
-- `Vk+1 = b1w1 + b2w2 + ... + bkwk + bk+1uk+1 + bk+2uk+2 + ... + bnUn`
+- $$V_{k+1} = b_{1}w_{1} + b2w2 + ... + b_{K}w_{K} + bk+1uk+1 + bk+2uk+2 + ... + b_{n}U_{n}$$
 - Here, the coefficients `bk+1, bk+2, ..., bn` represent the contribution of each vector from `B2` in forming `Vk+1`.
 - For `Vk+1` to be a new vector, at least one of `bk+1, bk+2, ..., bn` must be non-zero.
 
 ## 4. **Objective Function (O)**
 The objective function in linear optimization often looks like this:
 
-```markdown
-O = (alpha1 - P1)Z1 + (alpha2 - P2)Z2 + ... + (alphan - Pn)Zn
-```
+
+$$O = (\alpha_1 - P1)Z1 + (\alpha_2 - P2)Z2 + ... + (\alpha_n - Pn)Zn$$
+
 
 ### Explanation:
 - **Z1, Z2, ..., Zn**: Decision variables.
@@ -242,3 +243,7 @@ O = (alpha1 - P1)Z1 + (alpha2 - P2)Z2 + ... + (alphan - Pn)Zn
 - **P1, P2, ..., Pn**: Prices or costs associated with each variable.
 
 The goal in linear optimization is to find the values of `Z1, Z2, ..., Zn` that maximize or minimize `O`, subject to the given constraints.
+
+# LO - 07
+
+![LO 07](../Archive/Attachment/LO_7%20Lecture.png)
