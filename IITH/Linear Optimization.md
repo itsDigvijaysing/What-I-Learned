@@ -247,3 +247,13 @@ The goal in linear optimization is to find the values of `Z1, Z2, ..., Zn` that 
 # LO - 07
 
 ![LO 07](../Archive/Attachment/LO_7%20Lecture.png)
+
+# LO - 08
+
+![LO 08](../Archive/Attachment/LO_08.png)
+
+# LO - 09 / 10 / 11
+
+ Unknown
+ 
+---
