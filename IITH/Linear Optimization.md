@@ -252,8 +252,13 @@ The goal in linear optimization is to find the values of `Z1, Z2, ..., Zn` that 
 
 ![LO 08](../Archive/Attachment/LO_08.png)
 
-# LO - 09 / 10 / 11
+# LO - 09 / 10 / 11 /12
 
  Unknown
  
 ---
+
+# LO - 13
+
+- Direction Vector
+- Assignment date:  Tomorrow
