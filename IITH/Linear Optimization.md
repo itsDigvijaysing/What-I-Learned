@@ -260,5 +260,44 @@ The goal in linear optimization is to find the values of `Z1, Z2, ..., Zn` that 
 
 # LO - 13
 
-- Direction Vector
 - Assignment date:  Tomorrow
+### Direction Vector in Linear Optimization
+
+#### What is a Direction Vector?
+
+A **direction vector** is a vector that represents the direction of movement in space from one point to another. In linear optimization, especially in linear programming problems, the direction vector plays a crucial role in determining the direction along which an objective function improves or changes.
+
+For a linear objective function of the form:
+
+$$[
+f(\mathbf{x}) = c_1x_1 + c_2x_2 + \dots + c_nx_n
+]$$
+
+The **direction vector** $$(\mathbf{d} = (d_1, d_2, \dots, d_n))$$ indicates the direction in which the function value can increase or decrease.
+
+#### Where is it Used?
+
+1. **Gradient Descent**: The direction vector points in the direction of the steepest descent when minimizing an objective function. In linear optimization, this guides the search for the optimal solution.
+
+2. **Feasible Directions Method**: In constrained optimization, the direction vector represents the feasible direction along which the solution can move while staying within the constraints.
+
+3. **Simplex Method**: In the simplex algorithm, a direction vector is used to determine which edge of the feasible region to follow to move toward the optimal vertex.
+
+4. **Sensitivity Analysis**: Direction vectors help in studying how small changes in the parameters of a problem affect the optimal solution.
+
+#### Visualization
+
+In a 2D space, a direction vector can be visualized as an arrow starting from a point \(\mathbf{x}_0\) and pointing in the direction of change. The vector gives a sense of which way and how fast a point can move in that direction.
+
+---
+
+#### Example:
+
+For a linear equation \(2x_1 + 3x_2 = 6\), the direction vector could be represented as \(\mathbf{d} = (2, 3)\), showing how changes in \(x_1\) and \(x_2\) impact the equation.
+
+
+
+# LO -14
+
+- No Assignment Given
+- 
