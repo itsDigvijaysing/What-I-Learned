@@ -1,5 +1,3 @@
-# JavaScript Course
-
 ## Notes
 
 - History of #JavaScript 
