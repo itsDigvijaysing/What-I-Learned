@@ -5,14 +5,15 @@
 - [ ] packet - switching (store & forward)
 - [ ] Circuit Switching
 - [ ] Freq Div Multiplexing & Time Div Multiplexing
-- [ ] delay, loss, throughput 
+- [ ] packet delay, loss, throughput 
 - [ ] protocol layers
 - [ ] attack
 - [ ] principle of network application 
 - [ ] web
 - [ ] http
-- [ ] ftp
-- [ ] smtp
+- [ ] cookies / cache
+- [ ] File Transfer protocol
+- [ ] Simple mail transfer protocol
 - [ ] dns
 - [ ] peer to peer
 - [ ] socket programming 
@@ -35,7 +36,7 @@
 
 ##  ADSA
 - [ ] Intro
-- [ ] Revise DS and Algo basic (Insertion Sort, etc)
+- [ ] Revise DS and Algo basic (Insertion Sort, Merge Sort, etc)
 - [ ] Asymptotic Notation 
 - [ ] Worst and Average Time complexity 
 - [ ] Randomised Quick short 
@@ -45,9 +46,10 @@
 - [ ] Correctness of Algo
 - [ ] Invariant 
 - [ ] Binary Search Tree
-- [ ] ADT
+- [ ] Abstract Data Type
 - [ ] Red black tree 
-- [ ] Hash table 
-- [ ] D&C: Matrix Multiplication 
+- [ ] Divide & Conquer 
+- [ ] Matrix Multiplication 
 - [ ] strassen algo
+- [ ] Hash table 
 - [ ] Check further 
