@@ -22,12 +22,14 @@
 - [ ] Assignment 2
 - [ ] Basics Supervised & Unsupervised
 - [ ] Under fitting & Over fitting , Bias & Variance
-- [ ] Stratified Sampling, K-Fold Cross validation
+- [ ] Stratified Sampling, N-Fold / K-Fold Cross validation, Resubstitution
+- [ ] Accuracy of Algo, Error of Algo, Precision
 - [ ] Classifiers 
 - [ ] KNN
 - [ ] Decision Tree
 - [ ] Naive Bayes 
 - [ ] Neural Network (..Perceptron)
+- [ ] Gradient Descent
 - [ ] Support Vector Machine 
 - [ ] Kernel 
 - [ ] Ensemble Methods
