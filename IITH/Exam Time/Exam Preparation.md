@@ -1,7 +1,10 @@
 ## ACN
 - [ ] Internet
 - [ ] Network Edge
-- [ ] core
+- [ ] Network core
+- [ ] packet - switching (store & forward)
+- [ ] Circuit Switching
+- [ ] Freq Div Multiplexing & Time Div Multiplexing
 - [ ] delay, loss, throughput 
 - [ ] protocol layers
 - [ ] attack
@@ -17,6 +20,8 @@
 ## FoML
 - [ ] Assignment 2
 - [ ] Basics Supervised & Unsupervised
+- [ ] Under fitting & Over fitting , Bias & Variance
+- [ ] Stratified Sampling, K-Fold Cross validation
 - [ ] Classifiers 
 - [ ] KNN
 - [ ] Decision Tree
@@ -30,13 +35,13 @@
 
 ##  ADSA
 - [ ] Intro
-- [ ] Revise DS and Algo basic
+- [ ] Revise DS and Algo basic (Insertion Sort, etc)
 - [ ] Asymptotic Notation 
 - [ ] Worst and Average Time complexity 
 - [ ] Randomised Quick short 
 - [ ] Randomised Insertion sort
 - [ ] randomised min cut
-- [ ] polynomial identical algo
+- [ ] polynomial identical testing algo
 - [ ] Correctness of Algo
 - [ ] Invariant 
 - [ ] Binary Search Tree
