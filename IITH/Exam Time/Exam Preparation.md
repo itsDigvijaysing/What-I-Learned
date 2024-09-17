@@ -21,10 +21,11 @@
 - [ ] KNN
 - [ ] Decision Tree
 - [ ] Naive Bayes 
-- [ ] Neural Network 
+- [ ] Neural Network (..Perceptron)
 - [ ] Support Vector Machine 
 - [ ] Kernel 
-- [ ] Bagging 
+- [ ] Ensemble Methods
+- [ ] Bagging, Boosting, Ada boost, Random Forest
 - [ ] Check further
 
 ##  ADSA
@@ -38,7 +39,7 @@
 - [ ] polynomial identical algo
 - [ ] Correctness of Algo
 - [ ] Invariant 
-- [ ] BST
+- [ ] Binary Search Tree
 - [ ] ADT
 - [ ] Red black tree 
 - [ ] Hash table 
