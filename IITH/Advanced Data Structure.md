@@ -591,7 +591,7 @@ Here’s a simple diagram to visualize this:
 
 - **Height = 3**, which matches the formula **O(log₂N)**.
 
-# ADS-11: Red-Black Trees
+# ADS - 11
 
 ## Overview
 
@@ -635,7 +635,7 @@ A Red-Black Tree (RB Tree) is a type of self-balancing binary search tree with s
 
 - **Note**: The code provides hints on operations but is not complete. Important operations include rotations and color adjustments to maintain tree properties.
 
-# ADS - 12: Proof of Correctness in Red-Black Trees
+# ADS - 12
 
 ## Invariants
 
@@ -687,25 +687,189 @@ A Red-Black Tree (RB Tree) is a type of self-balancing binary search tree with s
     - If z is black and y is black, or z is red and y is black, adjustments are needed to maintain tree properties. This involves fixing the double black issues by rebalancing and recoloring nodes.
 
 
-# ADS -14
+# ADS - 14
 
-```markdown
-# ADS-14: Red-Black Tree Deletion Code
+## Red-Black Tree Deletion Overview
 
-## Code Execution
+Deletion in a Red-Black Tree involves removing a node while maintaining the Red-Black Tree properties. This includes handling various cases and adjusting the tree to ensure it remains balanced.
 
-- **Purpose**: Demonstrates how deletion operations are executed in Red-Black Trees, including color changes and tree restructuring.
+## Deletion Cases and Fixes
 
-## RB Color Changing Cases
+### Deleting a Node with Two Children
 
-- **Example of Double Black Nodes**:
-  - **Scenario**: Construct an example where a node has double black issues after deletion.
-  - **Code Example**:
-    ```python
-    def double_black_example():
-        # Code to create a tree and perform deletion resulting in double black issues
-        pass
-    ```
+1. **Find the Successor**:
+   - If the node \( z \) to be deleted has two children, find the node \( y \) with the smallest value in the right subtree of \( z \). This node \( y \) will replace \( z \).
+   
+2. **Transplant Operation**:
+   - Replace \( z \) with \( y \). Since \( y \) will have at most one child (it may have a right child but not a left child), you need to adjust the tree by transplanting \( y \) into \( z \)'s position.
 
-- **Color Changes**: Handling of color changes during deletion to maintain Red-Black Tree properties.
+3. **Fix-Up**:
+   - After transplantation, if \( y \) was black, adjustments are needed to fix the Red-Black Tree properties. This may involve recoloring and performing rotations.
+
+### Deleting a Node with Only One Child
+
+1. **Simple Replacement**:
+   - If the node \( z \) to be deleted has only one child, replace \( z \) with its child. Adjust the parent of \( z \) to point to \( z \)'s child.
+
+### Deleting a Node with No Children (Leaf Node)
+
+1. **Direct Removal**:
+   - Simply remove the leaf node. If the node is red, there are no additional adjustments required. If it is black, it may cause a double-black issue, which requires further adjustment.
+
+## Fixing Double-Black Issues
+
+### Double-Black Fix Algorithm
+
+1. **Case 1: Sibling is Red**:
+   - If the sibling \( s \) of the node being fixed is red, perform a rotation and recoloring to move the red sibling up and fix the double-black issue.
+
+2. **Case 2: Sibling is Black and Sibling’s Children are Black**:
+   - If the sibling \( s \) is black and both of \( s \)'s children are black, move the double-black property up the tree and recolor \( s \) to red.
+
+3. **Case 3: Sibling is Black and Sibling’s Children are Not Both Black**:
+   - Adjust the tree based on the color of \( s \)’s children. This often involves rotations and recoloring.
+
+### Code for Deletion and Fix-Up
+
+Here is a simplified Python code example for Red-Black Tree deletion and fixing up double-black issues:
+
+```python
+class Node:
+    def __init__(self, data, color='red', left=None, right=None, parent=None):
+        self.data = data
+        self.color = color
+        self.left = left
+        self.right = right
+        self.parent = parent
+
+def delete_node(root, z):
+    if z.left and z.right:
+        y = minimum(z.right)
+        z.data = y.data
+        z = y
+
+    x = z.left if z.left else z.right
+
+    if x:
+        x.parent = z.parent
+
+    if not z.parent:
+        root = x
+    elif z == z.parent.left:
+        z.parent.left = x
+    else:
+        z.parent.right = x
+
+    if z.color == 'black':
+        fix_double_black(root, x)
+
+    return root
+
+def fix_double_black(root, x):
+    # Implement the fix-up logic for double-black nodes here
+    pass
+
+def minimum(node):
+    while node.left:
+        node = node.left
+    return node
+
+def rb_insert_fixup(root, z):
+    while z != root and z.parent.color == 'red':
+        if z.parent == z.parent.parent.left:
+            y = z.parent.parent.right
+            if y and y.color == 'red':
+                z.parent.color = 'black'
+                y.color = 'black'
+                z.parent.parent.color = 'red'
+                z = z.parent.parent
+            else:
+                if z == z.parent.right:
+                    z = z.parent
+                    left_rotate(root, z)
+                z.parent.color = 'black'
+                z.parent.parent.color = 'red'
+                right_rotate(root, z.parent.parent)
+        else:
+            # Symmetric case
+            pass
+
+    root.color = 'black'
+
+def left_rotate(root, x):
+    # Implement left rotation logic here
+    pass
+
+def right_rotate(root, y):
+    # Implement right rotation logic here
+    pass
+```
+
+# ADS - 15
+
+## Merge Sort
+
+### Overview
+Merge Sort is a stable, comparison-based sorting algorithm that follows the divide-and-conquer strategy. It divides the array into smaller subarrays, sorts each subarray, and then merges them to produce a sorted array.
+
+### Steps
+
+1. **Divide**: 
+   - Split the array into two halves until each subarray contains a single element.
+
+2. **Conquer**: 
+   - Recursively sort each half.
+
+3. **Combine**: 
+   - Merge the sorted halves to create a single sorted array.
+
+### Time Complexity
+- **Best, Average, and Worst Case**: \( O(n \log n) \)
+- **Space Complexity**: \( O(n) \) due to the auxiliary space used for merging.
+
+## Hashing
+
+### Overview
+Hashing is used to map data to a fixed-size value (hash value) to enable efficient data retrieval. It is commonly implemented using hash tables.
+
+### Key Concepts
+
+1. **Hash Function**:
+   - A function that converts input data into a hash value. It should ensure a uniform distribution of data.
+
+2. **Collision Handling**:
+   - **Chaining**: Use linked lists to handle collisions by storing multiple items in the same hash slot.
+   - **Open Addressing**: Find another open slot in the hash table (e.g., linear probing, quadratic probing).
+
+3. **Load Factor**:
+   - Ratio of the number of elements to the number of slots in the hash table. Higher load factors increase the chance of collisions.
+
+### Time Complexity
+- **Average Case**: \( O(1) \) for search, insert, and delete operations.
+- **Worst Case**: \( O(n) \) in case of many collisions.
+
+## Divide and Conquer
+
+### Overview
+Divide and Conquer is an algorithmic strategy that involves breaking a problem into smaller subproblems, solving each subproblem independently, and combining the solutions to solve the original problem.
+
+### Steps
+
+1. **Divide**:
+   - Break the problem into smaller subproblems.
+
+2. **Conquer**:
+   - Recursively solve each subproblem. If the subproblems are small enough, solve them directly.
+
+3. **Combine**:
+   - Merge the solutions of the subproblems to get the solution to the original problem.
+
+### Examples
+
+- **Merge Sort**: Divides the array, sorts each half, and merges the sorted halves.
+- **Quick Sort**: Chooses a pivot, partitions the array into elements less than and greater than the pivot, and recursively sorts the partitions.
+
+### Time Complexity
+- **Merge Sort**: \( O(n \log n) \)
+- **Quick Sort**: \( O(n \log n) \) on average, \( O(n^2) \) in the worst case.
 
