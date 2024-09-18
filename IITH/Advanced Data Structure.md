@@ -915,7 +915,8 @@ In a 2D plane with multiple points, the goal is to find the pair of points with 
 $$  [
   T(n) = 8T(n/2) + C
   ]$$
-  where \( C \) is the cost of combining the results.
+  - **8T(n/2)**: This term accounts for the 8 recursive multiplications of n/2×n/2​ matrices.
+  - where \( C \) is the cost of combining the results.
 
 ### Strassen's Algorithm
 
@@ -924,10 +925,10 @@ $$  [
 #### Key Points
 
 1. **Algorithm Overview**:
-   - Strassen’s algorithm reduces the number of multiplications required by decomposing the matrix multiplication problem into smaller subproblems.
+   - Strassen’s algorithm reduces the number of multiplications required by decomposing the matrix multiplication problem into smaller subproblems. (S1...S10)
 
 2. **Formulas**:
-   - Strassen’s algorithm uses 7 multiplications and 10 addition/subtraction operations to compute the product of two matrices.
+   - Strassen’s algorithm uses 7 multiplications and 10 addition/subtraction operations to compute the product of two matrices. (P1...P7)
 
 3. **Recurrence Relation**:
    - The recurrence relation for Strassen’s Algorithm is:    $$ [
@@ -942,6 +943,6 @@ $$  [
 
 ### Operations
 
-- **Multiplication**: More computationally intensive and time-consuming.
-- **Addition/Subtraction**: Less time-heavy compared to multiplication and requires simpler operations.
+- **Multiplication**: More computationally intensive and time-consuming. $$\theta (n)^3$$
+- **Addition/Subtraction**: Less time-heavy compared to multiplication and requires simpler operations.$$\theta (n)^2$$
 
