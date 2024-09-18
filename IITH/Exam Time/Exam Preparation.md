@@ -57,7 +57,3 @@
 - [ ] strassen algo
 - [ ] Hash table 
 - [ ] Check further 
-
-$$
-k(x, z) = e^{\frac{−∥x−z∥^{2}_{2}}{σ^{2}}}
-$$
