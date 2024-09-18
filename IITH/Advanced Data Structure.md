@@ -873,3 +873,75 @@ Divide and Conquer is an algorithmic strategy that involves breaking a problem i
 - **Merge Sort**: \( O(n \log n) \)
 - **Quick Sort**: \( O(n \log n) \) on average, \( O(n^2) \) in the worst case.
 
+# ADS - 16
+
+## Finding Closest Pair of Points
+
+### Overview
+In a 2D plane with multiple points, the goal is to find the pair of points with the closest distance between them using the Divide and Conquer approach.
+
+### Steps
+
+1. **Divide**:
+   - Divide the set of points into two halves: left and right.
+
+2. **Conquer**:
+   - Find the closest pair of points in the left half, \( d1 \).
+   - Find the closest pair of points in the right half, \( d2 \).
+
+3. **Combine**:
+   - Determine the minimum distance between \( d1 \) and \( d2 \). Let’s denote this minimum distance as \( d \), where \( d = \min(d1, d2) \).
+
+4. **Check Points Near the Center**:
+   - Consider points within a vertical strip centered around the dividing line with width \( 2d \). Check if there are any pairs of points within this strip that are closer than \( d \).
+
+5. **Pythagorean Check**:
+   - The Pythagorean theorem helps in understanding the geometric constraints, **Distance Bound**: If you have a point p in the vertical strip and want to check distances to points in the same strip, the maximum distance to check (considering both x and y distances) would be bounded by $$\sqrt{ 2d^2 }$$​. This is why the theorem is referenced: it gives insight into how far apart points can be in a certain geometric configuration.
+
+### Time Complexity
+- The Divide and Conquer approach typically has a time complexity of \( O(n \log n) \) due to the efficient merging of results from divided sections.
+
+## Matrix Multiplication
+
+### Standard Matrix Multiplication
+
+- For matrices \( A \) and \( B \) of size \( n \times n \):$$ [
+  C = A \times B
+  ]$$
+  The time complexity of the standard matrix multiplication is $$( \Theta(n^3) )$$
+### Recurrence Relation
+
+- When dividing the matrices into smaller submatrices, the recurrence relation for matrix multiplication is:
+$$  [
+  T(n) = 8T(n/2) + C
+  ]$$
+  where \( C \) is the cost of combining the results.
+
+### Strassen's Algorithm
+
+- Strassen's Algorithm improves the time complexity of matrix multiplication to $$( \Theta(n^{2.81}) )$$
+
+#### Key Points
+
+1. **Algorithm Overview**:
+   - Strassen’s algorithm reduces the number of multiplications required by decomposing the matrix multiplication problem into smaller subproblems.
+
+2. **Formulas**:
+   - Strassen’s algorithm uses 7 multiplications and 10 addition/subtraction operations to compute the product of two matrices.
+
+3. **Recurrence Relation**:
+   - The recurrence relation for Strassen’s Algorithm is:    $$ [
+     T(n) = 7T(n/2) + \Theta(n^2)
+     ]$$
+   - Here, \( \Theta(n^2) \) accounts for the addition and subtraction operations required.
+
+### Computational Complexity
+
+- **Matrix Multiplication**: The standard approach has \( \Theta(n^3) \) time complexity.
+- **Strassen's Algorithm**: Reduces the time complexity to \( \Theta(n^{2.8}) \), making it more efficient for large matrices.
+
+### Operations
+
+- **Multiplication**: More computationally intensive and time-consuming.
+- **Addition/Subtraction**: Less time-heavy compared to multiplication and requires simpler operations.
+
