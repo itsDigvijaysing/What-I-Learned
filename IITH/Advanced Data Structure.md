@@ -590,3 +590,122 @@ Here’s a simple diagram to visualize this:
 ```
 
 - **Height = 3**, which matches the formula **O(log₂N)**.
+
+# ADS-11: Red-Black Trees
+
+## Overview
+
+A Red-Black Tree (RB Tree) is a type of self-balancing binary search tree with specific properties that ensure the tree remains approximately balanced, making operations efficient.
+
+## Key Properties
+
+### Height of Red-Black Tree
+
+- **Claim**: The height of an RB Tree is \( O(\log N) \), where \( N \) is the number of nodes. This property ensures that operations like insertion, deletion, and search are efficient due to the logarithmic height.
+
+### Black Height
+
+- **Definition**: The black height of a node \( x \) is the number of black nodes along the path from \( x \) to the leaves, excluding \( x \) itself. It helps in maintaining the balance of the tree.
+  
+- **Subclaim**: The number of nodes in the subtree of node \( x \) is at least \( 2^{\text{bh}(x)} - 1 \), where \( \text{bh}(x) \) is the black height of node \( x \). This provides a lower bound on the number of nodes based on the black height.
+
+### Inductive Step
+
+- **Height Calculation**:
+  - For a Red-Black Tree of height \( h \), the number of nodes is \( \geq 2^{h/2} - 1 \). This is derived from the property that the minimum black height ensures a certain number of nodes.
+  - Therefore, \( h = O(\log n) \), and \( \log n \geq 2^{h/2} - 1 \). This confirms that the tree height grows logarithmically with the number of nodes.
+
+### Rotations
+
+- **Left Rotation**:
+  - **Purpose**: To maintain balance in the tree by rotating a node to the left.
+  - **Procedure**: 
+    1. Make the right child of the node the new root.
+    2. The left child of the new root becomes the right child of the original root.
+    3. Update the original root’s right child to be the new root.
+
+- **Right Rotation**:
+  - **Purpose**: To maintain balance by rotating a node to the right.
+  - **Procedure**: 
+    1. Make the left child of the node the new root.
+    2. The right child of the new root becomes the left child of the original root.
+    3. Update the original root’s left child to be the new root.
+
+### Red-Black Tree Code Overview
+
+- **Note**: The code provides hints on operations but is not complete. Important operations include rotations and color adjustments to maintain tree properties.
+
+# ADS - 12: Proof of Correctness in Red-Black Trees
+
+## Invariants
+
+1. **Red Node Property**:
+   - **Invariant**: If a node \( z \) is red, then its parent \( z.p \) must be black. This rule ensures that no two red nodes can be adjacent, which helps in maintaining tree balance.
+
+2. **Violation Cases**:
+   - **Root Red**: The root of the tree should not be red. If \( z \) is the root and is red, it violates the Red-Black Tree property.
+   - **Consecutive Red Nodes**: Both \( z \) and its parent \( z.p \) should not be red. This prevents the violation of the Red-Black Tree rules that would otherwise lead to imbalanced trees.
+
+## Proof of Correctness
+
+- **Proof**: The correctness of the Red-Black Tree relies on these invariants. Ensuring that these properties hold true during operations like insertion and deletion guarantees that the tree remains balanced and maintains its logarithmic height.
+# ADS - 13
+
+## Transplant Operation
+
+- **Definition**: The `Transplant` operation replaces a node \( z \) with its child \( y \). This is crucial for maintaining the binary search tree property after a node is deleted.
+  
+- **Code Example**:
+  ```python
+  def transplant(root, u, v):
+      if u.p is None:
+          root = v
+      elif u == u.p.left:
+          u.p.left = v
+      else:
+          u.p.right = v
+      v.p = u.p
+      return root
+```
+
+## Deletion Cases
+
+1. **Node with Two Children**:
+    - **Procedure**: Replace node z with its right-side lowest value child.
+    - **Reason**: The right-side lowest value child ensures the binary search tree property is preserved.
+2. **No Left Child**:
+    - **Procedure**: Replace z with its right child.
+3. **No Right Child**:
+    - **Procedure**: Replace z with its left child.
+
+## Fixing Up
+- **Red Leaf Deletion**: 
+	- (y(child)=Red)
+    - Directly maintains the Red-Black Tree properties without additional fixes.
+- **Black Node Deletion**: 
+	- (y(child)=Black & z(deletion node)=Black/Red)
+    - If z is black and y is black, or z is red and y is black, adjustments are needed to maintain tree properties. This involves fixing the double black issues by rebalancing and recoloring nodes.
+
+
+# ADS -14
+
+```markdown
+# ADS-14: Red-Black Tree Deletion Code
+
+## Code Execution
+
+- **Purpose**: Demonstrates how deletion operations are executed in Red-Black Trees, including color changes and tree restructuring.
+
+## RB Color Changing Cases
+
+- **Example of Double Black Nodes**:
+  - **Scenario**: Construct an example where a node has double black issues after deletion.
+  - **Code Example**:
+    ```python
+    def double_black_example():
+        # Code to create a tree and perform deletion resulting in double black issues
+        pass
+    ```
+
+- **Color Changes**: Handling of color changes during deletion to maintain Red-Black Tree properties.
+
