@@ -300,4 +300,83 @@ For a linear equation \(2x_1 + 3x_2 = 6\), the direction vector could be represe
 # LO -14
 
 - No Assignment Given
-- 
+
+## Simplex Algorithm Notes
+
+### 1. Matrix Definitions
+- **A (m * n):** Coefficient matrix of the constraints (m rows, n columns).
+- **B (m):** Vector representing basic variables in the optimization problem.
+- **C (n):** Vector representing the coefficients of the objective function.
+
+### 2. Key Properties
+- **Rank(A) = n:** A should have full rank, meaning the number of independent constraints equals the number of variables.
+- **Non-Degenerate:** A solution where basic variables are strictly positive.
+- **Bounded:** The feasible region has a finite solution.
+- **Feasible Point:** A point that satisfies all constraints.
+
+### 3. Tight and Uptight Rows
+- **Tight Rows (A1):** Constraints that are active at the current solution, represented by \( R_1, R_2, ..., R_n \).
+- **Uptight Rows (A2):** Non-binding constraints, represented by \( R_{n+1}, ..., R_m \).
+
+### 4. Vectors and Conditions
+- **w:** Derived from \( C^T \), related to the objective function.
+- **u:** Related to constraints.
+- **Condition:** \( C^T w > C^T u \) (w represents a better solution than u).
+
+### 5. Vector Z
+- **Z = w - u:** Shows the direction of improvement.
+- **Z = B1C1 + B2C2 + ... + BnCn**
+
+### 6. Optimality Condition
+- **\( C^T Z > 0 \):** If true, the solution can be improved.
+$$( C^T[B_1 Col_1 + B_2 Col_2 + ... + B_n Col_n] > 0 )$$
+   Shows that improvement in the solution is possible.
+
+# LO - 15
+
+## Simplex Algorithm Steps
+
+### Problem Setup
+- **A (m * n):** Coefficient matrix for constraints.
+- **B (m):** Constraint vector.
+- **C (n):** Coefficients of the objective function.
+- **Objective:** Maximize \( C^T x \) subject to \( Ax \leq b \).
+
+### Key Points
+1. **Rank(A) = n:** Matrix \( A \) must have full rank.
+2. **Polytopal Non-Degenerate:** No degenerate solutions in the feasible region.
+3. **Initial Feasible Solution (U):** Start with an initial feasible solution.
+
+---
+
+### Steps to Solve:
+
+#### Step 1: Initialization
+- Start with an **initial feasible point** \( U \) (a point that satisfies the constraints).
+- **Check if \( U \) is a vertex**:
+  - If **yes**, proceed to Step 4.
+  - If **no**, continue to Step 2.
+
+#### Step 2: Define Active and Inactive Constraints
+- **Active Constraints (A1):** Constraints that are tight (equality holds).
+- **Inactive Constraints (A2):** Constraints that are not tight (inequality holds).
+  - Let \( A_1 \) represent "Lisht" (active constraints).
+  - Let \( A_2 \) represent "Unlisht" (inactive constraints).
+
+#### Step 3: Move Towards a Vertex
+- **Null Space of A1:** Compute the direction of movement using the null space of \( A_1 \) (the matrix of active constraints).
+  - Find a direction vector \( w \in \text{Null}(A_1) \) such that:
+    - \( C^T w > 0 \) (improves the objective).
+  - **Move along \( w \)** towards a feasible point on the boundary (a vertex).
+  - Update \( U \) by moving in this direction until you reach a vertex.
+
+#### Step 4: Check Optimality
+- At the vertex, **check if the objective function can be improved**:
+  - Compute \( C^T Z \) where \( Z \) is the difference between the current and potential solution direction.
+  - If \( C^T Z > 0 \), then the solution can be improved:
+    - **Continue improving** by repeating Steps 2 and 3.
+  - If \( C^T Z \leq 0 \), **stop**: the current solution is optimal.
+
+#### Step 5: Termination
+- If no further improvement can be made, the current solution is the **optimal solution**.
+- Output the **optimal point \( x^* \)** and the **maximum value** of \( C^T x^* \).
