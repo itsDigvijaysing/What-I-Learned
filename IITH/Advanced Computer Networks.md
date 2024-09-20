@@ -972,5 +972,53 @@ Tutorial with multiple scenarios for Data transfer & retrieval from server.
 - **Sending Emails**: 
   - To send an email, a client connects using SMTP and issues a POST request to the server.
 
+# ACN - 17
+
+## 1. Overview of the Domain Name System (DNS)
+- **Definition**: The DNS is often referred to as the "address book of the internet," enabling hostname to IP address translation.
+- **Structure**: It is a distributed database implemented in a hierarchy of nameservers.
+
+### 2. Key Characteristics
+- **Application Layer Protocol**: Operates at the application layer, facilitating communication over the network edge.
+- **Hierarchical Structure**: Organized in a tree-like format, starting from the root zone.
+
+## 3. DNS Components
+- **Hostname to IP Address Translation**: Converts user-friendly domain names into machine-readable IP addresses.
+- **Mail Server and Web Server**: Both can share the same hostname but may serve different functions.
+
+### 4. DNS Hierarchy
+- **Root Zone**: The highest level in the DNS hierarchy.
+  - Example: For the domain `www.iith.ac.in.`, the last dot represents the root zone.
+- **Top-Level Domain (TLD)**: The next level down in the hierarchy.
+  - `.in` is a TLD for India.
+  - `.ac` indicates an academic domain.
+  
+### 5. DNS Query Process
+- To resolve an IP address from a hostname, the DNS query typically involves three round-trip times (RTTs):
+  1. Query the root server.
+  2. Query the TLD server.
+  3. Query the authoritative server.
+
+## 6. ICANN (Internet Corporation for Assigned Names and Numbers)
+- **Role**: Manages the root server and oversees domain name registration and allocation.
+- **Root Servers**: There are approximately 21 root servers globally.
+
+### 7. Types of Top-Level Domains (TLDs)
+- **Generic TLDs (gTLD)**: Examples include `.com`, `.edu`, and `.org`.
+- **Country Code TLDs (ccTLD)**: Specific to countries (e.g., `.in` for India).
+- **Special TLDs**: 
+  - `.gov` is reserved for U.S. government sites, while `.gov.in` is used for Indian government sites.
+
+## 8. DNS Security Concerns
+- **Risks**: Inaccurate DNS information can lead to phishing attacks and man-in-the-middle attacks.
+- **Importance of Security**: Protecting the integrity of DNS is crucial to prevent malicious redirects.
+
+## 9. Local DNS Server and Caching
+- **Local DNS Server**: Stores DNS information in cache, which speeds up query responses for frequently accessed domains.
+- **Authoritative DNS Server**: When a user visits a site, the local DNS may query the authoritative DNS server for accurate information.
+
+## 10. Additional Concepts
+- **DNS Name Resolution**: The process of converting domain names into IP addresses.
+- **Content Delivery Network (CDN)**: Uses multiple distributed servers to deliver content more efficiently and improve load distribution.
 
 
