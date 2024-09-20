@@ -787,3 +787,42 @@ int main() {
 - HTTP/2 is often used with TLS (Transport Layer Security) to ensure secure data transmission.
 - Enhances performance and security for web communications.
 
+# ACN - 13
+
+## 1. Maintaining User/Server State: Cookies
+
+### HTTP Statelessness
+- HTTP is a stateless protocol, meaning it does not retain user state or information across requests.
+
+### HTTP + Cookies = Stateful
+- Cookies enable stateful interactions, allowing the server to remember user information.
+
+### Uses of Cookies
+- **Authorization**: Verify user identity and grant access to secure areas.
+- **Recommendations**: Suggest products or content based on user behavior.
+- **Session Management**: Maintain user details during browsing sessions.
+- **Shopping Carts**: Track items added to the cart across sessions.
+
+## 2. Advertising Mechanisms
+
+### Real-Time Bidding
+- Advertisements on websites often use real-time bidding to display relevant ads.
+- Hundreds of tracking scripts (web bugs) access user data each time a website is visited.
+
+### User Tracking
+- **Cookies**: Used for tracking user browsing behavior.
+  - **First-Party Cookies**: Set by the website being visited.
+  - **Third-Party Cookies**: Set by external services (e.g., advertisers) and used for tracking across different sites.
+- **Trackers (Web Bugs)**: Small pieces of code that collect user activity data.
+
+## 3. Progressive Loading of Web Pages
+
+### Overview
+- **Progressive Loading**: Technique to enhance user experience by rendering content progressively.
+
+### HTTP
+- Supports progressive rendering, allowing parts of a webpage to load without waiting for the entire file.
+
+### JS/CSS
+- JavaScript and CSS files often require the entire file to be processed, which can delay rendering if large.
+
