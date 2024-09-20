@@ -682,3 +682,72 @@ int main() {
 
 # ACN - 11
 
+## 1. Persistent HTTP
+
+### Overview
+- **Persistent HTTP** is the modern version of HTTP that allows the same TCP connection to be reused for multiple requests and responses.
+- Earlier HTTP versions (like HTTP/1.0) closed the connection after each request, requiring a new TCP connection for every resource.
+
+### Benefits of Persistent HTTP:
+- **Reduced Connection Overhead**: Avoids the need to establish a new TCP connection for every file (HTML, images, etc.).
+- **Improved Latency**: Since a single connection is used, round-trip times (RTTs) for connection setup are reduced.
+
+### Example Problem:
+- A webpage requires **1 HTML file** and **10 image files** to load.
+- **No Pipelining (Sequential Requests)**:
+  - Each file is requested one by one over a persistent connection, leading to multiple RTTs (request, response cycle).
+- **With Pipelining**:
+  - Multiple requests are sent without waiting for responses, reducing the delay.
+
+## 2. Pipelining vs Non-pipelining (TCP Delays)
+
+### Non-pipelined Requests (No Pipelining):
+- Requests are made sequentially.
+- Each subsequent request waits for the previous request's response, leading to high latency, especially over slow or long-distance connections.
+
+### Pipelined Requests (With Pipelining):
+- All requests are sent at once (without waiting for previous responses).
+- TCP processes the responses in order.
+- **Benefits**: Reduced waiting time, faster resource loading, especially noticeable when many small resources (like images) are requested.
+
+## 3. Parallel TCP Sessions
+
+### Overview:
+- **Parallel TCP Sessions**: To further improve performance, multiple TCP connections (typically 6) are opened to download different resources concurrently.
+- Commonly used to fetch assets (images, CSS, JS) in parallel for faster webpage rendering.
+
+### Benefits:
+- Increased throughput, as the browser can request multiple resources at once, utilizing the bandwidth more effectively.
+
+## 4. HTTP/2
+
+### Overview:
+- **HTTP/2** is a major revision to HTTP designed to improve web performance, speed, and efficiency.
+- It addresses many of the inefficiencies found in HTTP/1.x.
+
+### Key Benefits:
+1. **Multiplexing**: Multiple requests and responses can be sent over a single TCP connection, and they do not need to wait for one another. This reduces head-of-line blocking.
+2. **Binary Framing**: HTTP/2 uses a binary protocol instead of textual. It splits the communication into **frames**, which improves performance and flexibility.
+3. **Header Compression**: HTTP/2 compresses headers, reducing redundant data transmission.
+4. **Server Push**: Allows servers to send resources to the client before the client explicitly requests them.
+
+### HTTP/2 Frames vs Packets:
+- **Frames**: HTTP/2 communication is divided into small frames, which can be interleaved and prioritized, allowing for more efficient data transmission.
+- **Packets**: In traditional HTTP/1.x, packets often carried the entire request or response, leading to inefficiencies.
+  
+### Benefits of Frames:
+- **Improved Packet Loss Recovery**: Since HTTP/2 divides data into frames, if a packet containing a frame is lost, only the missing frame needs to be retransmitted. This results in faster recovery and fewer delays compared to HTTP/1.x, where the loss of a packet could block the entire stream.
+
+## 5. Web Performance Enhancements
+
+### Improvements with HTTP/2:
+- **Faster Load Times**: Due to multiplexing, header compression, and server push, web pages load faster.
+- **Reduced Latency**: The elimination of head-of-line blocking and frame-based data transfer significantly improves latency, especially over high-latency networks.
+- **Better Bandwidth Utilization**: Parallel transfer of resources over a single connection maximizes bandwidth use.
+
+### Web Performance Summary:
+- **HTTP/1.x** struggled with high latency and inefficient resource requests.
+- **HTTP/2** solves many of these issues, leading to improved overall web performance, especially for modern, resource-heavy websites.
+
+# ACN - 12
+
