@@ -1009,7 +1009,7 @@ Where:
 - m_kj = Minimum number of scalar multiplications for matrices from k+1 to j.
 - pi * pk * pj is the cost of multiplying the two matrices.
 
-## Dynamic Programming Approach
+### Dynamic Programming Approach
 1. **Subproblem**: Define m[i, j] as the minimum number of scalar multiplications required to multiply matrices Ai to Aj.
 2. **Recurrence relation**:
 
@@ -1019,22 +1019,11 @@ $$m[i, j] = min(i <= k < j) { m[i, k] + m[k+1, j] + p(i-1) * pk * pj }$$
 4. **Optimal Parenthesization**: Store the optimal index k to split the matrix multiplication for the minimal cost.
 5. **Final Solution**: m[1, n] gives the minimum number of scalar multiplications for multiplying matrices from A1 to An.
 
-## Time Complexity
-- **Time Complexity**: Theta(n^3)
+### Time Complexity
+- **Time Complexity**: $$\Theta(n^3)$$
 - We calculate the minimum cost for multiplying matrices in all possible ways using dynamic programming tables.
 - For n matrices, there are n^2 subproblems, each requiring O(n) work, resulting in O(n^3) overall complexity.
 
-## Example
-For matrices with dimensions:
-- A1 = 10 x 30, 
-- A2 = 30 x 5,
-- A3 = 5 x 60.
-
-Find the optimal parenthesization order that minimizes scalar multiplications.
-
 ### Summary:
-1. Identify the matrix dimensions.
-2. Set up the cost matrix and find the minimal scalar multiplications using dynamic programming.
-3. Solve the subproblems using the recurrence relation.
-4. Use dynamic programming tables to store intermediate results for efficiency.
+Basically We first select which matrix to work on suppose we select matrix From i point to j point. Now we will check brute force way like we will have k value which will move from i point to j point every iteration. & at every iteration we will calculate scalar multiplication from i-> k point & k-> j point & at the end we will also take pi . pk . pj points dot product (This points are nothing but i->k &j->j matrices scalar multiplication we have to merge them at the end) & after doing all that we will get final value & like that after doing it for all combination. Lowest scalar multiplication will be the best approach means that it will take low time complexity & low processing power.
 
