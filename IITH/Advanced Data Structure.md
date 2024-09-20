@@ -982,4 +982,59 @@ $$  [
 
 - **Multiplication**: More computationally intensive and time-consuming. $$\theta (n)^3$$
 - **Addition/Subtraction**: Less time-heavy compared to multiplication and requires simpler operations.$$\theta (n)^2$$
+# ADS - 17
+
+## Matrix Chain Multiplication (Dynamic Programming)
+
+### Introduction
+- **Matrix multiplication** involves multiplying two matrices to get a product matrix.
+- Direct matrix multiplication has a cost measured by **scalar multiplications**.
+- The goal is not to compute the matrix product but to find the optimal way to group matrices for multiplication to **minimize scalar multiplications**.
+
+### Why Scalar Multiplication is Important?
+- **Scalar multiplication** refers to multiplying individual elements during matrix multiplication.
+- The number of scalar multiplications needed depends on how the matrices are grouped.
+- By reordering or regrouping, we can reduce the number of scalar multiplications significantly.
+
+### Problem: Matrix Chain Order
+- Given a sequence of matrices A1, A2, ..., An with dimensions p0 x p1, p1 x p2, ..., pn-1 x pn.
+- We need to find an order of matrix multiplication that minimizes the total scalar multiplication.
+
+#### Key Formula for Scalar Multiplication Cost:
+For matrices Ai (of dimension pi x pi+1) and Ak (of dimension pk x pk+1), the scalar multiplication cost for multiplying two matrices is:
+$$Cost = m_ik + m_kj + pi * pk * pj$$
+
+Where:
+- m_ik = Minimum number of scalar multiplications for matrices from i to k.
+- m_kj = Minimum number of scalar multiplications for matrices from k+1 to j.
+- pi * pk * pj is the cost of multiplying the two matrices.
+
+## Dynamic Programming Approach
+1. **Subproblem**: Define m[i, j] as the minimum number of scalar multiplications required to multiply matrices Ai to Aj.
+2. **Recurrence relation**:
+
+$$m[i, j] = min(i <= k < j) { m[i, k] + m[k+1, j] + p(i-1) * pk * pj }$$
+
+3. **Base Case**: When multiplying a single matrix, i.e., m[i, i] = 0, since no multiplication is needed.
+4. **Optimal Parenthesization**: Store the optimal index k to split the matrix multiplication for the minimal cost.
+5. **Final Solution**: m[1, n] gives the minimum number of scalar multiplications for multiplying matrices from A1 to An.
+
+## Time Complexity
+- **Time Complexity**: Theta(n^3)
+- We calculate the minimum cost for multiplying matrices in all possible ways using dynamic programming tables.
+- For n matrices, there are n^2 subproblems, each requiring O(n) work, resulting in O(n^3) overall complexity.
+
+## Example
+For matrices with dimensions:
+- A1 = 10 x 30, 
+- A2 = 30 x 5,
+- A3 = 5 x 60.
+
+Find the optimal parenthesization order that minimizes scalar multiplications.
+
+### Summary:
+1. Identify the matrix dimensions.
+2. Set up the cost matrix and find the minimal scalar multiplications using dynamic programming.
+3. Solve the subproblems using the recurrence relation.
+4. Use dynamic programming tables to store intermediate results for efficiency.
 
