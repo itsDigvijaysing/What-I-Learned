@@ -826,3 +826,44 @@ int main() {
 ### JS/CSS
 - JavaScript and CSS files often require the entire file to be processed, which can delay rendering if large.
 
+
+# ACN - 14 Tutorial Session
+
+Tutorial with multiple scenarios for Data transfer & retrieval from server.
+
+# ACN - 14
+
+## Privacy Concerns in Computer Networks
+
+### 1. Tracking Browsing Sessions with Cookies
+- **Cookies**: Small data files stored on the user's device that track browsing activities.
+- **Purpose**: Enable personalized experiences, user authentication, and session management.
+
+### 2. Disabling Trackers
+- Users can take steps to disable trackers:
+  - **Browser Settings**: Most browsers allow users to block or delete cookies.
+  - **Privacy Extensions**: Tools like ad blockers and privacy-focused extensions can prevent trackers from functioning.
+  - **Incognito/Private Mode**: Browsers offer private modes that limit cookie storage and tracking.
+
+### 3. Understanding Referrer Data
+- **Referrer**: The URL of the webpage that directed a user to the current page.
+- **Importance**: 
+  - Businesses analyze referrer data to understand traffic sources and optimize marketing strategies.
+  - Knowing which sources yield the most engagement helps in refining advertising efforts.
+
+### 4. Blocking Third-Party Cookies
+- **Third-Party Cookies**: Set by domains other than the one the user is currently visiting, primarily used for tracking across websites.
+- **Blocking Implications**:
+  - When users block third-party cookies, they prevent tracking by advertisers and data aggregators.
+  - **Important Note**: Blocking these cookies does not stop the data the website collects from the user. First-party data collection continues.
+
+### 5. Broader Privacy Concerns
+- **User Data Exploitation**: Collected data can be sold or shared without user consent, leading to privacy breaches.
+- **Targeted Advertising**: While personalized ads can improve user experience, they raise concerns about excessive surveillance and data profiling.
+- **Legal Frameworks**: Various laws (e.g., GDPR, CCPA) are being implemented to protect user privacy and regulate data collection practices.
+
+### 6. Best Practices for Users
+- **Regularly Clear Cookies**: Remove stored cookies periodically to minimize tracking.
+- **Use Privacy-Focused Browsers**: Browsers like Brave or Firefox focus on enhancing user privacy.
+- **Educate on Privacy Settings**: Understanding browser privacy settings and utilizing them can help protect personal information.
+
