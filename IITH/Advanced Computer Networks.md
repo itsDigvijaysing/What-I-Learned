@@ -867,3 +867,62 @@ Tutorial with multiple scenarios for Data transfer & retrieval from server.
 - **Use Privacy-Focused Browsers**: Browsers like Brave or Firefox focus on enhancing user privacy.
 - **Educate on Privacy Settings**: Understanding browser privacy settings and utilizing them can help protect personal information.
 
+# ACN - 15
+
+## Web Caches and Proxy Servers
+
+### 1. Overview
+- **Web Caches**: Temporary storage for web documents (e.g., HTML pages, images) that improves response time and reduces network traffic.
+- **DNS Caches**: It stored the DNS information so your don't need to visit Root DNS server for asking the Host IP address.
+- **Proxy Servers**: Intermediate servers that handle requests from clients and fetch resources from other servers, often using cached content to satisfy requests.
+
+### 2. Benefits
+- **Reduced Latency**: Satisfies client requests faster by serving cached content instead of fetching it from the origin server.
+- **Bandwidth Savings**: Decreases the amount of data transferred over the network by reusing cached data.
+- **Load Reduction**: Reduces the load on the original server by intercepting requests.
+
+### 3. Cache Control
+- **Cache-Control Header**: Used to specify directives for caching mechanisms in both requests and responses.
+  - **Examples**:
+    - `max-age=<seconds>`: Specifies the maximum amount of time a resource is considered fresh.
+    - `no-cache`: Forces caches to submit requests to the origin server for validation before releasing a cached copy.
+    - `public` vs. `private`: Determines whether a response is cacheable by shared caches (public) or only by a single user (private).
+
+### 4. Caching Example
+- When a client requests a resource, and there is an intermediate router with caching capabilities:
+  - **Scenario**: 
+    - Client requests a webpage (A).
+    - The router checks its cache. If the webpage is cached and still valid, it serves the cached version, reducing the time needed to connect to the actual server.
+    - If the webpage is not cached or expired, the router fetches it from the original server, caches it, and serves it to the client.
+  - **Time Difference**: 
+    - Direct request to the server: 300 ms
+    - Cached request through the router: 50 ms
+
+### 5. Types of Web Caches
+- **Private Cache**: 
+  - Used by a single user (e.g., browser cache). 
+  - Stores personal browsing data to speed up access to frequently visited sites.
+
+- **Shared Cache**: 
+  - Used by multiple users (e.g., proxy server cache).
+  - Reduces the amount of repeated data transmitted over the network for all users.
+
+- **Reverse Proxy Cache**: 
+  - Positioned between clients and one or more servers.
+  - Caches content from the server and serves it to clients, often used to improve performance and scalability.
+
+### 6. Proxy Types
+- **Transparent Proxy**: 
+  - Intercepts client requests without modifying them.
+  - Does not require any configuration on the client side.
+  - Example: A school network using a transparent proxy to filter internet access without user intervention.
+
+- **Forward Proxy**: 
+  - Acts on behalf of clients and forwards requests to the original server.
+  - Can be used for anonymity, caching, and filtering content.
+  - Example: A user accesses the web through a forward proxy to mask their IP address.
+
+### 7. History Capture
+- Proxy servers can log requests and responses, providing insights into user behavior and traffic patterns, which can help in optimizing cache strategies.
+
+
