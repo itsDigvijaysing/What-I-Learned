@@ -751,3 +751,39 @@ int main() {
 
 # ACN - 12
 
+## 1. HTTP 1.x Messages
+
+### Types of HTTP Messages
+- **Request**: Sent by the client to request resources.
+- **Response**: Sent by the server in reply to the request.
+
+### Common HTTP Methods
+- **GET**: Retrieves data from the server (e.g., a webpage).
+- **POST**: Sends data to the server (e.g., form submission).
+- **HEAD**: Similar to GET, but only retrieves headers (no body).
+- **PUT**: Updates or uploads a resource to the server.
+
+## 2. HTTP Response Codes
+- **200 OK**: The request succeeded.
+- **301 Moved Permanently**: The requested resource has been moved to a new URL.
+- **304 Not Modified**: Indicates the resource has not been modified since last requested.
+- **...**: Other response codes indicate various statuses (e.g., 404 Not Found, 500 Internal Server Error).
+
+## 3. HEX & ASCII Values
+- **HEX**: Represents binary data in a base-16 format. Commonly used in programming and networking for clarity.
+- **ASCII**: Character encoding standard representing text in computers.
+  - Example: The ASCII value of 'A' is 65 in decimal, 41 in hexadecimal.
+
+## 4. HTTP/2.0 Features
+
+### Server Push
+- The server can send multiple resources to the client after receiving an HTTP GET request.
+- **Considerations**: If objects are large, it can lead to increased delays and resource wastage.
+
+### Multiplexing
+- Allows multiple requests and responses to be sent simultaneously over a single connection, reducing latency.
+  
+### HTTP/2.0 with TLS
+- HTTP/2 is often used with TLS (Transport Layer Security) to ensure secure data transmission.
+- Enhances performance and security for web communications.
+
