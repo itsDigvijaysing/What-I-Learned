@@ -66,27 +66,27 @@ In practice, **LLMs often operate in a randomized mode** to provide varied and c
 Yes, each of these time complexity notations is defined mathematically with specific equations.
 > 	n_0 means that after certain value of n the equation will be always true, that value is point of n(input) which decides the time complexity of function (Graphs are also available.)
 
-### 1. **Big-O Notation \( O(g(n)) \)**:
-   - **Definition**: A function \( f(n) \) is \( O(g(n)) \) if there exist positive constants \( c \) and \( n_0 \) such that:
+### 1. **Big-O Notation ( O(g(n)) )**:
+   - **Definition**: A function ( f(n) ) is ( O(g(n)) ) if there exist positive constants ( c ) and ( n_0 ) such that:
    - 
  $$  [
    f(n) \leq c \cdot g(n) \quad \text{for all } n \geq n_0
    ]$$
-   - **Interpretation**: \( f(n) \) grows at most as fast as \( g(n) \) for sufficiently large \( n \).
+   - **Interpretation**: ( f(n) ) grows at most as fast as ( g(n) ) for sufficiently large ( n ).
 
-### 2. **Theta Notation \( \Theta(g(n)) \)**:
-   - **Definition**: A function \( f(n) \) is \( \Theta(g(n)) \) if there exist positive constants \( c_1 \), \( c_2 \), and \( n_0 \) such that:
+### 2. **Theta Notation ( \Theta(g(n)) )**:
+   - **Definition**: A function ( f(n) ) is ( \Theta(g(n)) ) if there exist positive constants ( c_1 ), ( c_2 ), and ( n_0 ) such that:
   $$ [
    c_1 \cdot g(n) \leq f(n) \leq c_2 \cdot g(n) \quad \text{for all } n \geq n_0
    ]$$
-   - **Interpretation**: \( f(n) \) grows exactly as fast as \( g(n) \) for sufficiently large \( n \).
+   - **Interpretation**: ( f(n) ) grows exactly as fast as ( g(n) ) for sufficiently large ( n ).
 
-### 3. **Omega Notation \( \Omega(g(n)) \)**:
-   - **Definition**: A function \( f(n) \) is \( \Omega(g(n)) \) if there exist positive constants \( c \) and \( n_0 \) such that:
+### 3. **Omega Notation ( \Omega(g(n)) )**:
+   - **Definition**: A function ( f(n) ) is ( \Omega(g(n)) ) if there exist positive constants ( c ) and ( n_0 ) such that:
    $$[
    f(n) \geq c \cdot g(n) \quad \text{for all } n \geq n_0
    ]$$
-   - **Interpretation**: \( f(n) \) grows at least as fast as \( g(n) \) for sufficiently large \( n \).
+   - **Interpretation**: ( f(n) ) grows at least as fast as ( g(n) ) for sufficiently large ( n ).
 
 ![Time Complexity Notation](../Archive/Attachment/ADS%20Time%20Complexity%20Notation.png)
 
@@ -97,7 +97,7 @@ Yes, each of these time complexity notations is defined mathematically with spec
 - **Omega $$( \Omega(g(n)) ): ( f(n) \geq c \cdot g(n) )$$
 ![My Notes on Time Complexity](../Archive/Attachment/Time%20Complexity%20Notes.png)
 
-These mathematical definitions formalize the relationships between \( f(n) \) and \( g(n) \) in terms of growth rates, where \( f(n) \) represents the actual time complexity of an algorithm and \( g(n) \) is the comparison function. Lower the value means lower the time Complexity of Equation.
+These mathematical definitions formalize the relationships between \( f(n) ) and \( g(n) ) in terms of growth rates, where \( f(n) ) represents the actual time complexity of an algorithm and \( g(n) ) is the comparison function. Lower the value means lower the time Complexity of Equation.
 > We are comparing the them & based on notation we know that after certain n value equation will be always true for future scenario.
 
 # ADS - 03
@@ -115,20 +115,20 @@ $$Algo A = \theta (n^2)$$$$Algo B = \theta(n)$$
 2. **AVL Tree**:
    - **Definition**: A self-balancing binary search tree where the difference in heights between the left and right sub trees (known as the balance factor) is at most 1 for every node.
    - **Operations**: 
-     - Insertion, deletion, and search operations take \(O(\log n)\) time because the tree maintains balance after each operation.
+     - Insertion, deletion, and search operations take \(O(\log n)) time because the tree maintains balance after each operation.
    - **Use**: AVL trees are used when you need efficient lookups, insertions, and deletions.
 
-3. **Expected Value \(E(X)\)**:
+3. **Expected Value \(E(X))**:
    - **Formula**: $$E(X) = \sum_{i=1}^{n} P(X_i) \times X_i$$
-   - **Explanation**: The expected value of a random variable \(X\) is the sum of each possible value of \(X\) weighted by its probability. For example, if a dice has faces 1 to 6, and each face has an equal probability, \(E(X)\) is the average of all possible outcomes.
+   - **Explanation**: The expected value of a random variable \(X) is the sum of each possible value of \(X) weighted by its probability. For example, if a dice has faces 1 to 6, and each face has an equal probability, \(E(X)) is the average of all possible outcomes.
 
 4. **Randomized Algorithm/Value**:
    - **Definition**: An algorithm that uses randomness as part of its logic, often to achieve better average-case performance or to simplify implementation.
    - **Example**: QuickSort's pivot selection can be randomized to avoid worst-case scenarios on sorted input.
 
 5. **Insertion Sort Average Time Complexity**:
-   - **Time Complexity**: \(O(n^2)\)
-   - **Explanation**: Insertion Sort compares each element with the previous elements and places it in the correct position. On average, it requires \(O(n^2)\) comparisons and swaps, where \(n\) is the number of elements in the list.
+   - **Time Complexity**: \(O(n^2))
+   - **Explanation**: Insertion Sort compares each element with the previous elements and places it in the correct position. On average, it requires \(O(n^2)) comparisons and swaps, where \(n) is the number of elements in the list.
 
 # ADS - 04
 
@@ -139,12 +139,12 @@ $$Algo A = \theta (n^2)$$$$Algo B = \theta(n)$$
 #### 1. **Big O and Small o Notation**
 
 - **Big O Notation**:
-  - **Definition**: Big O notation, \( O(f(n)) \), describes the upper bound of an algorithm's runtime. It provides the worst-case scenario, showing how the runtime grows as the input size \( n \) increases.
-  - **Example**: If an algorithm's time complexity is \( O(n^2) \), its runtime grows quadratically with the input size.
+  - **Definition**: Big O notation, \( O(f(n)) ), describes the upper bound of an algorithm's runtime. It provides the worst-case scenario, showing how the runtime grows as the input size \( n ) increases.
+  - **Example**: If an algorithm's time complexity is \( O(n^2) ), its runtime grows quadratically with the input size.
 
 - **Small o Notation**:
-  - **Definition**: Small o notation, \( o(f(n)) \), describes a stricter upper bound than Big O. It indicates that the algorithm's runtime grows slower than \( f(n) \) as the input size increases.
-  - **Example**: If \( T(n) = o(n^2) \), the runtime grows slower than \( n^2 \), but it doesn’t reach \( n^2 \) as \( n \) becomes large.
+  - **Definition**: Small o notation, \( o(f(n)) ), describes a stricter upper bound than Big O. It indicates that the algorithm's runtime grows slower than \( f(n) ) as the input size increases.
+  - **Example**: If \( T(n) = o(n^2) ), the runtime grows slower than \( n^2 ), but it doesn’t reach \( n^2 ) as \( n ) becomes large.
 
 ---
 
@@ -158,12 +158,12 @@ $$Algo A = \theta (n^2)$$$$Algo B = \theta(n)$$
   - The average case occurs when the elements are in a random order.
   - **Key Insight**: On average, half of the elements in the sorted portion of the array need to be compared and shifted for each insertion.
   - **Average Case Time Complexity**: 
-    \[
+    [
     T_{avg}(n) = O(n^2)
-    \]
+    ]
   - **Steps**:
-    1. For each element, the inner loop may have to shift, on average, \( n/2 \) elements.
-    2. Summing over all elements gives an average complexity of \( O(n^2) \).
+    1. For each element, the inner loop may have to shift, on average, \( n/2 ) elements.
+    2. Summing over all elements gives an average complexity of \( O(n^2) ).
 
 ---
 
@@ -174,12 +174,12 @@ $$Algo A = \theta (n^2)$$$$Algo B = \theta(n)$$
 
 - **Randomized Quick Sort**:
   - **Randomization**: Instead of always choosing a fixed pivot (e.g., the first or last element), Randomized Quick Sort picks a pivot at random from the current subarray.
-  - **Advantage**: Randomizing the pivot selection helps avoid the worst-case scenario (which is \( O(n^2) \) for a non-randomized Quick Sort when the array is already sorted or nearly sorted).
+  - **Advantage**: Randomizing the pivot selection helps avoid the worst-case scenario (which is \( O(n^2) ) for a non-randomized Quick Sort when the array is already sorted or nearly sorted).
   - **Expected Time Complexity**:
     $$[
     T_{avg}(n) = O(n \log n)
     ]$$
-  - **Reasoning**: The expected depth of the recursion tree is \( \log n \), and each level of the tree requires \( O(n) \) work for partitioning.
+  - **Reasoning**: The expected depth of the recursion tree is \( \log n ), and each level of the tree requires \( O(n) ) work for partitioning.
 
 ---
 
@@ -193,11 +193,11 @@ $$Algo A = \theta (n^2)$$$$Algo B = \theta(n)$$
   - **Example**: The probability of rolling a 4 on a 6-sided die is $( \frac{1}{6} ).$
 
 - **Permutation**:
-  - **Definition**: A permutation is an arrangement of all or part of a set of objects. The number of permutations of \( n \) distinct objects taken \( r \) at a time is given by:
+  - **Definition**: A permutation is an arrangement of all or part of a set of objects. The number of permutations of \( n ) distinct objects taken \( r ) at a time is given by:
     $$[
     P(n, r) = \frac{n!}{(n-r)!}
     ]$$
-  - **Example**: The number of ways to arrange 3 letters out of the set \{A, B, C, D\} is \( P(4, 3) = 24 \).
+  - **Example**: The number of ways to arrange 3 letters out of the set \{A, B, C, D\} is \( P(4, 3) = 24 ).
 
 ---
 
@@ -205,9 +205,9 @@ $$Algo A = \theta (n^2)$$$$Algo B = \theta(n)$$
 
 - **Definition**:
   - A Binary Search Tree is a binary tree where each node has at most two children.
-  - For any node \( N \):
-    - All elements in the left subtree of \( N \) are less than \( N \).
-    - All elements in the right subtree of \( N \) are greater than \( N \).
+  - For any node \( N ):
+    - All elements in the left subtree of \( N ) are less than \( N ).
+    - All elements in the right subtree of \( N ) are greater than \( N ).
 
 ![Binary Search Tree](../Archive/Attachment/Binary%20Search%20tree.png)
 - **Key Operations**:
@@ -219,8 +219,8 @@ $$Algo A = \theta (n^2)$$$$Algo B = \theta(n)$$
     3. Node to be deleted has two children (replace with the in-order successor or predecessor).
 
 - **Time Complexity**:
-  - **Best Case** (balanced tree): \( O(\log n) \)
-  - **Worst Case** (unbalanced tree, e.g., a linked list): \( O(n) \)
+  - **Best Case** (balanced tree): \( O(\log n) )
+  - **Worst Case** (unbalanced tree, e.g., a linked list): \( O(n) )
 
 # ADS - 05
 
@@ -288,17 +288,17 @@ Suppose we have graph (Node and edges), we want to find the minimum cuts (edges 
 ## Algorithm Correctness
 
 #### 1. **f(x) = g(x) Check:**
-   - **Goal:** Determine if two functions \( f(x) \) and \( g(x) \) are identical.
+   - **Goal:** Determine if two functions \( f(x) ) and \( g(x) ) are identical.
    - **Approach:** 
      - **Randomized Testing:** 
-       - Choose a random number \( r \) in the range \([0, 1000d]\).
-       - Evaluate the polynomial \( P(r) = f(r) - g(r) \).
-       - If \( P(r) = 0 \), declare \( f(x) = g(x) \) (identical).
-       - If \( P(r) \neq 0 \), declare \( f(x) \neq g(x) \) (not identical).
-     - **Correctness:** The correctness of this randomized approach depends on how likely it is that the functions are identical or not. If the algorithm says "identical," it is checking whether \( r \) is a root of \( P(x) \). The probability of falsely declaring functions identical is minimized by testing multiple roots.
+       - Choose a random number \( r ) in the range \([0, 1000d]).
+       - Evaluate the polynomial \( P(r) = f(r) - g(r) ).
+       - If \( P(r) = 0 ), declare \( f(x) = g(x) ) (identical).
+       - If \( P(r) \neq 0 ), declare \( f(x) \neq g(x) ) (not identical).
+     - **Correctness:** The correctness of this randomized approach depends on how likely it is that the functions are identical or not. If the algorithm says "identical," it is checking whether \( r ) is a root of \( P(x) ). The probability of falsely declaring functions identical is minimized by testing multiple roots.
 
 #### 2. **Polynomial Identity Testing (PIT):**
-- This is the process where the algorithm checks if \( f(x) = g(x) \) by evaluating at random points. PIT is used in algorithms to probabilistically determine if two polynomials are identical without explicitly expanding them.
+- This is the process where the algorithm checks if \( f(x) = g(x) ) by evaluating at random points. PIT is used in algorithms to probabilistically determine if two polynomials are identical without explicitly expanding them.
 
 #### 3. **Correctness of Algorithms:**
    - **Verifier for Algorithm Output:**
@@ -317,13 +317,13 @@ Suppose we have graph (Node and edges), we want to find the minimum cuts (edges 
 **Recursive Programs** are those that solve a problem by solving smaller instances of the same problem. In recursion, a function calls itself to solve these smaller instances, usually with a base case to terminate the recursion and avoid infinite loops.
 
 #### Key Components of Recursion:
-1. **Base Case**: The condition under which the recursion stops. It's crucial to prevent infinite recursion. For example, in calculating factorial, the base case is \( n = 0 \) or \( n = 1 \), where the function returns 1.
+1. **Base Case**: The condition under which the recursion stops. It's crucial to prevent infinite recursion. For example, in calculating factorial, the base case is \( n = 0 ) or \( n = 1 ), where the function returns 1.
 
 2. **Recursive Case**: The part of the function where it calls itself with a modified argument to reduce the problem size. 
 
 #### Example: Factorial Function
 
-function to calculate the factorial of a number \( n \):
+function to calculate the factorial of a number \( n ):
 
 ```python
 def factorial(n):
@@ -372,7 +372,7 @@ def factorial(n):
 #### 2. **Randomized Algorithms**
 - **Definition**: Algorithms that use randomization to make decisions or solve problems, and may produce different outputs on different runs with the same input.
 - **Characteristics**:
-  - **Probability of Correctness**: They have a certain probability of providing a correct answer. For instance, if the algorithm has a probability \( \alpha_1 \) of giving the correct answer and \( \alpha_2 \) of giving the wrong answer, \( \alpha_1 + \alpha_2 = 1 \).
+  - **Probability of Correctness**: They have a certain probability of providing a correct answer. For instance, if the algorithm has a probability \( \alpha_1 ) of giving the correct answer and \( \alpha_2 ) of giving the wrong answer, \( \alpha_1 + \alpha_2 = 1 ).
   - **Optimization**: By optimizing the randomized algorithm (e.g., using more samples or better random choices), it is often possible to increase the probability of obtaining a correct result and potentially achieve better performance than some deterministic algorithms.
   - **Efficiency**: In practice, randomized algorithms can be more efficient than deterministic ones, especially for complex problems where deterministic approaches are too slow or infeasible.
 
@@ -381,9 +381,9 @@ def factorial(n):
 - **Characteristics**:
   - **Quantum Superposition**: Quantum algorithms can process a superposition of states, allowing them to explore many possible solutions simultaneously.
   - **Interference**: Quantum algorithms use interference to amplify the probability of correct answers and cancel out incorrect ones.
-  - **Probability of Correctness**: Quantum algorithms can be designed to reduce or eliminate the probability of incorrect answers by strategically using quantum operations. For example, quantum algorithms can cancel out the probability of incorrect answers (\( \alpha_2 \)) and ensure that the output is correct with high probability (\( \alpha_1 \)).
+  - **Probability of Correctness**: Quantum algorithms can be designed to reduce or eliminate the probability of incorrect answers by strategically using quantum operations. For example, quantum algorithms can cancel out the probability of incorrect answers (\( \alpha_2 )) and ensure that the output is correct with high probability (\( \alpha_1 )).
   - **Example**: Shor's algorithm for factoring large numbers and Grover's algorithm for searching an unsorted database are examples where quantum algorithms offer significant speedups over classical algorithms.
-The discussion in your lecture about checking if a number is prime and the use of the square root of \( N \) in algorithms is quite relevant in number theory and algorithm design. Here's a structured note on this topic:
+The discussion in your lecture about checking if a number is prime and the use of the square root of \( N ) in algorithms is quite relevant in number theory and algorithm design. Here's a structured note on this topic:
 
 ---
 
@@ -393,17 +393,17 @@ The discussion in your lecture about checking if a number is prime and the use o
 
 **Definition**: A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself.
 
-**Goal**: To determine if a given number \( N \) is prime.
+**Goal**: To determine if a given number \( N ) is prime.
 
 #### **2. Basic Approach**
 
-- **Direct Method**: Check if \( N \) is divisible by any number from 2 up to \( N-1 \). If it is, \( N \) is not prime. This approach is inefficient for large numbers.
+- **Direct Method**: Check if \( N ) is divisible by any number from 2 up to \( N-1 ). If it is, \( N ) is not prime. This approach is inefficient for large numbers.
 
 #### **3. Optimized Approach Using Square Root**
 
-**Concept**: A more efficient method involves checking divisibility only up to \( $$\sqrt{N} $$\). The rationale is based on the following observation:
+**Concept**: A more efficient method involves checking divisibility only up to \( $$\sqrt{N} $$). The rationale is based on the following observation:
 
-- **Observation**: If \( N \) is divisible by some number \( d \), then \( N = d \times k \), where \( k \) is also a divisor. If both \( d \) and \( k \) were greater than \( \sqrt{N} \), their product \( d \times k \) would be greater than \( N \). Hence, at least one of these divisors must be less than or equal to \( \sqrt{N} \).
+- **Observation**: If \( N ) is divisible by some number \( d ), then \( N = d \times k ), where \( k ) is also a divisor. If both \( d ) and \( k ) were greater than \( \sqrt{N} ), their product \( d \times k ) would be greater than \( N ). Hence, at least one of these divisors must be less than or equal to \( \sqrt{N} ).
 
 **Pseudocode**:
 
@@ -426,11 +426,11 @@ def is_prime(N):
 ```
 
 **Algorithm**:
-1. **Handle Small Cases**: Check if \( N \) is less than 2. If so, it is not prime.
+1. **Handle Small Cases**: Check if \( N ) is less than 2. If so, it is not prime.
 2. **Check Divisibility**:
-   - For each integer \( i \) from 2 up to \( \sqrt{N} \):
-     - If \( N \) is divisible by \( i \), then \( N \) is not a prime.
-   - If no divisors are found in this range, \( N \) is a prime.
+   - For each integer \( i ) from 2 up to \( \sqrt{N} ):
+     - If \( N ) is divisible by \( i ), then \( N ) is not a prime.
+   - If no divisors are found in this range, \( N ) is a prime.
 
 # ADS - 09
 
@@ -601,19 +601,19 @@ A Red-Black Tree (RB Tree) is a type of self-balancing binary search tree with s
 
 ### Height of Red-Black Tree
 
-- **Claim**: The height of an RB Tree is \( O(\log N) \), where \( N \) is the number of nodes. This property ensures that operations like insertion, deletion, and search are efficient due to the logarithmic height.
+- **Claim**: The height of an RB Tree is \( O(\log N) ), where \( N ) is the number of nodes. This property ensures that operations like insertion, deletion, and search are efficient due to the logarithmic height.
 
 ### Black Height
 
-- **Definition**: The black height of a node \( x \) is the number of black nodes along the path from \( x \) to the leaves, excluding \( x \) itself. It helps in maintaining the balance of the tree.
+- **Definition**: The black height of a node \( x ) is the number of black nodes along the path from \( x ) to the leaves, excluding \( x ) itself. It helps in maintaining the balance of the tree.
   
-- **Subclaim**: The number of nodes in the subtree of node \( x \) is at least \( 2^{\text{bh}(x)} - 1 \), where \( \text{bh}(x) \) is the black height of node \( x \). This provides a lower bound on the number of nodes based on the black height.
+- **Subclaim**: The number of nodes in the subtree of node \( x ) is at least \( 2^{\text{bh}(x)} - 1 ), where \( \text{bh}(x) ) is the black height of node \( x ). This provides a lower bound on the number of nodes based on the black height.
 
 ### Inductive Step
 
 - **Height Calculation**:
-  - For a Red-Black Tree of height \( h \), the number of nodes is \( \geq 2^{h/2} - 1 \). This is derived from the property that the minimum black height ensures a certain number of nodes.
-  - Therefore, \( h = O(\log n) \), and \( \log n \geq 2^{h/2} - 1 \). This confirms that the tree height grows logarithmically with the number of nodes.
+  - For a Red-Black Tree of height \( h ), the number of nodes is \( \geq 2^{h/2} - 1 ). This is derived from the property that the minimum black height ensures a certain number of nodes.
+  - Therefore, \( h = O(\log n) ), and \( \log n \geq 2^{h/2} - 1 ). This confirms that the tree height grows logarithmically with the number of nodes.
 
 ### Rotations
 
@@ -640,11 +640,11 @@ A Red-Black Tree (RB Tree) is a type of self-balancing binary search tree with s
 ## Invariants
 
 1. **Red Node Property**:
-   - **Invariant**: If a node \( z \) is red, then its parent \( z.p \) must be black. This rule ensures that no two red nodes can be adjacent, which helps in maintaining tree balance.
+   - **Invariant**: If a node \( z ) is red, then its parent \( z.p ) must be black. This rule ensures that no two red nodes can be adjacent, which helps in maintaining tree balance.
 
 2. **Violation Cases**:
-   - **Root Red**: The root of the tree should not be red. If \( z \) is the root and is red, it violates the Red-Black Tree property.
-   - **Consecutive Red Nodes**: Both \( z \) and its parent \( z.p \) should not be red. This prevents the violation of the Red-Black Tree rules that would otherwise lead to imbalanced trees.
+   - **Root Red**: The root of the tree should not be red. If \( z ) is the root and is red, it violates the Red-Black Tree property.
+   - **Consecutive Red Nodes**: Both \( z ) and its parent \( z.p ) should not be red. This prevents the violation of the Red-Black Tree rules that would otherwise lead to imbalanced trees.
 
 ## Proof of Correctness
 
@@ -653,7 +653,7 @@ A Red-Black Tree (RB Tree) is a type of self-balancing binary search tree with s
 
 ## Transplant Operation
 
-- **Definition**: The `Transplant` operation replaces a node \( z \) with its child \( y \). This is crucial for maintaining the binary search tree property after a node is deleted.
+- **Definition**: The `Transplant` operation replaces a node \( z ) with its child \( y ). This is crucial for maintaining the binary search tree property after a node is deleted.
   
 - **Code Example**:
   ```python
@@ -698,18 +698,18 @@ Deletion in a Red-Black Tree involves removing a node while maintaining the Red-
 ### Deleting a Node with Two Children
 
 1. **Find the Successor**:
-   - If the node \( z \) to be deleted has two children, find the node \( y \) with the smallest value in the right subtree of \( z \). This node \( y \) will replace \( z \).
+   - If the node \( z ) to be deleted has two children, find the node \( y ) with the smallest value in the right subtree of \( z ). This node \( y ) will replace \( z ).
    
 2. **Transplant Operation**:
-   - Replace \( z \) with \( y \). Since \( y \) will have at most one child (it may have a right child but not a left child), you need to adjust the tree by transplanting \( y \) into \( z \)'s position.
+   - Replace \( z ) with \( y ). Since \( y ) will have at most one child (it may have a right child but not a left child), you need to adjust the tree by transplanting \( y ) into \( z )'s position.
 
 3. **Fix-Up**:
-   - After transplantation, if \( y \) was black, adjustments are needed to fix the Red-Black Tree properties. This may involve recoloring and performing rotations.
+   - After transplantation, if \( y ) was black, adjustments are needed to fix the Red-Black Tree properties. This may involve recoloring and performing rotations.
 
 ### Deleting a Node with Only One Child
 
 1. **Simple Replacement**:
-   - If the node \( z \) to be deleted has only one child, replace \( z \) with its child. Adjust the parent of \( z \) to point to \( z \)'s child.
+   - If the node \( z ) to be deleted has only one child, replace \( z ) with its child. Adjust the parent of \( z ) to point to \( z )'s child.
 
 ### Deleting a Node with No Children (Leaf Node)
 
@@ -721,13 +721,13 @@ Deletion in a Red-Black Tree involves removing a node while maintaining the Red-
 ### Double-Black Fix Algorithm
 
 1. **Case 1: Sibling is Red**:
-   - If the sibling \( s \) of the node being fixed is red, perform a rotation and recoloring to move the red sibling up and fix the double-black issue.
+   - If the sibling \( s ) of the node being fixed is red, perform a rotation and recoloring to move the red sibling up and fix the double-black issue.
 
 2. **Case 2: Sibling is Black and Sibling’s Children are Black**:
-   - If the sibling \( s \) is black and both of \( s \)'s children are black, move the double-black property up the tree and recolor \( s \) to red.
+   - If the sibling \( s ) is black and both of \( s )'s children are black, move the double-black property up the tree and recolor \( s ) to red.
 
 3. **Case 3: Sibling is Black and Sibling’s Children are Not Both Black**:
-   - Adjust the tree based on the color of \( s \)’s children. This often involves rotations and recoloring.
+   - Adjust the tree based on the color of \( s )’s children. This often involves rotations and recoloring.
 
 ### Code for Deletion and Fix-Up
 
@@ -824,8 +824,8 @@ Merge Sort is a stable, comparison-based sorting algorithm that follows the divi
    - Merge the sorted halves to create a single sorted array.
 
 ### Time Complexity
-- **Best, Average, and Worst Case**: \( O(n \log n) \)
-- **Space Complexity**: \( O(n) \) due to the auxiliary space used for merging.
+- **Best, Average, and Worst Case**: \( O(n \log n) )
+- **Space Complexity**: \( O(n) ) due to the auxiliary space used for merging.
 
 ## Hashing
 
@@ -845,8 +845,8 @@ Hashing is used to map data to a fixed-size value (hash value) to enable efficie
    - Ratio of the number of elements to the number of slots in the hash table. Higher load factors increase the chance of collisions.
 
 ### Time Complexity
-- **Average Case**: \( O(1) \) for search, insert, and delete operations.
-- **Worst Case**: \( O(n) \) in case of many collisions.
+- **Average Case**: \( O(1) ) for search, insert, and delete operations.
+- **Worst Case**: \( O(n) ) in case of many collisions.
 
 ## Divide and Conquer
 
@@ -870,8 +870,8 @@ Divide and Conquer is an algorithmic strategy that involves breaking a problem i
 - **Quick Sort**: Chooses a pivot, partitions the array into elements less than and greater than the pivot, and recursively sorts the partitions.
 
 ### Time Complexity
-- **Merge Sort**: \( O(n \log n) \)
-- **Quick Sort**: \( O(n \log n) \) on average, \( O(n^2) \) in the worst case.
+- **Merge Sort**: \( O(n \log n) )
+- **Quick Sort**: \( O(n \log n) ) on average, \( O(n^2) ) in the worst case.
 
 # ADS - 16
 
@@ -886,29 +886,66 @@ In a 2D plane with multiple points, the goal is to find the pair of points with 
    - Divide the set of points into two halves: left and right.
 
 2. **Conquer**:
-   - Find the closest pair of points in the left half, \( d1 \).
-   - Find the closest pair of points in the right half, \( d2 \).
+   - Find the closest pair of points in the left half, \( d1 ).
+   - Find the closest pair of points in the right half, \( d2 ).
 
 3. **Combine**:
-   - Determine the minimum distance between \( d1 \) and \( d2 \). Let’s denote this minimum distance as \( d \), where \( d = \min(d1, d2) \).
+   - Determine the minimum distance between \( d1 ) and \( d2 ). Let’s denote this minimum distance as \( d ), where \( d = \min(d1, d2) ).
 
 4. **Check Points Near the Center**:
-   - Consider points within a vertical strip centered around the dividing line with width \( 2d \). Check if there are any pairs of points within this strip that are closer than \( d \).
+   - Consider points within a vertical strip centered around the dividing line with width \( 2d ). Check if there are any pairs of points within this strip that are closer than \( d ).
 
 5. **Pythagorean Check**:
    - The Pythagorean theorem helps in understanding the geometric constraints, **Distance Bound**: If you have a point p in the vertical strip and want to check distances to points in the same strip, the maximum distance to check (considering both x and y distances) would be bounded by $$\sqrt{ 2d^2 }$$​. This is why the theorem is referenced: it gives insight into how far apart points can be in a certain geometric configuration.
 
 ### Time Complexity
-- The Divide and Conquer approach typically has a time complexity of \( O(n \log n) \) due to the efficient merging of results from divided sections.
+- The Divide and Conquer approach typically has a time complexity of \( O(n \log n) ) due to the efficient merging of results from divided sections.
 
 ## Matrix Multiplication
 
 ### Standard Matrix Multiplication
 
-- For matrices \( A \) and \( B \) of size \( n \times n \):$$ [
+- For matrices \( A ) and \( B ) of size \( n \times n ):$$ [
   C = A \times B
   ]$$
   The time complexity of the standard matrix multiplication is $$( \Theta(n^3) )$$
+
+## Matrix Multiplication for \(2 \times 2) Matrices
+
+Given two \(2 \times 2) matrices \(A) and \(B):
+
+$$[
+A = \begin{pmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{pmatrix}
+\quad \text{and} \quad
+B = \begin{pmatrix}
+b_{11} & b_{12} \\
+b_{21} & b_{22}
+\end{pmatrix}
+]$$
+
+The product \(C = A \times B) is calculated as follows:
+
+$$[
+C = \begin{pmatrix}
+c_{11} & c_{12} \\
+c_{21} & c_{22}
+\end{pmatrix}
+]$$
+
+where each element of \(C) is computed by:
+
+$$
+\begin{aligned}
+c_{11} &= a_{11}b_{11} + a_{12}b_{21} \\
+c_{12} &= a_{11}b_{12} + a_{12}b_{22} \\
+c_{21} &= a_{21}b_{11} + a_{22}b_{21} \\
+c_{22} &= a_{21}b_{12} + a_{22}b_{22}
+\end{aligned}
+$$
+
 ### Recurrence Relation
 
 - When dividing the matrices into smaller submatrices, the recurrence relation for matrix multiplication is:
@@ -916,7 +953,7 @@ $$  [
   T(n) = 8T(n/2) + C
   ]$$
   - **8T(n/2)**: This term accounts for the 8 recursive multiplications of n/2×n/2​ matrices.
-  - where \( C \) is the cost of combining the results.
+  - where ( C ) is the cost of combining the results.
 
 ### Strassen's Algorithm
 
@@ -934,12 +971,12 @@ $$  [
    - The recurrence relation for Strassen’s Algorithm is:    $$ [
      T(n) = 7T(n/2) + \Theta(n^2)
      ]$$
-   - Here, \( \Theta(n^2) \) accounts for the addition and subtraction operations required.
+   - Here, ( \Theta(n^2) ) accounts for the addition and subtraction operations required.
 
 ### Computational Complexity
 
-- **Matrix Multiplication**: The standard approach has \( \Theta(n^3) \) time complexity.
-- **Strassen's Algorithm**: Reduces the time complexity to \( \Theta(n^{2.8}) \), making it more efficient for large matrices.
+- **Matrix Multiplication**: The standard approach has ( \Theta(n^3) ) time complexity.
+- **Strassen's Algorithm**: Reduces the time complexity to ( \Theta(n^{2.8}) ), making it more efficient for large matrices.
 
 ### Operations
 
