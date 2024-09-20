@@ -925,4 +925,52 @@ Tutorial with multiple scenarios for Data transfer & retrieval from server.
 ### 7. History Capture
 - Proxy servers can log requests and responses, providing insights into user behavior and traffic patterns, which can help in optimizing cache strategies.
 
+# ACN - 16
+
+## 1. Digital Personal Data Protection Act-2023
+- **Overview**: The act focuses on protecting the personal data of individuals in India, establishing regulations for data processing and storage by organizations.
+
+## 2. Email Services
+- **Historical Context**: Email services were among the first applications used on the internet, predating the World Wide Web (WWW).
+
+### 3. Major Components of Email
+- **User Agent**: 
+  - Client-side software that allows users to send and receive emails (e.g., Outlook, Thunderbird).
+  
+- **Mail Transfer Agent (MTA)**: 
+  - Software that transfers email messages between servers, ensuring delivery from sender to recipient.
+  
+- **Simple Mail Transfer Protocol (SMTP)**: 
+  - Protocol used for sending emails from a client to a server and between servers.
+
+### 4. Email Sending Process
+1. **User X** wants to send an email to **User Y**.
+2. User X's email client sends the email to their **SMTP server**, which contains a mailbox and queue for outgoing messages.
+3. The SMTP server processes the email and forwards it to **User Y's mail server**.
+4. The email is then placed in **User Y's mailbox** for retrieval.
+
+### 5. SMTP vs. HTTP
+- **SMTP**: 
+  - Primarily used for the delivery and storage of email messages to the recipient's server.
+  - Supports **MIME** (Multipurpose Internet Mail Extension), allowing emails to include multimedia files (images, PDFs, etc.).
+
+- **HTTP**: 
+  - A web-based protocol that interfaces with email protocols like SMTP and IMAP (or POP3) to allow web applications to send and receive emails.
+
+### 6. IMAP and POP3
+- **Internet Message Access Protocol (IMAP)**: 
+  - Allows users to access and manage their email messages stored on a server.
+  - Features include retrieval, deletion, and organization of messages into folders.
+  
+- **Post Office Protocol (POP3)**: 
+  - An older protocol primarily used for retrieving emails from a server, often downloading them to a client and removing them from the server.
+
+### 7. HTTP Interactions
+- **Reading Emails**: 
+  - Web-based interfaces typically use HTTP to interact with the server to display email content.
+
+- **Sending Emails**: 
+  - To send an email, a client connects using SMTP and issues a POST request to the server.
+
+
 
