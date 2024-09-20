@@ -1022,3 +1022,63 @@ Tutorial with multiple scenarios for Data transfer & retrieval from server.
 - **Content Delivery Network (CDN)**: Uses multiple distributed servers to deliver content more efficiently and improve load distribution.
 
 
+# ACN - 18
+
+## 1. DNS Query Types
+- **Iterated Query**:
+  - The DNS server replies to the client with the best information it has. If the server doesn’t know the answer, it will direct the client to another DNS server (e.g., the root server or TLD server).
+
+- **Recursive Query**:
+  - The DNS server takes full responsibility for responding to the client’s query. If it doesn’t have the requested IP, it will query other DNS servers on behalf of the client.
+
+## 2. Caching DNS Information
+- **DNS Caching**:
+  - DNS information is cached at various levels, including local devices and servers, to speed up query resolution.
+  - The root nameserver information is often stored in our local device, reducing the need to repeatedly query the root server.
+
+## 3. DNS Records (Resource Records [RR])
+- **Format**: Each DNS resource record consists of a name, value, type, and time-to-live (TTL).
+  - **A** (Authoritative): Maps a hostname to an IP address.
+  - **NS** (Nameserver): Maps a domain name to an authoritative nameserver for that domain.
+  - **CNAME** (Canonical Name): Maps an alias (name) to a canonical (real) name. Often used for load balancing (e.g., `server.east` and `server.west` for different geographical servers).
+  - **MX** (Mail Exchange): Maps a domain name to the mail server responsible for handling SMTP emails.
+  - **SOA** (Start of Authority): Indicates the authoritative DNS server for a domain and provides administrative information.
+
+## 4. DNS Tools
+- **Dig Command**:
+  - A tool used to query DNS servers and retrieve DNS records. It can display details about root servers and DNS configurations.
+
+## 5. Border Gateway Protocol (BGP)
+- **BGP**:
+  - The protocol used to exchange routing information between different autonomous systems (AS) on the internet.
+
+## 6. Anycast Routing
+- **Anycast**:
+  - Multiple servers share the same IP address, and the network automatically routes requests to the nearest or best-performing server.
+  - Examples:
+    - **Cloudflare Query Resolver**: `1.1.1.1` / `1.0.0.1`
+    - **Google DNS Query Resolver**: `8.8.8.8` / `8.8.4.4`
+
+## 7. DNS Security
+### 7.1. Security Goals
+- **Confidentiality**: Protecting data from unauthorized access (MD5/SHA2 for hashing).
+- **Authenticity**: Verifying the source of the data.
+- **Integrity**: Ensuring the data hasn’t been tampered with.
+  - **Example**: Signing SOA records with `MD5` or `SHA2` to maintain integrity.
+
+### 7.2. Linux Files for DNS Configuration
+- **resolv.conf**: Contains the names of DNS servers that the system will query.
+- **hosts file**: Stores mappings of IP addresses to hostnames for local and external hosts.
+
+## 8. DNS Attack Types
+### 8.1. DDoS (Distributed Denial of Service) Attack
+- **Attack Method**: Flood the root DNS servers with traffic to overwhelm them.
+- **Defense**: Local DNS servers cache the data, meaning the attack is often mitigated because requests are redirected to cached data, which helps prevent the attack from being fully successful.
+
+### 8.2. Spoofing Attack
+- **Method**: Intercepting DNS queries and returning fake, malicious responses to redirect users to bogus websites.
+- **DNS Cache Poisoning**: An attacker can insert false DNS entries into a cache, causing future queries to resolve to incorrect IP addresses.
+  
+### 8.3. DNSSEC (DNS Security Extensions)
+- **Purpose**: Provides authenticity and integrity to DNS queries.
+- **How It Works**: DNSSEC uses digital signatures to verify the legitimacy of DNS responses. If a message is tampered with, DNSSEC will detect it, ensuring that users are not misled by fake responses.
