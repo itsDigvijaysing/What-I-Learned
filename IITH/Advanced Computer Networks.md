@@ -1036,7 +1036,7 @@ Tutorial with multiple scenarios for Data transfer & retrieval from server.
   - DNS information is cached at various levels, including local devices and servers, to speed up query resolution.
   - The root nameserver information is often stored in our local device, reducing the need to repeatedly query the root server.
 
-## 3. DNS Records (Resource Records [RR])
+## 3. DNS Records (Resource Records (RR))
 - **Format**: Each DNS resource record consists of a name, value, type, and time-to-live (TTL).
   - **A** (Authoritative): Maps a hostname to an IP address.
   - **NS** (Nameserver): Maps a domain name to an authoritative nameserver for that domain.
