@@ -566,3 +566,83 @@ $$  \[
 
 # FoML - 07
 
+## Neural Network Training
+- The goal of training a neural network is to minimize the error between the predicted output \( y_i \) and the true output \( t_i \).
+- **Error function**: 
+ $$ \[
+  E = \frac{1}{2} \sum (t_i - y_i)^2
+  \]$$
+  This represents the sum of squared errors between the target and predicted values.
+
+## Backpropagation and Gradient Descent
+- **Backpropagation**: A method used to compute the gradient of the loss function with respect to each weight by propagating the error backward through the network.
+  - The weights are updated by calculating the gradient error and adjusting them accordingly.
+  - The number of hidden layers in the network is determined empirically:
+    - Too few hidden layers: The network might not learn the complex relationships in the data.
+    - Too many hidden layers: The network risks overfitting the data.
+
+### Gradient Descent Optimization
+- **Goal**: Minimize the error (loss function) as fast as possible using gradient descent.
+- To update the weights in the direction that decreases error, we need to calculate the **derivative** of the loss function with respect to the weights.
+- The activation function in neural networks must meet certain criteria:
+  - **Continuous**, **differentiable**, **non-decreasing**, and **easy to compute**.
+
+### Variants of Gradient Descent:
+1. **Stochastic Gradient Descent (SGD)**: Updates weights after each data point (faster, noisier).
+2. **Batch Gradient Descent**: Updates weights after calculating the gradient on the entire dataset (slower but more stable).
+3. **Mini-Batch Gradient Descent**: A compromise between the two, where weights are updated after a small batch of data points.
+
+---
+
+## Activation Functions
+Activation functions introduce non-linearity to the network, which allows it to learn complex patterns.
+
+1. **Sigmoid**: Maps input to a value between 0 and 1.
+$$   \[
+   \sigma(x) = \frac{1}{1 + e^{-x}}
+   \]$$
+2. **Tanh**: Maps input to a value between -1 and 1.
+$$   \[
+   \tanh(x) = \frac{e^{x} - e^{-x}}{e^{x} + e^{-x}}
+   \]$$
+3. **ReLU (Rectified Linear Unit)**: Activation is 0 if the input is negative, otherwise it is the input.
+$$   \[
+   f(x) = \max(0, x)
+   \]$$
+4. **Leaky ReLU**: Similar to ReLU, but allows a small slope for negative inputs (helps avoid dead neurons).
+$$   \[
+   f(x) = \begin{cases} 
+   x & \text{if } x > 0 \\
+   \alpha x & \text{if } x \leq 0 
+   \end{cases}
+   \]$$
+
+---
+
+## Loss Functions
+The loss function measures the difference between the true output and the predicted output.
+
+1. **Euclidean Loss**: Also known as squared loss, used in regression problems.
+  $$ \[
+   L = \frac{1}{2} \sum (t_i - y_i)^2
+   \]$$
+2. **Softmax Loss**: Also called **multinomial logistic regression loss**, commonly used in classification tasks. 
+   - It transforms the output into a probability distribution and calculates the cross-entropy between the predicted probabilities and the true labels.
+
+---
+
+## Support Vector Machine (SVM)
+- **SVM** is derived from **statistical learning theory** and is a powerful model for both classification and regression tasks.
+- **History**: In the mid-1990s, SVMs outperformed neural networks in various benchmarks.
+- **Linear Classifier**: SVM constructs a hyperplane that separates data points of different classes. The objective is to maximize the margin between the classes.
+  - **Pros**: Effective for high-dimensional spaces, especially with clear margins.
+  - **Cons**: Can struggle with noisy data or overlapping classes.
+
+---
+
+## Summary of Key Points
+- **Backpropagation** is essential for training neural networks and involves updating the weights based on the error gradient.
+- **Gradient Descent** has different variants (SGD, Batch GD, Mini-Batch GD), each with trade-offs in terms of speed and accuracy.
+- **Activation functions** like Sigmoid, Tanh, ReLU, and Leaky ReLU play a critical role in introducing non-linearity.
+- **Loss functions** such as Euclidean Loss and Softmax Loss are used to quantify the error during training.
+- **SVMs** are powerful classifiers that, in certain cases, outperform neural networks, particularly when clear boundaries between classes exist.
