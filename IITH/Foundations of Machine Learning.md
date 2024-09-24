@@ -199,3 +199,93 @@ Links: [IIT Hyderabad](IIT%20Hyderabad.md),
 #### 7. **K-Fold Cross Validation**
 - **Concept**: A technique to assess model performance by dividing the dataset into \( k \) equal parts (folds). The model is trained on \( k-1 \) folds and tested on the remaining fold. This process is repeated \( k \) times, each time with a different fold as the testing set.
 - **Benefit**: Provides a more robust evaluation of model performance by reducing variance and bias in the error estimate.
+
+# FoML - 03
+
+## Cross-Validation
+### Leave-One-Out (LOO) / N-Fold Cross Validation
+- **N-Fold Cross Validation**:
+  - The dataset is divided into **N folds**.
+  - We train the model on **N-1 folds** and test on the remaining fold.
+  - This process is repeated **N times**, each time with a different fold as the test set.
+  - The final **cross-validation accuracy** is computed by averaging the accuracies from all test sets.
+
+### Resubstitution
+- **Resubstitution** refers to using the **same dataset** for both training and testing.
+- This can lead to **overestimation of model performance** because the model has already seen the data it's being tested on.
+
+## Evaluation Metrics
+### For Classification
+- The objective is to evaluate how well a model classifies instances into categories, such as positive or negative.
+
+### Accuracy
+- Formula:  
+  \[
+  \text{Accuracy} = \frac{TP + TN}{TP + FP + TN + FN}
+  \]
+  where:
+  - **TP**: True Positive
+  - **FP**: False Positive
+  - **TN**: True Negative
+  - **FN**: False Negative
+- **Accuracy = 1 - error**  
+  - Useful when class distribution is balanced.
+  - May not be useful in cases where there is a large **class skew** or **imbalanced datasets**.
+    - For example, in cases where 98% of data belongs to one class, accuracy might be misleading.
+
+### Precision
+- Formula:  
+  \[
+  \text{Precision} = \frac{TP}{TP + FP}
+  \]
+  - Measures the proportion of **true positives** out of the predicted positives.
+  - Useful when the cost of **false positives** is high.
+
+### Recall (True Positive Rate)
+- Formula:  
+  \[
+  \text{Recall} = \frac{TP}{TP + FN}
+  \]
+  - Measures the proportion of **true positives** out of the actual positives.
+  - Also known as **sensitivity** or **hit rate**.
+
+### False Negative Rate (Miss Rate)
+- Measures how often we incorrectly classify a positive instance as negative.
+  
+### False Positive Rate (Fall-out)
+- Measures how often we incorrectly classify a negative instance as positive.
+  
+### Multi-Class Problems
+- In real-world applications, the cost associated with different types of errors can vary.
+  - **Detection cost**:  
+    \[
+    \text{Cost} = C_{fp} \cdot FP + C_{fn} \cdot FN
+    \]
+    - Where:
+      - \(C_{fp}\): Cost of false positive
+      - \(C_{fn}\): Cost of false negative
+    - In some cases, **false negatives** are costlier than **false positives** (e.g., detecting a serious illness).
+
+## ROC Curve (Receiver Operating Characteristic)
+- The **ROC curve** is a graphical plot that illustrates the diagnostic ability of a binary classifier as its discrimination threshold is varied.
+- **X-axis**: False Positive Rate (Fall-out)  
+- **Y-axis**: True Positive Rate (Recall)
+- Many algorithms output a **confidence score** \( F(x) \), so we can adjust the **threshold** \( t \) to classify:
+  - If \( F(x) > t \), classify as **positive**.
+  - If \( F(x) \leq t \), classify as **negative**.
+
+- **Purpose of ROC**:
+  - Visualizes the trade-off between **sensitivity (recall)** and **specificity** for different thresholds.
+  - A **perfect classifier** would have an ROC curve that passes through the upper left corner (100% sensitivity, 0% false positives).
+
+## Distance Metrics
+### Lp Distance
+- A general distance metric family, where \( p \) represents the order.
+  - **Euclidean Distance** is a special case with \( p = 2 \).
+
+### Euclidean Distance (Mean Square Distance)
+- Formula:
+  \[
+  d(p,q) = \sqrt{\sum_{i=1}^n (p_i - q_i)^2}
+  \]
+- Measures the straight-line distance between two points in Euclidean space.
