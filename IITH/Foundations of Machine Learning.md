@@ -303,3 +303,83 @@ $$  [
   ]$$
 - Measures the straight-line distance between two points in Euclidean space.
 
+# FoML - 4
+
+## Empirical Error
+- **Empirical Error** refers to the error rate of a model when evaluated on a **training dataset**.
+- It is the average loss over the training examples and is often minimized to create models.
+- Formula (in case of classification):
+$$  [
+  \text{Empirical Error} = \frac{1}{n} \sum_{i=1}^{n} \mathbb{I} \left( f(x_i) \neq y_i \right)
+  ]$$
+  where:
+  - ( f(x_i) \) is the predicted output for the input \( x_i \)
+  - ( y_i \) is the actual label of the input
+  - ( \mathbb{I} ) is the indicator function, which is 1 if \( f(x_i) \neq y_i \) and 0 otherwise.
+
+## Empirical Risk Minimization (ERM)
+- **ERM** is a strategy to minimize the empirical error.
+- The goal is to find a model that minimizes the empirical risk (or error) on the training data.
+- While ERM helps to fit the training data well, it does not always generalize to unseen data. Overfitting can occur if the model becomes too complex.
+
+## K-Nearest Neighbors (KNN)
+- **KNN** is a **lazy learning algorithm**, meaning it doesn't learn an explicit model. Instead, it stores all training data and classifies new data points based on proximity to existing points.
+- For each new point, the algorithm finds the **K nearest neighbors** (based on a distance metric like Euclidean distance) and classifies the new point by majority voting.
+
+### Choosing the value of K
+- **Small K values**:
+  - Sensitive to **noise** and outliers.
+  - The decision boundary can be more **complex** and vary widely between points.
+- **Large K values**:
+  - The decision boundary is more **smooth**, but may include points from other classes, leading to **misclassification**.
+  - The model becomes less sensitive to noise but risks making incorrect generalizations.
+
+### Occam's Razor Principle
+- When multiple models produce similar performance, **choose the simplest model**.
+- This principle encourages avoiding overcomplicated models that may overfit the training data.
+
+## Inductive vs. Transductive Learning
+### Inductive Learning
+- In **inductive learning**, the model learns an **explicit target function** from the entire training set.
+- The trained model is then applied to any unseen test data to predict outcomes.
+- **Examples**: Decision trees, SVMs, etc.
+
+### Transductive Learning
+- In **transductive learning**, the model directly makes predictions for the **specific test data** provided during training.
+- It focuses on mapping the training data to the given test data rather than generalizing to all possible test data.
+- **Examples**: KNN, some semi-supervised learning methods.
+
+## Lazy Learner (KNN)
+- **KNN** is a **lazy learner** because it **doesn't construct an explicit model**.
+- Instead, it waits until it receives a query and then computes the prediction based on the training data.
+- Once the prediction is made, the algorithm returns to its idle state without any further updates or learning.
+
+## Bayes Optimal Error
+- The **Bayes Optimal Error** is the **lowest possible error** that can be achieved by any classifier for a particular problem, assuming the true underlying probability distribution is known.
+- It represents the **theoretical limit** of a classifier's performance.
+
+## Voronoi Diagrams (KNN)
+- **Voronoi Diagrams** can be used to represent regions around each data point in **KNN**.
+- Each region contains all points closest to a particular training point.
+- The diagram divides the space into cells, each containing all the locations closer to one training data point than to any other.
+
+## Normalization of Data
+- **Normalization** is important for distance-based methods like **KNN** because features may have different scales.
+- Without normalization, features with larger scales can dominate the distance calculation, leading to incorrect classifications.
+- **Methods**:
+  - **Min-Max Scaling**: Rescale features to a range [0,1].
+  - **Z-Score Normalization**: Rescale features to have a mean of 0 and a standard deviation of 1.
+
+## Decision Trees
+- **Decision Trees** are a **non-parametric** method used for classification and regression tasks.
+- It models decisions as a series of nodes that split data based on feature values.
+- **Divide and Conquer Strategy**: It recursively divides the dataset into smaller subsets based on specific features and constructs a tree-like structure for classification.
+- Advantages:
+  - Easy to interpret.
+  - Handles both categorical and continuous data.
+- Drawbacks:
+  - Can easily overfit if not pruned.
+  - Pruning helps to simplify the tree and prevent overfitting.
+
+# FoML - 5
+
