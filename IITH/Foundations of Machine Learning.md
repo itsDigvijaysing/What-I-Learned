@@ -383,3 +383,65 @@ $$  [
 
 # FoML - 5
 
+## Handling Categorical Variables
+- For **categorical variables**, assigning **numerical values** (like 1, 2, 3, etc.) can be misleading.
+  - The model might treat the numerical values as continuous and apply operations like **Euclidean distance**, which would lead to incorrect classifications.
+  
+### One-Hot Encoding
+- A common method to handle categorical variables is **one-hot encoding**.
+  - Each category is represented as a **binary vector**, where only one element is "1" and the rest are "0".
+  - This ensures the model **doesn't compare categories incorrectly** by treating them as numbers.
+
+## K-Nearest Neighbors (KNN) and Hyperparameters
+- In **KNN**, we define **hyperparameters**, such as the value of **K** (the number of neighbors).
+  - **Hyperparameters** are set manually before training and can be tuned using techniques like **cross-validation**.
+- Normal parameters (e.g., distances between points) are determined by the **algorithm** based on the model.
+
+## Decision Trees
+
+### Divide and Conquer Strategy
+- **Decision Trees** use a **divide and conquer** approach to recursively split the data into smaller subsets.
+- The **split** is based on feature values and the goal is to maximize the **purity** of the resulting subsets.
+
+### Decision Nodes
+- **Univariate Decision Nodes**: Splits the data based on a single feature.
+- **Multivariate Decision Nodes**: Splits the data based on a combination of features.
+
+### Leaves
+- The **leaf nodes** in a decision tree represent the final output of the tree:
+  - **Classification Trees**: The leaf node represents a class label.
+  - **Regression Trees**: The leaf node represents a continuous value.
+
+### Greedy Learning
+- **Decision Trees** use a **greedy learning** approach to find the **best split** at each node.
+  - At each step, the algorithm selects the split that results in the greatest **reduction in impurity**.
+
+## Measure of Impurity
+- **Entropy** is a common measure of impurity in decision trees.
+  - Formula:
+    $$\[
+    I_m = - \sum_{i} p_{mi} \log_2(p_{mi})
+    \]$$
+  - Where:
+    - \( p_{mi} \) is the proportion of instances belonging to class \( i \) at node \( m \).
+  - Node \( m \) is **pure** if \( p_{mi} = 0 \) or \( p_{mi} = 1 \), meaning all instances at the node belong to one class.
+
+### Information Gain
+- **Information Gain** measures the **reduction in impurity** after a split.
+  - The goal is to **maximize information gain** at each split.
+  - If the impurity after splitting is lower than before, the split is deemed useful.
+
+### Example of Impurity and Information Gain
+- **Entropy** is often used as the impurity measure in decision trees.
+- **Information gain** is the difference in impurity before and after the split.
+
+## Overfitting and Generalization in Decision Trees
+- **Overfitting** occurs when a model becomes too complex and captures noise in the training data, leading to poor performance on unseen data.
+- **Generalization** is the model's ability to perform well on unseen data.
+
+### Pruning
+- To avoid overfitting, we can apply **pruning** to decision trees:
+  - **Pre-Pruning** (Early Stopping):
+    - Stop growing the tree before it becomes overly complex, usually by limiting the depth of the tree or the minimum number of samples required to split a node.
+  - **Post-Pruning**:
+    - First, grow the complete tree, then **chop off** the last connected nodes (subtrees) to simplify the tree and improve generalization.
