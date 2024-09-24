@@ -909,8 +909,167 @@ To improve the generalization and avoid overfitting in **Neural Networks**, seve
 
 # FoML - 12
 
-Absent in today's lecture due to health issue,
-But Quiz happened this Day & I lost 2% free marks. (easiest Quiz)
-😢
+**Absent in today's lecture due to health issue,**
+**But Quiz happened this Day & I lost 2% free marks. (easiest Quiz)**
+**😢**
 
+## Ensemble Methods Overview
+- **Ensemble methods** are techniques that combine multiple learning models to improve overall performance.
+- The key idea is that combining several weak models (weak learners) can result in a strong model.
+- Ensemble methods generally reduce **variance** and **bias**, leading to better generalization on unseen data.
 
+## Training Set and Bootstrap Sampling
+- **Bootstrap Sampling** is a technique used to generate multiple training datasets by randomly sampling from the original dataset with replacement.
+- Each sample (called a **bootstrap sample**) is used to train a different model in the ensemble.
+  
+### Bootstrap Process:
+  1. From the training set of size \( N \), generate multiple bootstrap samples, each of size \( N \).
+  2. These samples are created by sampling with replacement, meaning some data points may appear more than once in a single bootstrap sample.
+  3. Models trained on each bootstrap sample may capture different aspects of the data, leading to better generalization when combined.
+
+## Bagging (Bootstrap Aggregating)
+- **Bagging** is an ensemble technique that combines multiple models trained on different bootstrap samples of the data.
+- Each model is trained independently, and the final prediction is obtained by averaging the predictions (for regression) or by majority voting (for classification).
+
+### Bagging Process:
+  1. Create multiple bootstrap samples from the training set.
+  2. Train a separate model (usually a decision tree) on each sample.
+  3. Combine the models' outputs by **averaging** (regression) or **majority vote** (classification).
+
+### Advantages of Bagging:
+- Reduces **variance** by averaging out the noise in different models.
+- Helps avoid **overfitting**, particularly in high-variance models like decision trees.
+
+## Boosting
+- **Boosting** is another ensemble technique that builds models sequentially, where each subsequent model tries to correct the errors made by the previous ones.
+- In boosting, models are trained in a sequence, and the misclassified data points are given higher weights so that the next model focuses more on those errors.
+
+### Boosting Process:
+  1. Initialize the first model with equal weights for all data points.
+  2. After each iteration, the weights of incorrectly classified points are increased so that the next model focuses more on those difficult cases.
+  3. Final predictions are made by combining the predictions of all models, usually by weighted majority voting or a weighted sum for regression.
+
+### Key Points in Boosting:
+- Boosting reduces **bias** by correcting errors made in previous models.
+- **Each model is dependent** on the previous one, unlike in bagging, where models are independent.
+
+## Adaboost (Adaptive Boosting)
+- **Adaboost** is one of the most popular boosting algorithms. It adjusts the weights of incorrectly classified points, forcing the next weak learner to focus more on them.
+  
+### Adaboost Algorithm:
+1. **Initialize weights** for all data points: Initially, all points are given equal weights.
+   $$
+   w_i = \frac{1}{N}, \text{where } N \text{ is the number of data points.}
+   $$
+2. **Train weak learner**: Train a weak model (e.g., a decision stump or shallow tree) on the weighted dataset.
+3. **Calculate error**: Calculate the error of the model and adjust the weights of misclassified points. The error \( \epsilon \) is calculated as:
+   $$
+   \epsilon = \frac{\sum w_i \cdot \mathbb{I}(y_i \neq h(x_i))}{\sum w_i}
+   $$
+   where \( h(x_i) \) is the predicted label and \( y_i \) is the actual label.
+4. **Update weights**: Increase the weights of misclassified points:
+   $$
+   w_i^{\text{new}} = w_i^{\text{old}} \cdot \exp(\alpha \cdot \mathbb{I}(y_i \neq h(x_i)))
+   $$
+   where \( \alpha \) is the weight given to the weak learner's contribution and is calculated as:
+   $$
+   \alpha = \frac{1}{2} \ln\left(\frac{1 - \epsilon}{\epsilon}\right)
+   $$
+5. **Repeat**: The process is repeated for several iterations, and each model focuses more on the misclassified points.
+6. **Final Prediction**: The final prediction is a weighted sum of all weak learners:
+   $$
+   H(x) = \text{sign}\left(\sum \alpha_i h_i(x)\right)
+   $$
+
+### Example of Adaboost:
+- Imagine a dataset where some points are hard to classify correctly.
+- The first weak learner may classify 70% correctly, but the 30% misclassified points will have their weights increased.
+- The next learner will focus more on these harder points, and the process continues until the majority of points are correctly classified.
+
+# FoML - 13
+
+## AdaBoost (Adaptive Boosting) - In Depth
+- **AdaBoost** is a boosting algorithm where each subsequent model in the ensemble focuses more on the mistakes made by the previous ones.
+- It combines weak learners (e.g., decision stumps) to form a strong classifier.
+  
+### Key Characteristics:
+1. **Weight Updates**:
+   - Initially, all data points are given equal weights.
+   - After each iteration, weights of misclassified points are increased, forcing the next weak learner to focus on these difficult examples.
+   - The updated weights influence how much the next weak learner focuses on each point.
+   
+2. **Error Calculation**:
+   - Each learner’s error \( \epsilon \) is calculated based on the weights of misclassified points:
+     $$
+     \epsilon = \frac{\sum w_i \cdot \mathbb{I}(y_i \neq h(x_i))}{\sum w_i}
+     $$
+     
+3. **Classifier Contribution**:
+   - A classifier's influence in the final prediction is determined by:
+     $$
+     \alpha = \frac{1}{2} \ln\left(\frac{1 - \epsilon}{\epsilon}\right)
+     $$
+   - The more accurate a learner, the higher its influence on the final prediction.
+   
+4. **Final Prediction**:
+   - The final model is a weighted combination of all weak learners:
+     $$
+     H(x) = \text{sign}\left(\sum \alpha_i h_i(x)\right)
+     $$
+
+## Gradient Boosting
+- **Gradient Boosting** is a more general boosting framework where models are added sequentially to minimize a **loss function** (e.g., mean squared error, log loss).
+- Each new model corrects the residuals (errors) of the previous model by learning the gradient of the loss function with respect to the prediction.
+
+### Gradient Boosting Process:
+1. **Initialize** the model with a constant prediction (e.g., the mean for regression).
+2. **Calculate Residuals**: At each iteration, calculate the residuals (errors) of the current model:
+   $$
+   r_i = y_i - \hat{y_i}
+   $$
+   where \( y_i \) is the true label and \( \hat{y_i} \) is the predicted label.
+   
+3. **Fit a New Model**: Train a new model to predict these residuals.
+4. **Update the Prediction**: Update the predictions by adding the new model’s output to the current prediction, weighted by a step size \( \eta \):
+   $$
+   \hat{y_i}^{\text{new}} = \hat{y_i}^{\text{old}} + \eta \cdot f(x_i)
+   $$
+   
+5. **Repeat** the process for a fixed number of iterations or until the residuals are minimized.
+
+### Key Points in Gradient Boosting:
+- **Step Size** \( \eta \): Controls the contribution of each new model.
+- **Regularization**: Gradient boosting can be regularized by controlling the number of models or the complexity of each model (e.g., decision tree depth).
+
+## XGBoost (Extreme Gradient Boosting)
+- **XGBoost** is an efficient and scalable implementation of gradient boosting that includes several optimizations for better performance.
+- It is widely used in machine learning competitions and applications due to its speed and accuracy.
+
+### Key Innovations in XGBoost:
+1. **Regularization**:
+   - XGBoost introduces both **L1** (Lasso) and **L2** (Ridge) regularization terms in the objective function to prevent overfitting:
+     $$
+     \text{Objective} = \sum \text{loss}(y_i, \hat{y_i}) + \lambda \|w\|^2 + \alpha \|w\|
+     $$
+     where \( \lambda \) controls L2 regularization and \( \alpha \) controls L1 regularization.
+
+2. **Second-Order Approximation**:
+   - Instead of just using the gradient (first-order derivative), XGBoost also uses the **Hessian** (second-order derivative) to make more precise updates.
+
+3. **Sparsity Awareness**:
+   - XGBoost is optimized to handle **sparse data** (e.g., missing values) efficiently, skipping unnecessary computations.
+
+4. **Parallelization**:
+   - The training process in XGBoost is parallelized, making it much faster than traditional gradient boosting implementations.
+
+5. **Tree Pruning**:
+   - XGBoost prunes trees by performing **depth-first search** to optimize leaf nodes, removing nodes that do not contribute significantly to the model’s performance.
+
+6. **Handling Imbalanced Data**:
+   - XGBoost includes parameters like `scale_pos_weight` to adjust for class imbalance.
+
+### XGBoost Process:
+1. **Initialize**: Start with a base model (often a constant value).
+2. **Compute Gradient and Hessian**: For each data point, compute the gradient and Hessian (second derivative) of the loss function with respect to the prediction.
+3. **Fit Trees**: Build decision trees that fit the residuals, using the gradients and Hessians to guide the splits.
+4. **Update Predictions**: Update the model’s predictions using the trees' output, similarly to standard gradient boosting, but with additional regularization and optimization.
