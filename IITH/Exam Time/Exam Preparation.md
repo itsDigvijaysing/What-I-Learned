@@ -22,13 +22,13 @@
 
 ## FoML
 - [x] Assignment 2
-- [ ] Basics Supervised & Unsupervised
-- [ ] Under fitting & Over fitting , Bias & Variance
+- [x] Basics Supervised & Unsupervised
+- [ ] Under fitting & Over fitting , Bias (High=Underfit) & Variance (High=Overfit)
+- [ ] Classifiers Methods (K-fold & Stratified Sampling,....)
 - [ ] Stratified Sampling, N-Fold / K-Fold Cross validation, Resubstitution
 - [ ] Accuracy of Algo, Error of Algo, Precision
-- [ ] Classifiers 
 - [ ] KNN
-- [ ] Decision Tree
+- [ ] Decision Tree (Entropy & Gini Index & Information Gain)
 - [ ] Naive Bayes 
 - [ ] Neural Network (..Perceptron)
 - [ ] Gradient Descent

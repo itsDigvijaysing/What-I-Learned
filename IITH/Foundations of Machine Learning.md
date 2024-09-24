@@ -322,7 +322,7 @@ $$  [
 - The goal is to find a model that minimizes the empirical risk (or error) on the training data.
 - While ERM helps to fit the training data well, it does not always generalize to unseen data. Overfitting can occur if the model becomes too complex.
 
-## K-Nearest Neighbors (KNN)
+## K-Nearest Neighbors (KNN) (Transductive)
 - **KNN** is a **lazy learning algorithm**, meaning it doesn't learn an explicit model. Instead, it stores all training data and classifies new data points based on proximity to existing points.
 - For each new point, the algorithm finds the **K nearest neighbors** (based on a distance metric like Euclidean distance) and classifies the new point by majority voting.
 
