@@ -909,7 +909,8 @@ To improve the generalization and avoid overfitting in **Neural Networks**, seve
 
 # FoML - 12
 
-Quiz Happened & I was absent 
-
+Absent in today's lecture due to health issue,
+But Quiz happened this Day & I lost 2% free marks. (easiest Quiz)
+😢
 
 
