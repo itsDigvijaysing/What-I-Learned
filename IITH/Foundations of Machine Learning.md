@@ -445,3 +445,80 @@ $$  [
     - Stop growing the tree before it becomes overly complex, usually by limiting the depth of the tree or the minimum number of samples required to split a node.
   - **Post-Pruning**:
     - First, grow the complete tree, then **chop off** the last connected nodes (subtrees) to simplify the tree and improve generalization.
+
+# FoML - 6
+
+## Bayes Theorem
+- **Bayes Theorem** provides a way to calculate the **posterior probability** of a hypothesis based on prior knowledge and evidence.
+- Formula:
+$$  \[
+  P(H|E) = \frac{P(E|H) \cdot P(H)}{P(E)}
+  \]$$
+  Where:
+  - \( P(H|E) \): Posterior probability of hypothesis \( H \) given the evidence \( E \).
+  - \( P(E|H) \): Likelihood of the evidence given the hypothesis.
+  - \( P(H) \): Prior probability of the hypothesis.
+  - \( P(E) \): Marginal probability of the evidence (normalization factor).
+
+## Naive Bayes Assumption
+- The **Naive Bayes Algorithm** assumes **independence** between the features (attributes) of the data.
+  - This assumption simplifies calculations but is often unrealistic in real-life scenarios where attributes can be dependent.
+- Despite this "naive" assumption, the algorithm works surprisingly well in many applications, as it reduces computational complexity.
+
+### Why Assume Independence?
+- Without the independence assumption, calculating probabilities considering all possible dependencies between features becomes computationally expensive.
+  - The **computational cost** of modeling dependencies grows exponentially with the number of features.
+  - By assuming independence, we can reduce this to a manageable level, allowing the algorithm to run efficiently on standard hardware (like normal CPUs).
+
+## Posterior, Prior, and Likelihood
+- **Posterior Probability**: The probability of a hypothesis (class) given observed evidence.
+- **Prior Probability**: The initial belief or probability of the hypothesis before observing the evidence.
+- **Likelihood**: The probability of the evidence given that the hypothesis is true.
+
+### Maximum Likelihood Hypothesis
+- If we assume that all hypotheses (or classes) are **equally probable** before observing any evidence (a **uniform prior**), the computation of the posterior simplifies.
+- The class with the highest likelihood becomes the **maximum likelihood hypothesis**, which is the class that Naive Bayes assigns to the new data.
+
+## Naive Bayes Algorithm Steps
+1. **Calculate Prior Probability** for each class.
+2. **Calculate Likelihood** of the evidence for each class (using the Naive assumption of feature independence).
+3. **Compute Posterior Probability** for each class using Bayes Theorem.
+4. **Classify** the instance by choosing the class with the highest posterior probability.
+
+## Pros of Naive Bayes Algorithm
+1. **Simple and Fast**:
+   - Due to the independence assumption, the algorithm has low computational complexity.
+   - It works well even with a large number of features.
+2. **Performs well in many real-world applications**:
+   - Surprisingly effective for problems like text classification and spam detection.
+3. **Handles both binary and multiclass classification**.
+4. **Requires less training data** compared to other algorithms like logistic regression or SVMs.
+
+## Cons of Naive Bayes Algorithm
+1. **Strong independence assumption**:
+   - Naive Bayes assumes that features are independent of each other, which is rarely true in real-world datasets.
+   - When the features are highly dependent, Naive Bayes may not perform well.
+2. **Zero frequency problem**:
+   - If a category (value) in a feature was not seen in the training data for a given class, it will lead to **zero probabilities**.
+   - This can be handled by techniques like **Laplace smoothing**.
+
+## Underflow Prevention
+- When calculating the probabilities for a large number of features, multiplying many small probabilities together can lead to **numerical underflow**.
+  - To prevent this, we often compute the **logarithms** of probabilities instead of directly multiplying them.
+  - The logarithmic form of Bayes Theorem is:
+ $$   \[
+    \log P(H|E) = \log P(H) + \sum_{i=1}^{n} \log P(E_i|H)
+    \]$$
+    where \( E_i \) is the \(i\)-th feature.
+
+## Overcoming the Independence Assumption
+- While the independence assumption is a limitation, several techniques can help improve Naive Bayes' performance when the features are dependent:
+  1. **Feature selection**: Remove or merge highly correlated features.
+  2. **Hierarchical Bayesian models**: Introduce dependencies between features, though this increases complexity.
+  3. **Bayesian networks**: A more complex model that explicitly represents dependencies between features.
+
+## Example Applications
+- **Text Classification** (spam detection, sentiment analysis).
+- **Document Categorization**.
+- **Medical Diagnosis** (e.g., predicting disease based on symptoms).
+
