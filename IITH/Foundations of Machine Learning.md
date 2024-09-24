@@ -205,7 +205,7 @@ Links: [IIT Hyderabad](IIT%20Hyderabad.md),
 ## Cross-Validation
 ### Leave-One-Out (LOO) / N-Fold Cross Validation
 - **N-Fold Cross Validation**:
-  - The dataset is divided into **N folds**.
+  - The dataset is divided into **N folds** N =  Data points of set.
   - We train the model on **N-1 folds** and test on the remaining fold.
   - This process is repeated **N times**, each time with a different fold as the test set.
   - The final **cross-validation accuracy** is computed by averaging the accuracies from all test sets.
@@ -218,11 +218,17 @@ Links: [IIT Hyderabad](IIT%20Hyderabad.md),
 ### For Classification
 - The objective is to evaluate how well a model classifies instances into categories, such as positive or negative.
 
+|                     | **Predicted Positive** | **Predicted Negative** |
+| ------------------- | ---------------------- | ---------------------- |
+| **Actual Positive** | True Positive (TP)     | False Negative (FN)    |
+| **Actual Negative** | False Positive (FP)    | True Negative (TN)     |
+
+
 ### Accuracy
 - Formula:  
-  \[
+$$  [
   \text{Accuracy} = \frac{TP + TN}{TP + FP + TN + FN}
-  \]
+  ]$$
   where:
   - **TP**: True Positive
   - **FP**: False Positive
@@ -235,32 +241,38 @@ Links: [IIT Hyderabad](IIT%20Hyderabad.md),
 
 ### Precision
 - Formula:  
-  \[
+$$  [
   \text{Precision} = \frac{TP}{TP + FP}
-  \]
+  ]$$
   - Measures the proportion of **true positives** out of the predicted positives.
   - Useful when the cost of **false positives** is high.
 
 ### Recall (True Positive Rate)
 - Formula:  
-  \[
+$$  [
   \text{Recall} = \frac{TP}{TP + FN}
-  \]
+  ]$$
   - Measures the proportion of **true positives** out of the actual positives.
   - Also known as **sensitivity** or **hit rate**.
 
 ### False Negative Rate (Miss Rate)
 - Measures how often we incorrectly classify a positive instance as negative.
+$$  [
+  \text{Miss Rate} = \frac{FN}{TP + FN}
+  ]$$
   
 ### False Positive Rate (Fall-out)
 - Measures how often we incorrectly classify a negative instance as positive.
+$$  [
+  \text{False Positive} = \frac{FP}{TN + FN}
+  ]$$
   
 ### Multi-Class Problems
 - In real-world applications, the cost associated with different types of errors can vary.
   - **Detection cost**:  
-    \[
+    $$[
     \text{Cost} = C_{fp} \cdot FP + C_{fn} \cdot FN
-    \]
+    ]$$
     - Where:
       - \(C_{fp}\): Cost of false positive
       - \(C_{fn}\): Cost of false negative
@@ -285,7 +297,7 @@ Links: [IIT Hyderabad](IIT%20Hyderabad.md),
 
 ### Euclidean Distance (Mean Square Distance)
 - Formula:
-  \[
+$$  [
   d(p,q) = \sqrt{\sum_{i=1}^n (p_i - q_i)^2}
-  \]
+  ]$$
 - Measures the straight-line distance between two points in Euclidean space.
