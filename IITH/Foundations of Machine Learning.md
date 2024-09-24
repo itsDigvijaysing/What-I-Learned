@@ -303,7 +303,7 @@ $$  [
   ]$$
 - Measures the straight-line distance between two points in Euclidean space.
 
-# FoML - 4
+# FoML - 04
 
 ## Empirical Error
 - **Empirical Error** refers to the error rate of a model when evaluated on a **training dataset**.
@@ -381,7 +381,7 @@ $$  [
   - Can easily overfit if not pruned.
   - Pruning helps to simplify the tree and prevent overfitting.
 
-# FoML - 5
+# FoML - 05
 
 ## Handling Categorical Variables
 - For **categorical variables**, assigning **numerical values** (like 1, 2, 3, etc.) can be misleading.
@@ -446,7 +446,7 @@ $$  [
   - **Post-Pruning**:
     - First, grow the complete tree, then **chop off** the last connected nodes (subtrees) to simplify the tree and improve generalization.
 
-# FoML - 6
+# FoML - 06
 
 ## Bayes Theorem
 - **Bayes Theorem** provides a way to calculate the **posterior probability** of a hypothesis based on prior knowledge and evidence.
@@ -523,7 +523,7 @@ $$  \[
 - **Medical Diagnosis** (e.g., predicting disease based on symptoms).
 
 
-# FoML - 06
+# FoML - 07
 
 ## Overview of AI, Machine Learning, and Deep Learning
 - **Computer Science (CS)**: A vast field that includes various subfields, one of which is **Artificial Intelligence (AI)**.
@@ -564,7 +564,7 @@ $$  \[
 ## Gradient Descent Variants
 - **Steepest Descent**: Sometimes referred to as the "steepest descent," this refers to the basic idea of moving in the direction of the negative gradient to minimize the loss function.
 
-# FoML - 07
+# FoML - 08
 
 ## Neural Network Training
 - The goal of training a neural network is to minimize the error between the predicted output \( y_i \) and the true output \( t_i \).
@@ -640,5 +640,184 @@ The loss function measures the difference between the true output and the predic
 
 # FoML - 09
 
+## Linear Classifier and Margin
+- **Support Vector Machine (SVM)** is a type of **linear classifier** that separates classes by finding the optimal hyperplane with the **maximum margin**.
+- **Margin**: The distance between the separating hyperplane and the nearest data points from each class (called **support vectors**).
+  - The goal of SVM is to maximize this margin to ensure good generalization.
 
+## Estimating Margin
+- The margin is calculated based on the distance between the hyperplane and the support vectors.
+  - For a given hyperplane \( w^T x + b = 0 \), the margin is estimated as:
+    \[
+    \text{Margin} = \frac{2}{\|w\|}
+    \]
+  - This ensures that the classifier is as far away as possible from both classes, reducing the risk of misclassification.
 
+## Lagrange Multipliers
+- **Lagrange Multipliers** are used to convert the constrained optimization problem (maximizing the margin) into an unconstrained problem.
+  - The original optimization problem involves constraints that all data points should be classified correctly.
+  - The **Lagrangian** is introduced to handle these constraints by incorporating **Lagrange multipliers**.
+  - The optimization problem becomes:
+    \[
+    L(w, b, \alpha) = \frac{1}{2} \|w\|^2 - \sum \alpha_i [y_i(w^T x_i + b) - 1]
+    \]
+  - Where \( \alpha_i \) are the Lagrange multipliers.
+
+## Convexity and Duality
+- **Convexity**: The optimization problem in SVM is **convex**, meaning that any local minimum is a global minimum. This ensures that the optimization problem can be solved efficiently.
+- **Duality**: SVM leverages **duality theory** to solve the problem in the **dual form**. Instead of solving the primal problem directly, we solve its dual, which often has fewer variables and constraints.
+  - The dual form of the optimization problem is:
+    \[
+    \max_{\alpha} \sum \alpha_i - \frac{1}{2} \sum \alpha_i \alpha_j y_i y_j (x_i^T x_j)
+    \]
+    Subject to: 
+    \[
+    \sum \alpha_i y_i = 0 \quad \text{and} \quad \alpha_i \geq 0
+    \]
+    - Solving this dual form gives the optimal values of \( \alpha \), from which we can compute \( w \) and \( b \).
+
+## SVM Standard Primal Form
+- The **primal form** of the SVM optimization problem is:
+  \[
+  \min_{w, b} \frac{1}{2} \|w\|^2
+  \]
+  Subject to:
+  \[
+  y_i(w^T x_i + b) \geq 1 \quad \forall i
+  \]
+  This ensures that each point is correctly classified with a margin of at least 1.
+
+## Hinge Loss
+- SVM uses a **hinge loss function** for classification tasks.
+  - The hinge loss is defined as:
+    \[
+    L(y_i, f(x_i)) = \max(0, 1 - y_i f(x_i))
+    \]
+    Where \( f(x_i) = w^T x_i + b \).
+  - If the point is correctly classified and far from the margin, the loss is 0. If it is within the margin or misclassified, the loss increases.
+
+## Regularization in SVM
+- To prevent overfitting, **regularization** is added to the SVM objective function. This balances the trade-off between maximizing the margin and minimizing classification error.
+  - The regularized primal form of SVM becomes:
+    \[
+    \min_{w, b} \frac{1}{2} \|w\|^2 + C \sum \xi_i
+    \]
+    Where \( \xi_i \) are slack variables representing the amount by which a data point is on the wrong side of the margin, and \( C \) is the regularization parameter controlling the trade-off.
+
+## SVM Dual with KKT (Karush-Kuhn-Tucker) Conditions
+- The **dual formulation** of SVM leads to the application of the **KKT conditions**, which are necessary conditions for a solution to be optimal.
+  - The KKT conditions ensure that:
+    1. **Primal feasibility**: \( y_i(w^T x_i + b) \geq 1 - \xi_i \)
+    2. **Dual feasibility**: \( \alpha_i \geq 0 \)
+    3. **Complementary slackness**: \( \alpha_i [y_i(w^T x_i + b) - 1 + \xi_i] = 0 \)
+  - These conditions help in solving the dual problem efficiently, ensuring that the support vectors are identified and the hyperplane is correctly placed.
+
+---
+
+## Summary of Key Concepts
+- **SVM** finds the optimal hyperplane that maximizes the margin between classes.
+- **Lagrange multipliers** and **duality** are used to transform the primal optimization problem into a more tractable dual form.
+- **Hinge loss** is employed in SVM to penalize points that are on the wrong side of the margin.
+- **Regularization** helps to balance margin maximization and error minimization, preventing overfitting.
+- The **KKT conditions** are crucial for ensuring optimality in the dual formulation of SVM.
+
+# FoML - 10
+
+## Solving SVM Duality with KKT Conditions
+
+### KKT Conditions and SVM Duality
+- The **Karush-Kuhn-Tucker (KKT) conditions** are necessary for a solution to be optimal in constrained optimization problems, such as in the dual formulation of **Support Vector Machines (SVM)**.
+- The dual problem transforms the primal optimization into a convex optimization problem that is easier to solve, especially when using **Lagrange multipliers**.
+
+#### KKT Conditions for SVM
+The KKT conditions for SVM can be summarized as:
+1. **Primal feasibility**: The data points should satisfy the margin constraints.
+   \[
+   y_i(w^T x_i + b) \geq 1 - \xi_i
+   \]
+   (For separable data: \( y_i(w^T x_i + b) \geq 1 \))
+   
+2. **Dual feasibility**: The Lagrange multipliers \( \alpha_i \) should be non-negative.
+   \[
+   \alpha_i \geq 0
+   \]
+   
+3. **Complementary slackness**: The product of the Lagrange multipliers and the margin violations must be zero.
+   \[
+   \alpha_i [y_i(w^T x_i + b) - 1 + \xi_i] = 0
+   \]
+
+4. **Stationarity**: The gradient of the Lagrangian with respect to \( w \) and \( b \) must vanish, ensuring optimality.
+   \[
+   \frac{\partial L(w, b, \alpha)}{\partial w} = 0, \quad \frac{\partial L(w, b, \alpha)}{\partial b} = 0
+   \]
+
+By satisfying these conditions, we can solve the dual problem and identify the support vectors that lie on the margin.
+
+---
+
+## Convex Optimization Problem in SVM
+
+- **Convex optimization** problems are easier to solve because they guarantee a **global minimum**.
+- The SVM optimization problem is convex, meaning the cost function (hinge loss with regularization) is convex.
+- The goal in SVM is to minimize the objective function while maintaining the constraints on margin and classification.
+
+#### Solving Convex Optimization with Duality
+- The **dual form** of the SVM optimization problem:
+  \[
+  \max_{\alpha} \sum \alpha_i - \frac{1}{2} \sum \alpha_i \alpha_j y_i y_j (x_i^T x_j)
+  \]
+  subject to:
+  \[
+  \sum \alpha_i y_i = 0 \quad \text{and} \quad \alpha_i \geq 0
+  \]
+  allows us to solve the convex problem efficiently using numerical methods, such as **Quadratic Programming (QP)**.
+
+---
+
+## Non-Separable Data and Soft Margin SVM
+
+### Non-Separable Data
+- In real-world data, classes are often **non-separable**, meaning there is no clear hyperplane that can perfectly separate them.
+- To handle non-separable data, **Soft Margin SVM** is used. This introduces a **slack variable** \( \xi_i \), allowing some points to be misclassified or lie within the margin.
+
+## Soft Margin SVM (C-SVM)
+- **Soft Margin SVM** allows for flexibility in the decision boundary by introducing slack variables \( \xi_i \) for each point that does not satisfy the margin constraint.
+- The objective function for Soft Margin SVM is:
+  \[
+  \min_{w, b} \frac{1}{2} \|w\|^2 + C \sum_{i} \xi_i
+  \]
+  where \( C \) is a regularization parameter that controls the trade-off between maximizing the margin and minimizing classification errors.
+
+### Role of Slack Variables
+- The slack variable \( \xi_i \) allows points to be inside the margin or misclassified, but at a cost. The **penalty** for violating the margin is controlled by \( C \).
+- **Larger \( C \)**: Penalizes misclassifications heavily, leading to a smaller margin.
+- **Smaller \( C \)**: Allows more misclassifications, leading to a wider margin and better generalization.
+
+---
+
+# SVM for Noisy Data: C-SVM and Soft Margin
+- **Noisy data** often contains mislabeled or outlier data points that do not follow the general pattern of the dataset.
+- **C-SVM (C-Support Vector Classification)** is a soft-margin SVM that handles noisy data by allowing some flexibility in the decision boundary.
+- **Soft margin** allows for better generalization in the presence of noise by not forcing the classifier to perfectly fit the data.
+
+---
+
+# Harder 2-Dimensional Data
+
+## Challenges in 2-Dimensional Data
+- In certain datasets, especially in **2-dimensional spaces**, the data may not be linearly separable, or the margin may be hard to estimate because of noise or outliers.
+- In such cases, SVM can still be effective by:
+  - **Soft margins** to allow for misclassification.
+  - **Kernel tricks** to map the data into a higher-dimensional space where it is separable.
+
+### Handling Harder Data with Kernel SVM
+- For data that is difficult to separate in 2 dimensions, we can use the **Kernel Trick** to project the data into a higher-dimensional space where a linear separation is possible.
+  - Common kernels include **polynomial kernels** and **Radial Basis Function (RBF)** kernels.
+
+---
+
+## Key Takeaways
+- **KKT conditions** ensure optimality in solving SVM duality problems.
+- **Soft Margin SVM (C-SVM)** allows for non-separable and noisy data by introducing slack variables and a regularization parameter.
+- In **harder 2-dimensional data**, SVM can handle complexity using soft margins and kernel tricks to improve separability.
