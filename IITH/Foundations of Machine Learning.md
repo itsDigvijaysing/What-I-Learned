@@ -727,7 +727,7 @@ The KKT conditions for SVM can be summarized as:
 $$   [
    y_i(w^T x_i + b) \geq 1 - \xi_i
    ]$$
-  $$ (\text{For separable data:} \( y_i(w^T x_i + b) \geq 1 \))$$
+  $$ (\text{For separable data:} ( y_i(w^T x_i + b) \geq 1 ))$$
    
 2. **Dual feasibility**: The Lagrange multipliers \( \alpha_i \) should be non-negative.
 $$   [
@@ -798,3 +798,118 @@ $$  [
 #### Handling Harder Data with Kernel SVM
 - For data that is difficult to separate in 2 dimensions, we can use the **Kernel Trick** to project the data into a higher-dimensional space where a linear separation is possible.
   - Common kernels include **polynomial kernels** and **Radial Basis Function (RBF)** kernels.
+
+# FoML - 11
+
+## Regularization in SVM to Avoid Overfitting
+- **Overfitting** occurs when a model learns noise and patterns specific to the training data, which hurts generalization.
+- In **SVM**, regularization is introduced to prevent overfitting by controlling the trade-off between maximizing the margin and minimizing classification errors.
+- The regularized **primal objective** in SVM is:
+  $$
+  \min_{w, b} \frac{1}{2} \|w\|^2 + C \sum_{i} \xi_i
+  $$
+  Where:
+  - \( C \) is the **regularization parameter**. A smaller \( C \) allows a wider margin but with potential misclassifications, reducing overfitting.
+
+## Complementary Slackness
+- **Complementary slackness** is a condition derived from the **Karush-Kuhn-Tucker (KKT) conditions**, which are used to find optimal solutions for the dual form of SVM.
+- In the context of SVM, the **complementary slackness condition** ensures that either:
+  - The **Lagrange multiplier** \( \alpha_i \) is zero, meaning the data point is correctly classified with a sufficient margin.
+  - Or, the point lies on the margin (or within the margin for soft-margin SVM), and the multiplier is positive.
+- **Equation**:
+  $$
+  \alpha_i \cdot [y_i(w^T x_i + b) - 1 + \xi_i] = 0
+  $$
+
+---
+
+## Kernel Tricks
+- **Kernel tricks** allow SVM to handle **non-linearly separable data** by transforming the input features into higher-dimensional spaces where linear separation is possible.
+- **Key Kernels**:
+  1. **Higher-Order Polynomial Kernel**:
+     - Projects data into a higher-dimensional space using polynomials.
+     - Kernel function:
+     $$
+     K(x_i, x_j) = (x_i^T x_j + 1)^d
+     $$
+     Where \( d \) is the degree of the polynomial.
+     
+  2. **Radial Basis Function (RBF) Kernel**:
+     - Maps data into an infinite-dimensional space, often used when the decision boundary is highly complex.
+     - Kernel function:
+     $$
+     K(x_i, x_j) = \exp\left(-\frac{\|x_i - x_j\|^2}{2\sigma^2}\right)
+     $$
+     Where \( \sigma \) is a parameter controlling the width of the Gaussian.
+
+  3. **Linear Kernel**:
+     - Simply computes the dot product in the original feature space, used when the data is already linearly separable.
+     - Kernel function:
+     $$
+     K(x_i, x_j) = x_i^T x_j
+     $$
+
+---
+
+## Gaussian Kernel Function
+- A common choice for **non-linear SVM** is the **Gaussian Kernel** (a type of RBF kernel).
+- The **Gaussian Kernel function** computes similarity based on the distance between two data points in feature space:
+  $$
+  K(x_i, x_j) = \exp\left(-\gamma \|x_i - x_j\|^2\right)
+  $$
+  Where \( \gamma \) is a **hyperparameter** controlling the influence of single training examples. Higher \( \gamma \) means the influence is more localized around specific points.
+
+---
+
+## Decision Tree Pruning
+- **Pruning** is a regularization technique used in **Decision Trees** to reduce overfitting by removing sections of the tree that provide little value for classifying instances.
+- Two common pruning strategies:
+  1. **Pre-Pruning**: Stop the tree's growth early, based on conditions such as maximum depth or minimum node size.
+  2. **Post-Pruning**: Grow the full tree and then prune nodes based on performance on a validation set.
+
+### Criteria for Pruning:
+- **Error Reduction**: Nodes that do not improve classification accuracy significantly are pruned.
+- **Cost Complexity Pruning**: This strategy prunes the tree based on a combination of the tree's size and its performance on the training data.
+
+---
+
+## Neural Network Regularization Techniques
+To improve the generalization and avoid overfitting in **Neural Networks**, several regularization techniques are applied:
+
+### Stochastic Gradient Descent (SGD)
+- **SGD** is an optimization technique where the weights of the neural network are updated using a small batch of training data at a time.
+- Helps in faster convergence and introduces a bit of noise in weight updates, which can act as a regularizer.
+
+### Dropout
+- **Dropout** is a technique where, during training, random neurons are dropped from the network at each iteration.
+- This forces the network to not rely on specific neurons, helping it generalize better.
+- **Dropout rate** is the proportion of neurons dropped at each iteration.
+
+### Early Stopping
+- **Early stopping** is a technique where training is stopped as soon as the performance on a validation set stops improving.
+- This prevents overfitting by not allowing the model to train for too long and start memorizing the noise.
+
+### Quantization
+- **Quantization** involves reducing the precision of weights, which can prevent overfitting and also reduce the size of the model.
+- Weights are approximated to fewer levels, introducing a form of regularization.
+
+---
+
+## Neural Network Loss Functions:
+- **Loss functions** in neural networks measure the difference between the predicted output and the actual label.
+- Commonly used loss functions include:
+  - **Euclidean Loss** for regression tasks:
+  $$
+  E = \frac{1}{2} \sum_{i=1}^{n} (y_i - \hat{y_i})^2
+  $$
+  - **Softmax Loss** (Multinomial Logistic Loss) for classification tasks:
+  $$
+  L = - \sum_{i=1}^{n} y_i \log(\hat{y_i})
+  $$
+
+# FoML - 12
+
+Quiz Happened & I was absent 
+
+
+
