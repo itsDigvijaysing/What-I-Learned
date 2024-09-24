@@ -638,11 +638,7 @@ The loss function measures the difference between the true output and the predic
   - **Pros**: Effective for high-dimensional spaces, especially with clear margins.
   - **Cons**: Can struggle with noisy data or overlapping classes.
 
----
+# FoML - 09
 
-## Summary of Key Points
-- **Backpropagation** is essential for training neural networks and involves updating the weights based on the error gradient.
-- **Gradient Descent** has different variants (SGD, Batch GD, Mini-Batch GD), each with trade-offs in terms of speed and accuracy.
-- **Activation functions** like Sigmoid, Tanh, ReLU, and Leaky ReLU play a critical role in introducing non-linearity.
-- **Loss functions** such as Euclidean Loss and Softmax Loss are used to quantify the error during training.
-- **SVMs** are powerful classifiers that, in certain cases, outperform neural networks, particularly when clear boundaries between classes exist.
+
+
