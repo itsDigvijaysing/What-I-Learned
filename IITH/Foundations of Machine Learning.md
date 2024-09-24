@@ -264,7 +264,7 @@ $$  [
 ### False Positive Rate (Fall-out)
 - Measures how often we incorrectly classify a negative instance as positive.
 $$  [
-  \text{False Positive} = \frac{FP}{TN + FN}
+  \text{False Positive} = \frac{FP}{TN + FP}
   ]$$
   
 ### Multi-Class Problems
@@ -285,6 +285,7 @@ $$  [
 - Many algorithms output a **confidence score** \( F(x) \), so we can adjust the **threshold** \( t \) to classify:
   - If \( F(x) > t \), classify as **positive**.
   - If \( F(x) \leq t \), classify as **negative**.
+![ROC Curve](Foundations%20of%20Machine%20Learning.png)
 
 - **Purpose of ROC**:
   - Visualizes the trade-off between **sensitivity (recall)** and **specificity** for different thresholds.
@@ -301,3 +302,4 @@ $$  [
   d(p,q) = \sqrt{\sum_{i=1}^n (p_i - q_i)^2}
   ]$$
 - Measures the straight-line distance between two points in Euclidean space.
+
