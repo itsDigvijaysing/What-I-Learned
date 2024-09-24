@@ -21,7 +21,7 @@
 - [ ] socket programming 
 
 ## FoML
-- [ ] Assignment 2
+- [x] Assignment 2
 - [ ] Basics Supervised & Unsupervised
 - [ ] Under fitting & Over fitting , Bias & Variance
 - [ ] Stratified Sampling, N-Fold / K-Fold Cross validation, Resubstitution
