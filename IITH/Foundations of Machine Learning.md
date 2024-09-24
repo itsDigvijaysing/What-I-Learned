@@ -525,7 +525,44 @@ $$  \[
 
 # FoML - 06
 
+## Overview of AI, Machine Learning, and Deep Learning
+- **Computer Science (CS)**: A vast field that includes various subfields, one of which is **Artificial Intelligence (AI)**.
+- **AI**: In AI, both **Machine Learning (ML)** and **Deep Learning (DL)** are key concepts.
+  - **Machine Learning (ML)**: Focuses on creating systems that learn from data.
+  - **Deep Learning (DL)**: A subset of ML that uses neural networks to model complex patterns in data.
 
+## Neural Networks
+- **Inspiration**: Neural networks are inspired by how the human brain works. They attempt to mimic the brain's structure, where neurons (brain cells) process and pass information.
+- **Purpose**: Neural networks are used for tasks like classification, regression, and pattern recognition. Their ability to learn from data and adjust themselves makes them powerful tools in AI and ML.
 
+## Rosenblatt’s Algorithm (Perceptron)
+- **Rosenblatt**: Proposed the first algorithm for a **single-layer neural network**, known as the **Perceptron**.
+- **Perceptron**: It is a linear classifier, which classifies data points by learning a hyperplane that separates two classes.
+- **Complexity**: While a single neuron can perform simple linear classification, by using multiple neurons (forming a network), we can solve more complex, non-linear problems.
+
+## Working of Neural Networks
+1. **Initialization**: The network is initialized with **random weights**.
+2. **Training**: The network is trained over millions of iterations:
+   - Data is passed through the network (forward pass).
+   - The **weights are adjusted** gradually to increase accuracy.
+3. **Output**: After training the model for many iterations, the network begins producing outputs similar to what we expect (desired outcomes).
+4. **Improvement**: The accuracy of the neural network improves gradually as the model continues learning from the data.
+
+## Backpropagation and Gradient Descent
+- **Backpropagation**: This is the method used to calculate the error and propagate it backward through the network to update the weights.
+  - The error is calculated at the output layer.
+  - The network adjusts the weights by sending the error signal back through the layers.
+- **Gradient Descent**: The optimization technique used to minimize the error (loss function).
+  - It adjusts weights to reach the optimal solution, typically by following the gradient of the loss function.
+  - **Stochastic Gradient Descent (SGD)** is often used for faster and more efficient optimization.
+
+## Multilayer Perceptron (MLP) and Feedforward Neural Networks (FFNN)
+- **MLP**: A **Multilayer Perceptron** is a type of neural network with multiple layers of neurons.
+  - It is a **feedforward neural network (FFNN)**, meaning the data flows in one direction: from input to output.
+  - MLPs can model complex non-linear relationships by stacking multiple layers (hidden layers).
+
+## Gradient Descent Variants
+- **Steepest Descent**: Sometimes referred to as the "steepest descent," this refers to the basic idea of moving in the direction of the negative gradient to minimize the loss function.
 
 # FoML - 07
+
