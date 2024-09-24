@@ -522,3 +522,5 @@ $$  \[
 - **Document Categorization**.
 - **Medical Diagnosis** (e.g., predicting disease based on symptoms).
 
+
+# FoML - 06
