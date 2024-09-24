@@ -1,14 +1,14 @@
 ### **Day 1 (Sept 24) - Foundation of Machine Learning (FoML)**
-- [ ] **8:00 AM - 10:00 AM**:  
+- [x] **8:00 AM - 10:00 AM**:  
   **Topic**: Underfitting & Overfitting, Bias & Variance  
   **Focus**: Definitions, concepts, and implications.  
-- [ ] **10:15 AM - 12:15 PM**:  
+- [x] **10:15 AM - 12:15 PM**:  
   **Topic**: Classifier Methods (K-Fold & Stratified Sampling)  
   **Focus**: Methodology and practical applications.  
-- [ ] **1:00 PM - 3:00 PM**:  
+- [x] **1:00 PM - 3:00 PM**:  
   **Topic**: Stratified Sampling, N-Fold/K-Fold Cross Validation  
   **Focus**: Practice examples.  
-- [ ] **3:15 PM - 5:15 PM**:  
+- [x] **3:15 PM - 5:15 PM**:  
   **Topic**: Accuracy of Algorithms, Error of Algorithms, Precision  
   **Focus**: Metrics and their importance.  
 - [ ] **6:00 PM - 8:00 PM**:  
