@@ -73,7 +73,7 @@
 - [ ] **12:15 PM - 1:00 PM**:  
   **Quick Review of Key ADSA Concepts**  
 - [ ] **1:00 PM - 2:30 PM**:  
-  **ADSA Exam**  
+  ==**ADSA Exam**==  
 - [ ] **2:30 PM - 5:00 PM**:  
   **Preparation for ACN**  
 - [ ] **6:00 PM - 8:00 PM**:  
@@ -105,7 +105,7 @@
 
 ---
 
-### **(29 Sept) - Focus on Advanced Computer Networks (ACN) 
+### **Day 6 (Sept 29) - Focus on Advanced Computer Networks (ACN) 
 - [ ]  **8:00 AM - 10:00 AM**:  
   **Topic**: Web & HTTP / HTTP 2.0
 - [ ] **10:15 AM - 12:15 PM**:  
@@ -121,23 +121,25 @@
 
 ---
 
-### **(30 Sept) - ACN Exam Day**
+### **Day 7 (Sept 30) - ACN Exam Day**
 - [ ] **8:00 AM - 10:00 AM**:  
   **Topic**: Quick review of ACN materials.  
   **Focus**: Key concepts and challenging areas.  
-- [ ] **10:00 AM**: **ACN Open Book Test.**  
+- [ ] **10:00 AM**: 
+	==**ACN Open Book Exam**==  
 - [ ] **After the exam**:  
   **Relax and prepare for FoML exam.**  
 - [ ] **1:00 PM**: **Prepare for FoML...**  
 
 ---
 
-### **(1 Oct) - Foundation of Machine Learning (FoML) Exam Day**
+### **Day 8 (Oct 1)- Foundation of Machine Learning (FoML) Exam Day**
 - [ ] **8:00 AM - 10:00 AM**:  
   **Topic**: Last-minute review of key FoML concepts.  
   **Focus**: Important algorithms and metrics.  
 - [ ] **10:00 AM**: Revise all the Important FoML Topics
-- [ ] **4:00 PM: FoML Exam at 4 PM.**  
+- [ ] **4:00 PM: 
+    ==FoML Exam**==  
 - [ ] **After 4 PM**:  
   **Preparation for Future Topics or Relax.**  
 ---
