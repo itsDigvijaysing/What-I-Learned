@@ -609,13 +609,13 @@ A Red-Black Tree (RB Tree) is a type of self-balancing binary search tree with s
 
 - **Definition**: The black height of a node \( x ) is the number of black nodes along the path from \( x ) to the leaves, excluding \( x ) itself. It helps in maintaining the balance of the tree.
   
-- **Subclaim**: The number of nodes in the subtree of node \( x ) is at least \( 2^{\text{bh}(x)} - 1 ), where \( \text{bh}(x) ) is the black height of node \( x ). This provides a lower bound on the number of nodes based on the black height.
+- **Subclaim**: The number of nodes in the subtree of node \( x ) is at least $$( 2^{\text{bh}(x)} - 1 )$$, where $$( \text{bh}(x) ) $$is the black height of node ( x ). This provides a lower bound on the number of nodes based on the black height.
 
 ### Inductive Step
 
 - **Height Calculation**:
-  - For a Red-Black Tree of height \( h ), the number of nodes is \( \geq 2^{h/2} - 1 ). This is derived from the property that the minimum black height ensures a certain number of nodes.
-  - Therefore, \( h = O(\log n) ), and \( \log n \geq 2^{h/2} - 1 ). This confirms that the tree height grows logarithmically with the number of nodes.
+  - For a Red-Black Tree of height \( h ), the number of nodes is $$( \geq 2^{h/2} - 1 )$$ This is derived from the property that the minimum black height ensures a certain number of nodes.
+  - Therefore, \( h = O(\log n) ), and $$( \log n \geq 2^{h/2} - 1 )$$. This confirms that the tree height grows logarithmically with the number of nodes.
 
 ### Rotations
 
