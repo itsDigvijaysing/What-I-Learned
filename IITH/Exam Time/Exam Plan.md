@@ -105,32 +105,39 @@
 
 ---
 
-### **Day 6 (Sept 29) - ACN Exam Day**
+### **(29 Sept) - Focus on Advanced Computer Networks (ACN) 
+- [ ]  **8:00 AM - 10:00 AM**:  
+  **Topic**: Web & HTTP / HTTP 2.0
+- [ ] **10:15 AM - 12:15 PM**:  
+  **Topic**:  Cookies / Cache Topics
+- [ ] **1:00 PM - 3:00 PM**:  
+  **Topic**: File Transfer Protocol FTP & SMTP 
+- [ ] **3:15 PM - 5:15 PM**:  
+  **Topic**: DNS & Peer to Peer with Online Video Conference
+- [ ] **6:00 PM - 8:00 PM**:  
+  **Topic**: Socket Programming Revise
+- [ ] **8:15 PM - 10:00 PM**:  
+  **Preparation**: Finalize ACN notes.
+
+---
+
+### **(30 Sept) - ACN Exam Day**
 - [ ] **8:00 AM - 10:00 AM**:  
   **Topic**: Quick review of ACN materials.  
   **Focus**: Key concepts and challenging areas.  
 - [ ] **10:00 AM**: **ACN Open Book Test.**  
 - [ ] **After the exam**:  
   **Relax and prepare for FoML exam.**  
+- [ ] **1:00 PM**: **Prepare for FoML...**  
 
 ---
 
-### **Day 7 (Sept 30) - Foundation of Machine Learning (FoML) Exam Day**
+### **(1 Oct) - Foundation of Machine Learning (FoML) Exam Day**
 - [ ] **8:00 AM - 10:00 AM**:  
   **Topic**: Last-minute review of key FoML concepts.  
   **Focus**: Important algorithms and metrics.  
-- [ ] **10:00 AM**: **FoML Exam at 4 PM.**  
+- [ ] **10:00 AM**: Revise all the Important FoML Topics
+- [ ] **4:00 PM: FoML Exam at 4 PM.**  
 - [ ] **After 4 PM**:  
   **Preparation for Future Topics or Relax.**  
-
 ---
-## **Time Allocation Based on Complexity**
-- **FoML**:
-  - **Higher Complexity Topics**: Gradient Descent, Neural Networks, Support Vector Machines (2 hours each).
-  - **Lower Complexity Topics**: KNN, Naive Bayes (1-2 hours each).
-- **ADSA**:
-  - **Higher Complexity Topics**: Strassen's Algorithm, Randomized Algorithms (2 hours each).
-  - **Lower Complexity Topics**: Basic Data Structures, Invariants (1-2 hours each).
-- **ACN**:
-  - **Higher Complexity Topics**: Packet Switching, Network Protocols (2 hours each).
-  - **Lower Complexity Topics**: HTTP, DNS (1-2 hours each).
