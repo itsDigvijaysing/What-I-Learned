@@ -11,7 +11,7 @@
 - [x] **3:15 PM - 5:15 PM**:  
   **Topic**: Accuracy of Algorithms, Error of Algorithms, Precision  
   **Focus**: Metrics and their importance.  
-- [ ] **6:00 PM - 8:00 PM**:  
+- [x] **6:00 PM - 8:00 PM**:  
   **Topic**: K-Nearest Neighbors (KNN)  
   **Focus**: Concept, implementation, and advantages.  
 - [ ] **8:15 PM - 10:00 PM**:  
