@@ -476,12 +476,14 @@ for i in range(1, len(L)):
    - For all `i` in `[0, |L|-1]`, `L[i] <= Max`. This ensures that the algorithm correctly finds the maximum element. for any positive max no this statement will give correct answer
 $$
 \forall i \; \epsilon [0,\dots,|L|] 
-$$$$ 
+$$
+$$ 
 L[i]\leq max
 $$
 $$(\forall j \; \epsilon [0 \dots i+1] , L[j] \leq max) \cap (P)
 % For All j from 0 to i+1 \left( i is index max will be equal to or greater than them )
-$$$$
+$$
+$$
 P = (\exists K|max=L[K])
 $$
 ### 5. **Insertion Sort Algorithm**
