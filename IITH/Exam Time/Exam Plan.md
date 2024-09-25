@@ -21,7 +21,7 @@
 ---
 
 ### **Day 2 (Sept 25) - Foundation of Machine Learning (FoML) & Advanced Data Structures and Algorithms (ADSA)**
-- [ ] **8:00 AM - 10:00 AM**:  
+- [x] **8:00 AM - 10:00 AM**:  
   **Topic**: Naive Bayes  
   **Focus**: Understand the formula and assumptions.  
 - [ ] **10:15 AM - 12:15 PM**:  
