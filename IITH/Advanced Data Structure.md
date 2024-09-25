@@ -633,10 +633,6 @@ A Red-Black Tree (RB Tree) is a type of self-balancing binary search tree with s
     2. The right child of the new root becomes the left child of the original root.
     3. Update the original root’s left child to be the new root.
 
-### Red-Black Tree Code Overview
-
-- **Note**: The code provides hints on operations but is not complete. Important operations include rotations and color adjustments to maintain tree properties.
-
 # ADS - 12
 
 ## Invariants
