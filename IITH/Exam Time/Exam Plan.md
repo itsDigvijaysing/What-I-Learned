@@ -14,7 +14,7 @@
 - [x] **6:00 PM - 8:00 PM**:  
   **Topic**: K-Nearest Neighbors (KNN)  
   **Focus**: Concept, implementation, and advantages.  
-- [ ] **8:15 PM - 10:00 PM**:  
+- [x] **8:15 PM - 10:00 PM**:  
   **Topic**: Decision Trees (Entropy, Gini Index & Information Gain)  
   **Focus**: Drawing decision trees and calculating metrics.
 
