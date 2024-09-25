@@ -34,7 +34,7 @@
   **Topic**: Support Vector Machine  
   **Focus**: Concept, margins, and kernels.  
 - [ ] **6:00 PM - 8:00 PM**:  
-  **Topic**: Intro & Revise Basic Data Structures and Algorithms (ADSA)  
+  **Topic**: Intro & Revise Basic Data Structures and Algorithms (ADSA)  (Insertion Sort & Merge Sort)
   **Focus**: Key data structures and sorting algorithms.  
 - [ ] **8:15 PM - 10:00 PM**:  
   **Topic**: Asymptotic Notation & Time Complexity (ADSA)  
@@ -56,7 +56,7 @@
   **Topic**: Binary Search Tree & Abstract Data Type  
   **Focus**: Structures and operations.  
 - [ ] **6:00 PM - 8:00 PM**:  
-  **Topic**: Red-Black Tree & Divide & Conquer  
+  **Topic**: Red-Black Tree & Divide & Conquer & AVL Tree
   **Focus**: Characteristics and implementations.  
 - [ ] **8:15 PM - 10:00 PM**:  
   **Topic**: Matrix Multiplication & Strassen's Algorithm  
@@ -98,10 +98,10 @@
 - [ ] **3:15 PM - 5:15 PM**:  
   **Preparation**: Organize materials for the ACN open book test.  
 - [ ] **6:00 PM - 8:00 PM**:  
-  **Topic**: Quick Review of FoML Topics  
+  **Topic**: FoML Kernels & Ensemble Methods
   **Focus**: Key concepts and algorithms.  
 - [ ] **8:15 PM - 10:00 PM**:  
-  **Preparation**: Finalize FoML notes.
+  **Topics**: Bagging, Boosting, Ada boost, Random Forest.
 
 ---
 
