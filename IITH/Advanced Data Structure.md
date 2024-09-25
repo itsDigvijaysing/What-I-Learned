@@ -647,6 +647,7 @@ A Red-Black Tree (RB Tree) is a type of self-balancing binary search tree with s
 ## Proof of Correctness
 
 - **Proof**: The correctness of the Red-Black Tree relies on these invariants. Ensuring that these properties hold true during operations like insertion and deletion guarantees that the tree remains balanced and maintains its logarithmic height.
+
 # ADS - 13
 
 ## Transplant Operation
@@ -667,7 +668,6 @@ A Red-Black Tree (RB Tree) is a type of self-balancing binary search tree with s
 ```
 
 ## Deletion Cases
-
 1. **Node with Two Children**:
     - **Procedure**: Replace node z with its right-side lowest value child.
     - **Reason**: The right-side lowest value child ensures the binary search tree property is preserved.
