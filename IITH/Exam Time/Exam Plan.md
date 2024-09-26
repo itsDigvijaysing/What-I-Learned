@@ -43,7 +43,7 @@
 ---
 
 ### **Day 3 (Sept 26) - Advanced Data Structures and Algorithms (ADSA)**
-- [ ] **8:00 AM - 10:00 AM**:  
+- [x] **8:00 AM - 10:00 AM**:  
   **Topic**: Randomized Quick Sort & Insertion Sort  
   **Focus**: Comparison with traditional sorting methods.  
 - [ ] **10:15 AM - 12:15 PM**:  
