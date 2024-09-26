@@ -30,9 +30,9 @@
 - [ ] **1:00 PM - 3:00 PM**:  
   **Topic**: Gradient Descent  
   **Focus**: Optimization process and its significance.  
-- [ ] **3:15 PM - 5:15 PM**:  
+- [x] **3:15 PM - 5:15 PM**:  
   **Topic**: Support Vector Machine  
-  **Focus**: Concept, margins, and kernels.  
+  **Focus**: Concept, margin
 - [x] **6:00 PM - 8:00 PM**:  
   **Topic**: Intro & Revise Basic Data Structures and Algorithms (ADSA)  (Insertion Sort & Merge Sort)
   **Focus**: Key data structures and sorting algorithms.  
@@ -98,8 +98,8 @@
 - [ ] **3:15 PM - 5:15 PM**:  
   **Preparation**: Organize materials for the ACN open book test.  
 - [ ] **6:00 PM - 8:00 PM**:  
-  **Topic**: FoML Kernels & Ensemble Methods
-  **Focus**: Key concepts and algorithms.  
+  **Topic**: FoML Kernels, SVM & Ensemble Methods
+  **Focus**: Key concepts and algorithms, and kernels.  
 - [ ] **8:15 PM - 10:00 PM**:  
   **Topics**: Bagging, Boosting, Ada boost, Random Forest.
 
