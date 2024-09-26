@@ -55,7 +55,7 @@
 - [x] **3:15 PM - 5:15 PM**:  
   **Topic**: Binary Search Tree & Abstract Data Type  
   **Focus**: Structures and operations.  
-- [ ] **6:00 PM - 8:00 PM**:  
+- [x] **6:00 PM - 8:00 PM**:  
   **Topic**: Red-Black Tree & Divide & Conquer & AVL Tree
   **Focus**: Characteristics and implementations.  
 - [ ] **8:15 PM - 10:00 PM**:  
