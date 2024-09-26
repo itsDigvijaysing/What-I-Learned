@@ -46,7 +46,7 @@
 - [x] **8:00 AM - 10:00 AM**:  
   **Topic**: Randomized Quick Sort & Insertion Sort  
   **Focus**: Comparison with traditional sorting methods.  
-- [ ] **10:15 AM - 12:15 PM**:  
+- [x] **10:15 AM - 12:15 PM**:  
   **Topic**: Randomized Min Cut & Polynomial Identity Testing Algorithm  
   **Focus**: Understanding applications.  
 - [ ] **1:00 PM - 3:00 PM**:  
