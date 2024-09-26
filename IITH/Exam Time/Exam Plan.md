@@ -52,7 +52,7 @@
 - [x] **1:00 PM - 3:00 PM**:  
   **Topic**: Correctness of Algorithms & Invariant  
   **Focus**: Proving correctness and invariants.  
-- [ ] **3:15 PM - 5:15 PM**:  
+- [x] **3:15 PM - 5:15 PM**:  
   **Topic**: Binary Search Tree & Abstract Data Type  
   **Focus**: Structures and operations.  
 - [ ] **6:00 PM - 8:00 PM**:  
