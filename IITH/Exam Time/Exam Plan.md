@@ -49,7 +49,7 @@
 - [x] **10:15 AM - 12:15 PM**:  
   **Topic**: Randomized Min Cut & Polynomial Identity Testing Algorithm  
   **Focus**: Understanding applications.  
-- [ ] **1:00 PM - 3:00 PM**:  
+- [x] **1:00 PM - 3:00 PM**:  
   **Topic**: Correctness of Algorithms & Invariant  
   **Focus**: Proving correctness and invariants.  
 - [ ] **3:15 PM - 5:15 PM**:  
