@@ -33,10 +33,10 @@
 - [ ] **3:15 PM - 5:15 PM**:  
   **Topic**: Support Vector Machine  
   **Focus**: Concept, margins, and kernels.  
-- [ ] **6:00 PM - 8:00 PM**:  
+- [x] **6:00 PM - 8:00 PM**:  
   **Topic**: Intro & Revise Basic Data Structures and Algorithms (ADSA)  (Insertion Sort & Merge Sort)
   **Focus**: Key data structures and sorting algorithms.  
-- [ ] **8:15 PM - 10:00 PM**:  
+- [x] **8:15 PM - 10:00 PM**:  
   **Topic**: Asymptotic Notation & Time Complexity (ADSA)  
   **Focus**: Analyzing algorithms and their efficiency.
 
