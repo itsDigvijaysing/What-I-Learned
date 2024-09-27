@@ -27,7 +27,7 @@
 - [x] Classifiers Methods (K-fold & Stratified Sampling,....)
 - [x] Stratified Sampling, N-Fold / K-Fold Cross validation, Resubstitution
 - [x] Accuracy of Algo, Error of Algo, Precision
-- [ ] KNN
+- [x] KNN
 - [ ] Decision Tree (Entropy & Gini Index & Information Gain)
 - [ ] Naive Bayes 
 - [ ] Neural Network (..Perceptron)
