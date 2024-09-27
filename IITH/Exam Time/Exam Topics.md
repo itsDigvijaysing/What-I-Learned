@@ -41,11 +41,11 @@
 ##  ADSA
 - [x] Intro
 - [x] Revise DS and Algo basic (Insertion Sort, Merge Sort, etc)
-- [ ] Asymptotic Notation 
-- [ ] Worst and Average Time complexity 
-- [ ] Randomised Quick short 
-- [ ] Randomised Insertion sort
-- [ ] randomised min cut
+- [x] Asymptotic Notation 
+- [x] Worst and Average Time complexity 
+- [x] Randomised Quick short 
+- [x] Randomised Insertion sort
+- [x] randomised min cut
 - [ ] polynomial identical testing algo
 - [ ] Correctness of Algo
 - [ ] Invariant 

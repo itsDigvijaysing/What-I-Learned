@@ -68,11 +68,9 @@
 - [x] **8:00 AM - 10:00 AM**:  
   **Topic**: Quick Review of ADSA  
   **Focus**: Recap key concepts.  
-- [ ] **10:15 AM - 12:15 PM**:  
+- [x] **10:15 AM - 12:00 PM**:  
   **Preparation**: Relax and refresh for ADSA exam.  
-- [ ] **12:15 PM - 1:00 PM**:  
-  **Quick Review of Key ADSA Concepts**  
-- [ ] **1:00 PM - 2:30 PM**:  
+- [ ] **12:00 PM - 1:30 PM**:  
   ==**ADSA Exam**==  
 - [ ] **2:30 PM - 5:00 PM**:  
   **Preparation for ACN**  
