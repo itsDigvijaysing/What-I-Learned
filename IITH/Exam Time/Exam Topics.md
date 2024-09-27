@@ -39,8 +39,8 @@
 - [ ] Check further
 
 ##  ADSA
-- [ ] Intro
-- [ ] Revise DS and Algo basic (Insertion Sort, Merge Sort, etc)
+- [x] Intro
+- [x] Revise DS and Algo basic (Insertion Sort, Merge Sort, etc)
 - [ ] Asymptotic Notation 
 - [ ] Worst and Average Time complexity 
 - [ ] Randomised Quick short 

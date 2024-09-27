@@ -58,14 +58,14 @@
 - [x] **6:00 PM - 8:00 PM**:  
   **Topic**: Red-Black Tree & Divide & Conquer & AVL Tree
   **Focus**: Characteristics and implementations.  
-- [ ] **8:15 PM - 10:00 PM**:  
+- [x] **8:15 PM - 10:00 PM**:  
   **Topic**: Matrix Multiplication & Strassen's Algorithm  
   **Focus**: Understanding Strassen’s method.
 
 ---
 
 ### **Day 4 (Sept 27) - Advanced Data Structures and Algorithms (ADSA) & Advanced Computer Networks (ACN)**
-- [ ] **8:00 AM - 10:00 AM**:  
+- [x] **8:00 AM - 10:00 AM**:  
   **Topic**: Quick Review of ADSA  
   **Focus**: Recap key concepts.  
 - [ ] **10:15 AM - 12:15 PM**:  
@@ -81,7 +81,7 @@
   **Focus**: Key concepts and definitions.  
 - [ ] **8:15 PM - 10:00 PM**:  
   **Topic**: ACN (Packet Switching, Circuit Switching)  
-  **Focus**: Diagrams and explanations.
+  **Focus**: Diagrams and explanations. 
 
 ---
 
