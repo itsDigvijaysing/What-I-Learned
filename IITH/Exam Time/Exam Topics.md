@@ -46,11 +46,11 @@
 - [x] Randomised Quick short 
 - [x] Randomised Insertion sort
 - [x] randomised min cut
-- [ ] polynomial identical testing algo
-- [ ] Correctness of Algo
-- [ ] Invariant 
-- [ ] Binary Search Tree
-- [ ] Abstract Data Type
+- [x] polynomial identical testing algo
+- [x] Correctness of Algo
+- [x] Invariant 
+- [x] Binary Search Tree
+- [x] Abstract Data Type
 - [ ] Red black tree 
 - [ ] Divide & Conquer 
 - [ ] Matrix Multiplication 
