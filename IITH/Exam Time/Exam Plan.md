@@ -70,7 +70,7 @@
   **Focus**: Recap key concepts.  
 - [x] **10:15 AM - 12:00 PM**:  
   **Preparation**: Relax and refresh for ADSA exam.  
-- [ ] **12:00 PM - 1:30 PM**:  
+- [x] **12:00 PM - 1:30 PM**:  
   ==**ADSA Exam**==  
 - [ ] **2:30 PM - 5:00 PM**:  
   **Preparation for ACN**  
