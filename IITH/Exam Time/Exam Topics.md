@@ -51,9 +51,9 @@
 - [x] Invariant 
 - [x] Binary Search Tree
 - [x] Abstract Data Type
-- [ ] Red black tree 
-- [ ] Divide & Conquer 
-- [ ] Matrix Multiplication 
-- [ ] strassen algo
-- [ ] Hash table 
-- [ ] Check further 
+- [x] Red black tree 
+- [x] Divide & Conquer 
+- [x] Matrix Multiplication 
+- [x] strassen algo
+- [x] ~~Hash table~~ 
+- [x] Check further 
