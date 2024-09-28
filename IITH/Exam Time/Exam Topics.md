@@ -9,16 +9,16 @@
 - [x] Freq Div Multiplexing & Time Div Multiplexing
 - [x] packet delay, loss, throughput 
 - [ ] protocol layers
-- [ ] attack
+- [x] attack
 - [ ] principle of network application 
 - [ ] web
 - [ ] http
-- [ ] cookies / cache
+- [x] cookies / cache
 - [ ] File Transfer protocol
-- [ ] Simple mail transfer protocol
-- [ ] dns
+- [x] Simple mail transfer protocol
+- [x] dns
 - [ ] peer to peer & Online Video Conference
-- [ ] socket programming 
+- [x] socket programming 
 
 ## FoML
 - [x] Assignment 2

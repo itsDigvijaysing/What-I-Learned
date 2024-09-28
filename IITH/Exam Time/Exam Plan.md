@@ -89,12 +89,16 @@
   **Focus**: Practical examples and applications.  
 - [x] **10:15 AM - 12:15 PM**:  
   **Topic**: ACN (Packet Delay, Loss, Throughput; Protocol Layers)  
-  **Focus**: Analyze packet flow.  
+  **Focus**: Analyse packet flow.  
 - [ ] **1:00 PM - 3:00 PM**:  
   **Topic**: ACN (Attacks, Principle of Network Application)  
-  **Focus**: Types of attacks and defenses.  
+  **Topic**: Web & HTTP / HTTP 2.0
+  **Topic**:  Cookies / Cache Topics
 - [ ] **3:15 PM - 5:15 PM**:  
-  **Preparation**: Organize materials for the ACN open book test.  
+  **Topic**: File Transfer Protocol FTP & SMTP 
+  **Topic**: DNS & Peer to Peer with Online Video Conference
+  **Topic**: Socket Programming Revise
+  **Topic:** CDN Notes & in Detailed 
 - [ ] **6:00 PM - 8:00 PM**:  
   **Topic**: FoML Kernels, SVM & Ensemble Methods
   **Focus**: Key concepts and algorithms, and kernels.  
@@ -105,15 +109,15 @@
 
 ### **Day 6 (Sept 29) - Focus on Advanced Computer Networks (ACN) 
 - [ ]  **8:00 AM - 10:00 AM**:  
-  **Topic**: Web & HTTP / HTTP 2.0
+  **Topic**: ACN Old Assignments Solutions
 - [ ] **10:15 AM - 12:15 PM**:  
-  **Topic**:  Cookies / Cache Topics
+  **Topic**:  Google Classroom Sheets (Sir PPT) & Imp Formula on page
 - [ ] **1:00 PM - 3:00 PM**:  
-  **Topic**: File Transfer Protocol FTP & SMTP 
+  **Topic**: Problem Sets / Real Life Scenario
 - [ ] **3:15 PM - 5:15 PM**:  
-  **Topic**: DNS & Peer to Peer with Online Video Conference
+  **Topic**: Timeline Diagrams Check & Draw
 - [ ] **6:00 PM - 8:00 PM**:  
-  **Topic**: Socket Programming Revise
+  **Topic**: Solve Question Papers or Questions.
 - [ ] **8:15 PM - 10:00 PM**:  
   **Preparation**: Finalize ACN notes.
 
