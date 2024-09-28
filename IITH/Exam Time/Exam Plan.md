@@ -117,7 +117,7 @@
 - [ ] **3:15 PM - 5:15 PM**:  
   **Topic**: Timeline Diagrams Check & Draw
 - [ ] **6:00 PM - 8:00 PM**:  
-  **Topic**: Solve Question Papers or Questions.
+  **Topic**: Solve Question Papers
 - [ ] **8:15 PM - 10:00 PM**:  
   **Preparation**: Finalize ACN notes.
 
