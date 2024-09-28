@@ -1,9 +1,4 @@
 ### **Day 1 (Sept 24) - Foundation of Machine Learning (FoML)**
-
-
-
-
-
 - [x] **8:00 AM - 10:00 AM**:  
   **Topic**: Underfitting & Overfitting, Bias & Variance  
   **Focus**: Definitions, concepts, and implications.  
@@ -89,10 +84,10 @@
 ---
 
 ### **Day 5 (Sept 28) - Focus on Advanced Computer Networks (ACN) & Foundation of Machine Learning (FoML)**
-- [ ] **8:00 AM - 10:00 AM**:  
+- [x] **8:00 AM - 10:00 AM**:  
   **Topic**: ACN (Frequency Division & Time Division Multiplexing)  
   **Focus**: Practical examples and applications.  
-- [ ] **10:15 AM - 12:15 PM**:  
+- [x] **10:15 AM - 12:15 PM**:  
   **Topic**: ACN (Packet Delay, Loss, Throughput; Protocol Layers)  
   **Focus**: Analyze packet flow.  
 - [ ] **1:00 PM - 3:00 PM**:  
