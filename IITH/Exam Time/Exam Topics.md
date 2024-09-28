@@ -1,13 +1,13 @@
 # Mid Semester Exam
 
 ## ACN
-- [ ] Internet
-- [ ] Network Edge
-- [ ] Network core
-- [ ] packet - switching (store & forward)
-- [ ] Circuit Switching
-- [ ] Freq Div Multiplexing & Time Div Multiplexing
-- [ ] packet delay, loss, throughput 
+- [x] Internet
+- [x] Network Edge
+- [x] Network core
+- [x] packet - switching (store & forward)
+- [x] Circuit Switching
+- [x] Freq Div Multiplexing & Time Div Multiplexing
+- [x] packet delay, loss, throughput 
 - [ ] protocol layers
 - [ ] attack
 - [ ] principle of network application 
