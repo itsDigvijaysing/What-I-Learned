@@ -90,7 +90,7 @@
 - [x] **10:15 AM - 12:15 PM**:  
   **Topic**: ACN (Packet Delay, Loss, Throughput; Protocol Layers)  
   **Focus**: Analyse packet flow.  
-- [ ] **1:00 PM - 3:00 PM**:  
+- [x] **1:00 PM - 3:00 PM**:  
   **Topic**: ACN (Attacks, Principle of Network Application)  
   **Topic**: Web & HTTP / HTTP 2.0
   **Topic**:  Cookies / Cache Topics
