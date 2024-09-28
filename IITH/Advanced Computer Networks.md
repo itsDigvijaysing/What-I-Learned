@@ -485,6 +485,7 @@ $$  [
   2. **Segment**: Transport layer encapsulates the message into a segment with a transport header ([Ht | M]).
   3. **Datagram**: Network layer encapsulates the segment into a datagram with a network header ([Hn| [Ht | M]]).
   4. **Frame**: Link layer encapsulates the datagram into a frame for transmission.
+
 ![Packet Transfer](../Archive/Attachment/Packet%20Transfer.png)
 - **Matryoshka Dolls**: Encapsulation is like stacking Matryoshka dolls, where each layer adds its own information, wrapping the previous layer's data.
 
@@ -500,6 +501,7 @@ $$  [
 
 - A **socket** is an API (Application Programming Interface) that allows networking applications to use the services of the transport layer.
 - It acts like a pipe, providing communication between the transport layers of two hosts within a network.
+
 ![Socket](../Archive/Attachment/Socket.png)
 ### Key Characteristics of Sockets:
 - **API between application and transport layers:**

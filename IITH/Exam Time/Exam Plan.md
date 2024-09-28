@@ -72,12 +72,12 @@
   **Preparation**: Relax and refresh for ADSA exam.  
 - [x] **12:00 PM - 1:30 PM**:  
   ==**ADSA Exam**==  
-- [ ] **2:30 PM - 5:00 PM**:  
+- [x] **2:30 PM - 5:00 PM**:  
   **Preparation for ACN**  
-- [ ] **6:00 PM - 8:00 PM**:  
+- [x] **6:00 PM - 8:00 PM**:  
   **Topic**: ACN (Internet, Network Edge, Network Core)  
   **Focus**: Key concepts and definitions.  
-- [ ] **8:15 PM - 10:00 PM**:  
+- [x] **8:15 PM - 10:00 PM**:  
   **Topic**: ACN (Packet Switching, Circuit Switching)  
   **Focus**: Diagrams and explanations. 
 
