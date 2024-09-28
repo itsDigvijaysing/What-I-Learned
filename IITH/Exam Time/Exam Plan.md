@@ -1,4 +1,9 @@
 ### **Day 1 (Sept 24) - Foundation of Machine Learning (FoML)**
+
+
+
+
+
 - [x] **8:00 AM - 10:00 AM**:  
   **Topic**: Underfitting & Overfitting, Bias & Variance  
   **Focus**: Definitions, concepts, and implications.  
