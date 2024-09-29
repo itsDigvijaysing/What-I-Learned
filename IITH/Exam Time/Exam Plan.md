@@ -24,10 +24,10 @@
 - [x] **8:00 AM - 10:00 AM**:  
   **Topic**: Naive Bayes  
   **Focus**: Understand the formula and assumptions.  
-- [ ] **10:15 AM - 12:15 PM**:  
+- [x] **10:15 AM - 12:15 PM**:  
   **Topic**: Neural Network (Perceptron)  
   **Focus**: Architecture and forward pass.  
-- [ ] **1:00 PM - 3:00 PM**:  
+- [x] **1:00 PM - 3:00 PM**:  
   **Topic**: Gradient Descent  
   **Focus**: Optimization process and its significance.  
 - [x] **3:15 PM - 5:15 PM**:  
