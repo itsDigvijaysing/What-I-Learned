@@ -108,7 +108,7 @@
 ---
 
 ### **Day 6 (Sept 29) - Focus on Advanced Computer Networks (ACN) 
-- [ ]  **8:00 AM - 10:00 AM**:  
+- [x]  **8:00 AM - 10:00 AM**:  
   **Topic**: ACN Old Assignments Solutions
 - [ ] **10:15 AM - 12:15 PM**:  
   **Topic**:  Google Classroom Sheets (Sir PPT) & Imp Formula on page
