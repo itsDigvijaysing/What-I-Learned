@@ -94,7 +94,7 @@
   **Topic**: ACN (Attacks, Principle of Network Application)  
   **Topic**: Web & HTTP / HTTP 2.0
   **Topic**:  Cookies / Cache Topics
-- [ ] **3:15 PM - 5:15 PM**:  
+- [x] **3:15 PM - 5:15 PM**:  
   **Topic**: File Transfer Protocol FTP & SMTP 
   **Topic**: DNS & Peer to Peer with Online Video Conference
   **Topic**: Socket Programming Revise
@@ -110,28 +110,28 @@
 ### **Day 6 (Sept 29) - Focus on Advanced Computer Networks (ACN) 
 - [x]  **8:00 AM - 10:00 AM**:  
   **Topic**: ACN Old Assignments Solutions
-- [ ] **10:15 AM - 12:15 PM**:  
+- [x] **10:15 AM - 12:15 PM**:  
   **Topic**:  Google Classroom Sheets (Sir PPT) & Imp Formula on page
-- [ ] **1:00 PM - 3:00 PM**:  
+- [x] **1:00 PM - 3:00 PM**:  
   **Topic**: Problem Sets / Real Life Scenario
-- [ ] **3:15 PM - 5:15 PM**:  
+- [x] **3:15 PM - 5:15 PM**:  
   **Topic**: Timeline Diagrams Check & Draw
-- [ ] **6:00 PM - 8:00 PM**:  
+- [x] **6:00 PM - 8:00 PM**:  
   **Topic**: Solve Question Papers
-- [ ] **8:15 PM - 10:00 PM**:  
+- [x] **8:15 PM - 10:00 PM**:  
   **Preparation**: Finalize ACN notes.
 
 ---
 
 ### **Day 7 (Sept 30) - ACN Exam Day**
-- [ ] **8:00 AM - 10:00 AM**:  
+- [x] **8:00 AM - 10:00 AM**:  
   **Topic**: Quick review of ACN materials.  
   **Focus**: Key concepts and challenging areas.  
-- [ ] **10:00 AM**: 
+- [x] **10:00 AM**: 
 	==**ACN Open Book Exam**==  
-- [ ] **After the exam**:  
-  **Relax and prepare for FoML exam.**  
-- [ ] **1:00 PM**: **Prepare for FoML...**  
+- [x] **After the exam**:  
+  **Relax and prepare for FoML exam.** 
+  **1:00 PM**: **Prepare for FoML...**  
 
 ---
 

@@ -8,16 +8,16 @@
 - [x] Circuit Switching
 - [x] Freq Div Multiplexing & Time Div Multiplexing
 - [x] packet delay, loss, throughput 
-- [ ] protocol layers
+- [x] protocol layers
 - [x] attack
-- [ ] principle of network application 
-- [ ] web
-- [ ] http
+- [x] principle of network application 
+- [x] web
+- [x] http
 - [x] cookies / cache
-- [ ] File Transfer protocol
+- [x] File Transfer protocol
 - [x] Simple mail transfer protocol
 - [x] dns
-- [ ] peer to peer & Online Video Conference
+- [x] peer to peer & Online Video Conference
 - [x] socket programming 
 
 ## FoML
