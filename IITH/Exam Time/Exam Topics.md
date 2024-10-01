@@ -34,9 +34,9 @@
 - [ ] Gradient Descent
 - [ ] Support Vector Machine 
 - [ ] Kernel 
-- [ ] Ensemble Methods
-- [ ] Bagging, Boosting, Ada boost, Random Forest
-- [ ] Check further
+- [x] Ensemble Methods
+- [x] Bagging, Boosting, Ada boost, Random Forest
+- [x] Check further
 
 ##  ADSA
 - [x] Intro
