@@ -31,9 +31,9 @@
 - [ ] Decision Tree (Entropy & Gini Index & Information Gain)
 - [ ] Naive Bayes 
 - [ ] Neural Network (..Perceptron)
-- [ ] Gradient Descent
-- [ ] Support Vector Machine 
-- [ ] Kernel 
+- [x] Gradient Descent
+- [x] Support Vector Machine 
+- [x] Kernel 
 - [x] Ensemble Methods
 - [x] Bagging, Boosting, Ada boost, Random Forest
 - [x] Check further

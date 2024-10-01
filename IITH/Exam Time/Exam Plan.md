@@ -99,10 +99,10 @@
   **Topic**: DNS & Peer to Peer with Online Video Conference
   **Topic**: Socket Programming Revise
   **Topic:** CDN Notes & in Detailed 
-- [ ] **6:00 PM - 8:00 PM**:  
+- [x] **6:00 PM - 8:00 PM**:  
   **Topic**: FoML Kernels, SVM & Ensemble Methods
   **Focus**: Key concepts and algorithms, and kernels.  
-- [ ] **8:15 PM - 10:00 PM**:  
+- [x] **8:15 PM - 10:00 PM**:  
   **Topics**: Bagging, Boosting, Ada boost, Random Forest.
 
 ---
@@ -136,7 +136,7 @@
 ---
 
 ### **Day 8 (Oct 1)- Foundation of Machine Learning (FoML) Exam Day**
-- [ ] **8:00 AM - 10:00 AM**:  
+- [x] **8:00 AM - 10:00 AM**:  
   **Topic**: Last-minute review of key FoML concepts.  
   **Focus**: Important algorithms and metrics.  
 - [ ] **10:00 AM**: Revise all the Important FoML Topics
