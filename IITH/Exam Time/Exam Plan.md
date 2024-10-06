@@ -139,9 +139,9 @@
 - [x] **8:00 AM - 10:00 AM**:  
   **Topic**: Last-minute review of key FoML concepts.  
   **Focus**: Important algorithms and metrics.  
-- [ ] **10:00 AM**: Revise all the Important FoML Topics
-- [ ] **4:00 PM: 
+- [x] **10:00 AM**: Revise all the Important FoML Topics
+- [x] **4:00 PM: 
     ==FoML Exam**==  
-- [ ] **After 4 PM**:  
+- [x] **After 4 PM**:  
   **Preparation for Future Topics or Relax.**  
 ---
