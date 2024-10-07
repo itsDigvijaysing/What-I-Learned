@@ -98,6 +98,40 @@ DataType VariableName = "String" or number;
 ```
 
 You can also define a read-only variable or a constant in C++ by using the keyword `const`.
+#### Primitive Data Types
+| Type      | Description                       | Example         |
+|-----------|-----------------------------------|-----------------|
+| `int`     | Integer                           | `42`, `-1`      |
+| `float`   | Single-precision float            | `3.14f`         |
+| `double`  | Double-precision float            | `3.14159`       |
+| `char`    | Single character                  | `'a'`, `'Z'`    |
+| `bool`    | Boolean (`true`/`false`)          | `true`, `false` |
+| `void`    | No data (used in functions)       | N/A             |
+| `wchar_t` | Wide character                    | L`'A'`, L`'Ω'`  |
+
+#### Modifiers
+
+| Modifier   | Description             |
+| ---------- | ----------------------- |
+| `signed`   | Positive & negative     |
+| `unsigned` | Non-negative only       |
+| `short`    | Smaller range (2 bytes) |
+| `long`     | Larger range            |
+
+#### Derived Data Types
+- **Arrays**: `int arr[10];`
+- **Pointers**: `int *ptr;`
+- **References**: `int &ref = var;`
+- **Functions**: `int sum(int a, int b);`
+
+#### User-Defined Data Types
+| Type      | Description                                |
+|-----------|--------------------------------------------|
+| `struct`  | Group different types                      |
+| `class`   | Object-oriented programming                |
+| `enum`    | Named integer constants                    |
+| `union`   | Multiple types sharing same memory         |
+| `typedef` | Alias for a data type                      |
 
 ### Pointer and Reference
 
