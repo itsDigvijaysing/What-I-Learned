@@ -472,7 +472,8 @@ int main(){
 }
 ```
 
-- Array always go with reference by default.
+> Array always go with reference by default.
+
 There is one problem with pointers in C/C++, that is if you change the contents of the address in `sum()` function you will change the value of the variable. For example If we add a new integer `a=30` or `*a=30` variable to `sum()`
 
 ```cpp
