@@ -316,7 +316,7 @@ return 0;
 
 From the above the variables `a` and `b` in function `sum()` are different from the initialized variable `a` and `b`.
 
-This particular type of function is call `call by value` function. Another type of function is called as the `call by reference` or sometimes called as the `call by address`. For example (pseudo code):
+This particular type of function is call `call by value` (Send Copy) function. Another type of function is called as the `call by reference` or sometimes called as the `call by address`. For example (pseudo code):
 
 ```cpp
 int sum (int *a, int *b){
