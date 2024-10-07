@@ -301,16 +301,17 @@ Creating a compiled version of `cout` uses a lot of resources when compared to `
 A function can be defined as a block of code that is separate from the existing code; that is all the variables used in a function would only belong to that particular function. For example (pseudo code):
 
 ```cpp
-int a = 10;
-int b = 20;
-
-c = sum(a, b);
-
 int sum (int a, int b){
   return a + b;
 }
 
-printf("%d\n", c);
+int main(){
+	int a = 10;
+	int b = 20;
+	c = sum(a, b);
+	printf("%d\n", c);
+return 0;
+}
 ```
 
 From the above the variables `a` and `b` in function `sum()` are different from the initialized variable `a` and `b`.
@@ -318,16 +319,18 @@ From the above the variables `a` and `b` in function `sum()` are different from 
 This particular type of function is call `call by value` function. Another type of function is called as the `call by reference` or sometimes called as the `call by address`. For example (pseudo code):
 
 ```cpp
-int a = 10;
-int b = 20;
-
-c = sum(&a, &b);
-
 int sum (int *a, int *b){
   return *a + *b;
 }
 
-printf("%d\n", c);
+int main(){
+	int a = 10;
+	int b = 20;
+	
+	c = sum(&a, &b);
+	printf("%d\n", c);
+	return 0;
+}
 ```
 
 ### Defining a function
