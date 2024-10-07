@@ -456,7 +456,23 @@ int main(int argc, char ** argv) {
     return 0;
 }
 ```
+or
+```cpp
+void sum(int &a){ //Will take address of variable 'a' (argument)
+	a=a*2; //This will modify the original variable 'a' (reference)
+	cout<<a<<endl;
+}
 
+int main(){
+	int a;
+	cin>>a;
+	sum(a);
+	cout<<a<<endl;
+	return 0;
+}
+```
+
+- Array always go with reference by default.
 There is one problem with pointers in C/C++, that is if you change the contents of the address in `sum()` function you will change the value of the variable. For example If we add a new integer `a=30` or `*a=30` variable to `sum()`
 
 ```cpp
