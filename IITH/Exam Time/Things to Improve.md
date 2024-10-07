@@ -1,3 +1,4 @@
+### **Temporary Plan :** [[Week_plan (7->12 Oct)]]
 ### **Improvement Plan**
 
 - **Core Focus on Algorithms:** Revise key algorithms (divide-and-conquer, dynamic programming, trees) and practice daily.
@@ -12,3 +13,4 @@
 - **Get Feedback:** Regularly show your answers to peers or TAs to ensure clarity in explanations.
 - **Complete Tasks Early:** Finish all preparations at least a day before deadlines to avoid last-minute stress.
 - **Group Formulas:** Group formulas by concept; practice with real examples and review them regularly.
+
