@@ -98,6 +98,8 @@ DataType VariableName = "String" or number;
 ```
 
 You can also define a read-only variable or a constant in C++ by using the keyword `const`.
+String are nothing but array of char, so if we want to change something just write `s[index]=change` & String will be changed in that way.
+
 #### Primitive Data Types
 | Type      | Description                       | Example         |
 |-----------|-----------------------------------|-----------------|
@@ -266,14 +268,17 @@ for (size_t i = 0; i < count; i++) {
   /* code */
 }
 ```
-
-- [ ] ### 2.9 Range base `For` loop
+### Range base `For` loop
 
 Starting from C++11, we can use range based `For` loop
 
 ```cpp
 for (type var1 : var2) {
   /* code */
+}
+
+for (int num : numbers) {
+	cout << num << " "; // Output each number
 }
 ```
 
