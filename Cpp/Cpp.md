@@ -333,6 +333,15 @@ int main(){
 }
 ```
 
+#### 1. Void Function 
+- **Definition**: A function that does not return any value. It performs an operation but does not produce an output that can be used by the caller. 
+#### 2. Return Function 
+- **Definition**: A function that returns a value of a specified type. The return value can be used by the calling code for further processing or calculations. 
+#### 3. Parameterized Function 
+- **Definition**: A function that takes parameters (arguments) as input. These parameters allow the function to operate on different data each time it is called, making it more flexible. 
+#### 4. Non-Parameterized Function 
+- **Definition**: A function that does not take any parameters. It operates independently of external input and typically performs a fixed operation.
+
 ### Defining a function
 
 In C++, a function should be declared first before calling it. That is:
