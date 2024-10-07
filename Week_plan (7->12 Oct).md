@@ -13,7 +13,7 @@
 - **7:00 – 7:30 AM** – Breakfast
 - **7:30 – 8:30 AM** – Exercise + Bath
 - **8:30 – 9:00 AM** – LeetCode challenge (30 minutes)
-- **9:00 – 11:30 AM** – Assignment 1 (ACN->Quiz-1) (2.5 hours, Pomodoro technique)
+- **9:00 – 11:30 AM** – Assignment 1 (2.5 hours, Pomodoro technique)
 - **11:30 – 11:45 AM** – Short break
 
 ### 2. Afternoon:

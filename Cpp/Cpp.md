@@ -52,10 +52,9 @@ hello")
 ### Identifiers
 
 * These identifiers cannot conflict with C++ 86 keywords (which includes 11 tokens)
-
-|    |   |   |
-|-------------------------|------------------------|-----------------------------|
+  
 | alignas (since C++11)   | explicit               | signed                      |
+| ----------------------- | ---------------------- | --------------------------- |
 | alignof (since C++11)   | export(1)              | sizeof                      |
 | and                     | extern                 | static                      |
 | and_eq                  | FALSE                  | static_assert (since C++11) |
