@@ -44,46 +44,48 @@ hello")
 }
 ```
 
+
 **Things to remember**
 
 1. A statement should always end with `;`.
 2. `#Include` should always be in single line without any space followed by `<>` or `""`.
+3. Libraries, We generally use `<iostream>` , It's good library but it doesn't include other extra functionality of c++, so in competitive environment people generally use `<bits/stdc++.h>` Library it include almost all c++ libraries functionality, It's process heavy but helpful as we don't need to include libraries everytime. (It's supported for `gcc` & `clang with libstdc++` integrated.)
 
 ### Identifiers
 
 * These identifiers cannot conflict with C++ 86 keywords (which includes 11 tokens)
   
-| alignas (since C++11)   | explicit               | signed                      |
-| ----------------------- | ---------------------- | --------------------------- |
-| alignof (since C++11)   | export(1)              | sizeof                      |
-| and                     | extern                 | static                      |
-| and_eq                  | FALSE                  | static_assert (since C++11) |
-| asm                     | float                  | static_cast                 |
-| auto(1)                 | for                    | struct                      |
-| bitand                  | friend                 | switch                      |
-| bitor                   | goto                   | template                    |
-| bool                    | if                     | this                        |
-| break                   | inline                 | thread_local (since C++11)  |
-| case                    | int                    | throw                       |
-| catch                   | long                   | TRUE                        |
-| char                    | mutable                | try                         |
-| char16_t (since C++11)  | namespace              | typedef                     |
-| char32_t (since C++11)  | new                    | typeid                      |
-| class                   | noexcept (since C++11) | typename                    |
-| compl                   | not                    | union                       |
-| concept (concepts TS)   | not_eq                 | unsigned                    |
-| const                   | nullptr (since C++11)  | using(1)                    |
-| constexpr (since C++11) | operator               | virtual                     |
-| const_cast              | or                     | void                        |
-| continue                | or_eq                  | volatile                    |
-| decltype (since C++11)  | private                | wchar_t                     |
-| default(1)              | protected              | while                       |
-| delete(1)               | public                 | xor                         |
-| do                      | register               | xor_eq                      |
-| double                  | reinterpret_cast       |                             |
-| dynamic_cast            | requires (concepts TS) |                             |
-| else                    | return                 |                             |
-| enum                    | short                  |                             |
+| signed                      | alignas (since C++11)   | explicit               |
+| --------------------------- | ----------------------- | ---------------------- |
+| sizeof                      | alignof (since C++11)   | export(1)              |
+| static                      | and                     | extern                 |
+| static_assert (since C++11) | and_eq                  | FALSE                  |
+| static_cast                 | asm                     | float                  |
+| struct                      | auto(1)                 | for                    |
+| switch                      | bitand                  | friend                 |
+| template                    | bitor                   | goto                   |
+| this                        | bool                    | if                     |
+| thread_local (since C++11)  | break                   | inline                 |
+| throw                       | case                    | int                    |
+| TRUE                        | catch                   | long                   |
+| try                         | char                    | mutable                |
+| typedef                     | char16_t (since C++11)  | namespace              |
+| typeid                      | char32_t (since C++11)  | new                    |
+| typename                    | class                   | noexcept (since C++11) |
+| union                       | compl                   | not                    |
+| unsigned                    | concept (concepts TS)   | not_eq                 |
+| using(1)                    | const                   | nullptr (since C++11)  |
+| virtual                     | constexpr (since C++11) | operator               |
+| void                        | const_cast              | or                     |
+| volatile                    | continue                | or_eq                  |
+| wchar_t                     | decltype (since C++11)  | private                |
+| while                       | default(1)              | protected              |
+| xor                         | delete(1)               | public                 |
+| xor_eq                      | do                      | register               |
+|                             | double                  | reinterpret_cast       |
+|                             | dynamic_cast            | requires (concepts TS) |
+|                             | else                    | return                 |
+|                             | enum                    | short                  |
 
 * Identifiers are case sensitive.
 
