@@ -244,6 +244,7 @@ switch (/* expression */) {
 There are two types of `While` loop in C++
 
 1. `While` loop
+   Only execute if Condition is satisfied
 
   ```cpp
   while (/* condition */) {
@@ -252,6 +253,7 @@ There are two types of `While` loop in C++
   ```
 
 2. `do.. While..` loop
+   It get executed 1st time irrespective of the condition.
 
   ```cpp
   do {
