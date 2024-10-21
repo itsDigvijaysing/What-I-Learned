@@ -1073,3 +1073,63 @@ To improve the generalization and avoid overfitting in **Neural Networks**, seve
 2. **Compute Gradient and Hessian**: For each data point, compute the gradient and Hessian (second derivative) of the loss function with respect to the prediction.
 3. **Fit Trees**: Build decision trees that fit the residuals, using the gradients and Hessians to guide the splits.
 4. **Update Predictions**: Update the model’s predictions using the trees' output, similarly to standard gradient boosting, but with additional regularization and optimization.
+
+# FoML - 14
+
+## Overview of Ensemble Methods
+
+Ensemble methods combine multiple models to improve predictive performance. The main idea is that by aggregating the predictions from several models, we can achieve better accuracy than any single model.
+
+### Types of Ensemble Methods
+
+1. **Bagging (Bootstrap Aggregating)**
+   - Combines predictions from multiple models trained on different subsets of the data.
+   - Reduces variance and helps prevent overfitting.
+   - Example: Random Forest, where multiple decision trees are trained on bootstrapped samples.
+
+2. **Boosting**
+   - Sequentially trains models, where each new model focuses on correcting the errors made by the previous ones.
+   - Reduces bias and can lead to higher accuracy.
+   - Example: Gradient Boosting, AdaBoost.
+
+## Gradient Boosting
+
+### Overview
+
+Gradient Boosting is a powerful ensemble technique that builds models sequentially. It optimizes the loss function by adding new models that predict the residuals (errors) of the existing model.
+
+### Key Concepts
+
+- **Base Learner**: Typically, a weak learner (e.g., decision tree) that performs slightly better than random guessing.
+- **Loss Function**: A measure of how well the model is performing. Commonly used loss functions include Mean Squared Error (MSE) for regression and log loss for classification.
+- **Learning Rate**: A hyperparameter that controls the contribution of each new model to the ensemble. Lower values lead to more robust models but require more iterations.
+
+### Algorithm Steps
+
+1. **Initialize the model** with a constant prediction (e.g., mean of the target variable).
+2. **For each iteration**:
+   - Calculate the residuals (errors) from the current model.
+   - Fit a new model to these residuals.
+   - Update the predictions by adding the predictions of the new model, scaled by the learning rate.
+3. **Repeat** until a specified number of models is reached or improvements plateau.
+
+### Advantages of Gradient Boosting
+
+- **Flexibility**: Can optimize various loss functions and work with different types of data.
+- **Accuracy**: Often produces state-of-the-art predictive performance on structured/tabular data.
+- **Feature Importance**: Provides insights into feature contributions through variable importance scores.
+
+### Disadvantages of Gradient Boosting
+
+- **Overfitting**: Risk of overfitting if not properly regularized.
+- **Computationally Intensive**: Training can be slow and require significant computational resources.
+- **Sensitivity to Noisy Data**: Performance can degrade if the dataset contains a lot of noise or irrelevant features.
+
+### Popular Implementations
+
+- **XGBoost**: An efficient and scalable implementation of gradient boosting, known for its speed and performance.
+- **LightGBM**: Optimized for large datasets, it uses histogram-based learning to reduce memory usage and increase training speed.
+- **CatBoost**: Designed to handle categorical features automatically, making it user-friendly and effective for various tasks.
+
+# FoML - 15
+
