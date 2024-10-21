@@ -380,3 +380,80 @@ $$( C^T[B_1 Col_1 + B_2 Col_2 + ... + B_n Col_n] > 0 )$$
 #### Step 5: Termination
 - If no further improvement can be made, the current solution is the **optimal solution**.
 - Output the **optimal point \( x^* \)** and the **maximum value** of \( C^T x^* \).
+
+# LO - 16 / 17
+
+## Topics for Assignment
+## 1. Linear Programming (LP) Fundamentals
+
+- **Objective Function**: In linear programming, we aim to either maximize or minimize an objective function, often represented as `z = c^T x`. Here, `c` is a vector of coefficients (representing costs or profits), and `x` is a vector of decision variables. The goal is to find the values of `x` that give the best outcome for the objective function.
+
+- **Constraints**: Linear programs come with certain restrictions, known as constraints. These constraints are often written as `Ax ≤ b` or `Ax = b`, where `A` is a matrix, and `b` is a vector. They define the conditions that any solution must satisfy.
+
+- **Feasible Region**: The feasible region is the set of all possible solutions (points) that satisfy the constraints. It's the "allowed" area in which we search for the optimal solution.
+
+## 2. Polytopes and Convex Sets
+
+- **Polytope**: A polytope is a geometric shape formed by the intersection of several linear inequalities. In linear programming, the feasible region is a polytope. Each corner (or vertex) of this polytope represents a potential solution.
+
+- **Non-degenerate Polytope**: A non-degenerate polytope means that at each vertex, exactly `n` constraints are active (where `n` is the number of variables). This makes the solution process simpler, as there’s no ambiguity about which constraints define the vertices.
+
+- **Convexity**: A convex set means that if you pick two points inside the set and draw a line between them, the entire line will stay inside the set. This is important in linear programming because the feasible region (a polytope) is always convex, which ensures that any local optimal solution is also a global one.
+
+## 3. Standard Form of LP
+
+- **Canonical Form**: To solve a linear program using the simplex method, it must be in a standard form. This means the objective is to **maximize** or **minimize** a linear function subject to equality constraints (`Ax = b`) and non-negative variables (`x ≥ 0`).
+
+- **Slack Variables**: Slack variables are introduced to turn inequalities into equalities. For instance, if you have a constraint like `x1 + x2 ≤ 5`, you can introduce a slack variable `s` and rewrite it as `x1 + x2 + s = 5`, with `s ≥ 0`. This makes the problem easier to solve using simplex.
+
+## 4. Simplex Method Overview
+
+- **Basic Feasible Solutions (BFS)**: In the simplex method, we move from one corner (vertex) of the polytope to another. Each corner is a "basic feasible solution" (BFS). These vertices represent possible solutions, and we want to find the one that maximizes or minimizes the objective function.
+
+- **Pivot Operations**: These are the steps the simplex algorithm uses to switch from one BFS to another. In each step, we decide which variable will enter the solution and which will leave.
+
+- **Optimality Condition**: The algorithm stops when no further improvements can be made to the objective function. This happens when all the costs associated with non-basic variables (variables not currently in the solution) are non-negative, meaning no better solution is possible.
+
+## 5. Initialization of Simplex
+
+- **Initial Feasible Point**: Simplex requires an initial solution that satisfies all the constraints. This starting point is given as `z` in your problem.
+
+- **Choosing Entering and Leaving Variables**: At each step, the simplex method selects one variable to enter the basis (solution) and one to leave it. The entering variable is chosen based on the most negative reduced cost, and the leaving variable is selected using the ratio test (ensuring no constraint is violated).
+
+## 6. Tableau Representation
+
+- **Tableau Form**: Simplex is usually implemented using a tableau, which is a table-like structure that includes all the constraints, the objective function, and information on the basic and non-basic variables. It helps organize the calculations.
+
+- **Row Operations**: Just like in Gaussian elimination, you perform row operations on the tableau to update it after each pivot step. This ensures that you maintain a feasible solution.
+
+## 7. Duality in Linear Programming
+
+- **Dual Problem**: Every linear programming problem has a corresponding "dual" problem. The dual provides additional insight into the solution. For example, in the primal problem, we might be maximizing a profit; in the dual, we could be minimizing costs. Solving the dual can help verify the solution of the primal.
+
+## 8. Termination Criteria
+
+- **Optimality Condition**: The simplex algorithm stops when it finds the best solution, meaning no entering variable can improve the objective function.
+
+- **Unboundedness**: If the algorithm finds that it can keep improving the objective function without bound (i.e., the function keeps increasing or decreasing indefinitely), then the problem is unbounded.
+
+## 9. Degeneracy and Cycling
+
+- **Degeneracy**: Degeneracy occurs when more than one solution shares the same objective function value, but only `n` of them define a vertex. This can lead to cycling, where the algorithm revisits the same solutions repeatedly.
+
+- **Cycling**: To avoid cycling, special rules like Bland’s Rule are applied, which ensure that the algorithm progresses towards the optimal solution without getting stuck in loops.
+
+## 10. Numerical Stability
+
+- **Precision Issues**: In practical implementations of simplex, rounding errors in floating-point arithmetic can cause problems. Ensuring numerical stability is important, so that small errors don’t lead to incorrect results.
+
+## 11. Simplex Variants
+
+- **Revised Simplex**: The revised simplex method is a more efficient version of the simplex algorithm. Instead of recalculating everything from scratch in each step, it reuses previous information, saving time and computational resources.
+
+---
+
+### Practical Considerations
+
+1. **Matrix Operations**: Simplex involves several matrix operations, such as Gaussian elimination, updating the tableau, and finding inverse matrices. These are important for efficiently solving linear programs.
+
+2. **Computational Complexity**: While the simplex algorithm can theoretically take a long time to solve certain problems (exponential time complexity), in practice, it often works very efficiently.
