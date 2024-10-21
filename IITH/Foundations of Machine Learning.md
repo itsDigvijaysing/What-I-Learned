@@ -1133,3 +1133,113 @@ Gradient Boosting is a powerful ensemble technique that builds models sequential
 
 # FoML - 15
 
+## Data Handling Issues
+
+Data handling issues can significantly affect the performance of machine learning models. Common issues include:
+
+### 1. Missing Data
+- **Description**: Occurs when some data points are not recorded.
+- **Handling Strategies**:
+  - **Imputation**: Fill missing values using statistical methods (mean, median, mode).
+  - **Removal**: Discard rows or columns with missing data, but this may lead to loss of information.
+  - **Prediction Models**: Use models to predict missing values based on available data.
+
+### 2. Outliers
+- **Description**: Data points that differ significantly from other observations.
+- **Handling Strategies**:
+  - **Removal**: Eliminate outliers if justified.
+  - **Transformation**: Apply transformations (e.g., log transformation) to reduce the impact of outliers.
+  - **Robust Models**: Use models that are less sensitive to outliers (e.g., decision trees).
+
+### 3. Data Imbalance
+- **Description**: Unequal representation of classes in the dataset.
+- **Impact on Classifiers**:
+  - Classifiers may become biased towards the majority class, leading to poor performance on the minority class.
+  - Metrics like accuracy can be misleading in imbalanced datasets; precision, recall, and F1-score are better indicators.
+
+- **Handling Strategies**:
+  - **Resampling**: Techniques like oversampling the minority class or undersampling the majority class.
+  - **SMOTE (Synthetic Minority Over-sampling Technique)**:
+    - Generates synthetic samples for the minority class by interpolating between existing minority instances.
+    - Helps balance the dataset without simply duplicating existing examples.
+
+### 4. Feature Scaling
+- **Description**: Variability in feature ranges can affect model performance.
+- **Handling Strategies**:
+  - **Normalization**: Scale features to a range (e.g., 0 to 1).
+  - **Standardization**: Center features around zero and scale to unit variance (Z-score normalization).
+
+---
+
+## Bias-Variance Tradeoff
+
+The bias-variance tradeoff is a fundamental concept in machine learning that affects model performance.
+
+![Bias Variance](Bias_Variance.png)
+### 1. Generalization
+- **Definition**: The ability of a model to perform well on unseen data, beyond the training set.
+- **Generalization Error**: The difference between the expected prediction of the model on the entire population and the actual prediction error on unseen data.
+
+### 2. Bias
+- **Definition**: The error due to overly simplistic assumptions in the learning algorithm.
+- **Characteristics**:
+  - High bias can lead to **underfitting**, where the model cannot capture the underlying patterns in the data.
+  - Example: A linear model applied to a nonlinear dataset.
+
+### 3. Variance
+- **Definition**: The error due to excessive complexity in the learning algorithm.
+- **Characteristics**:
+  - High variance can lead to **overfitting**, where the model learns noise and random fluctuations in the training data.
+  - Example: A complex model capturing all data points in the training set.
+
+### 4. Tradeoff
+- Striking the right balance between bias and variance is crucial for optimal model performance.
+- **Goal**: Minimize total error (Bias² + Variance + Irreducible Error) while maintaining a good fit to the training data and generalizing well to unseen data.
+
+# FoML - 16
+## Regularization
+
+Regularization techniques are used to prevent overfitting by adding a penalty to the model's complexity.
+
+### 1. Overview
+- **Regularizer**: A term added to the loss function to constrain the model's complexity, helping to reduce overfitting.
+- Regularization works by discouraging overly complex models, promoting simpler models that are more likely to generalize well to new data.
+
+### 2. Types of Regularization
+
+#### L1 Regularization (Lasso)
+- **Description**: Adds the absolute value of the coefficients as a penalty term to the loss function.
+- **Effect**: Can shrink some coefficients to zero, effectively performing feature selection.
+- **Formula**: 
+$$  [
+  \text{Loss} = \text{Loss Function} + \lambda \sum |w_i|
+  ]$$
+  where \( \lambda \) is the regularization parameter.
+
+#### L2 Regularization (Ridge)
+- **Description**: Adds the squared value of the coefficients as a penalty term to the loss function.
+- **Effect**: Shrinks coefficients but does not set any to zero, retaining all features.
+- **Formula**:
+ $$ [
+  \text{Loss} = \text{Loss Function} + \lambda \sum w_i^2
+  ]$$
+
+### 3. Regularization in Different Models
+
+#### K-Nearest Neighbors (K-NN)
+- **Strategy**: Choose a higher \( k \) to reduce the model's sensitivity to noise, which acts as a form of regularization.
+
+#### Decision Trees
+- **Strategy**: Use **pruning** to remove nodes that provide little power to the model, preventing overfitting.
+
+#### Naïve Bayes
+- **Description**: As a parametric model, it automatically acts as a regularizer by assuming independence between features, which limits complexity.
+
+#### Support Vector Machines (SVMs)
+- **Strategy**: Incorporates a regularization parameter \( C \) that balances the tradeoff between maximizing the margin and minimizing classification errors.
+
+#### Neural Networks
+- **Strategies**:
+  - Use dropout layers to randomly deactivate a fraction of neurons during training, which helps prevent overfitting.
+  - Implement weight regularization (L1 or L2) to constrain weight values.
+
