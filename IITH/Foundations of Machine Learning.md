@@ -1199,32 +1199,121 @@ The bias-variance tradeoff is a fundamental concept in machine learning that aff
 # FoML - 16
 ## Regularization
 
-Regularization techniques are used to prevent overfitting by adding a penalty to the model's complexity.
+Regularizers are techniques used to prevent overfitting in machine learning models by adding a penalty term to the loss function. This encourages simpler models that generalize better to unseen data.
 
-### 1. Overview
-- **Regularizer**: A term added to the loss function to constrain the model's complexity, helping to reduce overfitting.
-- Regularization works by discouraging overly complex models, promoting simpler models that are more likely to generalize well to new data.
+## 1. Overview of Regularization
 
-### 2. Types of Regularization
+- **Purpose**: Regularization discourages the learning of overly complex models by imposing a constraint on the model parameters.
+- **Effect**: Helps to improve generalization by reducing the risk of overfitting to the training data.
 
-#### L1 Regularization (Lasso)
+## 2. Common Types of Regularization
+
+### A. L1 Regularization (Lasso)
+
 - **Description**: Adds the absolute value of the coefficients as a penalty term to the loss function.
-- **Effect**: Can shrink some coefficients to zero, effectively performing feature selection.
-- **Formula**: 
-$$  [
-  \text{Loss} = \text{Loss Function} + \lambda \sum |w_i|
-  ]$$
-  where \( \lambda \) is the regularization parameter.
+- **Mathematical Representation**:
 
-#### L2 Regularization (Ridge)
+  Given a loss function L(y, ŷ), where y is the true value and ŷ is the predicted value, L1 regularization modifies the loss function as follows:
+  
+  Loss_Lasso = L(y, ŷ) + λ ∑ |wi|
+
+  where:
+  - λ is the regularization parameter that controls the strength of the penalty.
+  - wi are the model weights.
+
+- **Effects**:
+  - Encourages sparsity in the model parameters; some weights may be driven to zero, effectively selecting a simpler model.
+  - Useful for feature selection as it can eliminate irrelevant features.
+
+### B. L2 Regularization (Ridge)
+
 - **Description**: Adds the squared value of the coefficients as a penalty term to the loss function.
-- **Effect**: Shrinks coefficients but does not set any to zero, retaining all features.
-- **Formula**:
- $$ [
-  \text{Loss} = \text{Loss Function} + \lambda \sum w_i^2
-  ]$$
+- **Mathematical Representation**:
 
-### 3. Regularization in Different Models
+  The loss function is modified as follows:
+  
+  Loss_Ridge = L(y, ŷ) + λ ∑ wi^2
+
+- **Effects**:
+  - Shrinks the coefficients towards zero but does not eliminate them completely, leading to models that utilize all features.
+  - Helps prevent multicollinearity (when predictor variables are highly correlated) by stabilizing estimates.
+
+### C. Elastic Net Regularization
+
+- **Description**: Combines L1 and L2 regularization.
+- **Mathematical Representation**:
+
+  The modified loss function is given by:
+  
+  Loss_ElasticNet = L(y, ŷ) + λ1 ∑ |wi| + λ2 ∑ wi^2
+
+- **Effects**:
+  - Provides a balance between L1 and L2, promoting both sparsity and small coefficients.
+  - Particularly useful when dealing with datasets with highly correlated features.
+
+## 3. Lp Norm Regularizers
+
+### A. Overview of Lp Norms
+
+The Lp norm is a generalization of the L1 and L2 norms and is defined for a vector w as:
+
+L^p(w) = (∑ |wi|^p)^(1/p)
+
+where:
+- p is a positive integer (e.g., 1 for L1, 2 for L2).
+- wi are the individual weights or coefficients.
+
+### B. Common Lp Norms
+
+1. **L1 Norm (p=1)**:
+   - Defined as: L^1(w) = ∑ |wi|
+   - Encourages sparsity by pushing some weights to zero.
+
+2. **L2 Norm (p=2)**:
+   - Defined as: L^2(w) = (∑ wi^2)^(1/2)
+   - Shrinks weights evenly but retains all features.
+
+3. **Lp Norm (General Case)**:
+   - For 0 < p < 1, the Lp norm encourages sparsity and can be used in situations similar to L1 regularization but is not commonly used due to difficulties in optimization.
+   - Higher values of p (like p=3) can create a balance between L1 and L2 properties.
+
+### C. How Lp Norms Work
+
+- **Influence on Model Complexity**:
+  - The choice of p affects how the penalty is applied to the weights:
+    - Lower p values (e.g., L1) can lead to more sparsity, while higher p values (e.g., L2) lead to smoother weight distributions.
+  - As p increases, the regularization effect becomes stronger, and the model is less likely to overfit.
+
+- **Gradient Descent and Lp Regularization**:
+  - The gradients for different Lp norms affect weight updates during optimization:
+    - For L1, the gradient is a subgradient, which is not defined at zero.
+    - For L2, the gradient is smooth and continuous.
+  
+  The gradient of the loss function with Lp regularization changes based on the chosen norm, affecting how weights are updated during training.
+
+## 4. How Regularizers Work Mathematically
+
+### A. The Concept of Loss Function
+
+The loss function quantifies the difference between the predicted values and the actual values. By adding a regularization term, the loss function is transformed into a form that accounts for model complexity.
+
+- **General Form**:
+  
+  Total Loss = Prediction Error + Regularization Penalty
+
+### B. Impact of the Regularization Parameter λ
+
+- **Role of λ**:
+  - A small value of λ results in a model that may fit the training data very closely (potential overfitting).
+  - A large value of λ increases the penalty on complexity, potentially leading to underfitting.
+
+### C. Model Complexity Control
+
+- Regularization effectively controls the tradeoff between bias and variance:
+  - **Higher Bias**: Strong regularization can lead to increased bias but reduced variance.
+  - **Lower Bias**: Weak regularization may fit the training data well (low bias) but can lead to high variance.
+
+## 5. Regularization in Different Models
 
 #### K-Nearest Neighbors (K-NN)
 - **Strategy**: Choose a higher \( k \) to reduce the model's sensitivity to noise, which acts as a form of regularization.
