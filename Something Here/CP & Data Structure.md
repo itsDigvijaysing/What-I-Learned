@@ -7,9 +7,4 @@ Problem Set:
 [450 DSA Problems](https://450dsa.com/)
 [TLE Eliminator CP 31](https://www.tle-eliminators.com/cp-sheet)
 [CSES problem set](https://cses.fi/problemset/)
-
-Platforms:
-
 ## Competitive Programming
-
-## Data Structures
