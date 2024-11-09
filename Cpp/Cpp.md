@@ -1,7 +1,8 @@
 ### Tags: #Cpp 
 ## Basics
 
-C++ inherits most of its code style from C language, but both are very different from each other. Let's consider an example:
+C++ inherits most of its code style from C language, but both are very different from each other. 
+Let's consider an example:
 
 ```cpp
 // This is a comment
