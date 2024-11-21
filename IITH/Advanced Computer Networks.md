@@ -2132,3 +2132,222 @@ When a device (e.g., a mobile or laptop) connects to the network, the DHCP serve
   - Scalability: Reduces the size of routing tables.
   - Efficiency: Limits flooding of routing information to within local areas.
 
+# ACN - 35
+
+## **Network Layer Routing Algorithm Among ISPs: Border Gateway Protocol (BGP)**
+- **Overview**:
+  - **BGP**: The de facto **inter-domain routing protocol** that acts as the "glue" holding the Internet together.
+  - It is a **policy-based path vector protocol**.
+  - Enables subnets to advertise their existence to other **Autonomous Systems (AS)**.
+
+---
+
+## **BGP Types**
+1. **eBGP (External BGP)**:
+   - Facilitates routing between different Autonomous Systems.
+   - Used to exchange routes between gateway routers of different ASes.
+
+2. **iBGP (Internal BGP)**:
+   - Used within the same AS to ensure consistent routing information across routers in the AS.
+
+---
+
+## **BGP Sessions**
+- **Session Details**:
+  - BGP runs over **TCP** (port 179) to establish reliable communication.
+  - A BGP session is established between two BGP routers, known as **peers**.
+  - These sessions exchange routing information using **BGP update messages**.
+
+---
+
+## **BGP Policies**
+- BGP allows network operators to define routing policies that:
+  - Control how routing information is shared.
+  - Influence the selection of paths for forwarding traffic.
+- Policies are essential for ensuring routing aligns with an AS’s goals, such as:
+  - Avoiding certain ASes.
+  - Preferring specific routes.
+
+---
+
+## **BGP Path Vector Protocol**
+- Each route advertisement carries the **entire path** (sequence of AS numbers) to the destination.
+- Prevents **routing loops** by rejecting routes containing its own AS number.
+- **Key Components**:
+  - **AS-Path**: Sequence of ASes a route passes through.
+  - **Next-Hop**: The IP address of the router used to reach the destination.
+  - **Local Preference**: Preference value assigned to routes (higher value = preferred).
+  - **MED (Multi-Exit Discriminator)**: Used to prioritize paths when multiple links exist between ASes.
+
+---
+
+## **Hot Potato Routing**
+- A strategy where a router forwards traffic to the **closest exit point** in the AS.
+- Minimizes the resources consumed by the AS by offloading traffic as quickly as possible.
+- Trade-off: May not always result in the shortest path from the sender's perspective.
+
+---
+
+## **BGP Route Selection**
+### Steps for Route Selection:
+1. Prefer the route with the highest **Local Preference**.
+2. Choose the route with the shortest **AS-Path**.
+3. Select the route with the lowest **Origin Type** (e.g., IGP is preferred over EGP).
+4. Compare the **MED** values; lower is preferred.
+5. Prefer **eBGP** over **iBGP** routes.
+6. Select the route with the lowest **IGP cost** to the Next-Hop.
+7. Use **router ID** as a tiebreaker if all else is equal.
+
+---
+
+## **BGP Hijacking**
+- **Definition**:
+  - Malicious activity where an attacker advertises ownership of an IP prefix not assigned to them.
+  - This can redirect, intercept, or block traffic.
+
+- **Prevention Mechanism**:
+  - **RPKI (Resource Public Key Infrastructure)**:
+    - Validates IP prefixes and ensures that only authorized ASes advertise them.
+    - Adds a layer of cryptographic security to BGP routing.
+
+# ACN - 36
+
+## **Link Layer Introduction**
+
+### **Terminology**
+- **Nodes**: Includes hosts and routers.
+- **Responsibility**: The link layer handles the transfer of **IP datagrams** from one **physically adjacent node** to another over a link.
+- A **datagram** may travel across various link-layer technologies (e.g., Wi-Fi, Ethernet) during its journey, even within the same packet.
+
+---
+
+## **Link Layer Services**
+
+### **Framing and Link Access**
+- Encapsulates the datagram into a **frame** by adding headers and trailers.
+- Responsible for accessing the link (medium) to send frames.
+
+### **Reliable Delivery Between Adjacent Nodes**
+- Ensures data is reliably delivered between physically connected nodes.
+- While TCP provides end-to-end reliability, **reliable link-layer protocols** (e.g., on Wi-Fi) can improve efficiency by reducing the need for retransmissions in TCP.
+
+### **Retry Mechanisms**
+- There is a retry limit for sending a packet.
+- If a packet is not delivered after the retry limit, it is dropped.
+
+### **Error Detection and Correction**
+1. **Error Detection**:
+   - Detects corruption in transmitted frames using techniques like checksums or cyclic redundancy checks (CRC).
+   - Corrupted frames are typically discarded.
+2. **Error Correction**:
+   - Requires more bits than detection but allows errors to be corrected without retransmission.
+
+### **Interface Communication Types**
+- **Point-to-Point**: Direct link between two nodes.
+- **Broadcast**: Shared link among multiple nodes.
+
+---
+
+## **Multiple Access Links**
+### **Link Types**
+1. **Point-to-Point**: E.g., direct connections between two devices.
+2. **Broadcast**: Multiple devices share a single channel.
+
+### **Multiple Access Control Protocols (MAC)**
+- Needed when multiple nodes share the same broadcast channel to avoid collisions.
+- **Goals of an Ideal MAC Protocol**:
+  1. Full channel utilization if a single node transmits.
+  2. Fair resource allocation: If \( M \) nodes transmit, each gets \( R/M \) utilization.
+  3. Bandwidth efficiency: No dedicated bandwidth for specific users.
+  4. Simple and decentralized.
+
+---
+
+## **MAC Protocol Types**
+1. **Channel Partitioning Protocols**:
+   - **TDMA (Time Division Multiple Access)**:
+     - Divides the channel into time slots, with each node getting its dedicated time for transmission.
+   - **FDMA (Frequency Division Multiple Access)**:
+     - Divides the channel into frequency bands, with each node assigned a specific frequency.
+   
+2. **Random Access Protocols**:
+   - Allows nodes to transmit without coordination.
+   - Handles collisions when multiple nodes transmit simultaneously.
+   - Examples:
+     - **ALOHA**:
+       - Simple protocol; nodes transmit immediately.
+       - High collision probability; efficiency is limited.
+     - **CSMA (Carrier Sense Multiple Access)**:
+       - Nodes sense the channel before transmitting to avoid collisions.
+       - **CSMA/CD (Collision Detection)**:
+         - Used in wired networks (e.g., Ethernet).
+         - Detects collisions during transmission and stops immediately to minimize waste.
+
+---
+
+## **Ethernet**
+
+### **Physical Topology**
+1. **MAC Header**:
+   - Includes source and destination addresses.
+   - Frame check sequence for error detection.
+2. **Router Information**:
+   - Source and destination MAC addresses.
+
+---
+
+### **Ethernet Switch**
+- A **link-layer device** that actively forwards frames based on its knowledge of connected hosts.
+- Differences between Hub and Switch:
+  - **Hub**: Broadcasts frames to all connected devices (passive device).
+  - **Switch**: Forwards frames selectively to the appropriate device (active role).
+  
+### **Self-Learning Switch**
+- Learns where each host is located by analyzing source addresses in incoming frames.
+- Gradually builds a **forwarding table** (mapping MAC addresses to interfaces).
+
+### **Interconnected Switches**
+- Typically arranged in a **tree topology**.
+- Switches communicate to avoid loops using protocols like **Spanning Tree Protocol (STP)**.
+
+---
+
+## **ARP Cache Poisoning**
+- **Address Resolution Protocol (ARP)** resolves IP addresses to MAC addresses.
+- **ARP Cache Poisoning**:
+  - Attackers inject false MAC-IP mappings into the ARP table.
+  - Allows them to intercept, modify, or block traffic (man-in-the-middle attack).
+- **Mitigation**:
+  - Use dynamic ARP inspection (DAI).
+  - Enforce secure ARP bindings.
+
+---
+
+## **Adhoc and MANET**
+- **Adhoc Networks**:
+  - Networks formed dynamically without a fixed infrastructure.
+  - Devices communicate directly with each other.
+- **MANET (Mobile Adhoc Network)**:
+  - Specialized adhoc networks where devices are mobile.
+  - Requires dynamic routing due to frequent topology changes.
+
+---
+
+## **Switching in Ethernet**
+
+### **Fabric Plane: Cisco CRS**
+- Core architecture for high-performance routers and switches.
+
+### **Switching Mechanisms**:
+1. **Switching via Memory**:
+   - Packets are stored in memory before being forwarded.
+2. **Switching via Bus**:
+   - Packets are transferred across a shared bus.
+3. **Switching via Interconnection Networks**:
+   - Uses a multi-stage switch fabric for parallel processing.
+
+---
+
+## **Input Port Queuing**
+- **Head-of-Line (HoL) Blocking**:
+  - Occurs when a packet at the front of the queue is delayed, blocking other packets in the queue.
