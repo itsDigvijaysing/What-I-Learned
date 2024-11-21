@@ -1732,4 +1732,99 @@ $$  \[
 - **Input Port Queueing**: Packets that arrive at a router's input port are placed in a queue before being forwarded. If the queue is full or another packet is being processed, the new packet must wait in the queue.
 - **Head-of-Line (HoL) Blocking**: This occurs when a packet at the front of the queue is blocked by a slower or higher-priority packet, causing delays for subsequent packets that are waiting in the queue.
 
+# ACN - 31
+
+## Output Port Queueing
+
+### **Buffering**
+- **Purpose**: Manage congestion and avoid packet loss when multiple packets compete for the same output link.
+- **Buffering Rules**:
+  - Traditional Rule: [Typical RTT] × [Link Capacity (C)].
+  - Recent Recommendation (as per modern networking trends): [RTT × C] / [√N], where:
+    - **N** = Number of active flows.
+- **Challenges**:
+  - Insufficient buffering leads to packet loss.
+  - Excessive buffering causes increased queuing delays (bufferbloat).
+
+### **Packet Loss**
+- **Causes**:
+  - Congestion due to limited buffer space at the output port.
+  - **Priority Scheduling**:
+    - Lower-priority packets are dropped in favor of higher-priority ones during congestion.
+
+---
+
+## Buffer Management
+
+### **Key Buffer Management Strategies**:
+1. **Tail Drop**:
+   - Simplest mechanism.
+   - Packets arriving after the queue is full are dropped, regardless of priority.
+2. **Priority Drop**:
+   - Drops lower-priority packets to make room for higher-priority packets.
+
+### **Active Queue Management (AQM)**:
+- **Purpose**: Proactively manage queues to minimize packet delay and avoid buffer overflows.
+- **Techniques**:
+  1. **RED (Random Early Detection)**:
+     - Uses queue size thresholds:
+       - **Min Queue Size**: Admit all packets; no drops.
+       - **Max Queue Size**: Drop all or mark all packets (e.g., with ECN - Explicit Congestion Notification).
+     - Randomly drops packets as the queue builds up to avoid synchronized drops and congestion collapse.
+  2. **CoDEL (Controlled Delay)**:
+     - Focuses on packet delay rather than queue size.
+     - Drops or marks packets with ECN when the queuing delay exceeds a threshold (typically 5ms).
+     - Ensures low-latency forwarding by targeting delay reduction, not just queue size.
+
+---
+
+## Scheduling Policies
+
+### **Common Packet Scheduling Mechanisms**:
+1. **First-Come-First-Serve (FCFS)**:
+   - Processes packets in the order they arrive.
+   - Simple but can lead to unfair resource allocation.
+2. **Priority Scheduling**:
+   - Processes packets based on priority levels.
+   - Higher-priority packets are served first, potentially starving lower-priority flows.
+3. **Round Robin (RR) Queueing**:
+   - Cycles through flows to ensure fair bandwidth allocation.
+   - Equal opportunity for all flows.
+4. **Weighted Round Robin (WRR)**:
+   - Allocates bandwidth proportionally to assigned weights for different flows.
+   - Ensures differentiated service quality.
+
+---
+
+## Network Neutrality
+
+### **Core Principles**:
+1. **No Blocking**:
+   - ISPs must not block lawful content, applications, or services.
+2. **No Throttling**:
+   - ISPs must not degrade performance for specific applications or services.
+3. **No Paid Priority**:
+   - ISPs must not favor specific content or services in exchange for payment.
+
+### **Airtel as ISP & TSP**:
+- **ISP (Internet Service Provider)**:
+  - Manages and controls traffic flowing through its network pipes.
+- **TSP (Telecom Service Provider)**:
+  - Provides the infrastructure or "pipes" for the network.
+
+---
+
+## Performance Evaluation
+
+### **Bottleneck Links**:
+- **Definition**: The slowest link in the end-to-end path that limits network throughput.
+- **Impact**:
+  - Bottleneck links determine the maximum achievable data rate.
+  - End-to-end performance is constrained by the bottleneck, irrespective of the capacity of other links in the network path.
+
+### **Queuing Delays**:
+- **Queuing occurs** when packets wait in buffers due to congestion.
+- Prolonged queuing delays may lead to performance degradation and inefficiency.
+
+
 
