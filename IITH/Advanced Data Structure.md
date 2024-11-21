@@ -1081,3 +1081,115 @@ Basically We first select which matrix to work on suppose we select matrix From 
     - **Example**: The **Fibonacci sequence** is a classic example of overlapping subproblems. Without memoization, the same Fibonacci subproblem would be solved multiple times in the recursive calls, leading to inefficiency.
   
 - **Recursion and its Working**: Recursive solutions often lead to overlapping subproblems, which makes them inefficient for problems like the Fibonacci sequence, where many subproblems are recalculated multiple times. Dynamic programming optimizes these solutions by storing results of subproblems and using them when needed.
+
+# ADS - 19 / 20 / 21
+
+## 1. Greedy Algorithms: Activity Scheduling (Review)
+- **Activity Scheduling Problem**:
+  - The activity scheduling problem, which was reviewed earlier, involves selecting the maximum number of non-overlapping activities from a set, where each activity has a start time and end time. The greedy approach selects activities in order of their finishing times, and iteratively picks the next activity that does not overlap with the previously selected ones.
+  
+---
+
+## 2. Amortized Analysis
+- **Amortized Analysis**:
+  - Amortized analysis is a technique used to determine the average time per operation over a sequence of operations, rather than analyzing the worst-case time for a single operation. It is particularly useful when individual operations have varying costs, but the average cost over time remains manageable.
+  
+  - **Aggregation Method**:
+    - This method involves calculating the total cost for a sequence of operations and then averaging it over all operations. If a sequence of operations is performed, where the total cost is `O(n)` for `n` operations, the amortized cost per operation is `O(1)`. For example:
+      - If we push 10 elements to a stack, the maximum number of pops that can happen will be 10, and if we consider the total cost (over `n` operations), the average cost per operation would be constant or `O(1)`.
+  
+  - **Example**: 
+    - When using a stack, pushing an element onto the stack typically takes `O(1)` time. However, if you pop an element, the operation might involve more work (like resizing the stack if necessary). Amortized analysis helps average this cost over multiple operations, showing that despite occasional higher costs, the average cost of stack operations is constant (`O(1)`).
+
+---
+
+## 3. Counter Increment Problem
+- **Counter Increment Example**:
+  - A common amortized analysis example is the **counter increment problem**, where we perform a series of counter increments. The idea is that for each operation, we might encounter both low and high costs (e.g., incrementing a counter might sometimes require resetting the counter or reallocation). However, the amortized cost of a sequence of operations is computed based on the total work done over all operations, not just a single one.
+
+  - **Time Taken Amortization**:
+    - Suppose we are performing a sequence of operations. In the worst case, one operation might take longer, but when amortized over a series of operations, the average cost of each operation is much lower. This concept shows that the worst-case time for a single operation does not necessarily reflect the average cost over a series of operations.
+
+---
+
+## 4. Accounting Method
+- **Accounting Method in Amortized Analysis**:
+  - In the **accounting method**, we assign an "amortized cost" to each operation, which is an estimate of the actual cost of the operation. The sum of the amortized costs over a sequence of operations should always be greater than or equal to the total actual cost.
+  
+  - **Example**: 
+    - For example, consider a sequence of operations involving a stack. If the actual cost of a push operation is `O(1)` but the pop operation involves additional work like resizing the stack, we might assign an amortized cost of `O(1)` to the push operation and prepay for the additional cost of future pop operations.
+    - We might estimate that each operation has a higher cost at certain points (e.g., pushing an element might cost a little more because it requires resizing the stack), but over time, the overall cost remains balanced.
+  
+  - **Cost Estimation**:
+    - We can think of each operation in terms of "paying upfront" for future operations. For example, when a counter transitions from 0 to 1, we pay a cost of 2 (because this could involve resizing or other overhead). When the counter transitions from 1 back to 0, the cost is 0. By estimating the cost ahead of time, we ensure that we can pay for future expensive operations through the amortization of cheaper ones.
+
+  - **Prepaying for Future Operations**:
+    - In the accounting method, we ensure that the total amortized cost always covers the worst-case costs over a series of operations. By prepaying for some operations (like pushing elements or counter transitions), we can guarantee that the total actual cost is less than or equal to the estimated cost.
+  
+# ADS - 22
+
+## 1. Amortized Analysis: Overview
+
+Amortized analysis helps us analyze the average cost of operations over a sequence, rather than looking at the worst-case cost of individual operations. This method is particularly useful when individual operations may have varying costs but, when viewed over time, the average cost per operation is low.
+
+### Types of Amortized Analysis
+- **Aggregation Method**: 
+  - The aggregation method involves calculating the total cost of a sequence of operations and then dividing it by the number of operations to determine the average cost per operation.
+  - If the total cost of `n` operations is `O(n)`, the amortized cost per operation would be `O(1)`, indicating that the cost is distributed evenly across all operations.
+
+- **Accounting Method**: 
+  - In the accounting method, we assign an amortized cost to each operation, which is an estimate of the cost of the operation.
+  - The sum of the amortized costs over a sequence of operations should always be greater than or equal to the total actual cost.
+  - This method allows us to pay for expensive operations upfront (i.e., "prepay") so that the total cost remains balanced over time.
+
+- **Potential Method**: 
+  - The potential method uses the concept of **potential energy** to represent the "stored work" in the data structure.
+  - The idea is that certain operations (e.g., insertions, deletions) may cause the data structure to store "potential" work, which can be "spent" later in the sequence of operations.
+  - **Potential Function**: 
+    - The potential function applies to the entire data structure rather than just individual objects. It tracks the work that has been stored or "prepaid" in the data structure for future operations.
+    - The amortized cost of each operation is the actual cost of the operation plus the change in potential due to that operation.
+
+---
+
+## 2. Amortized Cost Calculation
+- The **amortized cost** of each operation is calculated as:
+
+$$  \[
+  \text{Amortized Cost} = \text{Actual Cost} + \Delta \Phi
+  \]$$
+
+  Where:
+  - **Actual Cost** is the real cost of performing the operation.
+  - **ΔΦ** is the change in potential after the operation.
+
+  The change in potential reflects the difference in the amount of work (or "energy") stored in the data structure before and after the operation. If the potential increases, it indicates that the data structure is "storing energy" for future use. Conversely, if the potential decreases, it means that the structure is "spending" this stored work.
+
+---
+
+## 3. Dynamic Arrays and Amortized Analysis
+
+Dynamic arrays are a key data structure that benefits from amortized analysis. A dynamic array is an array that grows in size as needed when elements are added. The basic operations involve adding an element, resizing the array when it becomes full, and possibly moving elements to a new location.
+
+### Dynamic Arrays: Insertion Process
+- **Insertion**: When adding an element to a dynamic array, if there is space in the array, the operation takes constant time, i.e., `O(1)`. However, when the array is full, a resizing operation is required. This resizing involves creating a new array with double the size and copying all the elements from the old array to the new one, which takes linear time `O(n)`.
+
+### Amortized Analysis of Dynamic Arrays
+- **Resize Operation**: While the resize operation has a linear time cost, it happens infrequently because the array doubles in size each time it reaches capacity. This leads to an amortized constant time cost for each insertion.
+  
+  - For example, if we perform `n` insertions, most of the insertions will take constant time `O(1)`, but a few will involve resizing the array, which costs `O(n)` for each resize. Since the size doubles with each resize, the total cost for `n` operations will be proportional to `O(n)`, and the amortized cost per insertion is `O(1)`.
+
+### Applying the Potential Method to Dynamic Arrays
+- **Potential Function for Dynamic Arrays**:
+  - We can define a potential function for the dynamic array as the difference between the current size of the array and the capacity of the array. If the array is half full, the potential is small. If it is nearly full, the potential increases because we are close to resizing.
+  
+  - When an insertion happens, the potential increases if we are approaching the point where the array will need to be resized. If we do a resize, the potential drops because the array's size increases and the number of elements per block increases.
+
+  - The **amortized cost** of an insertion is then:
+
+   $$ \[
+    \text{Amortized Cost} = \text{Actual Cost of Insertion} + \Delta \Phi
+    \]$$
+
+    Where \( \Delta \Phi \) is the change in potential due to the operation. In this case, the amortized cost remains constant `O(1)` over a sequence of operations, despite occasional resizing operations.
+
+
