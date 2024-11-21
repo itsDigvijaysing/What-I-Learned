@@ -1642,18 +1642,94 @@ $$  \[
 
 # ACN - 29
 
+## Network Layer
+
+- The **network layer** is responsible for routing and forwarding packets across networks. It determines the path to forward packets from source to destination.
+- **Service Model**: The network layer provides a service to the transport layer, ensuring data delivery across a diverse and possibly complex network infrastructure.
+
+## Different Architectures in Network Layer
+
+### 1. Best-Effort Architecture
+- In a **best-effort** approach, the network makes no guarantees about the quality of service (QoS). This means there is no guarantee of bandwidth, no guarantees on packet delivery, and no guarantee of order or timing.
+- **Advantages**: Simple, with no need for additional overhead in managing resources or guarantees.
+- **Disadvantages**: No assurances regarding network performance, such as delays, packet loss, or bandwidth fluctuations.
+
+### 2. ATM (Asynchronous Transfer Mode)
+- **ATM** is a network layer protocol that uses fixed-size cells (53 bytes) and supports both connection-oriented and connectionless communication.
+- It can provide **quality of service (QoS)** guarantees, making it suitable for real-time applications that need predictable service.
+
+### 3. IntServ (Integrated Services)
+- **IntServ** provides QoS by reserving resources across the network for a specific flow of traffic, ensuring that the network delivers the required bandwidth, delay, and jitter constraints.
+- It uses the **Resource Reservation Protocol (RSVP)** to reserve resources for each flow.
+
+### 4. DiffServ (Differentiated Services)
+- **DiffServ** is a scalable and straightforward alternative to IntServ, focusing on the marking of packets into different classes for QoS treatment.
+- Each packet is classified and marked at the network layer, allowing for efficient management of traffic priority and resource allocation.
+  
+## Reasons for Selecting Current Best-Effort Code
+
+- **Simplicity**: The best-effort approach is simple to implement, reducing the complexity of the network infrastructure.
+- **Sufficient Bandwidth**: For many applications, the available bandwidth is sufficient for normal operation without requiring intricate QoS guarantees.
+- **Replicate Application Layer**: Best-effort services replicate application-layer behavior without complex configuration, making it easy to handle diverse application needs.
+- **Congestion Control**: Managing congestion in the best-effort system is straightforward and has seen widespread success.
+
+## Issues with Best-Effort Approach
+
+- **No Guarantee on Bandwidth**: There is no assurance that the required bandwidth will be available when needed, which can lead to poor performance for high-demand applications.
+- **Loss and Order Issues**: Since no guarantees are made regarding the order of packet delivery, packets may arrive out of order or be lost, making it unsuitable for applications needing strict sequencing or reliability.
+
+## Dataplane and Control Plane
+
+- **Dataplane**: Refers to the functions related to forwarding packets within a router. It operates locally and typically deals with the fast forwarding of packets based on routing tables.
+- **Control Plane**: Deals with the network-wide logic that governs how the router behaves in terms of routing decisions. It runs routing algorithms and determines optimal routes for data packets.
+
 
 # ACN - 30
 
+## Router Architecture and Routing
 
-# ACN - 31
+- **Router Architecture**: Routers play a vital role in network communication by forwarding packets between devices on different networks. The router’s internal architecture handles this forwarding process.
+- **Routing Process**: Routers receive packets from the data link layer, consult the routing table to determine the best path, and then forward the packets to the next hop along that path. Routing decisions are made based on destination addresses, and routers typically use algorithms to determine the best path.
+  
+## Line Speed and Network Devices
 
+- **Router/Firewall/IDM/IPS/UTM/DPI**: 
+  - These devices are used for network traffic monitoring, security, and optimization. Each device plays a role in improving network performance and security.
+  - **IDM (Intrusion Detection System)** and **IPS (Intrusion Prevention System)** focus on monitoring and preventing security threats.
+  - **UTM (Unified Threat Management)** combines multiple security functions into one device.
+  - **DPI (Deep Packet Inspection)** inspects the content of packets for security or performance monitoring.
+  - **Line Speed** refers to how fast data is processed by these devices.
 
-# ACN - 32
+## Forwarding Based on Destination
 
+- **Destination-based Forwarding**: Packets are forwarded based on the destination address. Each router checks the packet's destination address, consults its forwarding table, and forwards the packet accordingly.
+- **Generalized Forwarding**: This method extends destination-based forwarding to include additional information such as quality of service (QoS) parameters, allowing routers to make more complex forwarding decisions.
 
-# ACN - 33
+## Forwarding Table (32-bit IPv4)
 
+- **IPv4 Forwarding Table**: A forwarding table typically contains entries for various destination IP addresses and the corresponding next-hop IP or interface to send the packet.
+- **Longest Prefix Matching**: In case multiple entries match the destination address, routers use **longest prefix matching** to determine the most specific match and forward the packet accordingly.
 
-# ACN - 34
+## Cache Types
+
+- **Direct Mapping**: In this method, each cache line corresponds to a specific entry in the cache, simplifying lookup but potentially leading to collisions.
+- **Set-Associative**: A cache entry can be mapped to any slot in a set, providing more flexibility and reducing the likelihood of collisions compared to direct mapping.
+- **Fully Associative**: Any cache entry can be placed in any cache line, offering the highest flexibility but requiring more complex lookup logic.
+
+## Fabric Plane (Cisco CRS)
+
+- **Fabric Plane**: The fabric plane refers to the internal communication structure that moves data between the input and output ports of a router. Cisco's CRS (Carrier Routing System) uses a high-capacity fabric plane to provide efficient data forwarding at high speeds.
+
+## Switching Fabrics
+
+- **Switching via Memory**: The router reads data from memory to forward packets. This method is often slower due to memory access times.
+- **Switching via Bus**: A bus is used to move data between different components of the router. This can be faster but still has limited capacity.
+- **Switching via Interconnected Network**: Data is moved using an interconnected network of switches, providing high capacity and scalability.
+- **Normal Parallel Processing**: Routers often use parallel processing to handle multiple packet flows simultaneously, improving the overall throughput and reducing processing delays.
+
+## Input Port Queueing and Head-of-Line (HoL) Blocking
+
+- **Input Port Queueing**: Packets that arrive at a router's input port are placed in a queue before being forwarded. If the queue is full or another packet is being processed, the new packet must wait in the queue.
+- **Head-of-Line (HoL) Blocking**: This occurs when a packet at the front of the queue is blocked by a slower or higher-priority packet, causing delays for subsequent packets that are waiting in the queue.
+
 
