@@ -1826,5 +1826,204 @@ $$  \[
 - **Queuing occurs** when packets wait in buffers due to congestion.
 - Prolonged queuing delays may lead to performance degradation and inefficiency.
 
+# ACN - 32
 
+## Subnets and IP Address Bit Identifiers
+
+### **Device Interfaces and Connectivity**
+- **Device Interface**: 
+  - A network interface is the point of interconnection between a device and a network.
+  - Devices on the same subnet can communicate directly without passing through an intervening router.
+
+### **Subnet Masks**
+- **Purpose**:
+  - Subnet masks help divide an IP address into a network portion and a host portion.
+  - Increasing the mask (e.g., moving from /24 to /26) reduces the number of usable host addresses, making allocation more conservative.
+- **Efficiency**:
+  - With limited devices, a smaller subnet mask helps optimize IP address usage.
+
+---
+
+## IP Addressing Overview
+
+### **32-bit IP Address Space**
+- IP addresses are 32 bits long, allowing for up to [2^32 = 4 billion] unique addresses.
+- Divided into **classes** for different allocation purposes:
+  - **Class A**: Large networks.
+  - **Class B**: Medium-sized networks.
+  - **Class C**: Small networks.
+  - **Class D**: Reserved for multicast.
+  - **Class E**: Reserved for experimental purposes.
+
+### **Classless Inter-Domain Routing (CIDR)**
+- CIDR replaces the rigid class-based system with a more flexible scheme.
+- Example: `/24` indicates a subnet mask of 255.255.255.0.
+- Benefits:
+  - Efficient use of IP address space.
+  - Reduces wastage by allowing variable-length subnet masks.
+
+---
+
+## Types of Network Communication
+
+1. **Unicast**:
+   - One-to-one communication between devices.
+   - Consumes the least network resources compared to other modes.
+2. **Multicast**:
+   - One-to-many communication where data is sent to a group of recipients.
+3. **Broadcast**:
+   - One-to-all communication within the subnet.
+   - Most resource-intensive among the three.
+
+---
+
+## Dynamic Host Configuration Protocol (DHCP)
+
+- **Purpose**: Automatically assigns IP configuration details to devices on a network.
+- **DHCP Server**:
+  - Manages and leases IP addresses dynamically.
+  - Eliminates the need for manual configuration of IP addresses.
+
+### **DHCP Process**
+When a device (e.g., a mobile or laptop) connects to the network, the DHCP server provides:
+1. **IP Address**: Allocates a unique IP address to the device.
+2. **Subnet Mask**: Indicates the size of the subnet the device is part of.
+3. **Default Gateway**: The IP address of the first-hop router.
+4. **Local DNS Server Information**: Name and IP address of the local DNS resolver for hostname resolution.
+
+---
+
+## Address Resolution Protocol (ARP)
+
+- **Purpose**:
+  - Maps an IP address to a MAC (Media Access Control) address in a local network.
+  - Ensures devices can communicate at the data link layer.
+
+### **ARP Table**
+- A table maintained by each device in the subnet containing mappings of:
+  - **IP Address**: Identifies the device in the network layer.
+  - **MAC Address**: Hardware identifier for the device on the link layer.
+
+### **Command Utility**
+- **Netstat**: 
+  - Provides network statistics and displays the details of ARP entries.
+
+# ACN - 33
+
+## Subnetting and CIDR
+- **Subnetting for Different Network Sets**: 
+  - When a company requires multiple networks with a limited number of devices, **CIDR (Classless Inter-Domain Routing)** is used.
+  - Allows flexible allocation of IP addresses and prevents wastage.
+
+## Forwarding and ARP Table
+- **Forwarding Table**:
+  - Maintained by routers and devices.
+  - Used for forwarding packets based on the longest prefix match in IP routing.
+
+- **ARP Table**:
+  - Maps IP addresses to MAC addresses to send packets within a local network.
+
+### **Packet Sending Example (H4 to H2)**:
+1. **Header Composition**:
+   - Includes source/destination MAC and IP addresses.
+2. **Packet Handling**:
+   - Only the device/router matching both the MAC and IP receives the packet.
+   - All others discard the packet.
+
+---
+
+## Longest Prefix Matching
+- **Purpose**:
+  - Ensures efficient routing by matching the most specific network prefix.
+- **Exhaustion of IPv4 Address**:
+  - **NAT (Network Address Translation)** helps mitigate IPv4 address exhaustion.
+
+---
+
+## NAT (Network Address Translation)
+- **Functionality**:
+  - All devices in a local network share a single public IPv4 address externally.
+- **Security**:
+  - IPv4 with NAT hides internal device identities, providing a layer of security compared to IPv6.
+  
+### **Advantages of NAT**:
+1. Conserves IPv4 addresses.
+2. Adds a layer of security by masking internal addresses.
+  
+### **Drawbacks of NAT**:
+1. Breaks end-to-end connectivity, making some applications harder to use.
+2. Introduces complexity in peer-to-peer communication.
+
+---
+
+## IPv6
+- **Advantages**:
+  - Vast address space (128-bit) compared to IPv4's 32-bit.
+  - Simplified header format improves efficiency.
+  - Built-in security features (IPSec).
+  - Auto-configuration eliminates the need for DHCP in some scenarios.
+  
+- **Shortcomings**:
+  - Not inherently backward-compatible with IPv4.
+  - Transitioning requires significant investment and dual-stack implementations.
+
+### **IPv4 to IPv6 Transition**:
+- **Tunneling**:
+  - IPv6 packets are encapsulated within IPv4 packets when passing through IPv4-only routers.
+  - Ensures compatibility during the transition.
+
+---
+
+## Flow Table Abstraction
+- **Flow Table in Routers and Switches**:
+  - Based on **match + action** rules.
+- **Flow Definition**:
+  1. **Header values**: Identify the flow.
+  2. **Action**: Specifies actions such as forwarding or dropping packets.
+  3. **Priority**: Resolves overlapping patterns.
+  4. **Counters**: Track bytes and packets.
+
+---
+
+## Software-Defined Networking (SDN)
+- **Overview**:
+  - Separates control plane from data plane.
+  - Enables centralized control of network devices like switches and routers.
+- **Market Shift**:
+  - Transforms traditional vertical network stacks into horizontal, allowing growth and flexibility.
+
+### **OpenFlow in SDN Architecture**:
+- **OpenFlow Abstraction**:
+  - Acts as the standard protocol for SDN.
+  - Controls firewalls, routers, switches, and NAT.
+  
+### **Generalized Forwarding**:
+- Operates on the principle of **match + action** for diverse use cases.
+
+---
+
+## Middleboxes
+- **Definition**:
+  - Devices that perform additional processing on packets besides forwarding.
+  - Examples include firewalls, intrusion detection systems (IDS), and deep packet inspection (DPI).
+
+### **Firewalls**:
+1. **Stateless Packet Filtering**:
+   - Filters packets based on predefined rules without context.
+2. **Stateful Packet Filtering**:
+   - Tracks the state of active connections for filtering.
+3. **Application Gateway**:
+   - Requires users to connect through the gateway for access.
+
+### **Limitations of Firewalls**:
+- **IP Spoofing**:
+  - Firewalls cannot prevent attacks based on spoofed IP addresses.
+
+---
+
+## Intrusion Detection Systems (IDS)
+- **Functionality**:
+  - Monitors network traffic for suspicious activity.
+- **Deep Packet Inspection (DPI)**:
+  - Analyzes the content of packets beyond headers for threats.
 
