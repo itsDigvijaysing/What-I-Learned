@@ -1552,3 +1552,47 @@ $$  \[
   
 - **Real-World Effects**:
   - Larger buffers might increase delay and result in **bufferbloat**, a situation where excessive buffering leads to high latency, adversely affecting interactive applications like VoIP and gaming.
+
+# ACN - 27
+
+## 1. TCP Congestion Control
+- **Congestion Control** aims to prevent overwhelming the network by adjusting the sender's transmission rate based on network feedback.
+  
+- **Phases**:
+  1. **Slow Start**: The sender begins with a small **congestion window (cwnd)**, doubling it every round-trip time (RTT) until it reaches the **threshold** (ssthresh).
+  2. **Congestion Avoidance**: Once the threshold is reached, **cwnd** grows linearly by 1 MSS per RTT to avoid congestion.
+  3. **Fast Retransmit**: When 3 duplicate ACKs are received, it indicates packet loss, and the sender retransmits the lost packet immediately without waiting for the timeout.
+  4. **Fast Recovery**: After retransmitting, the sender doesn’t return to the slow start. Instead, **cwnd** is reduced by half and continues incrementally, skipping slow start.
+
+---
+
+## 2. TCP Reno
+- **TCP Reno** is an update to **TCP Tahoe** that introduces **Fast Recovery**:
+  - **Fast Recovery**: In the event of packet loss (detected via 3 duplicate ACKs), instead of returning to **Slow Start**, **cwnd** is reduced by half and the sender continues transmitting.
+  - **Fast Retransmit**: Packet loss is inferred when 3 duplicate ACKs are received. The sender retransmits the lost packet without waiting for the timeout.
+
+---
+
+## 3. TCP Tahoe vs. TCP Reno
+- **TCP Tahoe**:
+  - **Slow Start**, **Congestion Avoidance**, and **Fast Retransmit**.
+  - **Threshold Adjustment**: Upon packet loss, **ssthresh** is set to **cwnd / 2**, and **cwnd** is reset to 1 MSS, starting **Slow Start** again.
+  
+- **TCP Reno**:
+  - **Fast Recovery** is introduced, improving on **TCP Tahoe** by not resetting **cwnd** to 1 MSS after packet loss.
+  - **Threshold Adjustment**: When packet loss occurs, **ssthresh** is set to **cwnd / 2**, and **cwnd** is reduced, but the sender can continue sending with a reduced window size instead of returning to **Slow Start**.
+
+---
+
+## 4. TCP New Reno
+- **TCP New Reno** introduces **Partial ACKs**:
+  - **Partial Acknowledgement**: Instead of waiting for 3 duplicate ACKs, **TCP New Reno** allows **Partial ACKs** to trigger **Fast Retransmit** for lost packets. This improves the efficiency of retransmissions, especially in cases of multiple packet losses within a window.
+
+---
+
+## 5. TCP SACK (Selective Acknowledgment)
+- **Selective Acknowledgment (SACK)** is an extension of TCP that allows the receiver to acknowledge not just the last successfully received byte, but also out-of-order packets:
+  - **SACK Option**: Each **SACK packet** contains a list of blocks of received data. It helps the sender identify exactly which packets have been received and which need to be retransmitted.
+  - **Selective Retransmission**: The sender retransmits not only the lost packet but also any subsequent packets that were lost in the same window.
+  - This method helps improve the efficiency of retransmissions and reduces unnecessary data transfers by only sending the specific missing packets.
+
