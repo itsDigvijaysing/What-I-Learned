@@ -1596,3 +1596,64 @@ $$  \[
   - **Selective Retransmission**: The sender retransmits not only the lost packet but also any subsequent packets that were lost in the same window.
   - This method helps improve the efficiency of retransmissions and reduces unnecessary data transfers by only sending the specific missing packets.
 
+# ACN - 28
+
+## 1. Explicit Congestion Notification (ECN)
+- **ECN** is a network-assisted congestion control mechanism that allows routers to signal congestion without dropping packets.
+  - **Network Router Marking**: When congestion is detected, routers mark packets with ECN bits instead of dropping them, signaling the sender to reduce the transmission rate.
+  - **Benefits**: ECN helps avoid packet loss and the associated delays, improving network performance and preventing congestion collapse.
+
+---
+
+## 2. Active Queue Management (AQM)
+- **AQM** algorithms are used by routers to manage the queue of packets in congested networks. Several AQM techniques include:
+  - **FIFO (First-In-First-Out)**: A simple queuing method where packets are processed in the order they arrive. However, it doesn't address congestion effectively.
+  - **Fair Queuing (RR - Round Robin)**: Distributes bandwidth equally among all active flows to avoid one flow dominating the network.
+  - **Weighted Fair Queuing (WFQ)**: Similar to RR but with adjustable weights, allowing some flows to receive more bandwidth than others based on priority.
+
+---
+
+## 3. TCP Congestion Control Schemes
+- **TCP New Reno**: An improved version of TCP Reno with better handling of packet loss and faster recovery using partial ACKs.
+- **TCP Hydra**: A TCP variant designed to address the issues of fairness and efficiency in high-speed networks. It uses an optimized approach for bandwidth sharing and congestion control.
+- **TCP BIC (Binary Increase Congestion Control)**: A congestion control algorithm designed for high-speed networks. It uses a binary search approach for faster convergence of the sending rate.
+- **Multipath TCP (MPTCP)**: An extension of TCP that allows data to be transmitted over multiple paths simultaneously, improving reliability and throughput.
+- **Split TCP**: A variant of TCP that splits the transmission into multiple segments, with each segment handling different parts of the network path.
+
+---
+
+## 4. TCP Fairness
+- **Fairness in TCP**: In ideal conditions, TCP can be fair, but there is no guarantee of fairness because applications can create multiple parallel TCP connections to increase throughput. This can lead to unequal bandwidth allocation between different users or applications.
+
+---
+
+## 5. Evolution of Transport Layer Functionality
+- **UDP**: Provides a connectionless service for applications requiring fast, low-overhead transmission, but with no reliability or congestion control.
+- **HTTP**: Initially used over TCP, HTTP evolved from version 1.1 (in-order delivery) to version 2 (multiplexed streams), which solved the issue of head-of-line blocking by prioritizing smaller objects first.
+- **SCTP (Stream Control Transmission Protocol)**: A message-oriented transport layer protocol that combines the best aspects of both TCP and UDP. It supports multi-homing and provides more flexibility for handling message-based communication.
+  - **SCTP Chunks**: Each chunk holds a certain amount of data, and the space is divided between different chunks, optimizing transmission for large messages.
+  
+---
+
+## 6. QUIC Protocol
+- **QUIC (Quick UDP Internet Connections)**: A transport protocol designed by Google that focuses on reducing connection establishment latency and improving security.
+  - **Application Layer Security**: Unlike TCP, QUIC integrates security features like encryption directly into the protocol, providing end-to-end security without relying on SSL/TLS.
+  - **Congestion Control**: QUIC uses common congestion control algorithms like **Reno** and **Cubic** to manage network congestion efficiently.
+
+# ACN - 29
+
+
+# ACN - 30
+
+
+# ACN - 31
+
+
+# ACN - 32
+
+
+# ACN - 33
+
+
+# ACN - 34
+
