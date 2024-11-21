@@ -1025,3 +1025,59 @@ $$m[i, j] = min(i <= k < j) { m[i, k] + m[k+1, j] + p(i-1) * pk * pj }$$
 ### Summary:
 Basically We first select which matrix to work on suppose we select matrix From i point to j point. Now we will check brute force way like we will have k value which will move from i point to j point every iteration. & at every iteration we will calculate scalar multiplication from i-> k point & k-> j point & at the end we will also take pi . pk . pj points dot product (This points are nothing but i->k &j->j matrices scalar multiplication we have to merge them at the end) & after doing all that we will get final value & like that after doing it for all combination. Lowest scalar multiplication will be the best approach means that it will take low time complexity & low processing power.
 
+# ADS - 18
+
+## 1. Dynamic Programming (DP)
+- **Optimal Substructure Property**: This property states that an optimal solution to a problem can be constructed efficiently from the optimal solutions of its subproblems. This is a fundamental characteristic of problems that can be solved using dynamic programming.
+  - **Example Problems**:
+    - **Longest Simple Path**: This problem involves finding the longest path in a graph where no vertex is visited more than once. A dynamic programming solution is applied by breaking the problem down into subproblems of finding the longest path from each vertex.
+    - **Shortest Simple Path**: Similar to the longest path, but the goal is to minimize the total distance or weight of the path. Dynamic programming can be used to find the shortest path by solving subproblems related to paths between pairs of vertices.
+
+---
+
+## 2. Memoization
+- **Memoization** is an optimization technique that involves storing the results of expensive function calls and returning the cached result when the same inputs occur again. It’s used to avoid redundant calculations.
+  - **Top-Down Approach**: Memoization uses recursion to solve a problem by breaking it into smaller subproblems. Each time a subproblem is solved, its result is stored in a table (usually an array or hash table). When the same subproblem needs to be solved again, the solution is fetched from the table, significantly improving efficiency.
+    - **Example**: In solving the Fibonacci sequence, memoization can be used to store the results of Fibonacci(n) for previously calculated values of `n` so that they are not recalculated.
+
+---
+
+## 3. Greedy Algorithms
+- **Greedy Algorithms** make a sequence of choices that are locally optimal, hoping that these local choices lead to a globally optimal solution. Greedy algorithms work best for problems that exhibit both the **optimal substructure** and the **greedy choice property**.
+  - **Optimal Substructure**: Just like dynamic programming, greedy algorithms rely on problems having an optimal substructure, where the overall optimal solution can be composed from optimal solutions to subproblems.
+  - **Greedy Choice Property**: This property indicates that a globally optimal solution can be arrived at by making a series of locally optimal choices. At each step, a greedy algorithm picks the best available option without considering the larger context.
+  
+- **Activity Scheduling Problem**:
+  - The activity scheduling problem is about selecting the maximum number of non-overlapping activities from a list of activities, where each activity has a start time and an end time. The goal is to schedule the most activities without any two overlapping.
+  - **Greedy Solution**: The greedy approach involves sorting the activities by their finish times and then iteratively selecting activities that start after the last selected activity ends.
+    - **Step-by-step Approach**:
+      1. Sort the activities by their end times.
+      2. Select the first activity.
+      3. Select the next activity whose start time is after the end time of the last selected activity.
+      4. Repeat until all activities are scheduled or no more non-overlapping activities are available.
+
+---
+
+## 4. Arrays and Hash Tables with Memoization
+- **Memoization with Recursion**: The top-down approach uses recursion to solve problems, storing the intermediate results in an array or hash table to avoid redundant computations. This is especially useful in problems with overlapping subproblems, such as in the **Knapsack Problem** or **Fibonacci Sequence**.
+    - **Example**: For the **Fibonacci sequence**, instead of recalculating Fibonacci(n) every time, we store the result of each calculation in an array and reuse it when needed.
+  
+- **Tabulation (Bottom-Up Approach)**: In contrast to memoization, the tabulation approach solves the problem starting from the smallest subproblem and builds up to the final solution. It eliminates recursion and constructs the solution in an iterative manner, using a table to store intermediate results.
+    - **Example**: The **Knapsack Problem** is often solved using tabulation, where we iteratively build up solutions for subproblems and use these solutions to solve larger problems.
+
+---
+
+## 5. Dynamic Programming and Greedy Algorithms: Full Working
+- **Dynamic Programming (DP)**: DP is applied when a problem can be broken down into smaller subproblems that overlap, and the solutions to these subproblems can be combined to solve the overall problem. The solution is constructed step-by-step by solving the subproblems and storing their results.
+    - **Example**: The **Knapsack Problem** is a typical dynamic programming problem where subproblems involve selecting items for a knapsack of capacity `W` and finding the optimal selection.
+  
+- **Greedy Algorithm**: Greedy algorithms, unlike dynamic programming, do not revisit or recombine subproblems. They make a sequence of decisions, each of which seems best at the time, with the hope of reaching an optimal solution. However, greedy algorithms do not guarantee an optimal solution for all problems.
+    - **Example**: The **Huffman Coding Problem** uses a greedy algorithm to build an optimal prefix code for data compression. Greedy decisions at each step result in the most efficient encoding.
+
+---
+
+## 6. Overlapping Subproblems and Recursion
+- **Overlapping Subproblems**: Dynamic programming is particularly useful for problems that have overlapping subproblems, meaning the same subproblems are solved multiple times during recursion. Memoization or tabulation ensures that each subproblem is solved only once, making the approach much more efficient.
+    - **Example**: The **Fibonacci sequence** is a classic example of overlapping subproblems. Without memoization, the same Fibonacci subproblem would be solved multiple times in the recursive calls, leading to inefficiency.
+  
+- **Recursion and its Working**: Recursive solutions often lead to overlapping subproblems, which makes them inefficient for problems like the Fibonacci sequence, where many subproblems are recalculated multiple times. Dynamic programming optimizes these solutions by storing results of subproblems and using them when needed.
