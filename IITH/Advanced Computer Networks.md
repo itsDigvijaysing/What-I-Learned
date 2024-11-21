@@ -1430,7 +1430,7 @@ $$  \[
 - **Wasted Resources**:
   - If packets are dropped or lost due to congestion, any upstream transmission capacity and buffering used to store the dropped packets are effectively wasted, as they do not contribute to successful packet delivery.
 
-# ACN - 26
+# ACN - 25
 
 ## 1. Causes and Cost of Congestion
 - **Causes of Congestion**:
@@ -1491,3 +1491,64 @@ $$  \[
   - The sender adjusts its congestion window to avoid congestion while trying to maximize throughput.
   - The window size is incremented by [MSS * MSS] / [cwnd], where cwnd is the current congestion window size. This ensures a gradual increase in the sending rate while monitoring the network for potential congestion.
 
+# ACN - 26
+
+## 1. TCP Congestion Control Overview
+- **TCP Congestion Control** aims to prevent network congestion by controlling the rate at which the sender transmits data. The control mechanism adapts based on feedback received from the network, primarily packet loss and round-trip time (RTT).
+  
+---
+
+## 2. Slow Start and Congestion Window (cwnd)
+- **Slow Start**:
+  - TCP starts with a small **congestion window (cwnd)** to avoid overwhelming the network.
+  - Initially, the window increases exponentially (doubles) after each round-trip time (RTT) as long as no packet loss occurs.
+  - This phase continues until **threshold (ssthresh)** is reached.
+
+- **After Threshold (Congestion Avoidance)**:
+  - Once **cwnd** reaches the threshold (ssthresh), the growth rate changes:
+    - Instead of doubling, the window increases by 1 MSS per RTT. This allows for a more gradual increase in the sending rate.
+  
+- **Packet Loss and Threshold Adjustment**:
+  - When packet loss occurs, **ssthresh** is set to **cwnd / 2**, and **cwnd** is reset to a small value (typically 1 MSS).
+  - After packet loss, the window will gradually increase again as the network conditions stabilize.
+
+---
+
+## 3. TCP Reno and TCP Tahoe
+
+### 3.1. TCP Tahoe
+- **TCP Tahoe** uses **Slow Start**, **Congestion Avoidance**, and **Fast Retransmit**:
+  - **Slow Start**: Starts with a small **cwnd** and doubles it each RTT until the threshold is reached.
+  - **Congestion Avoidance**: After the threshold, **cwnd** increases linearly.
+  - **Fast Retransmit**: When three duplicate ACKs are received, the sender retransmits the missing packet without waiting for a timeout.
+
+- **Threshold Adjustment**:
+  - When packet loss is detected, **ssthresh** is set to **cwnd / 2** and **cwnd** is reset to 1 MSS.
+
+### 3.2. TCP Reno
+- **TCP Reno** improves upon **TCP Tahoe** by adding **Fast Recovery**:
+  - **Fast Recovery**: After a packet loss, instead of resetting **cwnd** to 1 MSS, **cwnd** is reduced by half, and **ssthresh** is updated.
+  - **Fast Retransmit**: Similar to **TCP Tahoe**, retransmissions are triggered by receiving three duplicate ACKs.
+
+---
+
+## 4. TCP Cubic
+- **TCP Cubic** is an enhancement over **TCP Reno** designed for high-bandwidth, high-latency networks:
+  - **Cubic Growth**: Instead of linearly increasing **cwnd**, it uses a cubic function to increase the window size, which results in faster convergence to the optimal window size and better network utilization in large-scale networks.
+  - **Backoff**: During congestion, the **cwnd** grows slower (following a cubic curve) to avoid network congestion.
+
+---
+
+## 5. Delay-Based TCP Congestion Control
+- **Delay-Based Congestion Control**:
+  - In some scenarios, congestion is detected based on delays rather than packet loss. 
+  - TCP can adjust the congestion window based on round-trip time (RTT) estimates, where a higher delay indicates possible congestion, prompting the sender to slow down.
+
+---
+
+## 6. Impact of Queue Size and RAM on Congestion
+- **Queue Size**:
+  - Increasing the size of the network's **queue** (by adding more RAM) does not necessarily solve congestion issues. While it may prevent packet drops temporarily, it can lead to higher **queuing delays** and increased RTT, which may make congestion worse in some cases.
+  
+- **Real-World Effects**:
+  - Larger buffers might increase delay and result in **bufferbloat**, a situation where excessive buffering leads to high latency, adversely affecting interactive applications like VoIP and gaming.
