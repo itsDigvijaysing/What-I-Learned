@@ -1395,3 +1395,99 @@ $$  \[
 ### Scenario 3: **TCP Timeout Handling**
 - **Problem**: Determining the correct timeout interval for retransmissions, given the variability in network delay.
 - **Solution**: By using EWMA for RTT estimation, the timeout interval can be dynamically adjusted to minimize retransmission delays and reduce unnecessary timeouts.
+
+# ACN - 24
+
+## 1. Principle of Congestion Control
+- **Congestion** occurs when the network is overwhelmed with too many packets being sent, causing delays, packet loss, and inefficient resource usage. It is not simply about long delays or longer routes, but about the network's capacity to handle multiple packets at once.
+  
+- **Congestion Definition**:
+  - **Congestion** arises when the sender sends more packets than the network can handle, resulting in packet loss or delays.
+  - This happens when the **arrival rate of packets** (denoted as λ) exceeds the network's **outgoing capacity** (denoted as λ_out), meaning the network cannot process or forward all packets in time.
+
+---
+
+## 2. Traffic Intensity and IAT (Inter-Arrival Time)
+- **Traffic Intensity**:
+  - Refers to the **arrival rate** of packets into the network, which is critical in determining congestion.
+  - If the traffic intensity (λ) is greater than the network's capacity to transmit (λ_out), congestion occurs.
+  
+- **Inter-Arrival Time (IAT)**:
+  - The **Inter-Arrival Time (IAT)** is the time difference between consecutive packet arrivals.
+  - Variability in IAT (i.e., how packets are spaced out over time) plays a significant role in congestion. High variance can cause bursty traffic, leading to congestion and packet loss.
+
+---
+
+## 3. Packet Dropping and Network Capacity
+- **Packet Loss**:
+  - When the network is congested and cannot forward all packets, some packets are dropped.
+  - **Upstream Transmission Capacity**: If the network does not have enough upstream capacity (e.g., bandwidth or buffer size), packets are discarded.
+  
+- **Buffering**:
+  - Buffering is used to temporarily store packets in the network when there is congestion or a delay in transmission.
+  - However, excessive buffering can lead to wasted resources, as packets that could not be transmitted are dropped once the buffer overflows.
+
+- **Wasted Resources**:
+  - If packets are dropped or lost due to congestion, any upstream transmission capacity and buffering used to store the dropped packets are effectively wasted, as they do not contribute to successful packet delivery.
+
+# ACN - 26
+
+## 1. Causes and Cost of Congestion
+- **Causes of Congestion**:
+  - **Excessive traffic load**: When the number of packets sent exceeds the network's capacity to handle them.
+  - **Insufficient resources**: Limited bandwidth, buffer space, and routing capacity lead to congestion.
+  - **Long transmission delays**: Excessive queuing or propagation delays can also cause congestion.
+  
+- **Cost of Congestion**:
+  - **Packet loss**: As buffers overflow, packets are dropped, leading to retransmissions.
+  - **Increased delay**: Network congestion results in higher delays, as packets need to wait longer in buffers.
+  - **Reduced throughput**: Because of packet loss and retransmissions, the overall throughput of the network is reduced.
+
+---
+
+## 2. End-to-End Congestion Control
+- **End-to-End Congestion Control**: 
+  - The sender and receiver are responsible for monitoring and controlling congestion based on the feedback received from the network.
+  - **Receiver Window (rwnd)**: Indicates the available buffer space at the receiver. In an idealized scenario, rwnd can be infinite, meaning there is no limit on how much data can be buffered at the receiver.
+  - **Sender Window (cwnd)**: Controls the sender's rate of transmission. In reality, cwnd is finite and depends on network conditions.
+
+- **TCP Rate**:
+  - The rate at which data is sent by the sender is determined by the **sender window size (cwnd)** and the **receiver window size (rwnd)**.
+
+---
+
+## 3. Network-Assisted Congestion Control
+- **Network-Assisted Congestion Control**: 
+  - In this approach, the network helps the sender by providing explicit feedback on the congestion state (e.g., router-based feedback).
+  - **Advantages**: Reduces the burden on the sender and can more effectively mitigate congestion by informing it of network conditions.
+
+---
+
+## 4. TCP Congestion Control
+### 4.1. TCP Slow Start
+- **TCP Slow Start** is a mechanism that controls the initial rate of data transmission to prevent overwhelming the network.
+  - **Initial MSS (Maximum Segment Size)**: The sender starts with a small sending window and increases it exponentially after each successful ACK.
+  - **Exponential Increase**: The sender doubles its window size after every ACK received.
+  - **Ramp-up Phase**: Initially, the increase in the sending rate is slow, but it ramps up exponentially, allowing for a faster rate once the network can handle more traffic.
+
+---
+
+### 4.2. TCP Congestion Control: AIMD (Additive Increase, Multiplicative Decrease)
+- **AIMD** is a key algorithm used in TCP congestion control.
+  
+  - **Additive Increase**:
+    - The sender increases its congestion window size by a fixed amount (usually the Maximum Segment Size, MSS) for each round-trip time (RTT), as long as no packet loss occurs.
+    - This results in a slow but steady increase in the sending rate.
+
+  - **Multiplicative Decrease**:
+    - When packet loss occurs (indicating congestion), the sender reduces the window size by half (multiplicative decrease).
+    - This helps reduce the congestion by reducing the sending rate quickly.
+    - After reducing the window, the sender resumes the **additive increase** phase.
+
+---
+
+### 4.3. Congestion Avoidance
+- **Congestion Avoidance**:
+  - The sender adjusts its congestion window to avoid congestion while trying to maximize throughput.
+  - The window size is incremented by [MSS * MSS] / [cwnd], where cwnd is the current congestion window size. This ensures a gradual increase in the sending rate while monitoring the network for potential congestion.
+
