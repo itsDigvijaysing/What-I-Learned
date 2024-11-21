@@ -1273,3 +1273,136 @@ Next, we explored the **SAT (Satisfiability) Problem**, which is a classic NP-co
 - **Solving the SAT Problem**:
   - The SAT problem is a decision problem where we check whether a given Boolean formula is satisfiable. We typically use techniques like backtracking, heuristics, or brute force to solve SAT problems in practice. However, in theory, it is classified as NP-complete due to the large search space involved.
 
+# ADS - 25
+
+## 1. NP Non-Polynomial Algorithms
+In today's lecture, we explored **NP non-polynomial algorithms** and how the complexity of certain problems is related to input size. Here's the breakdown:
+
+- **Input Size and Logarithmic Bits**: 
+  - For certain problems, the input size **x** requires **log(x)** bits to represent the problem. This logarithmic scale is important in understanding the space complexity of the problem.
+
+- **Prime Number Certification**: 
+  - To **prove that a number is prime**, we need at least one **short certificate** **y** such that the operations can confirm whether **y** divides **x** (the number being tested for primality).
+    - **If y divides x**, the operation result is **1** (indicating that x is not prime).
+    - **If y does not divide x**, the operation result is **0** (indicating that x might be prime).
+  
+  This is a basic approach for certifying primality, and while it simplifies the verification process, finding such certificates efficiently can be very complex.
+
+---
+
+## 2. Computational Complexity (Golden Problem)
+The concept of **computational complexity** was discussed, specifically relating to the **Golden Problem**, which is a classical problem in complexity theory. 
+
+- **Golden Problem**:
+  - Solving this problem means we have addressed **L1, L2, L3**, which likely refers to the classification or types of problems that fall under the **NP** class, especially focusing on their **computational complexity**.
+  
+---
+
+## 3. SAT Problem and Its Reductions
+We revisited the **SAT problem** and its important connections with other NP-complete problems.
+
+- **SAT and CLIQUE**: 
+  - It was discussed that **SAT** can be reduced to **CLIQUE**. In other words, if we can solve the **CLIQUE** problem efficiently, we can solve the **SAT** problem as well. This is a classic **NP-completeness** reduction, where one NP-complete problem can be transformed into another.
+
+- **3SAT and SAT**: 
+  - We also discussed the relationship between **SAT** and **3SAT**. If we can't solve **SAT**, then we also can't solve **3SAT**, as **3SAT** is a more constrained version of **SAT**.
+    - **SAT <= 3SAT** means that SAT can be reduced to 3SAT. Thus, if you can solve 3SAT, you can solve SAT as well.
+
+# ADS - 26
+
+## SAT vs 3SAT: Converting Any Problem to 3SAT
+
+In today's lecture, we explored the relationship between **SAT** and **3SAT**, and how we can convert any SAT problem into a **3SAT** problem. Here's a detailed breakdown of the concepts:
+
+### 1. **What is SAT?**
+- **SAT (Satisfiability Problem)** asks whether there exists a **Boolean assignment** that makes a given **Boolean formula** evaluate to true. The formula consists of **AND**, **OR**, and **NOT** operators, and is expressed in **conjunctive normal form (CNF)**, meaning it is a conjunction (AND) of clauses, where each clause is a disjunction (OR) of literals.
+- **Literals** are variables or their negations (e.g., x or ¬x).
+
+### 2. **What is 3SAT?**
+- **3SAT** is a restricted version of SAT where every clause in the Boolean formula has **exactly three literals**. It is a specific type of CNF formula in which each clause consists of exactly three literals (either a variable or its negation).
+- A 3SAT problem is also a **decision problem**: Given a Boolean formula, determine whether there is a way to assign truth values to the variables such that the formula is satisfied (i.e., evaluates to true).
+
+### 3. **Converting SAT to 3SAT**
+The main focus of today's lecture was on how we can convert any **SAT problem** into a **3SAT problem**. This is important because 3SAT is **NP-complete**, just like SAT, and is used in complexity theory as a benchmark for proving the NP-completeness of other problems.
+
+The conversion from SAT to 3SAT involves the following steps:
+
+#### Step 1: Break down clauses with more than three literals
+If a clause has more than three literals, we need to break it into multiple clauses that each contain only three literals. Here’s how this can be done:
+
+- For a clause like `(x1 OR x2 OR x3 OR x4)`, we can introduce a new auxiliary variable `y`, and break it down into two clauses:
+  - `(x1 OR x2 OR y)`
+  - `(¬y OR x3 OR x4)`
+
+This ensures that the original clause is equivalent to the two new clauses, each with exactly three literals. The new auxiliary variable `y` helps split the clause into two parts while preserving the logical equivalence.
+
+#### Step 2: Handle clauses with fewer than three literals
+If a clause has fewer than three literals (for example, `(x1 OR x2)`), we need to pad it with dummy variables (typically introducing new variables) to make it a three-literal clause:
+  
+- For `(x1 OR x2)`, introduce a new variable `y`, and rewrite the clause as:
+  - `(x1 OR x2 OR y)`
+
+This new clause now has three literals. The new variable `y` does not affect the satisfiability of the formula, as it can always be assigned a value that makes the clause true.
+
+#### Step 3: Ensure the formula is in 3CNF form
+After converting all the clauses in the formula to either have exactly three literals or be transformed as described, the formula is now in **3CNF** form, which is equivalent to the original SAT formula. At this point, we have successfully reduced the SAT problem to a 3SAT problem.
+
+### 4. **Why Convert SAT to 3SAT?**
+- The **3SAT problem** is a **canonical NP-complete problem**, meaning that any other NP-complete problem can be reduced to 3SAT in polynomial time. This makes 3SAT an important problem in computational complexity theory.
+- By converting SAT to 3SAT, we can use existing results about 3SAT to analyze and prove the complexity of other problems.
+
+### 5. **Significance of the Reduction**
+The reduction of SAT to 3SAT is significant because:
+- **SAT** is an NP-complete problem, and **3SAT** is also NP-complete.
+- Showing that SAT can be reduced to 3SAT means that 3SAT has the same computational difficulty as SAT, and any efficient solution to 3SAT can be adapted to solve SAT.
+- This conversion demonstrates how complex problems can be transformed and analyzed using well-known NP-complete problems.
+
+# ADS - 27
+
+## Vertex Cover is NP-Complete
+
+In today's lecture, we discussed the **Vertex Cover** problem, its NP-completeness, and how it is reduced from **3SAT** using polynomial-time reductions. Let's break down the key concepts:
+
+### 1. **Vertex Cover Problem**
+- **Vertex Cover** is a well-known problem in computer science and graph theory. The problem is defined as follows:
+  - Given an undirected graph **G = (V, E)**, where **V** is the set of vertices and **E** is the set of edges, a **vertex cover** is a set of vertices **C ⊆ V** such that each edge in **E** is incident to at least one vertex in **C**.
+  - The **Vertex Cover problem** asks: Given a graph **G** and a number **k**, does there exist a vertex cover of size **k** or smaller?
+
+This problem is NP-complete, meaning that it is computationally hard to find an optimal solution, and it is unlikely that a polynomial-time algorithm exists for solving it.
+
+### 2. **Reduction from 3SAT to Vertex Cover**
+The NP-completeness of **Vertex Cover** is established by reducing the **3SAT problem** to it in polynomial time. The general idea is to show that if we can solve the Vertex Cover problem efficiently, we can solve the 3SAT problem as well.
+
+#### Step 1: The 3SAT Problem
+- **3SAT** is a decision problem where we are given a Boolean formula **ϕ** in **conjunctive normal form (CNF)** with clauses containing exactly three literals. The question is whether there exists an assignment of truth values to the variables such that the formula **ϕ** evaluates to true.
+
+#### Step 2: Graph Construction for Vertex Cover
+- Given a **3SAT** formula **ϕ** (with **m** clauses and **n** variables), we construct a graph **G** that encodes the structure of the formula.
+- For each **clause** in the formula, we create a **triangle** (a 3-cycle), where each vertex in the triangle represents one of the literals in that clause (a literal can either be a variable or its negation).
+  - For example, if a clause contains the literals **(x1 OR x2 OR ¬x3)**, we create a triangle with three vertices, each corresponding to one of the literals.
+
+#### Step 3: Connecting Clauses and Variables
+- For each **variable** in the formula, we introduce **edges** connecting the vertices corresponding to that variable's occurrences in different clauses. These edges represent the relationships between the variables and the clauses.
+
+#### Step 4: Vertex Cover of Size ≤ n + 2m
+- The constructed graph has a **vertex cover** of size **≤ n + 2m** if and only if the formula **ϕ** is satisfiable.
+  - If **ϕ** is satisfiable, we can select a vertex cover in the graph that ensures every edge (representing a variable or clause) is covered by at least one vertex in the vertex cover.
+  - The size of this vertex cover is bounded by **n + 2m**, where **n** is the number of variables and **m** is the number of clauses.
+  
+This shows that solving the Vertex Cover problem with a cover of size ≤ n + 2m can be used to determine the satisfiability of a given 3SAT formula.
+
+#### Step 5: If G has a Vertex Cover of Size ≤ n + 2m, Then ϕ is Satisfiable
+- If the graph **G** has a **vertex cover of size ≤ n + 2m**, this implies that the **3SAT formula ϕ** is satisfiable.
+  - The presence of such a vertex cover guarantees that there is a valid truth assignment to the variables that satisfies all the clauses of the formula.
+
+### 3. **Polynomial-Time Reduction (Polynomial Tree Reduction)**
+- The process described above is a **polynomial-time reduction** because the construction of the graph from the 3SAT formula can be done in polynomial time relative to the size of the input.
+- This reduction shows that if we can solve the **Vertex Cover problem** efficiently, we can solve **3SAT** efficiently, thus proving that **Vertex Cover** is NP-complete.
+
+### 4. **Conclusion**
+In today's lecture, we learned that **Vertex Cover** is NP-complete by demonstrating a polynomial-time reduction from **3SAT**. Specifically:
+- If **ϕ** is satisfiable, then there exists a vertex cover in **G** of size **≤ n + 2m**.
+- Conversely, if there is a vertex cover of size **≤ n + 2m** in **G**, then **ϕ** is satisfiable.
+
+This provides a clear example of how NP-complete problems can be related to each other through polynomial-time reductions.
+
