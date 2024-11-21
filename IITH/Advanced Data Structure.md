@@ -1406,3 +1406,128 @@ In today's lecture, we learned that **Vertex Cover** is NP-complete by demonstra
 
 This provides a clear example of how NP-complete problems can be related to each other through polynomial-time reductions.
 
+# ADS - 28
+
+## Network Flows
+
+In today's lecture, we learned about **Network Flows**, a fundamental topic in optimization problems, particularly related to **maximum flow** and **minimum cut** problems. Let's go through the key concepts in detail:
+
+### 1. **Flow Network**
+- A **flow network** is a directed graph where each edge has a **capacity**, which indicates the maximum amount of flow that can pass through that edge. It also has a **source** node (from which the flow originates) and a **sink** node (where the flow is directed towards).
+  
+- The flow in the network is represented by a function:
+  - **f: V × V → R** (Where **V** is the set of vertices, and **R** is the set of real numbers representing the flow).
+  
+  This flow function must satisfy the following conditions:
+
+#### 1.1 **Capacity Constraints**
+- The flow on any edge **(u, v)** should not exceed the capacity of the edge. In other words, for each edge **(u, v)**:
+  - **0 ≤ f(u, v) ≤ capacity(u, v)**
+  - The flow cannot exceed the maximum capacity of the edge.
+
+#### 1.2 **Skew Symmetry**
+- The flow between two nodes must be symmetric in a specific way:
+  - **f(u, v) = -f(v, u)**
+  - This means the flow from **u** to **v** is the opposite of the flow from **v** to **u**.
+
+#### 1.3 **Flow Conservation**
+- The total flow entering any node (except the source and sink) must be equal to the total flow leaving that node. This is known as the **flow conservation** property:
+  - For any node **u** other than the source and sink:
+    - **Σ f(v, u) = Σ f(u, v)**, where the summation is over all neighboring nodes **v** of **u**.
+  - This ensures that there is no accumulation of flow at intermediate nodes.
+
+### 2. **Residual Network**
+- A **residual network** is a concept used to represent the remaining capacity in the flow network after some flow has been sent. In the residual network, the capacity of an edge is the remaining capacity available for sending additional flow.
+  
+  - **Residual Capacity**: The residual capacity of an edge **(u, v)** is given by:
+    - **Residual Capacity(u, v) = capacity(u, v) - flow(u, v)**
+    - This represents the unused capacity of an edge, i.e., the amount of additional flow that can be sent along that edge.
+  
+  - **Key Property**: If **f** is a flow in **G**, then **f + f'** is also a valid flow in the residual network **Gf**. This means that if **f'** is an additional flow that can be sent through the network, the combined flow (**f + f'**) is also a valid flow in the residual network.
+  
+  - **Residual Graph**: In a residual network, for each edge **(u, v)**, there is a reverse edge **(v, u)** with a flow in the opposite direction, representing the possibility of "undoing" the flow sent from **u** to **v**. This reverse edge allows for "backtracking" the flow and is used in algorithms like **Ford-Fulkerson** to find augmenting paths and increase the flow.
+
+### 3. **Value of Flow**
+- The **value of the flow**, denoted by **|f|**, is the total amount of flow sent from the source to the sink. It is calculated by summing the flow on all edges leaving the source (or equivalently, the flow entering the sink):
+  - **|f| = Σ f(s, v)**, where **s** is the source node and **v** is any node in the network.
+
+### 4. **Maximizing Flow**
+- The goal of the **maximum flow problem** is to find the flow in the network that maximizes the flow value **|f|**, while satisfying the above conditions (capacity constraints, skew symmetry, and flow conservation). This can be viewed as an optimization problem where we aim to send as much flow as possible from the source to the sink, without violating any constraints.
+
+### 5. **Paths in the Network**
+- We can use paths to send the flow from the source to the sink. These paths can be:
+  - **Single-path**: A direct path from the source to the sink.
+  - **Multi-path**: A combination of multiple paths through the network, used simultaneously to increase the total flow.
+
+  For example, if you are sending **water** through pipes (edges in a flow network), you would want to find the paths through which you can send the maximum amount of water, considering the capacities of the pipes.
+
+### 6. **Min-Cut Theorem**
+- The **Min-Cut Theorem** is a key result in flow networks. It states that the maximum value of the flow is equal to the minimum capacity of the edges that, if removed, would disconnect the source from the sink. This is called the **minimum cut**.
+
+- **Min-Cut**: Given a flow network **G**, the minimum cut is a partition of the graph into two disjoint sets of vertices, **S** and **T**, such that the source is in **S** and the sink is in **T**. The edges that go from **S** to **T** form the **cut**, and the capacity of this cut is the sum of the capacities of the edges going from **S** to **T**. The minimum cut is the one with the smallest capacity.
+
+- **Min-Cut Problem**: Given a graph **G**, the goal is to find the minimum cut that separates the source from the sink, as this cut will determine the maximum flow that can be sent through the network.
+
+### 7. **Amortized Analysis & Network Flow**
+- **Amortized Analysis** is a technique used to analyze the average time complexity of a sequence of operations, especially when the cost of operations varies. It is used to evaluate the long-term cost of operations rather than focusing on worst-case scenarios.
+
+- **Vertex Cover and Network Flow**: The **Vertex Cover Problem** can be reduced to a **Network Flow Problem**. A **vertex cover** of a graph is a set of vertices such that every edge in the graph is incident to at least one vertex in the cover. This problem is **NP-complete**, and we can use flow networks to solve it efficiently by modeling it as a max-flow problem.
+
+### 8. **Application of Max Flow and Min Cut**
+- The **max-flow** problem and the **min-cut** problem are closely related. In practical scenarios, this relationship can be used to optimize various network-related processes, such as:
+  - Optimizing traffic flow in a network.
+  - Designing pipelines or communication networks.
+  - Managing resources in a way that maximizes efficiency.
+
+  By solving the **max flow** problem, we can determine the maximum capacity that can be pushed from the source to the sink. The **min cut** helps us understand the bottlenecks or critical edges that limit the flow.
+
+# ADS - 29
+
+## Network Flow
+
+In today's lecture, we continued our study of **Network Flow** and explored more advanced concepts related to maximizing flow, finding cuts, and the role of residual networks in solving flow problems. Here’s a detailed explanation of the concepts covered:
+
+### 1. **Maximizing Flow on a Flow Network**
+
+The **maximum flow** problem involves sending the largest possible amount of flow from a source node **S** to a sink node **T** in a flow network, while respecting the capacities of the edges. The goal is to maximize the flow while satisfying the **capacity constraints**, **skew symmetry**, and **flow conservation** properties discussed earlier.
+
+#### 1.1 **Max Flow Algorithm**
+- We use algorithms like **Ford-Fulkerson** or **Edmonds-Karp** (which is an implementation of Ford-Fulkerson using BFS) to find the maximum flow in a flow network. These algorithms work by finding augmenting paths and increasing the flow along those paths.
+
+### 2. **Finding a Cut of Minimum Capacity**
+
+A **cut** in a flow network is a partition of the graph into two disjoint sets: one set contains the source node, and the other contains the sink node. The **capacity of a cut** is the total capacity of the edges that cross from the source side to the sink side.
+
+The **Min-Cut Theorem** states that the **maximum flow** in a network is equal to the **minimum capacity** of a cut that separates the source from the sink. This theorem is fundamental because it provides a way to measure the maximum flow in a network indirectly by finding the minimum cut.
+
+### 3. **Residual Network**
+
+The **residual network** is a graph that represents the remaining capacity of each edge after some flow has already been sent through the network. It helps us identify where additional flow can be sent and guides the flow augmentation process in algorithms like **Ford-Fulkerson**.
+
+- **Residual Capacity**: For each edge **(u, v)** in the flow network, the residual capacity is given by:
+  - **Residual Capacity(u, v) = capacity(u, v) - flow(u, v)**
+  
+  - If **f(u, v)** is the flow on edge **(u, v)**, and **capacity(u, v)** is the edge's maximum capacity, then the residual network allows us to send additional flow if the residual capacity is greater than zero.
+
+### 4. **Key Lemma: Unreachable Nodes in the Residual Network**
+
+- **Lemma**: In a residual network **Gf**, if node **t** (sink) is not reachable from node **s** (source), then the current flow **f** is the **maximum flow**.
+  
+  **Explanation**: If there is no path from the source to the sink in the residual network, then no further flow can be sent from the source to the sink. This implies that the flow has reached its maximum capacity, and no augmenting paths exist to increase the flow further. Thus, the current flow is the maximum flow in the network.
+
+### 5. **Augmented Paths and Increasing Flow**
+
+- **Claim**: If there is an **augmented path** from the source **S** to the sink **T**, we can increase the flow along that path.
+
+  - **Augmented Path**: An augmented path is a path from the source to the sink where the residual capacity is greater than zero for all edges along the path. This means we can send more flow along that path.
+  
+  - **Backward Edges**: Augmented paths may include **backward edges**, which represent the flow that can be "undone" or "reversed" if necessary. In some cases, reducing the flow along an edge can increase the flow on another path.
+
+    - In the residual network, backward edges allow us to "backtrack" the flow to explore alternative augmenting paths. When we reverse the flow on a forward edge, we can push flow in the opposite direction, potentially creating new augmenting paths that were previously unavailable.
+
+#### 5.1 **Flow Augmentation**
+- If we find an augmenting path, we can increase the flow along that path by the minimum residual capacity of the edges in the path. This process is repeated iteratively until no more augmenting paths can be found, at which point the flow is maximized.
+
+#### 5.2 **Residual Graph Example**
+- Consider a residual graph where some edges have backward flow. For example, if there is a forward edge **(u, v)** with residual capacity 3 and a backward edge **(v, u)** with a flow of 1, we can "push" an additional flow of 1 from **u** to **v** along that edge and reverse 1 unit of flow on the backward edge.
+
