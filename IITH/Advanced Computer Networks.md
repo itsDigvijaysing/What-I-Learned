@@ -2027,3 +2027,108 @@ When a device (e.g., a mobile or laptop) connects to the network, the DHCP serve
 - **Deep Packet Inspection (DPI)**:
   - Analyzes the content of packets beyond headers for threats.
 
+# ACN - 34
+
+## Network Layer Control Plane Roadmap
+- **Routing Protocols**:
+  - **Types**:
+    1. **Link State Routing**: Each router has a complete topology view.
+    2. **Distance Vector Routing**: Routers only know about their neighbors.
+  - **Examples**:
+    - **OSPF (Open Shortest Path First)**.
+    - **Routing in ISPs**.
+  
+- **Forwarding vs. Routing**:
+  - **Forwarding**: Operates in the **data plane**, forwarding packets to their next hop.
+  - **Routing**: Operates in the **control plane**, determining paths and updating routing tables.
+
+---
+
+## Goals of Routing Protocols
+1. **Path Efficiency**:
+   - Aim for cost-effective, fast, or least congested paths.
+   - Evaluate bottleneck links for determining optimal paths.
+2. **Graph Abstraction**:
+   - Represent networks as graphs to model routing.
+   - Minimize link costs (e.g., hops, distance, network cable costs).
+
+---
+
+## Routing Algorithm Classifications
+1. **Based on Topology Information**:
+   - **Global**:
+     - Complete topology knowledge.
+     - Link costs for all nodes are known.
+     - Example: **Link-State Algorithms** (e.g., Dijkstra).
+   - **Decentralized**:
+     - Routers exchange information with their neighbors iteratively.
+     - Example: **Distance Vector Algorithms** (e.g., Bellman-Ford).
+
+2. **Based on Route Updates**:
+   - **Static Routing**:
+     - Routes change slowly.
+     - Pre-configured paths.
+   - **Dynamic Routing**:
+     - Routes change periodically.
+     - Adjust to real-time network conditions.
+
+---
+
+## Dijkstra's Algorithm (Link State Routing)
+- **Purpose**:
+  - Finds the shortest path from a source node to all other nodes.
+- **Process**:
+  1. Initially, all nodes except the source are set to infinite cost.
+  2. Updates costs iteratively by exploring the least-cost node.
+  3. Broadcasts link cost information to all neighbors.
+  4. After sufficient iterations, every node knows the shortest path to all others.
+
+- **Properties**:
+  - **Centralized Algorithm**: Assumes global knowledge of the network.
+  - **Complexity**:
+    - Algorithm complexity: [O(n log n)] (using priority queues).
+    - Message complexity: High due to frequent broadcasts.
+  - **Potential Issues**:
+    - Oscillations can occur if link costs change frequently.
+
+---
+
+## Distance Vector Algorithm (DVR)
+- **Based on Bellman-Ford Equation**:
+  - Computes the least-cost path from one node to another.
+  - Uses dynamic programming principles.
+
+- **Decentralized Nature**:
+  - Each node maintains a vector of costs to all destinations.
+  - Nodes exchange cost information with neighbors iteratively.
+
+- **Convergence**:
+  - After [k] iterations, a node learns the least-cost path involving up to [k] hops.
+  - Routing loops and delays can occur during convergence.
+
+---
+
+## Internet Approach to Scaling Routing
+1. **Autonomous Systems (AS)**:
+   - The Internet is divided into multiple **Autonomous Systems**, each controlled by an individual organization (e.g., ISPs).
+   - Each AS runs its own routing protocols.
+
+2. **Routing Types**:
+   - **Intra-AS Routing**:
+     - Routing within an AS (e.g., OSPF, RIP).
+   - **Inter-AS Routing**:
+     - Routing between ASes (e.g., BGP - Border Gateway Protocol).
+
+---
+
+## Hierarchical OSPF (Open Shortest Path First)
+- **Structure**:
+  - Two-level hierarchy:
+    1. **Local Areas**:
+       - Groups of routers within an AS.
+    2. **Backbone Area**:
+       - Connects local areas and routes traffic between them.
+- **Advantages**:
+  - Scalability: Reduces the size of routing tables.
+  - Efficiency: Limits flooding of routing information to within local areas.
+
