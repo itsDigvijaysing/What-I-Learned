@@ -1658,7 +1658,151 @@ In **K-median** clustering, the centroid is replaced with the **median** rather 
 
 Unlike K-means, **DBSCAN** does not require the user to specify the number of clusters beforehand. It works by identifying regions of high density and separating them from regions of low density, making it well-suited for datasets with irregular shapes and varying cluster sizes. DBSCAN also handles noise (outliers) by labeling them as points that do not belong to any cluster.
 
+# FoML - 22
 
+## Dimensionality Reduction
 
+**Dimensionality reduction** is a technique used to reduce the number of features (dimensions) in a dataset while preserving as much of the relevant information as possible. The goal is to simplify the data, improve performance, and avoid overfitting. 
 
+### Why Use Dimensionality Reduction?
 
+- **Reduce Overhead**: Reducing the number of features can decrease computational cost and increase processing speed.
+- **Improve Performance**: By focusing on the most important features, dimensionality reduction can improve the performance of machine learning models.
+- **Avoid Overfitting**: High-dimensional data often leads to overfitting, where the model learns noise rather than the underlying pattern. Reducing dimensions can help mitigate this problem.
+- **Easy Visualization**: Lower-dimensional data can be visualized more easily, making it simpler to interpret.
+- **Noise Reduction**: Dimensionality reduction can help reduce noise by removing less relevant features that may introduce unnecessary variance.
+
+### Curse of Dimensionality
+
+As the number of features in a dataset increases, the data becomes more sparse, and the distances between data points become larger. This can make it difficult to discern meaningful patterns and leads to the **curse of dimensionality**. In high-dimensional spaces, data points are distributed across many dimensions, and the sparsity of the data can hinder analysis and model performance.
+
+#### Hypercube vs. Hypersphere in Dimensionality Reduction
+
+- **Hypercube**: A hypercube in n-dimensions is a geometric figure where each edge has equal length. In high-dimensional space, the volume of the hypercube increases exponentially with the number of dimensions, causing data points to become sparse. This sparsity makes it difficult to detect patterns, and the curse of dimensionality becomes more pronounced.
+
+- **Hypersphere**: A hypersphere is a generalization of a circle (in 2D) and a sphere (in 3D) to n dimensions. As the number of dimensions increases, the surface area of the hypersphere becomes increasingly concentrated around the surface, and the volume inside becomes less relevant. The focus shifts to the surface area, which is where the majority of data points are located in high-dimensional spaces.
+
+### Principal Component Analysis (PCA)
+
+**PCA** is one of the most widely used techniques for dimensionality reduction. It works by finding new axes (principal components) in the data space, such that the variance along these new axes is maximized. The key steps in PCA are:
+
+1. **Covariance Matrix**: Compute the covariance matrix of the data to understand how the features are correlated with each other.
+2. **Eigenvalues and Eigenvectors**: Calculate the eigenvalues and eigenvectors of the covariance matrix. The eigenvectors represent the directions of maximum variance, and the eigenvalues represent the magnitude of variance along those directions.
+3. **Select Principal Components**: Choose the top k eigenvectors with the largest eigenvalues to form a new feature space. The number of components k is typically chosen based on how much of the total variance is retained.
+4. **Transformation**: Project the original data onto the new axes defined by the selected principal components, resulting in reduced dimensions.
+
+PCA helps in representing the data in fewer dimensions while retaining as much variance (information) as possible, making it an effective technique for dimensionality reduction.
+
+# FoML - 23
+
+## Principal Component Analysis (PCA)
+
+PCA is a technique for dimensionality reduction that aims to transform data into a lower-dimensional space while preserving the most significant variance in the data. The core idea behind PCA is to identify the directions (principal components) along which the data varies the most, and project the data along these new directions. 
+
+The optimization problem for PCA can be formalized as:
+
+### Maximizing Variance
+
+Given a dataset, PCA seeks to maximize the variance along new axes (principal components), subject to the constraint that the vectors defining these new axes have unit length. Mathematically, we aim to find the **weight vector** `w` that maximizes the variance of the data along the direction defined by `w`, subject to the constraint that the magnitude of `w` is 1 (i.e., `|w| = 1`).
+
+This optimization problem can be expressed as:
+
+- Maximize [Var(Xw)] subject to [|w| = 1]
+
+Where:
+- `X` is the dataset (in matrix form, each row represents an observation, and each column represents a feature).
+- `w` is the direction along which we are maximizing variance.
+
+The solution to this problem is the **eigenvector** of the covariance matrix of `X` corresponding to the largest eigenvalue. This eigenvector defines the first principal component of the data. By iteratively finding the eigenvectors corresponding to the next largest eigenvalues, we can identify the axes that capture the most variance in the data, which are the principal components.
+
+### Generalized Eigenvalue Problem
+
+The generalized eigenvalue problem is used to find the principal components. Given the covariance matrix `Σ` of the data, we solve the following:
+
+- `Σw = λw`
+
+Where:
+- `w` is the eigenvector (the direction of maximum variance).
+- `λ` is the eigenvalue, which corresponds to the amount of variance along the direction defined by `w`.
+
+PCA involves solving this eigenvalue problem to identify the most significant eigenvectors and eigenvalues, which are then used to transform the data into a new basis (principal component space).
+
+---
+
+## Gaussian Mixture Model (GMM)
+
+**GMM** is a probabilistic model used for clustering and density estimation in unsupervised learning. It assumes that the data is generated from a mixture of several Gaussian distributions, each with its own mean and variance. The key idea is that the data is modeled as coming from a combination of different clusters, each represented by a Gaussian distribution.
+
+### Key Components of GMM:
+- **Gaussian Distribution**: Each cluster in the GMM is modeled by a Gaussian distribution (also called a normal distribution). Each Gaussian distribution has two parameters:
+  - Mean (`μ`): The center of the distribution.
+  - Covariance (`Σ`): The spread or shape of the distribution.
+
+- **Mixture Model**: The overall data distribution is a weighted sum of these Gaussian distributions. Each Gaussian is associated with a weight, which reflects the proportion of data points that belong to that cluster.
+
+Mathematically, the GMM is defined as:
+
+- `P(x) = Σ (π_k * N(x | μ_k, Σ_k))`
+
+Where:
+- `x` is the data point.
+- `π_k` is the weight of the k-th Gaussian.
+- `N(x | μ_k, Σ_k)` is the Gaussian distribution with mean `μ_k` and covariance `Σ_k` for the k-th cluster.
+
+### Expectation-Maximization (EM) Algorithm:
+GMM is typically trained using the **Expectation-Maximization (EM)** algorithm:
+1. **Expectation Step**: Given the current parameters of the model (means, covariances, and weights), calculate the probability (responsibility) that each data point belongs to each Gaussian component.
+2. **Maximization Step**: Update the parameters (means, covariances, and weights) of the Gaussian components based on the responsibilities calculated in the E-step.
+
+The EM algorithm iterates between these two steps to converge to the optimal parameters for the Gaussian mixture.
+
+### Applications:
+- **Unsupervised Learning**: GMM is widely used for clustering, where it groups data points into clusters based on the Gaussian distributions.
+- **Density Estimation**: GMM can also be used to estimate the probability density of a given dataset.
+
+---
+
+## Graph-based Spectral Clustering
+
+**Spectral clustering** is a powerful technique that uses the eigenvalues and eigenvectors of a similarity or affinity matrix to reduce the dimensionality of the data and cluster it effectively.
+
+### Key Steps in Spectral Clustering:
+
+1. **Represent the Dataset as a Weighted Graph**:
+   - The dataset is represented as a graph where each data point is a node, and the edges between the nodes represent the similarity between the data points. 
+   - The weights on the edges represent the similarity between the nodes (data points), often based on a distance metric (e.g., Gaussian similarity function).
+   
+2. **Construct the Laplacian Matrix**:
+   - The Laplacian matrix `L` of the graph is used to describe the structure of the graph. It is computed as:
+   
+   - `L = D - W`
+   
+   Where:
+   - `D` is the degree matrix, which is a diagonal matrix where each entry `D_i` is the sum of the weights of the edges connected to vertex `i`.
+   - `W` is the affinity (similarity) matrix where each entry `W_ij` is the weight (similarity) between vertices `i` and `j`.
+
+3. **Eigenvalue Decomposition**:
+   - Compute the eigenvalues and eigenvectors of the Laplacian matrix. The eigenvectors corresponding to the smallest eigenvalues capture the structure of the data and can be used for clustering.
+   
+4. **Cluster the Data**:
+   - After obtaining the eigenvectors, the data points are embedded into a lower-dimensional space. Then, a clustering algorithm (such as k-means) is applied to the eigenvectors to partition the data into clusters.
+
+### Min Cut and Normalized Cut:
+
+- **Min Cut**: The goal of the min cut problem is to partition a graph into two sets such that the sum of the edge weights between the sets is minimized. In spectral clustering, we aim to minimize the cut between clusters.
+  
+- **Normalized Cut**: Normalized cut is a variation of the min cut that normalizes the cut cost by the total weight of the edges connected to each of the two sets. The objective is to minimize the normalized cut to obtain well-balanced clusters.
+
+   - **Normalized Cut Formula**:
+   - `NCut(A, B) = (Cut(A, B) / Vol(A)) + (Cut(A, B) / Vol(B))`
+   
+   Where:
+   - `Cut(A, B)` is the sum of the weights of edges between sets `A` and `B`.
+   - `Vol(A)` and `Vol(B)` are the total edge weights connected to sets `A` and `B`.
+
+### Spectral Clustering with Kernel Methods:
+Spectral clustering can also use **kernel functions** to compute similarity matrices. This allows spectral clustering to handle more complex structures, such as spiral data, by transforming the data into a higher-dimensional space before applying clustering.
+
+### Applications:
+- **Image Segmentation**: Spectral clustering is often used in computer vision tasks like image segmentation, where the goal is to partition an image into different regions.
+- **Community Detection**: In network analysis, spectral clustering is used to identify communities within a network.
