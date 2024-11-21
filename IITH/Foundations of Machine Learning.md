@@ -1332,3 +1332,153 @@ The loss function quantifies the difference between the predicted values and the
   - Use dropout layers to randomly deactivate a fraction of neurons during training, which helps prevent overfitting.
   - Implement weight regularization (L1 or L2) to constrain weight values.
 
+# FoML - 17
+
+## Bayes Error
+
+Bayes error refers to the **minimum error rate** that any classifier can achieve for a given learning problem. It represents the error of the **Bayes optimal classifier**, which is the best possible classifier under the assumption that the true data distribution is known. 
+
+The key point is that **Bayes error** requires knowledge of the **true underlying distribution** of the data. If we have access to this distribution, we can compute the optimal decision boundary and minimize classification errors. In practice, this is challenging because we often do not know the true distribution. However, if the distribution were known, Bayes' Theorem would allow us to calculate the most probable class for a given input, minimizing the error.
+
+### Formalizing Learning
+
+To formalize the concept of learning, we often use the **PAC (Probably Approximately Correct)** framework, which defines a learning problem in terms of the relationship between a hypothesis and the true distribution.
+
+### PAC Learning
+
+**PAC Learning** is a framework in machine learning that aims to formalize the process of learning from examples. It guarantees that, with high probability, a learned hypothesis will be approximately correct, given a sufficiently large sample of data. 
+
+- **Probability Approximately Correct**: A learning algorithm is said to be **PAC-learnable** if, for any distribution of data, the algorithm can learn a hypothesis that is close to the optimal hypothesis with high probability. In other words, for a given error rate [ε] and confidence level [1 - δ], the algorithm will output a hypothesis that deviates from the optimal hypothesis by no more than [ε] with probability at least [1 - δ].
+
+#### PAC Definition:
+- A hypothesis class [H] is PAC-learnable if there exists an algorithm that, given a sample of size [m], produces a hypothesis such that the probability of error is less than or equal to [ε], with high probability.
+
+### Statistical Learning and Generalization of Error
+
+**Statistical learning theory** is the theoretical foundation of machine learning, which seeks to understand the performance of algorithms in terms of generalization from a sample to the entire population.
+
+- **Generalization** refers to the ability of a model to perform well on unseen data (i.e., not just the data it was trained on).
+- **Error Generalization** concerns how the error on the training set compares to the error on the test set. A model that generalizes well is one where the error on the test set is close to the error on the training set.
+
+### Model Class [F] and Hypothesis Space
+
+In machine learning, the **model class [F]** represents the set of all possible hypotheses that a learning algorithm can choose from. This is also known as the **hypothesis space**.
+
+- If we have a large hypothesis space, the learning algorithm may have more options to choose from, but it also increases the complexity of finding the best model.
+- **PAC Learnability of [F]**: A hypothesis space [F] is said to be **PAC-learnable** if there exists an algorithm that can produce a hypothesis with a high probability that is approximately correct, given enough training data.
+
+### Empirical Risk Minimization
+
+Empirical Risk Minimization (ERM) is a strategy for learning where we minimize the **empirical risk** (or error) based on the training data. The **empirical risk** is the average loss over the sample.
+
+- **Empirical Risk**: For a hypothesis [h], the empirical risk is given by:
+
+$$  [ R_emp(h) = (1/m) * Σ L(h(x_i), y_i) ]$$
+
+  where [m] is the number of training samples, [L] is the loss function, and [(x_i, y_i)] are the data points and their corresponding labels.
+
+The idea behind **ERM** is to choose the hypothesis that minimizes the average loss over the training data, which we hope will also minimize the generalization error.
+
+### Proof Sketch and VC Theory Concepts
+
+**VC (Vapnik-Chervonenkis) Theory** provides a framework for understanding the capacity of a model class and its ability to generalize. It is closely related to the concept of **shattering**.
+
+- A **VC dimension** is the size of the largest set of points that can be shattered by a hypothesis class. A set of points is said to be **shattered** by a hypothesis class if, for every possible labeling of the points, there exists a hypothesis in the class that perfectly classifies the points.
+
+The **VC dimension** provides insight into the complexity of the hypothesis class and is a key factor in understanding the trade-off between model complexity and generalization.
+
+### No Free Lunch Theorem
+
+The **No Free Lunch (NFL) theorem** states that **no single learning algorithm works best for all problems**. The theorem suggests that, for any algorithm that performs well on one class of problems, there is an equal and opposite algorithm that performs poorly on another class. 
+
+- **NFL Theorem for Learning**: For any algorithm [A], any sample size [m], and any error [ε > 0], there exists a distribution [D] such that, when the algorithm is applied to data drawn from [D], the performance of the algorithm is no better than random guessing. This underscores the importance of selecting appropriate algorithms and datasets based on the task at hand.
+
+### Conclusion
+
+In summary, the PAC learning framework provides a formal understanding of the ability of an algorithm to learn from data. The concepts of **empirical risk minimization**, **VC dimension**, and **the No Free Lunch theorem** offer theoretical insights into how to design and evaluate learning algorithms. These theories are crucial for understanding how models generalize to new, unseen data, which is at the core of machine learning.
+
+# FoML - 18
+
+## Regression Formulation
+
+Regression is a statistical method used to model the relationship between a dependent variable and one or more independent variables. The goal of regression is to predict the value of the dependent variable based on the input features (independent variables).
+
+In regression problems, we aim to minimize the error between the predicted values and the true values (ground truth). This is typically done using a **loss function** that measures the difference between the predicted and actual values.
+
+### Parametric vs Non-Parametric Regression
+
+- **Parametric Regression**:
+  In parametric regression, the form of the model is predefined, and the parameters of the model are learned from the data. A common example of parametric regression is **Linear Regression**. 
+  The model assumes that there is a linear relationship between the independent and dependent variables. Once the model is defined, it estimates the parameters (e.g., slope and intercept) from the data.
+
+  The key advantage of parametric regression is that it is computationally efficient, as it only requires the estimation of a fixed number of parameters.
+
+- **Non-Parametric Regression**:
+  In non-parametric regression, there is no assumption about the functional form of the model. Instead, the model adapts to the data by using a flexible structure, and the complexity of the model increases as more data points are added. Non-parametric regression methods do not rely on predefined parameters and can capture more complex relationships in the data.
+
+  A common non-parametric regression method is **Kernel Regression**, which estimates the value of the dependent variable at a point based on the values of nearby points.
+
+### Linear Regression
+
+**Linear regression** is a simple and widely used parametric method for regression problems. The model assumes a linear relationship between the dependent variable [y] and independent variables [x]:
+
+- **Model**: 
+$$  [ y = w_0 + w_1x_1 + w_2x_2 + ... + w_nx_n + ε ]$$
+
+  Where:
+  - [y] is the dependent variable (target).
+  - [x_1, x_2, ..., x_n] are the independent variables (features).
+  - [w_0, w_1, ..., w_n] are the parameters (weights) to be learned.
+  - [ε] is the error term (random noise).
+
+In linear regression, we aim to find the parameters [w_0, w_1, ..., w_n] that minimize the error between the predicted values and the actual values. This is usually done by minimizing the **mean squared error (MSE)** between the predictions and the true values.
+
+---
+
+# FoML - 19
+
+## Regularized Least Squares Regression
+
+In **regularized regression**, we modify the cost function to include a penalty term that discourages large model coefficients. Regularization helps prevent overfitting, which can occur when the model becomes too complex and fits the noise in the training data.
+
+The two most common types of regularization are **L1 regularization** (Lasso) and **L2 regularization** (Ridge).
+
+### L2 Regularization (Ridge Regression)
+
+Ridge regression is a regularized form of linear regression that adds a penalty to the cost function based on the squared values of the coefficients. This encourages the model to find smaller coefficients, which helps reduce overfitting.
+
+- **Cost function** for Ridge regression:
+
+$$  [ J(w) = (1/2m) * Σ (y_i - (w_0 + w_1x_1i + w_2x_2i + ... + w_nx_ni))^2 + λ Σ w_j^2 ]$$
+
+  Where:
+  - [m] is the number of data points.
+  - [y_i] is the actual value of the target for the i-th data point.
+  - [w_j] is the coefficient (weight) of the j-th feature.
+  - [λ] is the regularization parameter that controls the strength of the penalty.
+
+In Ridge regression, we add the squared sum of the coefficients [Σ w_j^2] to the cost function. The regularization parameter [λ] controls the trade-off between fitting the data and minimizing the size of the coefficients. As [λ] increases, the coefficients are driven towards zero, and the model becomes simpler.
+
+### L1 Regularization (Lasso Regression)
+
+Lasso (Least Absolute Shrinkage and Selection Operator) regression is another form of regularized regression, but it uses **L1 regularization**. The Lasso method adds the absolute values of the coefficients to the cost function, encouraging sparsity in the model.
+
+- **Cost function** for Lasso regression:
+
+$$  [ J(w) = (1/2m) * Σ (y_i - (w_0 + w_1x_1i + w_2x_2i + ... + w_nx_ni))^2 + λ Σ |w_j| ]$$
+
+  Where:
+  - [λ] is the regularization parameter.
+  - The sum of the absolute values of the coefficients encourages some coefficients to be exactly zero, leading to feature selection.
+
+Lasso regression is particularly useful when we believe that only a subset of features are relevant, as it can effectively eliminate irrelevant features by setting their coefficients to zero.
+
+### Regularization and Overfitting
+
+The goal of regularized regression is to prevent overfitting by penalizing large coefficients, which helps the model generalize better to new, unseen data. Regularization strikes a balance between bias and variance:
+- **High regularization** (large [λ]) leads to higher bias but lower variance (underfitting).
+- **Low regularization** (small [λ]) leads to lower bias but higher variance (overfitting).
+
+By tuning the regularization parameter [λ], we can find the optimal balance and improve the performance of the regression model.
+
+
