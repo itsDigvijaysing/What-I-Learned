@@ -457,3 +457,6 @@ $$( C^T[B_1 Col_1 + B_2 Col_2 + ... + B_n Col_n] > 0 )$$
 1. **Matrix Operations**: Simplex involves several matrix operations, such as Gaussian elimination, updating the tableau, and finding inverse matrices. These are important for efficiently solving linear programs.
 
 2. **Computational Complexity**: While the simplex algorithm can theoretically take a long time to solve certain problems (exponential time complexity), in practice, it often works very efficiently.
+
+Everything Done Assignment Time came at the end.
+4 Assignments were given.
