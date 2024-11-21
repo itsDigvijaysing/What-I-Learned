@@ -1193,3 +1193,83 @@ Dynamic arrays are a key data structure that benefits from amortized analysis. A
     Where \( \Delta \Phi \) is the change in potential due to the operation. In this case, the amortized cost remains constant `O(1)` over a sequence of operations, despite occasional resizing operations.
 
 
+# ADS - 23
+
+## 1. Incremental Counter Amortized Method (CLRS)
+In this lecture, we explored the concept of the **incremental counter amortized method**, which is used to analyze the cost of operations before they actually happen. This method allows us to amortize costs over a sequence of operations, making the analysis of costly operations more efficient.
+
+- **Array Doubling**: 
+  - When using dynamic arrays, **array doubling** is a common technique used to manage the resizing of the array. 
+  - The idea is that when the array becomes full, we **double its size** to accommodate additional elements. This allows for amortized constant time insertion, even though resizing itself can take linear time.
+  - **Cost of Insertion**: 
+    - If an insertion is not at a position that is a power of 2, the cost is constant. However, when the number of elements is a power of 2, resizing occurs, and the cost of that insertion is proportional to the number of elements in the array.
+    - Specifically, the cost of insertion increases incrementally when resizing, but over a sequence of insertions, the **amortized cost** remains constant.
+
+---
+
+## 2. Non-Deterministic Polynomial (NP)
+We then moved on to **NP problems** and explored the concept of **NP-completeness**, which plays a central role in computational complexity theory.
+
+- **Non-Deterministic Polynomial (NP)**:
+  - **NP** is a complexity class of decision problems for which a proposed solution can be verified in polynomial time, even though finding the solution might be computationally hard.
+  - A problem is in NP if there exists a **non-deterministic algorithm** that can solve it in polynomial time, i.e., the solution can be guessed and then verified efficiently.
+
+---
+
+## 3. NP-Completeness: Optimization and Decision Problems
+NP-completeness is a class of problems that are **both NP-hard** and **NP** (i.e., they are among the hardest problems in NP). We discussed two main types of problems in this context:
+
+- **Optimization Problems**:
+  - These problems involve finding the best solution according to some criterion. They often involve searching through a large space of possible solutions, and the objective is to find the optimal one.
+  
+- **Decision Problems**:
+  - A **decision problem** asks whether a certain condition or property is true for a given input. Unlike optimization problems, which ask for the best solution, decision problems simply ask for a "yes" or "no" answer.
+
+---
+
+## 4. The CLIQUE Problem
+We also studied the **CLIQUE** problem, a classical example in NP-completeness:
+
+- **CLIQUE**: Given a graph with vertices connected by edges, the goal is to find a subset of vertices (a **clique**) such that every pair of vertices in the subset is connected by an edge.
+  
+  - **Clique Number**: The value of the clique number is the size of the largest clique in the graph, i.e., the largest set of vertices such that every pair of vertices in that set is connected by an edge.
+
+- **Subgraph with a Clique**:
+  - In a given subnet, we find the number of subgraphs that contain a clique. A **clique** is a subset of vertices such that every pair of vertices in the subset is connected by an edge.
+  
+- **Decision Problem**:
+  - The decision problem for the clique problem asks: **"Does a clique of size k exist in the given graph?"** This is an NP-complete problem, meaning that it is computationally hard to solve, and finding an optimal solution may require non-deterministic algorithms.
+
+---
+
+## 5. NP-Correctness in Decision Problems
+The final topic covered **NP-correctness** in decision problems. This concept is important for proving that a given decision problem belongs to the NP-complete class.
+
+- **NP-Correctness**: A decision problem is NP-correct if:
+  - It is in NP (i.e., a solution can be verified in polynomial time).
+  - The problem is NP-hard (i.e., any problem in NP can be reduced to it in polynomial time).
+
+# ADS - 24
+
+## 1. NP Problems and Polynomial Algorithms
+In today's lecture, we delved deeper into **NP problems** and the concept of **polynomial time algorithms**. Here's an explanation:
+
+- **NP Problems**: A problem is in NP (Non-deterministic Polynomial time) if a proposed solution to the problem can be verified in polynomial time. This means that given a solution, we can check whether it is correct in a time that is a polynomial function of the input size.
+
+- **Polynomial Time Verifier**: 
+  - A problem is in **L NP** (Logarithmic Space NP) if there exists a polynomial-time verifier **A** that checks if a given solution to the problem is valid. The verifier operates in logarithmic space and runs in polynomial time with respect to the input size **p**.
+  - The verifier accepts the solution if it's correct and rejects if it's not. This highlights the verification process of NP problems: a solution is easy to verify, but finding the solution might not be efficient.
+
+---
+
+## 2. SAT Problem (Satisfiability Problem)
+Next, we explored the **SAT (Satisfiability) Problem**, which is a classic NP-complete problem.
+
+- **SAT Problem**: Given a Boolean formula, the task is to determine if there exists an assignment to the variables such that the formula evaluates to true. In other words, we are trying to find an assignment that satisfies the formula.
+
+- **SAT as an NP-complete problem**: 
+  - The **SAT problem** is one of the first problems proven to be NP-complete. This means that if we can find an efficient solution for SAT, we can use that solution to solve other NP problems as well.
+
+- **Solving the SAT Problem**:
+  - The SAT problem is a decision problem where we check whether a given Boolean formula is satisfiable. We typically use techniques like backtracking, heuristics, or brute force to solve SAT problems in practice. However, in theory, it is classified as NP-complete due to the large search space involved.
+
