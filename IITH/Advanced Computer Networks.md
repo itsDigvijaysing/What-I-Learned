@@ -1084,3 +1084,314 @@ Tutorial with multiple scenarios for Data transfer & retrieval from server.
 ### 8.3. DNSSEC (DNS Security Extensions)
 - **Purpose**: Provides authenticity and integrity to DNS queries.
 - **How It Works**: DNSSEC uses digital signatures to verify the legitimacy of DNS responses. If a message is tampered with, DNSSEC will detect it, ensuring that users are not misled by fake responses.
+
+# ACN - 19
+
+## 1. Overview of the Transport Layer
+- The transport layer is responsible for end-to-end communication between processes across a network. 
+- It provides logical communication between application processes running on different hosts.
+- **Key tasks**:
+  - **Multiplexing and Demultiplexing**: Mapping multiple application processes to network connections.
+  - **Error Detection and Recovery**: Ensuring data integrity.
+  - **Data Segmentation and Reassembly**: Splitting data into segments for transmission and reassembling them at the destination.
+
+---
+
+## 2. Principle Internet Transport Protocols
+The Internet primarily uses two transport protocols:
+- **TCP (Transmission Control Protocol)**: Reliable, connection-oriented service.
+- **UDP (User Datagram Protocol)**: Lightweight, connectionless service.
+
+### Key Differences Between TCP and UDP
+| Feature            | TCP                        | UDP                         |
+|--------------------|----------------------------|-----------------------------|
+| **Connection Type** | Connection-oriented       | Connectionless              |
+| **Reliability**     | Ensures reliable delivery (ACKs, retransmissions) | No guarantee of delivery or order |
+| **Error Detection** | Detects and recovers from errors | Error detection only (checksum) |
+| **Speed**           | Slower due to overhead    | Faster due to minimal overhead |
+| **Use Cases**       | File transfer, web browsing (HTTP/HTTPS) | Streaming, DNS queries, gaming |
+
+---
+
+## 3. Multiplexing and Demultiplexing
+- **Multiplexing**: Combining multiple application data streams into one transport-layer stream.
+- **Demultiplexing**: Extracting and delivering data to the correct application process.
+- **Ports**: 
+  - Each application process is assigned a **port number** for identification.
+  - Even within a single device (e.g., desktop app or browser tab), each process communicates using a unique port.
+  - **Single/Two applications on the same port**: Possible only if one uses **TCP** and the other uses **UDP**.
+
+---
+
+## 4. UDP: User Datagram Protocol
+- **Characteristics**:
+  - Simple, lightweight, and connectionless.
+  - Best-effort service: Data may be lost or delivered out of order.
+  - No setup required: Suitable for low-latency or constrained networks.
+  - Includes a **checksum** for basic error detection.
+
+### Checksum Calculation
+1. Add 16-bit words of the segment's data.
+2. Wrap around if the sum overflows (i.e., add the overflow bit back into the sum).
+3. The result is the **checksum**—used by the receiver to detect errors in the segment.
+
+### Advantages of UDP
+- No connection setup needed.
+- Minimal overhead, making it faster.
+- Can work efficiently in constrained or compressed networks.
+
+### Limitations of UDP
+- No guarantee of delivery or order.
+- Not suitable for applications requiring reliable data transfer.
+
+---
+
+### Example of Usage
+- **UDP in Real Life**:
+  - **DNS**: Fast, simple queries where loss can be tolerated.
+  - **Streaming**: Audio/video where occasional loss is acceptable.
+
+# ACN - 20
+
+## 1. Principles of Reliable Data Transfer (RDT)
+- **Reliable Data Transfer (RDT)** ensures accurate and complete communication of data between sender and receiver, even in the presence of errors or packet loss.
+- Reliability mechanisms:
+  - **Error detection**: Using checksums.
+  - **Acknowledgment (ACK)**: Confirming successful receipt of data.
+  - **Retransmission**: Resending data if errors or losses are detected.
+
+---
+
+## 2. Finite State Machine (FSM) for Reliable Data Transfer
+- **FSM (Finite State Machine)** is used to specify the behavior of the sender and receiver.
+- States define specific actions (e.g., sending data, waiting for acknowledgment).
+- State transitions occur based on events (e.g., receiving ACK or timeout).
+
+---
+
+## 3. Reliable Data Transfer Protocols
+
+### **RDT 1.0: Reliable Transfer over Reliable Channels**
+- Assumes:
+  - No bit errors in transmitted packets.
+  - No packet loss.
+  - In-order delivery of packets.
+- Sender transmits data, and the receiver reliably delivers it to the application.
+
+---
+
+### **RDT 2.0: Reliable Transfer over a Channel with Bit Errors**
+- Introduces:
+  - **Checksum**: Detects corrupted packets.
+  - **Acknowledgment (ACK)**: Confirms receipt of data.
+  - **Negative Acknowledgment (NAK)**: Requests retransmission of corrupted data.
+- **Procedure**:
+  - If receiver detects an error (using checksum), it sends NAK.
+  - Sender retransmits the data packet on receiving NAK.
+
+#### **Limitation of RDT 2.0**
+- If an ACK or NAK is corrupted, the sender cannot determine the receiver’s state.
+- Sender may retransmit data unnecessarily or fail to send new data.
+
+---
+
+### **RDT 2.1: Handling Corrupted ACK/NAK**
+- Addresses the limitation of RDT 2.0:
+  - Introduces **sequence numbers** to detect duplicate packets.
+  - Sequence numbers alternate between 0 and 1 (sufficient for stop-and-wait protocol).
+- **Procedure**:
+  - Receiver uses sequence numbers to identify duplicate packets.
+  - Sender retransmits a packet only if the sequence number indicates it is necessary.
+  - If the receiver sends a duplicate ACK (due to a lost or corrupted NAK), the sender assumes the last packet was not received and retransmits.
+
+---
+
+## 4. Stop-and-Wait Protocol
+- Sender sends one packet at a time and waits for an acknowledgment (ACK) before sending the next packet.
+- Receiver sends:
+  - **ACK**: For correct packets.
+  - **NAK** or duplicate ACK: For corrupted or missing packets.
+
+### **Advantages of Stop-and-Wait**
+- Simple and reliable.
+- Sufficient for small-scale, low-latency networks.
+
+---
+
+## 5. NAK-Free Protocol
+- Replaces explicit NAKs with duplicate ACKs:
+  - **Procedure**:
+    - Receiver sends an ACK with the sequence number of the last successfully received packet.
+    - If the sender receives a duplicate ACK for the same sequence number, it retransmits the latest packet.
+  - **Benefit**:
+    - Eliminates the need for NAKs while maintaining reliability.
+    - Handles errors and packet loss using sequence numbers and duplicate ACKs.
+
+# ACN - 21
+
+## 1. RDT 3.0: Reliable Transfer Over Lossy Channels
+- Extends **RDT 2.1** to handle packet loss and acknowledgment (ACK) loss.
+- Introduces:
+  - **Timers**: Sender sets a timer for each transmitted packet.
+  - **Retransmission**: On timeout, the sender retransmits the packet.
+
+### **Scenarios in RDT 3.0**
+1. **No Loss**:
+   - Packets and ACKs are delivered without any loss or corruption.
+   - Sender efficiently transmits packets and receives ACKs.
+2. **ACK Loss**:
+   - If an ACK is lost, the sender’s timer expires.
+   - Sender retransmits the packet, which is then acknowledged again by the receiver.
+3. **Packet Loss**:
+   - If a data packet is lost, the receiver does not send an ACK.
+   - Sender’s timer expires, and it retransmits the lost packet.
+4. **Premature Timeout**:
+   - Timer expires before the ACK arrives.
+   - Sender retransmits the packet unnecessarily, but the receiver can handle duplicates using sequence numbers.
+
+---
+
+## 2. Performance of RDT 3.0: Stop-and-Wait Protocol
+- In **Stop-and-Wait**, the sender sends one packet at a time and waits for an ACK before sending the next packet.
+- **Sender Utilization (U)**:
+  - Represents the fraction of time the sender is actively sending data.
+  - Defined as:
+    \[
+    U = \frac{L / R}{RTT + L / R}
+    \]
+    where:
+    - \(L\): Packet size in bits.
+    - \(R\): Transmission rate (bps).
+    - \(RTT\): Round Trip Time between sender and receiver.
+  - For large RTT or small \(L/R\), utilization decreases significantly.
+
+---
+
+## 3. Pipelined Reliable Data Transfer
+- **Pipelining** allows the sender to transmit multiple packets before receiving ACKs, improving efficiency compared to Stop-and-Wait.
+- Two main pipelined protocols:
+  - **Go-Back-N (GBN)**
+  - **Selective Repeat (SR)**
+
+---
+
+## 4. Go-Back-N Protocol
+- **Sender**:
+  - Can send up to \(N\) packets (window size) without waiting for an ACK.
+  - Maintains a **window** of unacknowledged packets.
+  - If a packet is lost, the sender retransmits that packet and all subsequent packets in the window.
+- **Receiver**:
+  - Acknowledges packets cumulatively (e.g., ACK for packet 3 implies packets 1, 2, and 3 were received correctly).
+  - Discards out-of-order packets.
+
+---
+
+## 5. Receiver Scenarios in Go-Back-N
+- **In-Order Packet Arrival**:
+  - Receiver delivers the packet to the application and sends a cumulative ACK.
+- **Out-of-Order Packet Arrival**:
+  - Receiver discards the packet and sends a cumulative ACK for the last correctly received packet.
+- **Lost Packet**:
+  - Receiver waits for the sender to retransmit the missing packet and subsequent ones.
+
+# ACN - 22
+
+## 1. Go-Back-N in Action
+- **Go-Back-N (GBN)** is a **pipelined** protocol that allows the sender to send multiple packets before receiving acknowledgments (ACKs).
+- **Sender**:
+  - Can send up to \(N\) packets before needing an acknowledgment for the first packet.
+  - Maintains a **window** of size \(N\) for unacknowledged packets.
+  - If any packet is lost, the sender retransmits that packet and all subsequent packets in the window.
+  
+- **Receiver**:
+  - Receives packets in order, acknowledges them cumulatively (ACK for packet 3 means packets 1, 2, and 3 were received).
+  - Discards out-of-order packets as it expects a sequence of packets.
+  - The receiver cannot buffer out-of-order packets.
+
+- **In Practice**:
+  - If a packet is lost or corrupted, the receiver will discard the subsequent packets until the lost one is retransmitted and received correctly.
+  - The sender waits for an acknowledgment for the first unacknowledged packet, and if a timeout occurs, it retransmits the entire window from the lost packet onwards.
+
+---
+
+## 2. Selective Repeat Protocol
+- **Selective Repeat (SR)** improves on **Go-Back-N** by allowing the receiver to buffer out-of-order packets.
+  
+- **Sender**:
+  - Can send multiple packets before receiving an acknowledgment, like GBN.
+  - Sends packets with sequence numbers, retransmitting only the ones that were not acknowledged after a timeout.
+  
+- **Receiver**:
+  - Can accept out-of-order packets and buffer them until missing packets arrive.
+  - Sends an ACK only for correctly received packets.
+  - It has a **window size** and can buffer up to that many out-of-order packets.
+
+- **In Practice**:
+  - **Efficiency**: More efficient than GBN since only lost packets are retransmitted, rather than all subsequent packets.
+  - **Complexity**: Requires more memory on the receiver side to store out-of-order packets.
+
+---
+
+## 3. Issue with Sliding Window Protocols (SWS + RWS ≤ Sequence Number Space Size)
+- **Sliding Window Protocol** (such as GBN and SR) has a **window size constraint** for both the sender's window size (SWS) and receiver's window size (RWS).
+  - The sum of **SWS + RWS** should not exceed the total size of the **sequence number space**.
+  
+- **Why this constraint exists**:
+  - Sequence numbers are used to identify packets, and if the window size is too large, the sender and receiver might use the same sequence numbers for different packets, leading to confusion.
+  
+- **Mathematically**:
+$$  [
+  \text{SWS} + \text{RWS} \leq \text{Sequence Number Space Size}
+  ]$$
+  - This ensures that there is no ambiguity in packet sequence numbers, preventing both sender and receiver from "reusing" sequence numbers.
+
+- **Implication**:
+  - The protocol design must balance sender and receiver window sizes to avoid collisions in sequence numbers.
+  - For instance, if the sender's window size is too large, the receiver might get confused by overlapping sequence numbers.
+
+
+# ACN - 23
+
+## 1. Exponentially Weighted Moving Average (EWMA)
+- **EWMA** is a method for smoothing or filtering time series data, often used for measuring network performance or estimating round-trip time (RTT) in transport protocols like TCP.
+  
+- **Definition**:
+  - The **EWMA** of a sequence of data points is calculated as a weighted average of the current data point and the previous EWMA value.
+  - The weight applied to the previous value is **exponentially decaying**, meaning more recent data points have higher influence on the average.
+
+- **Formula**:
+$$  \[
+  S_n = \alpha \cdot x_n + (1 - \alpha) \cdot S_{n-1}
+  \]$$
+  where:
+  - \(S_n\): The smoothed value at time \(n\).
+  - \(x_n\): The current value at time \(n\).
+  - \(S_{n-1}\): The previous smoothed value.
+  - \(\alpha\): The smoothing factor (0 < \(\alpha\) < 1).
+
+- **Application**:
+  - **TCP RTT Estimation**: TCP uses EWMA to estimate the Round-Trip Time (RTT) and adjusts the retransmission timeout (RTO) accordingly. A high \(\alpha\) makes the estimate more sensitive to recent values, while a low \(\alpha\) smooths the estimate over time.
+  
+- **Example**:
+  - Given a stream of RTT values: 100 ms, 120 ms, 110 ms, and 130 ms.
+  - If we use an \(\alpha\) of 0.2, the EWMA can be computed as:
+    - \(S_1 = 0.2 \cdot 100 + 0.8 \cdot 0 = 20\)
+    - \(S_2 = 0.2 \cdot 120 + 0.8 \cdot 20 = 32\)
+    - \(S_3 = 0.2 \cdot 110 + 0.8 \cdot 32 = 46.4\)
+    - \(S_4 = 0.2 \cdot 130 + 0.8 \cdot 46.4 = 61.12\)
+
+---
+
+## 2. Scenario Examples
+
+### Scenario 1: **TCP RTT Estimation Using EWMA**
+- **Problem**: Estimating RTT in TCP where network conditions fluctuate, and the transmission delay can vary.
+- **Solution**: Using EWMA to smooth out fluctuations and maintain a reliable estimate of the RTT, which in turn helps to compute the **Retransmission Timeout (RTO)**.
+  
+### Scenario 2: **Network Congestion Control**
+- **Problem**: Managing congestion in networks where packet loss or delay occurs due to high traffic load.
+- **Solution**: EWMA can be used to monitor **round-trip time (RTT)** or **packet loss rate** over time, adjusting the congestion window size to avoid overloading the network.
+
+### Scenario 3: **TCP Timeout Handling**
+- **Problem**: Determining the correct timeout interval for retransmissions, given the variability in network delay.
+- **Solution**: By using EWMA for RTT estimation, the timeout interval can be dynamically adjusted to minimize retransmission delays and reduce unnecessary timeouts.
