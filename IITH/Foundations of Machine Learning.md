@@ -1481,4 +1481,184 @@ The goal of regularized regression is to prevent overfitting by penalizing large
 
 By tuning the regularization parameter [λ], we can find the optimal balance and improve the performance of the regression model.
 
+# FoML - 20
+
+## Support Vector Machines (SVM) and Support Vector Regression (SVR)
+
+Support Vector Machines (SVM) are a powerful class of algorithms used for classification and regression tasks. SVMs aim to find a hyperplane that best separates the data points in the feature space. For regression tasks, **Support Vector Regression (SVR)** is employed, which adapts the SVM approach for continuous output predictions rather than discrete classifications.
+
+### Support Vector Regression (SVR)
+
+SVR works by fitting a regression line (or hyperplane in higher dimensions) while allowing some margin of error. It attempts to minimize the error by focusing on the data points that are closest to the regression line, known as **support vectors**.
+
+- **Complexity**:
+  The objective of SVR is to minimize the following equation:
+
+$$  [ 1/2 * ||w||^2 + C * Σ ε_i ]$$
+
+  Where:
+  - [||w||^2] is the complexity of the model (the weight vector).
+  - [ε_i] is the deviation from the margin for each support vector.
+  - [C] is the regularization parameter controlling the trade-off between model complexity and fitting errors.
+
+In SVR, we focus on minimizing [1/2 * ||w||^2], where [w] is the weight vector of the model. The goal is to maximize the margin, i.e., the distance between the regression line (or hyperplane) and the support vectors, while keeping the model simple and avoiding overfitting.
+
+### Tubes in SVR
+
+The concept of a **tube** is used in SVR, where a regression line is constructed with a certain width. The width of the tube (also known as the margin) plays a crucial role in controlling the balance between underfitting and overfitting:
+
+- **Wider Tube**: 
+  - A wider tube reduces errors but allows the regression line to have more flexibility, meaning it can vary more. This reduces the risk of overfitting but can lead to **underfitting** as the model may fail to capture the nuances of the data. In this case, the slope of the regression line may be less defined due to fewer constraints from support vectors.
+
+- **Narrower Tube**: 
+  - A narrower tube leads to a regression line that fits the data points closely, which increases the risk of **overfitting**. The model becomes more sensitive to small fluctuations in the data, resulting in a more defined slope but potentially fitting noise rather than the underlying trend. This can make the model less generalizable.
+
+### Non-Linear (Kernel) SVR
+
+In cases where the data is not linearly separable, we use **kernel tricks** to map the data into a higher-dimensional space where a hyperplane can be used to separate the data. The kernel function allows us to work with non-linear relationships by applying a transformation that makes the problem linearly separable in a higher-dimensional space.
+
+For example, in a **3D space**, the formula for a support vector regression hyperplane is:
+
+- **Formula in 3D**:
+
+$$  [ f(x) = w_1 * x_1 + w_2 * x_2 + w_3 * x_3 + b ]$$
+
+Where:
+- [w_1, w_2, w_3] are the weights for the three dimensions.
+- [x_1, x_2, x_3] are the input features.
+- [b] is the bias term.
+
+### Logistic Regression
+
+Logistic Regression is a classification algorithm used for binary classification problems. Unlike linear regression, which predicts a continuous output, logistic regression outputs probabilities that a given input belongs to one of two classes.
+
+The key feature of logistic regression is the **sigmoid function**:
+
+- **Sigmoid Function**:
+
+$$  [ σ(x) = 1 / (1 + exp(-x)) ]$$
+
+The output of the sigmoid function is always between 0 and 1, which is interpreted as the probability of the input belonging to the positive class.
+
+### Logistic Regression Formula
+
+The logistic regression model predicts the probability [p] of the positive class given the input features [x]:
+
+- **Formula**:
+
+$$  [ p = σ(w_0 + w_1 * x_1 + w_2 * x_2 + ... + w_n * x_n) ]$$
+
+Where:
+- [w_0, w_1, ..., w_n] are the weights to be learned by the model.
+- [x_1, x_2, ..., x_n] are the input features.
+- [σ] is the sigmoid function.
+
+The goal is to find the weights [w_0, w_1, ..., w_n] that minimize the **log-loss** or **cross-entropy loss** between the predicted probabilities and the true labels.
+
+### Regularization in Logistic Regression
+
+To prevent overfitting, **regularization** is applied to logistic regression. This typically involves adding a penalty term to the loss function to constrain the magnitude of the weights. The two common types of regularization are **L1 regularization** (Lasso) and **L2 regularization** (Ridge), similar to regression.
+
+The regularized cost function for logistic regression with L2 regularization is:
+
+- **Cost Function with L2 Regularization**:
+
+$$  [ J(w) = - (1/m) * Σ [y_i * log(p_i) + (1 - y_i) * log(1 - p_i)] + λ Σ w_j^2 ]$$
+
+Where:
+- [p_i] is the predicted probability for the i-th data point.
+- [y_i] is the true label (0 or 1).
+- [λ] is the regularization parameter.
+- [w_j] is the weight of the j-th feature.
+
+### Gradient Descent for Logistic Regression
+
+Gradient descent is commonly used to optimize the weights in logistic regression. During training, we iteratively adjust the weights to minimize the cost function.
+
+- **Gradient Descent Update Rule**:
+
+  [ w_j := w_j - α * (∂J(w)/∂w_j) ]
+
+Where:
+- [α] is the learning rate.
+- [∂J(w)/∂w_j] is the partial derivative of the cost function with respect to the weight [w_j].
+
+By applying gradient descent, the algorithm converges to the optimal set of weights that minimize the loss and regularization term.
+
+# FoML - 21
+
+## Bias-Variance Tradeoff
+
+In machine learning, the **bias-variance tradeoff** describes the relationship between the bias and variance of a model. It is challenging to achieve both low bias and low variance simultaneously because they typically trade off against each other:
+
+- **Bias** refers to the error introduced by approximating a real-world problem with a simplified model. High bias means that the model is too simple, leading to systematic errors or underfitting.
+- **Variance** refers to the model's sensitivity to fluctuations in the training data. High variance means the model is too complex and overfits the training data, resulting in large fluctuations in predictions for different datasets.
+
+### Tradeoff Explanation:
+- **Reducing Bias**: To reduce bias, we often use more complex models, which can lead to higher variance.
+- **Reducing Variance**: To reduce variance, we typically use simpler models, which can increase bias.
+  
+The goal is to strike a balance between bias and variance to achieve an optimal model performance.
+
+## Clustering
+
+Clustering is an unsupervised learning technique used to group similar data points together. This technique is widely used in applications such as:
+
+- **Google Photos**: To group similar images and identify users uniquely.
+- **Customer Segmentation**: To identify customers based on shared interests or behaviors.
+
+### K-Means Clustering
+
+**K-means clustering** is a popular method where the number of clusters (k) must be predefined. It assigns each data point to the cluster with the nearest centroid and iteratively refines these assignments. 
+
+**Objective of K-means**: The objective is to minimize the **within-cluster variance** (i.e., the sum of squared distances from each point to the centroid of its cluster):
+
+- **Monothetic vs. Polythetic Patterns**: 
+  - **Monothetic patterns** are those where all features must satisfy the same condition across all members of the cluster.
+  - **Polythetic patterns** allow for different features to define clusters, not necessarily requiring every feature to hold true.
+
+### Types of Clusters
+- **Hard Clustering**: Each point belongs strictly to one cluster.
+- **Soft Clustering**: Each point can belong to multiple clusters with different probabilities.
+
+### K-Means Methodology
+
+1. **Initialization**: K-means begins by selecting initial centroids, which can have a significant impact on the final results. If the initial centroids are poorly chosen, the algorithm may converge to suboptimal clusters.
+   
+2. **Centroid Selection Probability**: The probability of selecting a good initial centroid is determined by:
+
+   [ P(good centroid) = (Number of ways to select points as centroids from each cluster) / (Total number of possible outcomes) ]
+
+3. **Cluster Assignment**: Each point is assigned to the cluster whose centroid is nearest, based on the chosen distance metric.
+
+4. **Convergence**: The algorithm repeats the assignment and centroid update steps until the centroids do not change significantly.
+
+### Sensitivity to Outliers
+
+K-means is sensitive to outliers, as outliers can disproportionately influence the placement of the centroids. In real-world applications, such as in **termite removal** from data, it’s often useful to **remove outliers** before running the algorithm to improve clustering results.
+
+### Distance Metrics in K-Means
+
+Different distance metrics (e.g., Euclidean, Manhattan, Cosine) can significantly affect the results of K-means clustering. Choosing the right metric is crucial for the effectiveness of clustering.
+
+## Hierarchical Clustering
+
+**Hierarchical clustering** is an alternative to K-means where the number of clusters does not need to be predefined. Instead, it generates a **dendrogram**, which is a tree-like structure that shows the merging of clusters at each level.
+
+- **Agglomerative (bottom-up)**: Start with each data point as its own cluster, and iteratively merge the closest clusters.
+- **Divisive (top-down)**: Start with all points in a single cluster and iteratively split the clusters into smaller ones.
+
+Hierarchical clustering has the advantage of not requiring the number of clusters (K) to be specified upfront.
+
+### K-Median vs. K-Means
+
+In **K-median** clustering, the centroid is replaced with the **median** rather than the mean. This is useful in cases where the data is not normally distributed and outliers are present, as the median is less sensitive to outliers than the mean.
+
+## DBSCAN (Density-Based Spatial Clustering of Applications with Noise)
+
+Unlike K-means, **DBSCAN** does not require the user to specify the number of clusters beforehand. It works by identifying regions of high density and separating them from regions of low density, making it well-suited for datasets with irregular shapes and varying cluster sizes. DBSCAN also handles noise (outliers) by labeling them as points that do not belong to any cluster.
+
+
+
+
 
