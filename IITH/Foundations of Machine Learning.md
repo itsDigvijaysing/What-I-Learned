@@ -1806,3 +1806,170 @@ Spectral clustering can also use **kernel functions** to compute similarity matr
 ### Applications:
 - **Image Segmentation**: Spectral clustering is often used in computer vision tasks like image segmentation, where the goal is to partition an image into different regions.
 - **Community Detection**: In network analysis, spectral clustering is used to identify communities within a network.
+
+# FoML - 24
+
+## **Clustering and Spectral Clustering**
+
+### **Partitioning into \( k \)-Clusters**
+- Clustering divides data into \( k \) groups such that data points within a cluster are more similar to each other than to those in other clusters.
+- The process often involves **minimizing intra-cluster distance** and **maximizing inter-cluster distance**.
+- Eigenvectors can be used to **unroll data** from high-dimensional or non-linear spaces into a representation suitable for clustering, aiding the training process.
+
+---
+
+### **Spectral Clustering**
+- **Spectral clustering** is a technique that uses the **eigenvalues** of a similarity matrix to reduce dimensions and cluster data effectively.
+  
+#### **Key Steps**:
+1. **Create a Similarity Graph**:
+   - Represent the dataset as a graph \( G = (V, E) \), where:
+     - \( V \) are data points.
+     - \( E \) are edges weighted by a similarity function (e.g., Gaussian kernel).
+
+2. **Construct the Laplacian Matrix**:
+   - Compute the graph Laplacian \( L \), which can be:
+     - Unnormalized: \( L = D - A \) (where \( D \) is the degree matrix, and \( A \) is the adjacency matrix).
+     - Normalized: \( L_{sym} = I - D^{-1/2}AD^{-1/2} \).
+
+3. **Compute Eigenvectors**:
+   - Find the eigenvalues and eigenvectors of \( L \).
+   - Select the top \( k \) eigenvectors corresponding to the smallest eigenvalues.
+
+4. **Cluster the Eigenvectors**:
+   - Treat the eigenvectors as features and use a traditional clustering algorithm (e.g., \( k \)-means) to group data points.
+
+---
+
+## **Cluster Validity**
+
+### **Definition**
+- **Cluster validity** evaluates the quality of clustering results based on how well the data has been partitioned.
+
+### **Types of Indices**
+1. **External Index**:
+   - Measures the agreement between a clustering result and a ground truth partition.
+   - Examples: Adjusted Rand Index (ARI), Normalized Mutual Information (NMI).
+
+2. **Internal Index**:
+   - Assesses clustering quality without external ground truth by analyzing properties like cohesion and separation.
+   - Example: **Silhouette Coefficient**:
+     - Combines ideas of **cohesion** (how close points in a cluster are) and **separation** (how distinct clusters are).
+     - Silhouette value for a point:
+$$       [
+       S(i) = \frac{b(i) - a(i)}{\max(a(i), b(i))}
+       ]$$
+       where:
+       - \( a(i) \): Mean intra-cluster distance for point \( i \).
+       - \( b(i) \): Mean nearest-cluster distance for point \( i \).
+
+3. **Relative Index**:
+   - Compares the quality of different clustering algorithms on the same dataset.
+
+---
+
+## **Dimensionality Reduction**
+
+### **Principal Component Analysis (PCA)**
+- **PCA** is a linear dimensionality reduction technique used to transform data into a lower-dimensional space while minimizing information loss.
+
+#### **Key Concepts**:
+1. **Projection**:
+   - PCA finds a new set of axes (principal components) such that the first component captures the most variance, the second captures the next highest variance, and so on.
+
+2. **Optimization Objective**:
+   - Minimize the reconstruction error:
+    $$ [
+     \min ||X - X_{reconstructed}||^2
+     ]$$
+     Where \( X_{reconstructed} \) is the data projected onto the principal components.
+
+3. **Steps**:
+   - Center the data by subtracting the mean.
+   - Compute the covariance matrix.
+   - Find the eigenvalues and eigenvectors of the covariance matrix.
+   - Select the top \( k \) eigenvectors as the principal components.
+
+4. **Applications**:
+   - Reducing dimensions for visualization.
+   - Preprocessing for machine learning models to eliminate noise.
+
+---
+
+### **Linear Discriminant Analysis (LDA)**
+- Unlike PCA, **LDA** is supervised and aims to maximize the separation between classes.
+- Projects data onto a linear space that maximizes the ratio of **between-class variance** to **within-class variance**.
+
+---
+
+### **T-SNE (t-Distributed Stochastic Neighbor Embedding)**
+- A non-linear dimensionality reduction technique for high-dimensional data visualization.
+
+#### **Key Concepts**:
+1. **Perplexity**:
+   - A user-defined parameter controlling the balance between local and global structure.
+   - Higher perplexity captures broader global relationships; lower perplexity focuses on local clustering.
+
+2. **Steps**:
+   - Compute pairwise similarities between data points in high-dimensional space.
+   - Compute pairwise similarities in low-dimensional space.
+   - Minimize the Kullback-Leibler divergence between the two distributions.
+
+#### **Applications**:
+- Visualizing high-dimensional data (e.g., embeddings from neural networks).
+
+---
+
+### **Kernel PCA**
+- An extension of PCA using kernel functions to handle non-linear data structures.
+- Transforms data into a higher-dimensional feature space where linear separation becomes possible.
+- Steps:
+  1. Compute the kernel matrix.
+  2. Find eigenvalues and eigenvectors of the kernel matrix.
+  3. Use the top \( k \) eigenvectors for projection.
+
+---
+
+### **Multi-Dimensional Scaling (MDS)**
+- A technique that represents data in a lower-dimensional space while preserving pairwise distances.
+- Often used for visualization when the exact structure of the data is less important.
+
+---
+
+### **Manifold Learning**
+- Manifold learning methods aim to uncover the low-dimensional structure (manifold) underlying high-dimensional data.
+
+#### **ISOmap**:
+- Constructs a graph of nearest neighbors and computes geodesic distances on the graph.
+- Applies classical MDS to embed the data into a low-dimensional space.
+
+#### **T-SNE**:
+- Focuses on preserving neighborhood structures, as detailed above.
+
+---
+
+## **Comparisons of Techniques**
+| Technique      | Linear/Non-linear | Use Case                                   |
+|----------------|-------------------|--------------------------------------------|
+| PCA            | Linear            | Dimensionality reduction, noise removal    |
+| LDA            | Linear            | Classification, supervised dimensionality reduction |
+| Kernel PCA     | Non-linear        | Non-linear dimensionality reduction        |
+| T-SNE          | Non-linear        | High-dimensional data visualization        |
+| ISOmap         | Non-linear        | Manifold learning, preserving geodesic distances |
+| MDS            | Non-linear        | General dimensionality reduction for distances |
+
+---
+
+## **Applications**
+1. **Data Preprocessing**:
+   - Reduce noise and eliminate irrelevant features.
+2. **Visualization**:
+   - Visualizing complex, high-dimensional datasets in 2D or 3D.
+3. **Feature Engineering**:
+   - Creating meaningful features for machine learning models.
+4. **Cluster Analysis**:
+   - Identifying natural groupings in the data.
+
+
+**Done**
+---
