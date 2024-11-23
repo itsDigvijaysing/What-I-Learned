@@ -1154,9 +1154,9 @@ Amortized analysis helps us analyze the average cost of operations over a sequen
 ## 2. Amortized Cost Calculation
 - The **amortized cost** of each operation is calculated as:
 
-$$  \[
+$$  [
   \text{Amortized Cost} = \text{Actual Cost} + \Delta \Phi
-  \]$$
+  ]$$
 
   Where:
   - **Actual Cost** is the real cost of performing the operation.
@@ -1186,9 +1186,9 @@ Dynamic arrays are a key data structure that benefits from amortized analysis. A
 
   - The **amortized cost** of an insertion is then:
 
-   $$ \[
+   $$ [
     \text{Amortized Cost} = \text{Actual Cost of Insertion} + \Delta \Phi
-    \]$$
+    ]$$
 
     Where \( \Delta \Phi \) is the change in potential due to the operation. In this case, the amortized cost remains constant `O(1)` over a sequence of operations, despite occasional resizing operations.
 
@@ -1531,3 +1531,162 @@ The **residual network** is a graph that represents the remaining capacity of ea
 #### 5.2 **Residual Graph Example**
 - Consider a residual graph where some edges have backward flow. For example, if there is a forward edge **(u, v)** with residual capacity 3 and a backward edge **(v, u)** with a flow of 1, we can "push" an additional flow of 1 from **u** to **v** along that edge and reverse 1 unit of flow on the backward edge.
 
+# ADSA - 30
+
+## **Flow Network**
+### **Definition**
+- A **flow network** is a directed graph \( G = (V, E) \) where:
+  - Each edge \( (u, v) \in E \) has a **non-negative capacity** \( c(u, v) \geq 0 \).
+  - There are two special vertices:
+    - **Source (\( s \))**: The vertex where flow originates.
+    - **Sink (\( t \))**: The vertex where flow is collected.
+
+### **Key Properties**
+1. **Flow (\( f \))**:
+   - A function \( f(u, v) \) represents the flow of material from vertex \( u \) to vertex \( v \).
+   - Must satisfy the following constraints:
+     1. **Capacity Constraint**:
+     $$   [
+        0 \leq f(u, v) \leq c(u, v) \quad \forall (u, v) \in E
+        ]$$
+     2. **Flow Conservation**:
+$$        [
+        \sum_{v \in V} f(u, v) - \sum_{v \in V} f(v, u) = 0 \quad \forall u \in V \setminus \{s, t\}
+        ]$$
+        (Net flow into any vertex, except \( s \) or \( t \), must be zero.)
+
+2. **Value of Flow (\( |f| \))**:
+   - The total flow leaving the source is equal to the total flow arriving at the sink:
+    $$ [
+     |f| = \sum_{v \in V} f(s, v) = \sum_{v \in V} f(v, t)
+     ]$$
+
+---
+
+## **Max Flow-Min Cut Theorem**
+### **Statement**
+- The maximum value of a flow in a network is equal to the minimum capacity of a cut that separates the source \( s \) and sink \( t \).
+
+### **Key Concepts**
+1. **Cut**:
+   - A cut \( (S, T) \) is a partition of \( V \) into two disjoint sets:
+     - \( S \): Contains the source \( s \).
+     - \( T \): Contains the sink \( t \).
+
+2. **Capacity of a Cut (\( C(S, T) \))**:
+   - The sum of the capacities of edges crossing from \( S \) to \( T \):
+$$     [
+     C(S, T) = \sum_{u \in S, v \in T} c(u, v)
+     ]$$
+
+3. **Max Flow \(\leq\) Min Cut**:
+   - Any feasible flow \( f \) satisfies:
+$$     [
+     |f| \leq C(S, T)
+     ]$$
+   - The theorem asserts that \( |f| = C(S, T) \) for some \( (S, T) \), meaning the maximum flow equals the minimum cut capacity.
+
+---
+
+## **Ford-Fulkerson Algorithm**
+
+### **Purpose**
+- Computes the maximum flow in a flow network.
+
+### **Steps**
+1. **Initialize**:
+   - Start with \( f(u, v) = 0 \) for all edges \( (u, v) \).
+
+2. **Residual Network**:
+   - Construct a residual network \( G_f \) based on current flow \( f \), where:
+     - Residual capacity \( c_f(u, v) = c(u, v) - f(u, v) \) if \( (u, v) \in E \).
+     - Residual capacity \( c_f(v, u) = f(u, v) \) if flow can be reversed.
+
+3. **Find Augmenting Path**:
+   - Use DFS or BFS to find a path \( P \) from \( s \) to \( t \) in \( G_f \) where \( c_f(u, v) > 0 \) for all edges \( (u, v) \in P \).
+
+4. **Augment Flow**:
+   - Compute the bottleneck capacity:
+  $$   [
+     \Delta f = \min_{(u, v) \in P} c_f(u, v)
+     ]$$
+   - Update the flow:
+ $$    [
+     f(u, v) = f(u, v) + \Delta f \quad \forall (u, v) \in P
+     ]$$
+    $$ [
+     f(v, u) = f(v, u) - \Delta f \quad \forall (v, u) \in P
+     ]$$
+
+5. **Repeat**:
+   - Continue until no augmenting path exists.
+
+6. **Result**:
+   - The flow \( f \) at termination is the **maximum flow**, and the residual network provides a **minimum cut**.
+
+---
+
+## **Flow Conversions**
+### **Capacity Constraints**
+- Every edge \( (u, v) \) has a capacity \( c(u, v) \) that limits the flow \( f(u, v) \):
+$$  [
+  0 \leq f(u, v) \leq c(u, v)
+  ]$$
+
+### **Flow Conservation**
+- For any vertex \( v \) other than \( s \) or \( t \):
+$$  [
+  \text{Incoming flow} = \text{Outgoing flow}
+  ]$$
+
+### **Flow Addition Property**
+- If a flow \( f \) and an auxiliary flow \( f' \) exist:
+$$  [
+  f \uparrow f' = |f| + |f'|
+  ]$$
+
+---
+
+## **Corollaries from CLRS**
+### **Corollary 24.4: Augmenting Path Theorem**
+- A flow \( f \) is a **maximum flow** if and only if there are no augmenting paths in the residual network \( G_f \).
+- The absence of augmenting paths indicates that all remaining residual capacities are zero, or no path from \( s \) to \( t \) exists in \( G_f \).
+
+### **Corollary 24.5: Max Flow-Min Cut Theorem**
+- The value of the maximum flow in a network equals the total capacity of edges in a minimum cut.
+- Formally:
+$$  [
+  |f| = C(S, T)
+  ]$$
+  Where \( (S, T) \) is the minimum cut, and \( |f| \) is the value of the maximum flow.
+
+---
+
+## **Complete Example: Applying Ford-Fulkerson**
+Consider a flow network:
+
+1. **Initialization**:
+   - Start with \( f(u, v) = 0 \) for all edges.
+
+2. **Residual Network**:
+   - Compute residual capacities for all edges.
+
+3. **Find Augmenting Path**:
+   - Use BFS to find a path with positive residual capacity:
+$$     [
+     P: s \to u \to v \to t
+     ]$$
+
+4. **Augment Flow**:
+   - Determine the bottleneck capacity \( \Delta f \).
+   - Update flow values for edges along \( P \).
+
+5. **Repeat**:
+   - Continue until no augmenting paths exist.
+
+6. **Output**:
+   - The final flow values \( f(u, v) \) represent the maximum flow.
+   - The residual network reveals the minimum cut.
+
+**Done**
+---
