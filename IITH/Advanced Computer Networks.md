@@ -2351,3 +2351,166 @@ When a device (e.g., a mobile or laptop) connects to the network, the DHCP serve
 ## **Input Port Queuing**
 - **Head-of-Line (HoL) Blocking**:
   - Occurs when a packet at the front of the queue is delayed, blocking other packets in the queue.
+
+# ACN - 37
+
+## **Virtual LAN (VLAN)**
+
+### **Definition**
+- A **Virtual LAN (VLAN)** is a logical grouping of network devices that enables devices to communicate as if they were on the same physical LAN, even if they are located on different physical networks.
+- VLANs work at **Layer 2 (Data Link Layer)** of the OSI model, allowing network segmentation to enhance performance, scalability, security, and management.
+
+### **Purpose of VLANs**
+1. **Traffic Isolation**:
+   - Segregates network traffic to prevent unnecessary data sharing between departments or functions.
+   - Helps reduce broadcast storms.
+
+2. **Improved Security**:
+   - Sensitive data and critical operations can be isolated within their VLANs.
+   - Unauthorized devices cannot access traffic outside their VLAN.
+
+3. **Simplified Management**:
+   - VLANs allow logical grouping of users based on organizational roles, simplifying configuration and troubleshooting.
+
+---
+
+## **Challenges with Traditional LANs**
+
+### **Single Broadcast Domain**
+- In traditional LANs without VLANs:
+  - All devices are part of a **single broadcast domain**.
+  - A broadcast from one device is received by all devices, regardless of whether it is relevant to them.
+  - As the number of devices increases, the volume of broadcast traffic grows exponentially, leading to inefficiency.
+
+### **Scalability Issues**
+- Without VLANs, all broadcast traffic must propagate across the entire network.
+- Adding devices increases collision chances and congestion, degrading performance.
+
+### **Administrative Issues**
+- When a user moves to a different location within the network:
+  - Their network configuration must be updated manually.
+  - This often requires extending cables or reconfiguring switch ports, which can be time-consuming and error-prone.
+
+---
+
+## **Port-Based VLANs**
+
+### **Overview**
+- A **Port-Based VLAN** assigns specific switch ports to a VLAN, making the VLAN membership dependent on the physical connection.
+- Any device connected to a port inherits the VLAN configuration assigned to that port.
+
+### **Key Features**
+1. **Logical Segmentation**:
+   - One physical switch can behave as multiple logical switches.
+   - Each VLAN acts like a separate network, even though they share the same physical hardware.
+
+2. **Flexibility**:
+   - Devices can move freely between ports within the same VLAN without requiring IP address reconfiguration.
+   - Some switches allow VLAN assignment based on **MAC addresses** rather than port numbers, offering dynamic flexibility.
+
+3. **Use Case**:
+   - Ideal for environments where logical separation is needed (e.g., different departments like HR, IT, or Finance).
+
+---
+
+## **Trunk Ports**
+
+### **Definition**
+- A **Trunk Port** is a type of switch port configured to carry traffic for multiple VLANs. 
+- Trunk ports are essential for communication between VLANs across multiple switches.
+
+### **How It Works**
+- Uses **VLAN tagging** (e.g., IEEE 802.1Q) to distinguish between VLANs in transmitted frames.
+- Tagging adds a small header to Ethernet frames that identifies the VLAN the frame belongs to.
+
+### **Purpose**
+1. **Inter-Switch Communication**:
+   - Trunk ports allow switches to share VLAN traffic over a single physical connection.
+2. **Router Connection**:
+   - Used to connect switches to routers for **Inter-VLAN routing**, enabling communication between different VLANs.
+
+---
+
+## **Ethernet VPN (EVPN)**
+
+### **Definition**
+- **Ethernet VPN (EVPN)** is a modern protocol that extends Layer 2 networks over a Layer 3 backbone.
+- Allows for the transmission of Ethernet frames between geographically dispersed sites using tunneling techniques.
+
+### **Key Concepts**
+1. **Encapsulation**:
+   - Layer 2 frames are encapsulated in Layer 3 packets, enabling them to traverse IP-based networks.
+2. **Transport**:
+   - These packets are routed like standard IP traffic using existing routing protocols (e.g., BGP, OSPF).
+
+### **Advantages**
+- **Seamless Connectivity**:
+  - Enables VLAN extension across multiple sites without requiring physical Layer 2 links.
+- **Redundancy**:
+  - Offers built-in failover and load balancing for higher reliability.
+- **Scalability**:
+  - Supports the growth of distributed networks while maintaining manageable Layer 2 connectivity.
+
+---
+
+## **End-to-End Networking Concepts**
+
+### **Real-Life Data Flow from Layer to Destination**
+Below is a step-by-step breakdown of how data moves through the network stack and essential protocols involved:
+
+---
+
+### **1. Routing Table**
+- A **routing table** is used at Layer 3 to determine the best path for a packet to reach its destination.
+- The table contains:
+  - Destination IP addresses.
+  - Next-hop information.
+  - Metrics like cost and priority.
+
+---
+
+### **2. DHCP (Dynamic Host Configuration Protocol)**
+- DHCP dynamically assigns IP configurations to devices joining the network.
+
+#### **DORA Process**
+1. **D**iscover: A device broadcasts a request for an IP address.
+2. **O**ffer: The DHCP server responds with an available IP address.
+3. **R**equest: The device formally requests to lease the offered IP address.
+4. **A**cknowledge: The server confirms and leases the IP address to the device.
+
+---
+
+### **3. Joining a Wi-Fi Network**
+- A **Station (STA)** connects to a Wi-Fi network through:
+  1. **Authentication**: The STA and access point (AP) exchange credentials.
+  2. **Association**: The STA associates with the AP to join the network.
+
+---
+
+### **4. Forwarding and ARP Tables**
+1. **Forwarding Table**:
+   - Used by switches to map MAC addresses to specific switch ports for efficient Layer 2 forwarding.
+2. **ARP Table**:
+   - Resolves IP addresses to MAC addresses for devices in the same subnet.
+
+---
+
+### **5. DNS Resolver**
+- The **Domain Name System (DNS)** converts human-readable domain names (e.g., `example.com`) into machine-readable IP addresses (e.g., `192.168.1.1`).
+
+---
+
+### **6. TCP Connection**
+- TCP ensures reliable communication between endpoints using a **3-Way Handshake**:
+  1. **SYN**: The client sends a connection request.
+  2. **SYN-ACK**: The server acknowledges and sends its own connection request.
+  3. **ACK**: The client acknowledges the server’s response, establishing the connection.
+
+#### **Data Transfer**
+- Once the handshake is complete:
+  - Data is sent in segments with acknowledgments from the receiving side.
+  - Ensures integrity and reliability during transmission.
+
+
+**Done**
+---
