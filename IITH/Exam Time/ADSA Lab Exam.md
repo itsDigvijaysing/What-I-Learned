@@ -1,4 +1,4 @@
-# ADSA Lab Exam Study Plan (10 Hours Plan)
+# ADSA Lab Exam Study Plan (10 Hours Plan) ✅ (5 test cases / 20)
 
 ## 1. **Dynamic Programming (2 hours)** 
    - **Key Topics:**
