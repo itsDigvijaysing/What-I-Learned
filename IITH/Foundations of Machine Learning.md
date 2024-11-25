@@ -1551,7 +1551,7 @@ $$  [ p = σ(w_0 + w_1 * x_1 + w_2 * x_2 + ... + w_n * x_n) ]$$
 Where:
 - [w_0, w_1, ..., w_n] are the weights to be learned by the model.
 - [x_1, x_2, ..., x_n] are the input features.
-- [σ] is the sigmoid function.
+- [ σ ] is the sigmoid function.
 
 The goal is to find the weights [w_0, w_1, ..., w_n] that minimize the **log-loss** or **cross-entropy loss** between the predicted probabilities and the true labels.
 
@@ -1568,7 +1568,7 @@ $$  [ J(w) = - (1/m) * Σ [y_i * log(p_i) + (1 - y_i) * log(1 - p_i)] + λ Σ w_
 Where:
 - [p_i] is the predicted probability for the i-th data point.
 - [y_i] is the true label (0 or 1).
-- [λ] is the regularization parameter.
+- [ λ ] is the regularization parameter.
 - [w_j] is the weight of the j-th feature.
 
 ### Gradient Descent for Logistic Regression
@@ -1580,7 +1580,7 @@ Gradient descent is commonly used to optimize the weights in logistic regression
   [ w_j := w_j - α * (∂J(w)/∂w_j) ]
 
 Where:
-- [α] is the learning rate.
+- [ α ] is the learning rate.
 - [∂J(w)/∂w_j] is the partial derivative of the cost function with respect to the weight [w_j].
 
 By applying gradient descent, the algorithm converges to the optimal set of weights that minimize the loss and regularization term.
