@@ -1526,7 +1526,7 @@ $$  [ f(x) = w_1 * x_1 + w_2 * x_2 + w_3 * x_3 + b ]$$
 Where:
 - [w_1, w_2, w_3] are the weights for the three dimensions.
 - [x_1, x_2, x_3] are the input features.
-- [b] is the bias term.
+- [ b ] is the bias term.
 
 ### Logistic Regression
 
