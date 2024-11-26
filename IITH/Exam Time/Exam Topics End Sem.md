@@ -87,7 +87,7 @@
 ---
 
 ## ADSA Topics
-- [ ] Amortized analysis and dynamic arrays
+- [x] Amortized analysis and dynamic arrays
 - [ ] Incremental counter (Amortized method)
 - [ ] Computational complexity (NP-complete, NP-hard)
 - [ ] CLIQUE, Vertex Cover, SAT, and 3-SAT problems
