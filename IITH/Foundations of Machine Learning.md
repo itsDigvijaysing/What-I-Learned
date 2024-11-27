@@ -1426,10 +1426,10 @@ In regression problems, we aim to minimize the error between the predicted value
 $$  [ y = w_0 + w_1x_1 + w_2x_2 + ... + w_nx_n + ε ]$$
 
   Where:
-  - [y] is the dependent variable (target).
+  - [ y] is the dependent variable (target).
   - [x_1, x_2, ..., x_n] are the independent variables (features).
   - [w_0, w_1, ..., w_n] are the parameters (weights) to be learned.
-  - [ε] is the error term (random noise).
+  - [ ε] is the error term (random noise).
 
 In linear regression, we aim to find the parameters [w_0, w_1, ..., w_n] that minimize the error between the predicted values and the actual values. This is usually done by minimizing the **mean squared error (MSE)** between the predictions and the true values.
 
@@ -1452,10 +1452,10 @@ Ridge regression is a regularized form of linear regression that adds a penalty 
 $$  [ J(w) = (1/2m) * Σ (y_i - (w_0 + w_1x_1i + w_2x_2i + ... + w_nx_ni))^2 + λ Σ w_j^2 ]$$
 
   Where:
-  - [m] is the number of data points.
+  - [ m] is the number of data points.
   - [y_i] is the actual value of the target for the i-th data point.
   - [w_j] is the coefficient (weight) of the j-th feature.
-  - [λ] is the regularization parameter that controls the strength of the penalty.
+  - [ λ] is the regularization parameter that controls the strength of the penalty.
 
 In Ridge regression, we add the squared sum of the coefficients [Σ w_j^2] to the cost function. The regularization parameter [λ] controls the trade-off between fitting the data and minimizing the size of the coefficients. As [λ] increases, the coefficients are driven towards zero, and the model becomes simpler.
 
@@ -1468,7 +1468,7 @@ Lasso (Least Absolute Shrinkage and Selection Operator) regression is another fo
 $$  [ J(w) = (1/2m) * Σ (y_i - (w_0 + w_1x_1i + w_2x_2i + ... + w_nx_ni))^2 + λ Σ |w_j| ]$$
 
   Where:
-  - [λ] is the regularization parameter.
+  - [ λ] is the regularization parameter.
   - The sum of the absolute values of the coefficients encourages some coefficients to be exactly zero, leading to feature selection.
 
 Lasso regression is particularly useful when we believe that only a subset of features are relevant, as it can effectively eliminate irrelevant features by setting their coefficients to zero.
@@ -1499,7 +1499,7 @@ $$  [ 1/2 * ||w||^2 + C * Σ ε_i ]$$
   Where:
   - [||w||^2] is the complexity of the model (the weight vector).
   - [ε_i] is the deviation from the margin for each support vector.
-  - [C] is the regularization parameter controlling the trade-off between model complexity and fitting errors.
+  - [ C] is the regularization parameter controlling the trade-off between model complexity and fitting errors.
 
 In SVR, we focus on minimizing [1/2 * ||w||^2], where [w] is the weight vector of the model. The goal is to maximize the margin, i.e., the distance between the regression line (or hyperplane) and the support vectors, while keeping the model simple and avoiding overfitting.
 
