@@ -86,18 +86,18 @@
 
 ---
 
-## ADSA Topics
+## ADSA Topics (Exam Done)
 - [x] Amortized analysis and dynamic arrays
-- [ ] Incremental counter (Amortized method)
+- [x] Incremental counter (Amortized method)
 - [ ] Computational complexity (NP-complete, NP-hard)
-- [ ] CLIQUE, Vertex Cover, SAT, and 3-SAT problems
+- [x] CLIQUE, Vertex Cover, SAT, and 3-SAT problems
 - [ ] Polynomial time reductions
-- [ ] Network flows (Ford-Fulkerson, Residual Graphs, Min-Cut Max-Flow Theorem)
-- [ ] Residual capacity and flow augmentation
+- [x] Network flows (Ford-Fulkerson, Residual Graphs, Min-Cut Max-Flow Theorem)
+- [x] Residual capacity and flow augmentation
 - [ ] Key lemmas from flow algorithms (CLRS corollaries)
-- [ ] Max-flow algorithms (Push-Relabel, Edmonds-Karp)
-- [ ] NP-correctness in decision problems
-- [ ] SAT problem variations
+- [x] Max-flow algorithms (Push-Relabel, Edmonds-Karp)
+- [x] NP-correctness in decision problems
+- [x] SAT problem variations
 - [ ] Reduction from 3-SAT to Vertex Cover
 
 
