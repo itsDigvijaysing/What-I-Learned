@@ -1,62 +1,62 @@
 # Final Topics List for Study
 
 ## ACN Topics
-- [ ] Router architecture and routing
-- [ ] Forwarding based on destination
-- [ ] Forwarding table
-- [ ] Cache types
-- [ ] Fabric plane
-- [ ] Switching fabrics
-- [ ] Input Port Queueing and HoL Blocking
-- [ ] Output port queueing
-- [ ] Buffer management
+- [x] Router architecture and routing
+- [x] Forwarding based on destination
+- [x] Forwarding table
+- [x] Cache types
+- [x] Fabric plane
+- [x] Switching fabrics
+- [x] Input Port Queueing and HoL Blocking
+- [x] Output port queueing
+- [x] Buffer management
 - [ ] Scheduling policy
-- [ ] Network neutrality
-- [ ] Performance evaluation
-- [ ] Subnets and IP address bit identifiers
-- [ ] IP addressing overview
-- [ ] Types of network communication (Unicast, Broadcast, Multicast)
-- [ ] DHCP
-- [ ] Address Resolution Protocol (ARP)
-- [ ] Subnetting and CIDR
-- [ ] Forwarding and ARP Table
-- [ ] Longest prefix matching
-- [ ] NAT
-- [ ] IPv6 (Addressing, Transition Mechanisms)
-- [ ] Flow table abstraction
-- [ ] Software-defined networking (OpenFlow, Abstractions)
-- [ ] Middleboxes (Firewalls, Load Balancers)
-- [ ] Intrusion detection and prevention systems
-- [ ] Network layer control plane roadmap
-- [ ] Goals of routing protocols (Scalability, Robustness)
-- [ ] Dijkstra’s algorithm (Shortest Path First)
+- [x] Network neutrality
+- [x] Performance evaluation
+- [x] Subnets and IP address bit identifiers
+- [x] IP addressing overview
+- [x] Types of network communication (Unicast, Broadcast, Multicast)
+- [x] DHCP
+- [x] Address Resolution Protocol (ARP)
+- [x] Subnetting and CIDR
+- [x] Forwarding and ARP Table
+- [x] Longest prefix matching
+- [x] NAT
+- [x] IPv6 (Addressing, Transition Mechanisms)
+- [x] Flow table abstraction
+- [x] Software-defined networking (OpenFlow, Abstractions)
+- [x] Middleboxes (Firewalls, Load Balancers)
+- [x] Intrusion detection and prevention systems
+- [x] Network layer control plane roadmap
+- [x] Goals of routing protocols (Scalability, Robustness)
+- [x] Dijkstra’s algorithm (Shortest Path First)
 - [ ] Distance vector algorithm
 - [ ] Hierarchical OSPF
-- [ ] Network Layer routing algorithm among ISPs (BGP)
-- [ ] BGP types, sessions, policies, and path vector protocol
-- [ ] Link layer introduction, terminology
-- [ ] Multiple access protocols (ALOHA, CSMA, etc.)
-- [ ] Ethernet (CSMA/CD, Frame Structure)
-- [ ] ARP cache poisoning
-- [ ] Adhoc networks and MANET
-- [ ] VLAN (Trunking, Port-based, Challenges)
-- [ ] Ethernet VPN
-- [ ] Packet Switching vs Circuit Switching
-- [ ] Frequency Division Multiplexing (FDM) & Time Division Multiplexing (TDM)
-- [ ] Packet delay, loss, and throughput
-- [ ] Principles of network applications (Web, Email, P2P, etc.)
-- [ ] Protocols: HTTP, FTP, SMTP, DNS
-- [ ] Peer-to-peer & online video conferencing
-- [ ] Transport Layer (TCP, UDP)
-- [ ] Reliable data transfer (Stop-and-Wait, Go-Back-N, Selective Repeat)
-- [ ] Congestion control and avoidance (TCP Reno, Tahoe, New Reno, etc.)
+- [x] Network Layer routing algorithm among ISPs (BGP)
+- [x] BGP types, sessions, policies, and path vector protocol
+- [x] Link layer introduction, terminology
+- [x] Multiple access protocols (ALOHA, CSMA, etc.)
+- [x] Ethernet (CSMA/CD, Frame Structure)
+- [x] ARP cache poisoning
+- [x] Adhoc networks and MANET
+- [x] VLAN (Trunking, Port-based, Challenges)
+- [x] Ethernet VPN
+- [x] Packet Switching vs Circuit Switching
+- [x] Frequency Division Multiplexing (FDM) & Time Division Multiplexing (TDM)
+- [x] Packet delay, loss, and throughput
+- [x] Principles of network applications (Web, Email, P2P, etc.)
+- [x] Protocols: HTTP, FTP, SMTP, DNS
+- [x] Peer-to-peer & online video conferencing
+- [x] Transport Layer (TCP, UDP)
+- [x] Reliable data transfer (Stop-and-Wait, Go-Back-N, Selective Repeat)
+- [x] Congestion control and avoidance (TCP Reno, Tahoe, New Reno, etc.)
 - [ ] QUIC Protocol
 - [ ] Intserv, Diffserv, and QoS concepts
-- [ ] Best-effort delivery and limitations
-- [ ] Attacks and security mechanisms
-- [ ] TCP fairness and congestion control schemes
-- [ ] Explicit congestion notification (ECN)
-- [ ] Active queue management
+- [x] Best-effort delivery and limitations
+- [x] Attacks and security mechanisms
+- [x] TCP fairness and congestion control schemes
+- [x] Explicit congestion notification (ECN)
+- [x] Active queue management
 
 ---
 
