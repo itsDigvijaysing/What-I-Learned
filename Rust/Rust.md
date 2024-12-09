@@ -49,12 +49,13 @@ fn main() {
     println!("{}", x);
 }
 
-fn takes_ownership(some_string: String) {
+fn takes_ownership(some_string: String) { //Taking string as its pass to fucntion ownership transfer
     println!("{}", some_string);
 }
 
-fn makes_copy(some_integer: i32) {
+fn makes_copy(some_integer: i32) { //Making copy as it's using i32
     println!("{}", some_integer);
 }
 
 ```
+
