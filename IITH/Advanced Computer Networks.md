@@ -14,7 +14,7 @@ Resources: [CN: Top Down Approach](https://gaia.cs.umass.edu/kurose_ross/online_
 ## Syllabus
 
 1. Basics of CN & Network
-2. Application Layer
+2. Application Layer.
 3. Transport Layer principles & protocols
 4. Network Layer: Data Plane
 5. Network Layer: Control Plane
@@ -2513,4 +2513,6 @@ Below is a step-by-step breakdown of how data moves through the network stack an
 
 
 **Done**
+
 ---
+
