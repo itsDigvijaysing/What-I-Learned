@@ -4,6 +4,9 @@ Final end term Exam. → 70%
 
 Office → LA-312
 
-![ main dates ](image.jpg)- 1, Simple things can. make you Happy.
+![ main dates ](image.jpg)
+The printed rainbow… (movie)
+
+1. Simple things can. make you Happy.
 2. Always, have a positive thinking. .
-3.
+3. Loneliness and Boredom real life
