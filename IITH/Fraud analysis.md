@@ -24,4 +24,6 @@ Main to pics
 	3. Arbitrary assignments: Phone numbers or ZIP codes.
 	The law works best for datasets that combine multiple scales or orders of magnitude. 
 
-
+# Fa-02
+##  scale invariant
+Basically they are saying as
