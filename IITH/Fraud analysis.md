@@ -12,21 +12,25 @@ Main to pics
 	 - but when observed that the probability of  selecting page from 1000 book pages is very different& not equally divided.
 	 - =={ newcomb Belford }==
 	 ![benfold formula](Fraud%20analysis-1.png) 
-	 When Benford’s Law is followed:
-	1. Financial Data: Tax records, stock prices, or accounting data.
-	2. Scientific Data: Physical constants, populations, or data from experiments.
-	3. Natural Phenomena: Earthquake magnitudes, river lengths, or heights of mountains.
-	4. Business Metrics: Sales figures, production quantities, or inventory levels.
+ When Benford’s Law is followed:
+1. Financial Data: Tax records, stock prices, or accounting data.
+2. Scientific Data: Physical constants, populations, or data from experiments.
+3. Natural Phenomena: Earthquake magnitudes, river lengths, or heights of mountains.
+4. Business Metrics: Sales figures, production quantities, or inventory levels.
 
-	When Benford’s Law does NOT apply:
-	1. Data with fixed ranges: Heights of humans, test scores, or data constrained to specific intervals.
-	2. Random or uniform distributions: Lottery numbers, random number generators, or sequential data.
-	3. Arbitrary assignments: Phone numbers or ZIP codes.
-	The law works best for datasets that combine multiple scales or orders of magnitude. 
+![](Fraud%20analysis.png)
+
+When Benford’s Law does NOT apply:
+1. Data with fixed ranges: Heights of humans, test scores, or data constrained to specific intervals.
+2. Random or uniform distributions: Lottery numbers, random number generators, or sequential data.
+3. Arbitrary assignments: Phone numbers or ZIP codes.
+The law works best for datasets that combine multiple scales or orders of magnitude. 
 
 # Fa-02
-##  scale invariant 
+## scale invariant 
 Basically they are saying as as benfold law says that number frequently appear mostly in order of formula where 
 Number 1 will appear more time then the other number & that will remain true even is I've convert that number for example conversion of dollars to rs.
 
 ![](Fraud%20analysis%20distribuition.png)
+
+- So basically they are saying that even if we check multiply starting digit of scientific notation it will follow the same distribution
