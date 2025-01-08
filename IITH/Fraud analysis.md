@@ -25,5 +25,8 @@ Main to pics
 	The law works best for datasets that combine multiple scales or orders of magnitude. 
 
 # Fa-02
-##  scale invariant
-Basically they are saying as
+##  scale invariant 
+Basically they are saying as as benfold law says that number frequently appear mostly in order of formula where 
+Number 1 will appear more time then the other number & that will remain true even is I've convert that number for example conversion of dollars to rs.
+
+![](Fraud%20analysis%20distribuition.png)
