@@ -18,3 +18,9 @@ absent… (attended through mirror)
 
 Lets see what multiple perceptron can do.
 Going to do in notepad for checking.
+- ==End of Month We have Test==
+- Anything more than 2 hidden layer is deep neural network.
+![](Deep%20learning%2003.png)
+
+
+
