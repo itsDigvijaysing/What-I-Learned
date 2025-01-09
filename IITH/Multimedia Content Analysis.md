@@ -33,8 +33,18 @@ Evaluation
 		11. Dr
 		12. Neural network
 		13. etc.
-- convolutional neural network - ==VGG16 - Resnet deservset googlenet. . 
+- convolutional neural network - ==VGG16 - Resnet deservset googlenet==
 
+#  MCA - 03
 
+Data centric and image centric approaches.
+1. Image classification.
+ 2. Detection / Localisation
+ 3. Segmentation / Pixel classification
+ 4. Real time, Video tracking
+ 5. Sequential tanks, RNN, LSTS, GEV, Transformer.
+ 6. Generative AI - ChatGPT, BeRT
 
-
+Input and Data Generation
+![Lecture 3 MCA](Multimedia%20Content%20Analysis%20L3.png)
+- Intial intro to all the things we afe 
