@@ -40,4 +40,4 @@ So basically log is continuous that's why we use it.
 # FA - 03
 
 - equally likey digits are not scale invarients.
-..
+ 
