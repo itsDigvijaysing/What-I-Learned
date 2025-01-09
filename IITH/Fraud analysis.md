@@ -36,3 +36,8 @@ Number 1 will appear more time then the other number & that will remain true eve
 - So basically they are saying that even if we check multiply starting digit of scientific notation it will follow the same distribution
 ![](Fraud%20analysis%20distribuition-1.png)
 So basically log is continuous that's why we use it.
+
+# FA - 03
+
+- equally likey digits are not scale invarients.
+..
