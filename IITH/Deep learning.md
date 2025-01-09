@@ -9,3 +9,11 @@
 
 
 -![](Deep%20learning%20-%2001.png)
+
+# DL - 02
+
+absent… (attended through mirror)
+
+# DL - 03
+
+Lets see what multiple perceptron can do.
