@@ -17,3 +17,4 @@ absent… (attended through mirror)
 # DL - 03
 
 Lets see what multiple perceptron can do.
+Going to do in notepad for checking.
