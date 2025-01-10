@@ -90,3 +90,10 @@ Key elements → assets, threat, vulnerability, mitigation.
  active attack' {direct participate & data manipulation}
 Passive attack { only view collect the data & don't interfare }
 
+# NS - 03
+
+
+- Type of cipher text and how we can decrypt them and there vulnerabilities.
+- we learned about the mono alphabetic and multi substitution cipher.
+- we learned about different types of attack for decryption.
+![](Network%20security%20L3.png)
