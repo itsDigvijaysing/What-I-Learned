@@ -38,3 +38,6 @@ Tf (t,d)=1+log10c(t,d)
 Docu. ment frequency
 ==Log N / DF (t)==
 
+# NLP - 02
+
+![](Natural%20language%20processing%20L2.png)
