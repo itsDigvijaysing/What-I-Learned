@@ -47,4 +47,5 @@ Data centric and image centric approaches.
 
 Input and Data Generation
 ![Lecture 3 MCA](Multimedia%20Content%20Analysis%20L3.png)
-- Intial intro to all the things we afe 
+- Initial intro to all the things we are going to do.
+
