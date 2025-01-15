@@ -42,3 +42,7 @@ So basically log is continuous that's why we use it.
 - equally likey digits are not scale invarients.
  - benfold law hinges on the simple observation that, it a hat is a covered evenly in black & white strips then half of black stripes will be same as White when curve is smooth & spread several order magnitude.
 ![](Fraud%20analysis%20black%20and%20white.png)
+
+# FA - 04
+
+![](Fraud%20analysis%204.png)
