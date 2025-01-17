@@ -49,3 +49,6 @@ Input and Data Generation
 ![Lecture 3 MCA](Multimedia%20Content%20Analysis%20L3.png)
 - Initial intro to all the things we are going to do.
 
+# MCA - 04
+
+![](Multimedia%20Content%20Analysis%204.png)
