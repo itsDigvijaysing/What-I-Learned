@@ -1,5 +1,8 @@
-# DL - 01
+# DL - 00
+- Online Lecture
+- 
 
+# DL - 01
 - threshold logic unit 
 - check the story of McCulloch & Pitts.
 - Boolean inputs & output. { inputs can be excitatory or inhibitory nature }
