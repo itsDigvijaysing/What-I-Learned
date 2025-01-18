@@ -22,3 +22,7 @@ Grading policy
 # TIN - 02
 
 ![](Topics%20in%20networks%20L2.png)
+
+# TIN - 3
+
+![](Topics%20in%20networks%203.png)
