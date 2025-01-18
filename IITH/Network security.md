@@ -1,6 +1,6 @@
 # NS
- **network security first lecture** 
-**Introduction & logistic**
+- **network security first lecture** 
+- **Introduction & logistic**
 
 Why should we learn network Security.
 - digital dependency → Industry dependent on interconnected systems
@@ -33,8 +33,7 @@ Objective
 
 Prerequisites
 - CN, socket prog, shell scripting , preferred C / C++/ py 
-.
- 
+
 Grading policy
 - class participation → 5%
 - quizzes → 10%
@@ -42,12 +41,12 @@ Grading policy
 - end sem → 15%
 - assignment project → 60% / 70% ( CTF / VAPT / prog asg / project )
 # ns-02
+**The security problems**
+	- lots of buggy software
+	- social engineering is very effective
+	- money making using vulnerabilities
 
-The security problems
-- lots of buggy software
-- social engineering is very effective
-- money making using vulnerabilities
-
+- Buffer Overflo
 ![](Buffer%20Overflow.png)
 
 Attacked will try to get the IP address & bandwidth stealing

@@ -17,5 +17,11 @@
 3. [[Linear Optimization]] (Elective)(3 Credits)(Theory)
 4. [[Advanced Computer Networks]] (Core Elective)(3 Credits)(Systems)
 
-Semester 2 Subjects
+**Semester 2 Subjects**
+
+1. [Deep learning](IITH/Deep%20learning.md)
+2. [Multimedia Content Analysis](Multimedia%20Content%20Analysis.md)
+3. [Topics in networks](Topics%20in%20networks.md)
+4. [Fraud analysis](Fraud%20analysis.md)
+
 
