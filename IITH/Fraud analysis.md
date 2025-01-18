@@ -7,7 +7,7 @@ Main to pics
 3.  GNN
 4. trust, Index.
 
-# FA-02
+# FA - 02
  - use case → to check with set of vectors that this book is manipulated or genuine. {Book-s can be anything's }
 	 - but when observed that the probability of  selecting page from 1000 book pages is very different& not equally divided.
 	 - =={ newcomb Belford }==
@@ -18,7 +18,7 @@ Main to pics
 3. Natural Phenomena: Earthquake magnitudes, river lengths, or heights of mountains.
 4. Business Metrics: Sales figures, production quantities, or inventory levels.
 
-![](Fraud%20analysis.png)
+![FA Digits spread as per research](Fraud%20analysis.png)
 
 When Benford’s Law does NOT apply:
 1. Data with fixed ranges: Heights of humans, test scores, or data constrained to specific intervals.
@@ -26,23 +26,27 @@ When Benford’s Law does NOT apply:
 3. Arbitrary assignments: Phone numbers or ZIP codes.
 The law works best for datasets that combine multiple scales or orders of magnitude. 
 
-# Fa-02
+# FA - 03
 ## scale invariant 
 Basically they are saying as as benfold law says that number frequently appear mostly in order of formula where 
 Number 1 will appear more time then the other number & that will remain true even is I've convert that number for example conversion of dollars to rs.
-
-![](Fraud%20analysis%20distribuition.png)
+![FA Digits scale](Fraud%20analysis%20distribuition.png)
 
 - So basically they are saying that even if we check multiply starting digit of scientific notation it will follow the same distribution
-![](Fraud%20analysis%20distribuition-1.png)
+![Some Algo](Fraud%20analysis%20distribuition-1.png)
 So basically log is continuous that's why we use it.
 
-# FA - 03
-
+# FA - 04
 - equally likey digits are not scale invarients.
  - benfold law hinges on the simple observation that, it a hat is a covered evenly in black & white strips then half of black stripes will be same as White when curve is smooth & spread several order magnitude.
-![](Fraud%20analysis%20black%20and%20white.png)
+![FA_U Shape](Fraud%20analysis%20black%20and%20white.png)
 
-# FA - 04
+# FA - 05
+- Ranking Web
+- Page Ranking
+- Mathematical Way of Solving Page Ranking with actual example when google wants to create page ranking (Matrix solving way)
 
-![](Fraud%20analysis%204.png)
+![FA 05](Fraud%20analysis%204.png)
+# FA - 06
+
+- They tought about this concepts in more depth

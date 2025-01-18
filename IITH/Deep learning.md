@@ -41,7 +41,7 @@
 - perception started , weights & biased relation.
 - usage of bias as it can be important point to reach final output.
 
-![](Deep%20learning%20-%2001.png)
+![DL 01](Deep%20learning%20-%2001.png)
 
 # DL - 02
 
@@ -52,12 +52,9 @@
 	- Any boolean function of n inputs can be exactly represented wit 2^n perceptions in the hidden layer and 1 in the output layer!
 
 # DL - 03
-
-Lets see what multiple perceptron can do.
-Going to do in notepad for checking.
+- Lets see what multiple perceptron can do.
+- Going to do in notepad for checking.
 - ==End of Month We have Test==
 - Anything more than 2 hidden layer is deep neural network.
-![](Deep%20learning%2003.png)
-
-
-
+- Smallest no. Of neuron require to learn XOR function.
+![DL 03](Deep%20learning%2003.png)

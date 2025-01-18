@@ -16,3 +16,6 @@
 2. [[Foundations of Machine Learning]] (Core Elective)(3 Credits)(DataScience)
 3. [[Linear Optimization]] (Elective)(3 Credits)(Theory)
 4. [[Advanced Computer Networks]] (Core Elective)(3 Credits)(Systems)
+
+Semester 2 Subjects
+
