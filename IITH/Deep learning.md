@@ -1,6 +1,7 @@
 # DL - 00
 - Online Lecture
-- 
+- Evaluation Grading Criteria:
+  1.  Programming Assignment- 30% (best 3 of 4)
 
 # DL - 01
 - threshold logic unit 
