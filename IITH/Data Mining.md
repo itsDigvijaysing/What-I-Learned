@@ -1,6 +1,6 @@
 Link: [IIT Hyderabad](IIT%20Hyderabad.md)
 
-# DM - 00
+# DM - 01
 
 - To extract Knowledge from Data
 - Raw Data -> Statistical Module / Analysis

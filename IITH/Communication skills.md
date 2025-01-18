@@ -1,8 +1,10 @@
-# Grading {MostlyMCQ}
-Mid term Exam → 30%
-Final end term Exam. → 70%
+# CS - 01
 
-Office → LA-312
+**Grading {MostlyMCQ}**
+- Mid term Exam → 30%
+- Final end term Exam. → 70%
+
+**Office → LA-312**
 
 ![ main dates ](image.jpg)
 The printed rainbow… (movie)
@@ -13,4 +15,6 @@ The printed rainbow… (movie)
 
 # CS - 02
 
+- Tonality Content
+- Things to put in the CV/Resume
 ![](Communication%20skills%202.png)
