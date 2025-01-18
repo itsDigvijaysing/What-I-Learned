@@ -13,16 +13,16 @@
 
 - LLM Model compute used during training:
 ![Compute power Used](Deep%20learning%20model%20compute.jpg)
-Main Tech|Language|Licence|Main Backer
---
-| PyTorch|Python, C++|BSD|Facebook|
-| TensorFlow|Python, C++|Apache|Google|
-| JAX|Python|Apache|Google|
-| MXNet|Python, C++, R, Scala|Apache|Amazon|
-| CNTK|Python, C++|MIT|Microsoft|
-| Torch|Lua|BSD|Facebook|
-| Theano|Python|BSD|U. of Montreal|
-| Caffe|C++|BSD 2 clauses|U. of CA, Berkeley|
+	|Main Tech|Language|Licence|Main Backer|
+	|—|—|—|—|
+	|PyTorch|Python, C++|BSD|Facebook|
+	|TensorFlow|Python, C++|Apache|Google|
+	|JAX|Python|Apache|Google|
+	|MXNet|Python, C++, R, Scala|Apache|Amazon|
+	|CNTK|Python, C++|MIT|Microsoft|
+	|Torch|Lua|BSD|Facebook|
+	|Theano|Python|BSD|U. of Montreal|
+	|Caffe|C++|BSD 2 clauses|U. of CA, Berkeley|
 
 - **Reference Material:**
 	- Sir Channel Link: [Deep Learning (AI2100, AI5100 and CS5480) Course Contents - Deep Learning / Jan-May 2025](https://krmopuri.github.io/dl25/)
@@ -45,7 +45,11 @@ Main Tech|Language|Licence|Main Backer
 
 # DL - 02
 
-absent… (attended through mirror)
+**absent… (attended through mirror)**
+- Line Classifier- Shortcomings
+- what kind of preprocessing do we have to do, Example with XOR function
+- They found something like:
+	- Any boolean function of n inputs can be exactly represented wit 2^n perceptions in the hidden layer and 1 in the output layer!
 
 # DL - 03
 
