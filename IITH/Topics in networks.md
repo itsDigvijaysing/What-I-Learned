@@ -18,7 +18,6 @@ Grading policy
 - prog. Assignment →40%
 - course project →60%
 
-
 # TIN - 02
 
 ![](Topics%20in%20networks%20L2.png)

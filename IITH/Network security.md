@@ -46,7 +46,7 @@ Grading policy
 	- social engineering is very effective
 	- money making using vulnerabilities
 
-- Buffer Overflo
+- Buffer Overflow (with sample code)
 ![](Buffer%20Overflow.png)
 
 Attacked will try to get the IP address & bandwidth stealing
@@ -69,15 +69,13 @@ Operational security → handling & protecting data asset
 Alice & Bob & Trudy. {Alice → Client, Bob →server . Trudy → intruder }
 What bad person can do→ eaves drop, hijack the network, impersonate, etc.
 
-In security we have two different encryption types.
+**In security we have two different encryption types.**
 1. Symmetric encryption {some key both side}
 2. Asymmetric encryption {public key private key }
 
-Privacy = identity and data
+**Privacy = identity and data**
 
-
-
-- threat model
+**threat model**
 A structured approach to identity, assess, & mitigate securing risk associated with a system & application
 Key elements → assets, threat, vulnerability, mitigation.
 - types of attacker :-
@@ -86,13 +84,11 @@ Key elements → assets, threat, vulnerability, mitigation.
 - organization { competitor, supplier, partner }
 - state or state sponsored.
 
- active attack' {direct participate & data manipulation}
-Passive attack { only view collect the data & don't interfare }
+**active attack** {direct participate & data manipulation}
+**Passive attack** { only view collect the data & don't interfare }
 
 # NS - 03
-
-
 - Type of cipher text and how we can decrypt them and there vulnerabilities.
 - we learned about the mono alphabetic and multi substitution cipher.
 - we learned about different types of attack for decryption.
-![](Network%20security%20L3.png)
+![NS 03](Network%20security%20L3.png)
