@@ -1,7 +1,16 @@
 # DL - 00
 - Online Lecture
 - Evaluation Grading Criteria:
-  1.  Programming Assignment- 30% (best 3 of 4)
+  1. Programming Assignment- 30% (best 3 of 4)
+  2. Written exams (best 3 of 4; pre-scheduled) - 30%
+  3. Kaggle Project (presentation) - 20%
+  4. Endsem (written) - 20%
+
+![Deep Learning TA](Deep%20learning%20TAs.png)
+
+- **Course for Deep Learning Content:** 
+	- Starting from an artificial neuron model, the aim of this course is to understand feed-forward, recurrent architectures of Artificial Neural Networks, all the way to the latest Generative Al models driven by Deep Neural Networks. Specifically, we will discuss the basic Neuron models (McCulloch Pitts, Perceptron), Multi-Layer Perceptron (MLP), Convolutional Neural Networks (CNN), and Recurrent Neural Networks (RNN, LSTM and GRU). We will understand these models' representational ability and how to train them using the Gradient Descent technique using the Backpropagation algorithm. We will then discuss the encoder-decoder architecture, attention mechanism and its variants. That will be followed by self-attention and Transformers. The next part of the course will be on Generative Al, wherein we will discuss Variational Autoencoders, GANs, Diffusion Models, GPT, BERT, etc. We will briefly discuss multi-modal representation learning (e.g., CLIP). Towards the end, students will be briefly exposed to some of the advanced topics and/or recent trends in deep learning.
+
 
 # DL - 01
 - threshold logic unit 
