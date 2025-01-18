@@ -1,1 +1,1 @@
-![](Industry%20lecture%202.png)
+![Industry Lecture](Industry%20lecture%202.png)
