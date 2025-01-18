@@ -19,9 +19,17 @@ Grading policy
 - course project →60%
 
 # TIN - 02
-
-![](Topics%20in%20networks%20L2.png)
+- Network Layer Services & Protocols
+- SDN
+- Globally Deployed Software defined WAN
+- Routing and Forwarding
+- VALAN
+![TIN 02](Topics%20in%20networks%20L2.png)
 
 # TIN - 3
-
+- SDN/Openflow
+- Traditional Switch vs Openflow
+- ASIC/FPGA: Hard Coded program on the device
+- Limitation of Openflow (Issue and Protocol Complexity and flexibility)
+- P4 Lang for Solution and P4 target
 ![](Topics%20in%20networks%203.png)
