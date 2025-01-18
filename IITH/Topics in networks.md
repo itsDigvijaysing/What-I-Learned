@@ -1,3 +1,4 @@
+# TIN - 01
 In this subject We are understanding how the data from your phone to the server reach with all the hardware knowledge.
 
 Some important things
@@ -26,7 +27,7 @@ Grading policy
 - VALAN
 ![TIN 02](Topics%20in%20networks%20L2.png)
 
-# TIN - 3
+# TIN - 03
 - SDN/Openflow
 - Traditional Switch vs Openflow
 - ASIC/FPGA: Hard Coded program on the device

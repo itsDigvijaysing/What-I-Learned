@@ -1,4 +1,4 @@
-# NS
+# NS - 01
 - **network security first lecture** 
 - **Introduction & logistic**
 
@@ -40,7 +40,7 @@ Grading policy
 - mid sem exam → 10%
 - end sem → 15%
 - assignment project → 60% / 70% ( CTF / VAPT / prog asg / project )
-# ns-02
+# NS - 02
 **The security problems**
 	- lots of buggy software
 	- social engineering is very effective
