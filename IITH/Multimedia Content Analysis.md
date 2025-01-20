@@ -56,3 +56,8 @@ Input and Data Generation
 - Illustration of Constraints Optimization Problem
 - Discriminate function of Hyperplane
 ![](Multimedia%20Content%20Analysis%204.png)
+
+# MCA - 05
+
+
+![](Multimedia%20Content%20Analysis%205.png)
