@@ -58,3 +58,10 @@
 - Anything more than 2 hidden layer is deep neural network.
 - Smallest no. Of neuron require to learn XOR function.
 ![DL 03](Deep%20learning%2003.png)
+# DL - 04
+- Gradient descent
+- All variants (stochastic gradient descent, batch descent…)
+
+
+# DL - 05
+
