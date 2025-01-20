@@ -65,3 +65,8 @@
 
 # DL - 05
 
+- Chain rule of differential calculus
+- Distributed chain rule of differential calculus.
+- Some other concepts as well.
+
+![](Deep%20learning%20DL%20-%205.png)
