@@ -58,6 +58,10 @@ Input and Data Generation
 ![](Multimedia%20Content%20Analysis%204.png)
 
 # MCA - 05
-
+- Distance of point to Hyperplance
+- SVM - Support Vector Machines
+- Sequential data
+- Discrete Markov Process
+- Hidden Markov Model
 
 ![](Multimedia%20Content%20Analysis%205.png)
