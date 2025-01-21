@@ -36,3 +36,16 @@ Grading policy
 ![](Topics%20in%20networks%203.png)
 ![](Topics%20in%20networks%20p4%20programming.png)
 ![](Topics%20in%20networks%204%20next.png)
+
+# TIN - 04
+## Systems for ML
+- Early ML Foundation started due to:
+	1. Rise of Deep Neural Nets
+	2. Higher Data availablility
+	3. Power Hardware
+- Current ML Restrictions:
+	- Difficult to Manage the Servers
+	- Un-Optimised Model require high compute power and working similar to doing brute-force for something.
+	- High Power Usage & Cost of Infrastructure.
+- Systems for ML & Stateful Data & Firewall
+![](Topics%20in%20networks%204.png)
