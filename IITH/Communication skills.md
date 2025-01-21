@@ -18,3 +18,9 @@ The printed rainbow… (movie)
 - Tonality Content
 - Things to put in the CV/Resume
 ![](Communication%20skills%202.png)
+
+# CS - 03
+
+- powerpoint presentation
+- important point about pp display.
+![](Communication%20skills%203.png)
