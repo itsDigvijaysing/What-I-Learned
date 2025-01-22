@@ -50,3 +50,10 @@ So basically log is continuous that's why we use it.
 # FA - 06
 
 - They tought about this concepts in more depth
+
+# FA - 07
+
+- Ranking the page using the Logarithmic approach
+- Then they had Modified Page Rank-
+	- Z=0.85*M + 0.15*Y
+- 
