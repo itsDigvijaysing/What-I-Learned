@@ -29,4 +29,10 @@ The printed rainbow… (movie)
 
 - My Papa’s Waltz:(Poem)
 	- It feels like there was some ruckus (issues) of child and father
-	- 
+	> So I will try to write the poem understand which i thought.
+	> Previous Story: Father didn’t visit his family from long time and the child always so the father but he still was not able to chat with father, maybe because of some sad backstory. Like Father is very poor and mother is rich so they are not compatible with each other now.
+	> Now After lot of drinks father came to home even though its very hard for child because of smell, still child held on father.
+	> Then Father was drunk so he could not hold child well so they romped & fall in the kitchen which made pans to fall & seeing the father and child happiness mother was very shocked and could not calm her emotions.
+	> When the child was held by father he saw the knuckle of father and saw how battered they are due to nature of there Job (Workers Job Maybe), When previously the child was not paid attention by father, every time the child was very sad and used to scrap his right ear.
+	> 
+- Some of the best poetry do not ryhme, so it’s not always must. 
