@@ -34,5 +34,7 @@ The printed rainbow… (movie)
 	> Now After lot of drinks father came to home even though its very hard for child because of smell, still child held on father.
 	> Then Father was drunk so he could not hold child well so they romped & fall in the kitchen which made pans to fall & seeing the father and child happiness mother was very shocked and could not calm her emotions.
 	> When the child was held by father he saw the knuckle of father and saw how battered they are due to nature of there Job (Workers Job Maybe), When previously the child was not paid attention by father, every time the child was very sad and used to scrap his right ear.
-	> 
+	> When child was taught by father, he always pressured child to learn the things which he was not able to, his experience and his hard times. Because of how his position in life is degraded similar to hard dirt which has no values, But when its time to sleep father always danced & enjoyed with child while putting him to sleep & child never want to go to sleep so he always clinged to the shirt as he do not want to sleep.
+	
+	
 - Some of the best poetry do not ryhme, so it’s not always must. 
