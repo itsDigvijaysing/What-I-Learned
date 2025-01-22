@@ -70,3 +70,7 @@
 - Some other concepts as well.
 
 ![](Deep%20learning%20DL%20-%205.png)
+
+# DL - 06
+
+- Differentiation function of Back-propagation.
