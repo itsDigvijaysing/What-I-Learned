@@ -24,3 +24,9 @@ The printed rainbow… (movie)
 - powerpoint presentation
 - important point about pp display.
 ![](Communication%20skills%203.png)
+
+# CS - 04
+
+- My Papa’s Waltz:(Poem)
+	- It feels like there was some ruckus (issues) of child and father
+	- 
