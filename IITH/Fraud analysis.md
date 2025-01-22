@@ -56,4 +56,9 @@ So basically log is continuous that's why we use it.
 - Ranking the page using the Logarithmic approach
 - Then they had Modified Page Rank-
 	- Z=0.85*M + 0.15*Y
-- 
+- Algorithm Convergence
+	- ZU = Z((alpha)V + X)
+	- Z(aplha)V+ZX
+	- ==(alpha)V + X== (Either alpha Increases of X increase)
+	- ==(alpha)V + (PU + X)== 0<P<=1
+	- 
