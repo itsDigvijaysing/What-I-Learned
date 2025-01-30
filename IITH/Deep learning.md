@@ -76,3 +76,15 @@
 - Differentiation function of Back-propagation.
 - Notes by friend kshitij…
 ![](Deep%20learning%20till%2022%20Jun.pdf)
+
+# DL - 07
+
+![](DL%20cross%20entropy%20Info%20Theroy.png)
+
+# DL - 08
+
+![](DL%20gradient%20quadratic%20function.png)
+
+# DL - 09.
+
+![](Deep%20learning%2009.png)

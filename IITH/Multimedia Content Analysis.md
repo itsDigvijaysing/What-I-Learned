@@ -65,3 +65,6 @@ Input and Data Generation
 - Hidden Markov Model
 
 ![](Multimedia%20Content%20Analysis%205.png)
+# MCA - 06
+
+![](MCA%20principal%20component%20analysis.png)

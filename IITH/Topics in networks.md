@@ -49,3 +49,14 @@ Grading policy
 	- High Power Usage & Cost of Infrastructure.
 - Systems for ML & Stateful Data & Firewall
 ![](Topics%20in%20networks%204.png)
+
+# TIN - 05
+- Network and Machine Learning Perspective
+- Machine Learning knowledge and understand
+![](TIN%20Outline.jpeg)
+
+![](TIN%20Pytorch.jpeg)
+![](TIN%20Inference%20training.jpeg)
+# TIN - 06
+
+￼￼￼![TIN 6](TIN%206.pdf)
