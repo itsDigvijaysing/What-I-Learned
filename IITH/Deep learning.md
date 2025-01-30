@@ -103,6 +103,6 @@
   3. Multi task Learning
   4. Dropout
   5. Batch Normalization
-  -
+- What is gamma and Beta check
 
 ![](Deep%20learning%2009.png)
