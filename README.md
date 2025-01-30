@@ -1,4 +1,4 @@
-# What-I-Learned Repo
+# What-I-Learned Repo…
 
 Welcome to **What-I-Learned**! 🎉 This repository is a collection of topics that I have recently learned, written in an easy-to-understand format. My goal is to make these topics accessible and comprehensible for everyone. Let's enjoy learning together! 🥳
 
