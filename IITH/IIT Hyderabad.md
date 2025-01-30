@@ -24,4 +24,10 @@
 3. [Topics in networks](Topics%20in%20networks.md)
 4. [Fraud analysis](Fraud%20analysis.md)
 
+Extras:
+- [Natural language processing](Natural%20language%20processing.md)
+- [Communication skills](Communication%20skills.md)
+- [Network security](Network%20security.md)
+- [Wireless network](Wireless%20network.md)
+
 

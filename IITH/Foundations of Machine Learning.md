@@ -1,4 +1,4 @@
-Links: [IIT Hyderabad](IIT%20Hyderabad.md), [University of Waterloo Lectures](https://www.youtube.com/watch?v=GouhgbE5gPk&list=PLdAoL1zKcqTW-uzoSVBNEecKHsnug_M0k), [Stanford Lectures Andrew NG](https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU), [Rishabh Iyer - GitHub](https://github.com/rishabhk108), 
+Links: [IIT Hyderabad](IIT%20Hyderabad.md), [University of Waterloo Lectures](https://www.youtube.com/watch?v=GouhgbE5gPk&list=PLdAoL1zKcqTW-uzoSVBNEecKHsnug_M0k), [Stanford Lectures Andrew NG](https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU), [Rishabh Iyer - GitHub](https://github.com/rishabhk108), [Deep learning](Deep%20learning.md)
 
 # FoML - 01
 
