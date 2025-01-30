@@ -85,6 +85,7 @@
 
 ![](DL%20gradient%20quadratic%20function.png)
 
-# DL - 09.
+# DL - 09
+- Deep Learning
 
 ![](Deep%20learning%2009.png)
