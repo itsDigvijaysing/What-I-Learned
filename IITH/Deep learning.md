@@ -79,13 +79,30 @@
 
 # DL - 07
 
+- Information Theory
+- Cross Entropy Loss
+- KL-Divergence
+
 ![](DL%20cross%20entropy%20Info%20Theroy.png)
 
 # DL - 08
 
+- Convergence of Quadratic Function
+- Generic Convex Function
+- Multivariate Function
+- There is bound like make sure bound of Optimal step should be greater than 1/C and less than 2/C to have effective Learning Rate
+- Check Derivatives & total parameters & Numerical concepts
+
 ![](DL%20gradient%20quadratic%20function.png)
 
 # DL - 09
-- ok
+
+- Deep Regularization
+  1. Parameter Norm Penalty
+  2. Dataset Augmentation
+  3. Multi task Learning
+  4. Dropout
+  5. Batch Normalization
+  -
 
 ![](Deep%20learning%2009.png)
