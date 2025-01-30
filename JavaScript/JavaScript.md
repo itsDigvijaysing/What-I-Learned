@@ -442,4 +442,3 @@ function processUserInput(callback) {  //callback is Parameter to receive argume
 processUserInput(greeting); //Argument is Function Name
 ```
 > In this example, `greeting` is a callback function. It's passed as an argument to the `processUserInput` function. When `processUserInput` is called, it prompts the user for their name, then it waits for 2 seconds before calling the `greeting` function, passing in the name the user entered as an argument. The `setTimeout` function is used to create the delay.
-
