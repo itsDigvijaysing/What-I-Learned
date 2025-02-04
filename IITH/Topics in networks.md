@@ -60,3 +60,11 @@ Grading policy
 # TIN - 06
 
 ￼￼￼![TIN 6](TIN%206.pdf)
+
+# TIN - 07
+
+![TIN 7](TIN%207.png)
+
+# TIN - 08
+
+![](TIN%208.png)

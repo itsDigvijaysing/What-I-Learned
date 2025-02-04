@@ -39,3 +39,7 @@ The printed rainbow… (movie)
 	
 	
 - Some of the best poetry do not ryhme, so it’s not always must. 
+
+# CS - 05 (Last)
+
+![](Communication%20Skill%20Last.png) 

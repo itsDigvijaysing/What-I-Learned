@@ -106,3 +106,7 @@
 - What is gamma and Beta check
 
 ![](Deep%20learning%2009.png)
+
+# DL - 10
+
+![](Deep%20learning%2010.png)
