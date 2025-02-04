@@ -90,8 +90,16 @@ hello")
 
 * Identifiers are case sensitive.
 
-### Defining Variables
+### Pair
 
+-  In CPP we can store key value pair using pair<int, int> it will create key value pair.
+```cpp
+pair<int, pair<int,int>> p = {1,{2,3}}
+p.first -> 1
+p.second.second -> 3
+p.second.first -> 2
+```
+### Defining Variables
 Identifiers (or variables) can be initialized by using the following syntax:
 
 ```
@@ -194,6 +202,16 @@ A string is an array of characters terminated string or also called as null term
 ```cpp
 char a[6] = {'a', 'b', 'c', 'd', 'e', 0};
 printf("%s\n", a); // abcde
+```
+
+### Vector
+
+- Container Dynamic in Nature (When no size is known)
+- we can push_back in vector.
+```cpp
+vector<int> v;
+v.push_back(2);
+v.emplace_back
 ```
 
 ### Conditions

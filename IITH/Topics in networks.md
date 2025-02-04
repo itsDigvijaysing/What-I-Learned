@@ -59,12 +59,10 @@ Grading policy
 ![](TIN%20Inference%20training.jpeg)
 # TIN - 06
 
-<<<<<<< HEAD
 - Need of Specialization Hardware
 - GPU vs CPU Comparison
 - GPU Kernels (Threads, Blocks, Grid)
 - SIMT & Branching
-- 
 ![TIN 6](TIN%206.pdf)
 =======
 ￼￼￼![TIN 6](TIN%206.pdf)
@@ -76,4 +74,4 @@ Grading policy
 # TIN - 08
 
 ![](TIN%208.png)
->>>>>>> origin/main
+
