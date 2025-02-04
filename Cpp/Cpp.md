@@ -370,7 +370,9 @@ for (int x : s) cout << x << " "; // Sorted order
 
 ### **Multiset in C++ (STL)**
 
-A **multiset** allows duplicate elements and stores them in sorted order.
+- A **multiset** allows duplicate elements and stores them in sorted order.
+- We can count the given number directly. `ms.count(1);`
+- We can erase selected no.  one instance or all using erase.
 
 #### **Declaration**
 ```cpp
@@ -395,6 +397,41 @@ if (ms.find(5) != ms.end()) cout << "Found";
 for (int x : ms) cout << x << " "; // Sorted with duplicates
 ```
 
+### **Unordered Set & Map (C++ STL)**
+
+- **Faster (Avg. O(1)), No Sorting but Unique**
+
+#### **Unordered Set** (Unique, No Order)
+```cpp
+unordered_set<int> us = {10, 5, 20};
+```
+
+#### **Unordered Map** (Key-Value, No Order)
+```cpp
+unordered_map<int, string> um;
+um[1] = "One";
+```
+
+### Map
+
+A **map** in C++ is an associative container that stores key-value pairs in **sorted order** based on the key. It provides fast lookup, insertion, and deletion with **O(log N)** complexity using a self-balancing BST (like Red-Black Tree).
+
+#### **Usage**
+
+- **Stores unique keys** (sorted automatically).
+- **Fast search, insertion, and deletion** (`O(log N)`).
+- **Ordered traversal** of elements.
+
+#### **Basic Operations**
+
+```cpp 
+map<int, string> mp; 
+mp[1] = "One";         // Insert 
+mp.insert({2, "Two"}); // Another way to insert 
+mp.erase(1);           // Remove key 1  
+if (mp.find(2) != mp.end()) cout << "Found"; // Search  
+for (auto &[k, v] : mp) cout << k << " -> " << v << endl; // Iterate
+```
 
 ### Conditions
 
