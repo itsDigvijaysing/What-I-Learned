@@ -245,13 +245,66 @@ for(auto it:v){
 
 - **`v.insert(it, value)`** → Inserts `value` at `it`, shifts elements right.
 - **`v.insert(it, n, value)`** → Inserts `n` copies of `value` at `it`.
-- **`v.insert(it, range_start, range_end)`** → Inserts elements from another range.
+- **`v.insert(it, range_start(v.begin()), range_end(v.end()))`** → Inserts elements from another range.
 - **`v1.swap(v2)`** → Swaps contents of `v1` and `v2` in `O(1)`.
 
 - **`v.erase(it)`** → Removes element at `it`, shifts remaining elements left.
 - **`v.erase(it1, it2)`** → Removes elements in the range `[it1, it2)`.
 - **`v.clear()`** → Removes all elements, size becomes `0`, but capacity remains.
 - **`v.pop_back()`** → Removes the last element, reducing size by `1`.
+
+### List
+- Similar to Vector, but its efficient
+```cpp
+ls.push_front(1); //Push front is possible
+```
+- Push_front is possible in list (Doubly Linked List)
+
+### Queue
+
+A **queue** follows the **FIFO (First In, First Out)** principle. Elements are inserted at the back and removed from the front.
+- **Queue** → FIFO (`push()`, `pop()`, `front()`)
+- **DeQueue** support both FIFO & LIFO as well.
+
+#### Using `queue` from STL:
+
+```cpp
+#include <iostream> 
+#include <queue> 
+using namespace std;  
+int main() {     
+queue<int> q;     
+q.push(1);     
+q.push(2);     
+q.push(3);          
+cout << "Front: " << q.front() << endl; // 1     
+q.pop();     
+cout << "Front after pop: " << q.front() << endl; // 2      
+return 0; }```
+
+### Stack
+
+A **stack** follows the **LIFO (Last In, First Out)** principle. Elements are inserted and removed from the top.
+- **Stack** → LIFO (`push()`, `pop()`, `top()`)
+#### Using `stack` from STL:
+
+```cpp
+#include <iostream> 
+#include <stack> 
+using namespace std;  
+int main() {     
+stack<int> s;     
+s.push(1);     
+s.push(2);     
+s.push(3);          
+cout << "Top: " << s.top() << endl; // 3     
+s.pop();     
+cout << "Top after pop: " << s.top() << endl; // 2      
+return 0; }```
+
+
+
+
 ### Conditions
 
 There are two ways to use conditional operators.
