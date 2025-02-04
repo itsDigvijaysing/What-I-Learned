@@ -74,8 +74,8 @@
 # DL - 06
 
 - Differentiation function of Back-propagation.
-- Notes by friend kshitij…
-![](Deep%20learning%20till%2022%20Jun.pdf)
+- Notes by friend kshitij.
+![Deep learning till 22 Jun](Deep%20learning%20till%2022%20Jun.pdf)
 
 # DL - 07
 
@@ -106,3 +106,7 @@
 - What is gamma and Beta check
 
 ![](Deep%20learning%2009.png)
+
+# DL - 10
+
+![](Deep%20learning%2010.png)
