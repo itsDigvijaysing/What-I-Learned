@@ -1124,7 +1124,37 @@ public:
 - `sort(v.begin(),v.end());` Fully Sort and ascending order
 - `sort(a+2,a+4)` Sort selected
 - `sort(a,a+n,greater<int>)` Fully Sort and descending order
+- sort Customer Comparator:
+	- To create a **custom comparator function** for sorting, you can define a function that returns `true` if the first element should come before the second one.
+	  ```cpp
+	    #include <iostream>
+		#include <vector>
+		#include <algorithm>
+		using namespace std;
+		
+		// Custom comparator function
+		bool comp(int a, int b) {
+		    // Even numbers should come before odd numbers, both in ascending order
+		    if (a % 2 == 0 && b % 2 != 0) return true;
+		    if (a % 2 != 0 && b % 2 == 0) return false;
+		    return a < b;  // Sort in ascending order for both even and odd
+		}
+		
+		int main() {
+		    vector<int> arr = {5, 10, 3, 8, 7, 2};
+		
+		    // Sort using the custom comparator
+		    sort(arr.begin(), arr.end(), comp);
+		
+		    for (int x : arr) cout << x << " "; // Output: 2 8 10 3 5 7
+		
+		    return 0;
+		}```
 
+### Extra
+- `next_permutation(s.begin(),s.end())` to have next permutation
+- `__builtin_popcount` it counts the number of '1' in int binary format.
+- `max(v.begin(),v.end())` max value in the vector
 ### Function members
 
 You can define a same function with different signatures in C++.
