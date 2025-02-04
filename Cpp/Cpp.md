@@ -1120,6 +1120,11 @@ public:
 };
 ```
 
+### Sort
+- `sort(v.begin(),v.end());` Fully Sort and ascending order
+- `sort(a+2,a+4)` Sort selected
+- `sort(a,a+n,greater<int>)` Fully Sort and descending order
+
 ### Function members
 
 You can define a same function with different signatures in C++.
