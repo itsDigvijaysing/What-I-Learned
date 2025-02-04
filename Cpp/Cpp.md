@@ -241,7 +241,12 @@ for(auto it:v){
 }
 ```
 
-#### Vector Deleter
+#### Vector Insert & Delete
+
+- **`v.insert(it, value)`** → Inserts `value` at `it`, shifts elements right.
+- **`v.insert(it, n, value)`** → Inserts `n` copies of `value` at `it`.
+- **`v.insert(it, range_start, range_end)`** → Inserts elements from another range.
+- **`v1.swap(v2)`** → Swaps contents of `v1` and `v2` in `O(1)`.
 
 - **`v.erase(it)`** → Removes element at `it`, shifts remaining elements left.
 - **`v.erase(it1, it2)`** → Removes elements in the range `[it1, it2)`.
