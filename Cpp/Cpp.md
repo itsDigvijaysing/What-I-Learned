@@ -282,6 +282,46 @@ q.pop();
 cout << "Front after pop: " << q.front() << endl; // 2      
 return 0; }```
 
+### **Priority Queue in C++**
+
+A **priority queue** is a special type of queue where elements are ordered based on priority.
+
+#### **Default (Max Heap)**
+
+```cpp
+#include <iostream>
+#include <queue>
+using namespace std;
+
+int main() {
+    priority_queue<int> pq; // Max Heap (default)
+    pq.push(10);
+    pq.push(5);
+    pq.push(20);
+
+    cout << pq.top() << endl; // 20 (highest priority)
+    pq.pop();
+    cout << pq.top() << endl; // 10
+
+    return 0;
+}
+```
+
+#### **Min Heap (Ascending Order)**
+
+```cpp
+priority_queue<int, vector<int>, greater<int>> pq; // Min Heap
+```
+
+#### **Custom Comparator**
+
+```cpp
+struct Compare {
+    bool operator()(int a, int b) { return a > b; } // Min Heap
+};
+priority_queue<int, vector<int>, Compare> pq;
+```
+
 ### Stack
 
 A **stack** follows the **LIFO (Last In, First Out)** principle. Elements are inserted and removed from the top.
@@ -302,7 +342,58 @@ s.pop();
 cout << "Top after pop: " << s.top() << endl; // 2      
 return 0; }```
 
+### **Set in C++ (STL)**
 
+A **set** stores unique, sorted elements.
+#### **Declaration**
+```cpp
+set<int> s;
+```
+
+#### **Basic Operations**
+```cpp
+s.insert(10);
+s.insert(5);
+s.insert(20);
+s.erase(10);
+```
+
+#### **Access & Search**
+```cpp
+if (s.find(5) != s.end()) cout << "Found";
+```
+
+#### **Iterate**
+```cpp
+for (int x : s) cout << x << " "; // Sorted order
+```
+
+### **Multiset in C++ (STL)**
+
+A **multiset** allows duplicate elements and stores them in sorted order.
+
+#### **Declaration**
+```cpp
+multiset<int> ms;
+```
+
+#### **Basic Operations**
+```cpp
+ms.insert(10);
+ms.insert(5);
+ms.insert(10); // Allows duplicate
+ms.erase(ms.find(10)); // Erases only one occurrence
+```
+
+#### **Access & Search**
+```cpp
+if (ms.find(5) != ms.end()) cout << "Found";
+```
+
+#### **Iterate**
+```cpp
+for (int x : ms) cout << x << " "; // Sorted with duplicates
+```
 
 
 ### Conditions
