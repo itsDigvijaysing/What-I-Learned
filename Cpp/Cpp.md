@@ -211,8 +211,20 @@ printf("%s\n", a); // abcde
 ```cpp
 vector<int> v;
 v.push_back(2);
-v.emplace_back
+v.emplace_back(3); //Same work as push_back but little bit faster
+
+vector<int> v(5,100); //Container of Size 5 with every value 100 [100,100,100,100,100]
+vector<int> new_v(v); //Full copy of v container
 ```
+
+#### Vector Iterator
+
+- `v.begin()` returns an iterator pointing to the first element (i.e., the address of the first element).
+- `v.rbegin()` reverse to v.begin(), it give last element address.
+- `v.end()` points past the last element (not the last element itself)(Not at last, its next to the last element address).
+- `*it` dereferences the iterator, accessing the actual data at that memory location.
+- `it++` moves to the next element, `it--` moves to the previous.
+- `vec.insert(it, value)` inserts before `it`, `vec.erase(it)` removes at `it`.
 
 ### Conditions
 
