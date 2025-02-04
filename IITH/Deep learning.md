@@ -75,7 +75,7 @@
 
 - Differentiation function of Back-propagation.
 - Notes by friend kshitij…
-![](Deep%20learning%20till%2022%20Jun.pdf)
+![Deep learning till 22 Jun](Deep%20learning%20till%2022%20Jun.pdf)
 
 # DL - 07
 
