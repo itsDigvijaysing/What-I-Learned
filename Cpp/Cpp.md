@@ -222,10 +222,31 @@ vector<int> new_v(v); //Full copy of v container
 - `v.begin()` returns an iterator pointing to the first element (i.e., the address of the first element).
 - `v.rbegin()` reverse to v.begin(), it give last element address.
 - `v.end()` points past the last element (not the last element itself)(Not at last, its next to the last element address).
+- `v.rend()` reverse to v.end(), it give address of the element before first element.
 - `*it` dereferences the iterator, accessing the actual data at that memory location.
 - `it++` moves to the next element, `it--` moves to the previous.
 - `vec.insert(it, value)` inserts before `it`, `vec.erase(it)` removes at `it`.
 
+#### Vector loop
+
+- auto = automatically assign the datatype.
+
+```cpp
+for(auto it=v.begin();it!=v.end();it++){
+	cout<<*(it)<<endl;
+}
+
+for(auto it:v){
+	cout<<it<<endl;
+}
+```
+
+#### Vector Deleter
+
+- **`v.erase(it)`** → Removes element at `it`, shifts remaining elements left.
+- **`v.erase(it1, it2)`** → Removes elements in the range `[it1, it2)`.
+- **`v.clear()`** → Removes all elements, size becomes `0`, but capacity remains.
+- **`v.pop_back()`** → Removes the last element, reducing size by `1`.
 ### Conditions
 
 There are two ways to use conditional operators.
