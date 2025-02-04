@@ -74,7 +74,7 @@
 # DL - 06
 
 - Differentiation function of Back-propagation.
-- Notes by friend kshitij…
+- Notes by friend kshitij.
 ![Deep learning till 22 Jun](Deep%20learning%20till%2022%20Jun.pdf)
 
 # DL - 07
