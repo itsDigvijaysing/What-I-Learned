@@ -110,3 +110,7 @@
 # DL - 10
 
 ![](Deep%20learning%2010.png)
+
+# DL - 11
+
+![](DL%2011.png)
