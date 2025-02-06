@@ -61,4 +61,7 @@ So basically log is continuous that's why we use it.
 	- Z(aplha)V+ZX
 	- ==(alpha)V + X== (Either alpha Increases of X increase)
 	- ==(alpha)V + (PU + X)== 0<P<=1
-	- 
+
+# FA - 08
+
+![](Fraud%20analysis%208.png)
