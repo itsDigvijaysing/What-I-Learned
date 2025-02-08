@@ -75,3 +75,6 @@ Grading policy
 
 ![](TIN%208.png)
 
+# P4 - Prep
+
+![](TIN%20p4.png)
