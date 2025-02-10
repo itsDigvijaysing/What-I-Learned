@@ -8,3 +8,10 @@ How are you
 
 
 ![](Temp.png)
+-![](Temp%20Notes..jpg)
+
+![](Temp%20Notes.jpg)
+
+
+
+[Temp Notes](Temp%20Notes.pdf)]
