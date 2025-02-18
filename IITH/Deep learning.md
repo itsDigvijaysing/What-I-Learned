@@ -123,3 +123,8 @@
 # DL - 13
 
 ![](Deep%20learning%2013.png)
+
+# DL - 14
+
+![](Deep%20learning%2014.png)
+
