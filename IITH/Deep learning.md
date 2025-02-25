@@ -128,3 +128,6 @@
 
 ![](Deep%20learning%2014.png)
 
+# DL - 15
+
+![](Deep%20learning%2015.png)
