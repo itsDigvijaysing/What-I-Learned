@@ -115,7 +115,7 @@
 # DL - 11
 
 ![](DL%2011.png)
-!
+![DL Notes 2nd exam](DL%20Notes%202nd%20exam.pdf)
 
 # DL - 12
 
