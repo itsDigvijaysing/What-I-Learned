@@ -65,3 +65,7 @@ So basically log is continuous that's why we use it.
 # FA - 08
 
 ![](Fraud%20analysis%208.png)
+
+# FA - 10
+
+![](Fraud%20analysis%2010.png)
