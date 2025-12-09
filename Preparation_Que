@@ -1,0 +1,689 @@
+# Complete DSA Problem Set - Exam Preparation Guide
+
+## **Problem 1: Logging Roadside Trees**
+**Source:** Korean Expressway Corporation
+
+### Problem Statement
+A robot needs to cut down trees on both sides of a road from position 0 to N. Minimize total time.
+
+**Robot Specifications:**
+- Movement: 1 unit = 1 minute (forward/backward)
+- Cutting: 1 tree = 1 minute
+- **Critical Constraint:** Trees must be loaded in **non-increasing order** (each new tree ≤ previous tree length)
+- Can cut both left and right trees at same position if loading order permits
+- Infinite capacity
+- Start at position 0, must reach position N
+
+### Input Format
+```
+N (road length)
+N+1 integers: left side tree lengths [0...N]
+N+1 integers: right side tree lengths [0...N]
+```
+
+### Examples
+**Example 1:**
+```
+Input:
+5
+0 3 2 1 0 0
+0 3 2 1 0 0
+
+Output: 11
+```
+
+**Example 2:**
+```
+Input:
+7
+0 5 1 5 9 1 5 0
+0 0 0 0 0 0 0 0
+
+Output: 23
+```
+
+### Topics & Hints
+- **Topics:** Dynamic Programming, Greedy, State Space Search
+- **Key Insight:** State = (position, last_tree_cut_length, side). Need to decide optimal cutting order
+- **Approach:** DP with state (pos, max_len_so_far) or BFS with state management
+- **Complexity:** O(N² × max_tree_length) or O(N × states)
+
+### Similar Problems
+- LeetCode: Cherry Pickup II (1463)
+- LeetCode: Minimum Path Cost in a Grid (2304)
+
+---
+
+## **Problem 2: Min Cost Stone Pulling**
+**Source:** Stone Removal Optimization
+
+### Problem Statement
+Remove N stones arranged in a row. Cost depends on **neighbors present at removal time**:
+- **0 neighbors:** Cost = B[i]
+- **1 neighbor:** Cost = A[i]  
+- **2 neighbors:** Cost = 0
+
+Find minimum total cost to remove all stones.
+
+### Input Format
+```
+T (test cases)
+For each test case:
+  N
+  A[0] A[1] ... A[N-1]  (cost with 1 neighbor)
+  B[0] B[1] ... B[N-1]  (cost with 0 neighbors)
+```
+
+### Example
+```
+Input:
+1
+5
+1 5 3 4 3
+0 2 1 5 0
+
+Output:
+#1 5
+
+Explanation: Remove order [2,0,4,1,3] → costs [1+1+3+0+0] = 5
+```
+
+### Topics & Hints
+- **Topics:** Dynamic Programming, Interval DP
+- **Key Insight:** Model as intervals. dp[l][r] = min cost to remove all stones in [l,r]
+- **Observation:** The first stone removed in an interval has 2 neighbors, last removed has 0
+- **Approach:** For each interval [l,r], try removing each stone i first
+  - Cost = 0 (has 2 neighbors) + dp[l][i-1] + dp[i+1][r] + cost_of_removing_i_last
+
+### Similar Problems
+- LeetCode: Burst Balloons (312) - Very similar concept
+- LeetCode: Remove Boxes (546)
+- CodeForces: Stone Game variations
+
+---
+
+## **Problem 3: The Card Selection (Maximize Points)**
+**Source:** Samsung SWC
+
+### Problem Statement
+Select exactly K cards from N cards to maximize points.
+
+**Scoring Formula:**
+```
+Points = (Sum of card values) + Σ(count of each suit)²
+```
+
+Each card has:
+- Value: 1 to 10,000
+- Suit: 0=Heart, 1=Diamond, 2=Club, 3=Spade
+
+### Input Format
+```
+T (test cases)
+N K
+N lines: value suit
+```
+
+### Example Logic
+Cards: [(10,0), (20,1), (1,2), (2,2), (500,2)], K=5
+- Value sum: 533
+- Suits: Heart=1, Diamond=1, Club=3, Spade=0
+- Bonus: 1² + 1² + 3² + 0² = 11
+- **Total: 544**
+
+### Topics & Hints
+- **Topics:** Dynamic Programming, Optimization, Backtracking
+- **Key Insight:** The squared term makes this non-linear. Can't just greedily pick highest values
+- **Approach 1:** DP with state (cards_considered, cards_selected, suit_counts)
+- **Approach 2:** Iterate over all possible suit distributions that sum to K, then select best cards
+- **Optimization:** For each suit distribution, greedily pick highest value cards
+
+### Similar Problems
+- LeetCode: Maximum Score of a Good Subarray (1793)
+- LeetCode: Maximum Points You Can Obtain from Cards (1423)
+
+---
+
+## **Problem 4: Lattice Path Intersections**
+**Source:** Geometric Computation
+
+### Problem Statement
+Given a path defined by M turning points on a 2D lattice (path consists of horizontal/vertical segments), count how many of N target points lie **exactly on the path**.
+
+### Input Format
+```
+N M
+x[0] x[1] ... x[N-1]  (target x-coords)
+y[0] y[1] ... y[N-1]  (target y-coords)
+px[0] px[1] ... px[M-1]  (path x-coords)
+py[0] py[1] ... py[M-1]  (path y-coords)
+```
+
+### Example
+```
+Path: (1,1) → (1,5) → (2,5)
+Points: (1,1), (1,3), (2,6)
+
+Segments:
+- (1,1) to (1,5): vertical line x=1, y∈[1,5]
+- (1,5) to (2,5): horizontal line y=5, x∈[1,2]
+
+Check:
+- (1,1): ON (start point)
+- (1,3): ON (on vertical segment)
+- (2,6): OFF
+
+Output: 2
+```
+
+### Topics & Hints
+- **Topics:** Computational Geometry, Line Segment Intersection
+- **Approach:**
+  1. Build path segments from turning points
+  2. For each target point, check if it lies on any segment
+  3. For horizontal segment (y1=y2): Check if y_target=y1 and x_target∈[x1,x2]
+  4. For vertical segment (x1=x2): Check if x_target=x1 and y_target∈[y1,y2]
+- **Complexity:** O(N × M)
+
+### Similar Problems
+- LeetCode: Check if Point Is Reachable (2543)
+- LeetCode: Minimum Time to Visit Disappearing Nodes (2849)
+
+---
+
+## **Problem 5: Warehouse Stock Reduction**
+**Source:** Inventory Management
+
+### Problem Statement
+N items with initial stock A[i]. Each day:
+1. Stock increases: A[i] += B[i] for all i
+2. Export one item (set its stock to 0)
+3. Report total stock
+
+Find minimum days to make total stock ≤ K. Return -1 if impossible.
+
+### Input Format
+```
+N K
+A[0] A[1] ... A[N-1]  (initial stock)
+B[0] B[1] ... B[N-1]  (daily inflow)
+```
+
+### Topics & Hints
+- **Topics:** Binary Search, Greedy, Simulation
+- **Key Insight:** If all B[i] > 0, stock grows unboundedly → impossible
+- **Approach:**
+  1. Check if sum(B) ≤ 0 (must have net decrease)
+  2. Binary search on number of days
+  3. For each day count, simulate: maximize exports of high-growth items
+  4. Greedy: Each day, export item with highest (A[i] + day×B[i])
+
+### Similar Problems
+- LeetCode: Minimum Number of Days to Make m Bouquets (1482)
+- LeetCode: Capacity To Ship Packages Within D Days (1011)
+
+---
+
+## **Problem 6: Red and Blue Necklace**
+**Source:** String Manipulation
+
+### Problem Statement
+String of 'R' and 'B'. Make #R = #B by removing stones from **left or right ends only**. Minimize removals.
+
+**Mathematical Equivalence:**
+- Answer = N - (Length of longest subarray with equal R and B count)
+
+### Input Format
+```
+String S (e.g., "BBRRBRBRBRBBR")
+```
+
+### Example
+```
+Input: BBRRBRBRBRBBR
+Output: 1
+
+Explanation: Longest subarray with equal R/B has length 12
+Answer = 13 - 12 = 1
+```
+
+### Topics & Hints
+- **Topics:** Prefix Sum, Hash Map, Sliding Window
+- **Approach:**
+  1. Convert to +1/-1: R→+1, B→-1
+  2. Find longest subarray with sum=0
+  3. Use prefix sum + hashmap: if prefix[i]=prefix[j], then sum[i+1...j]=0
+- **Complexity:** O(N)
+
+### Similar Problems
+- LeetCode: Contiguous Array (525) - **Exact same concept**
+- LeetCode: Longest Well-Performing Interval (1124)
+
+---
+
+## **Problem 7: City Logistics (Truck & Garage)**
+**Source:** Grid Navigation with State
+
+### Problem Statement
+H×W grid with:
+- 0: Road
+- 1: Tree (blocked)
+- 2: Garage (start)
+- 3: Warehouse (can load goods)
+- 4: Airport (can unload goods)
+
+Truck starts at garage. Movement cost = distance × (1 + goods_on_truck).
+
+Find **maximum goods** deliverable to airport with budget C.
+
+### Input Format
+```
+T (test cases)
+H W C
+Grid[H][W]
+```
+
+### Constraints
+- H, W ∈ [2, 40]
+- C ∈ [5, 2000]
+- Max 13 warehouses
+
+### Topics & Hints
+- **Topics:** Graph, Dijkstra, State DP, Bitmask
+- **State:** (position, goods_carried, warehouses_visited_bitmask)
+- **Approach:**
+  1. Precompute shortest paths between all key points (garage, warehouses, airport)
+  2. Use DP/BFS with state: (current_location, goods_count, cost_used, warehouses_bitmask)
+  3. Try all sequences of warehouse visits
+  4. Since max 13 warehouses, bitmask DP feasible (2^13 states)
+
+### Similar Problems
+- LeetCode: Shortest Path to Get All Keys (864)
+- LeetCode: Minimum Cost to Reach Destination in Time (1928)
+
+---
+
+## **Problem 8: Tile Selection (Minimize Max Difference)**
+**Source:** Optimization Problem
+
+### Problem Statement
+Given N tiles with (width, height), select K tiles to minimize the **maximum difference** between any pair.
+
+**Difference Definition:**
+```
+diff(i,j) = max(|w[i]-w[j]|, |h[i]-h[j]|)
+```
+
+### Input Format
+```
+N K
+w[0] h[0]
+w[1] h[1]
+...
+w[N-1] h[N-1]
+```
+
+### Topics & Hints
+- **Topics:** Binary Search, Sorting, Greedy
+- **Approach:**
+  1. Binary search on answer (maximum difference D)
+  2. For each D, check if we can select K tiles with max_diff ≤ D
+  3. For checking: Sort by width, use sliding window
+     - For each starting tile i, find how many tiles j where |w[i]-w[j]|≤D AND |h[i]-h[j]|≤D
+  4. Alternative: Sort by one dimension, try all O(N²) ranges
+
+### Similar Problems
+- LeetCode: Find K Pairs with Smallest Sums (373)
+- LeetCode: Minimize Maximum Pair Sum in Array (1877)
+
+---
+
+## **Problem 9: String Chain Merging**
+**Source:** Dynamic Programming on Chains
+
+### Problem Statement
+Merge strings where last_char(A) = first_char(B). Final string must have first_char = last_char. Find maximum length.
+
+**Merging:** "123" + "389" → "123389"
+
+### Input Format
+```
+N
+string[0] string[1] ... string[N-1]
+```
+
+### Examples
+```
+Input:
+6
+14 123 323 321 421 535
+
+Output: 9
+Explanation: 123→323→321 = "123323321" (starts '1', ends '1')
+```
+
+### Topics & Hints
+- **Topics:** Dynamic Programming, Graph, DFS
+- **State:** dp[start_digit][end_digit] = max length of chain starting with 'start_digit', ending with 'end_digit'
+- **Approach:**
+  1. Model as directed graph: edge from string A to B if A.last = B.first
+  2. DP: For each starting digit d, find longest path that ends with d
+  3. Can use DFS with memoization
+- **Complexity:** O(N² × 10) or O(N × edges)
+
+### Similar Problems
+- LeetCode: Longest String Chain (1048) - Similar concept
+- LeetCode: Largest Color Value in a Directed Graph (1857)
+
+---
+
+## **Problem 10: Car Parking (Geometric Moves)**
+**Source:** Mathematical/Geometric Optimization
+
+### Problem Statement
+N cars at positions in range [-M, M]. Move all to (P,Q) simultaneously.
+- Drive i: move exactly i units (Manhattan: up/down/left/right)
+- **Can revisit positions** (move ≤ i and maintain parity)
+- All must arrive in **same number of drives**
+
+Find minimum drives or -1 if impossible.
+
+### Input Format
+```
+N M
+P Q
+N lines: x[i] y[i]
+```
+
+### Constraints
+- N ≤ 100
+- M ≤ 10^17
+
+### Examples
+```
+Example 1:
+N=2, Target=(1,1)
+Cars: (2,3), (-4,1)
+Manhattan distances: 3, 5
+Output: 5
+(Moves: 1+2+3+4+5=15, both can reach in 5 drives)
+
+Example 2:
+N=2, Target=(0,0)
+Cars: (0,1), (0,2)
+Output: -1
+(Distances 1 and 2 have different parity)
+```
+
+### Topics & Hints
+- **Topics:** Mathematics, Greedy, Number Theory
+- **Key Insights:**
+  1. Total moves in k drives = 1+2+...+k = k(k+1)/2
+  2. Car at distance d needs: k(k+1)/2 ≥ d AND (k(k+1)/2 - d) is even
+  3. All cars must satisfy this for the same k
+  4. **Parity check:** If two cars have different parity distances, impossible
+- **Approach:**
+  1. Calculate Manhattan distance for each car
+  2. Check if all distances have same parity
+  3. Binary search on k: check if max_distance ≤ k(k+1)/2 and parity works
+
+### Similar Problems
+- LeetCode: Reaching Points (780)
+- LeetCode: Minimum Moves to Reach Target Score (2139)
+
+---
+
+## **Problem 11: Robot Sum (Garbage Collection)**
+**Source:** Optimization with Sequential Costs
+
+### Problem Statement
+Array of garbage G[i]. Deploy robots at cost M each.
+- Robot at i cleans i, i+1, i+2, ...
+- **Waiting cost:** Each step costs = sum of all uncleaned garbage
+
+Find minimum total cost.
+
+### Input Format
+```
+N M
+G[0] G[1] ... G[N-1]
+```
+
+### Topics & Hints
+- **Topics:** Dynamic Programming, Greedy
+- **Key Insight:** 
+  - If robot deployed at i, it cleans [i, N)
+  - While robot moves through j→j+1, waiting cost = sum(uncleaned garbage)
+  - Decision: deploy new robot at j or let previous robot continue
+- **State:** dp[i] = min cost to clean [0, i)
+- **Transition:** dp[j] = min over i<j of (dp[i] + M + cost_of_robot_cleaning[i,j))
+- **Cost calculation:** When robot cleans [i,j), at each step the remaining garbage accumulates
+
+### Similar Problems
+- LeetCode: Minimum Cost to Hire K Workers (857)
+- LeetCode: Video Stitching (1024)
+
+---
+
+## **Problem 12: Gift Certificates (Digit DP)**
+**Source:** Digit Dynamic Programming
+
+### Problem Statement
+Count numbers X where:
+- 1 ≤ X ≤ A (A is huge, given as string)
+- digit_sum(X) = S
+
+Return count mod 10^9+7.
+
+### Input Format
+```
+String A (up to 100 digits)
+Integer S (up to 1000)
+```
+
+### Examples
+```
+A="101", S=3 → Answer: 4 (numbers: 3,12,21,30)
+A="172", S=3 → Answer: 7 (3,12,21,30,102,111,120)
+A="999", S=500 → Answer: 0 (max sum=27)
+```
+
+### Topics & Hints
+- **Topics:** Digit DP, Dynamic Programming
+- **State:** dp[pos][sum][tight][started]
+  - pos: current digit position
+  - sum: current digit sum
+  - tight: whether we're still bounded by A
+  - started: whether we've placed non-zero digit
+- **Approach:**
+  1. Build number digit by digit from left to right
+  2. If tight=1, digit ≤ A[pos]; else digit ≤ 9
+  3. Track running sum
+  4. At end, check if sum = S
+- **Complexity:** O(N × S) where N = len(A)
+
+### Similar Problems
+- LeetCode: Count Special Integers (2376)
+- LeetCode: Numbers With Repeated Digits (1012)
+- LeetCode: Numbers At Most N Given Digit Set (902)
+
+---
+
+## **Problem 13: 2-Array with Max D Score**
+**Source:** Optimization with Scoring
+
+### Problem Statement
+Two arrays A and B. Element score:
+- 1 if element ≤ D
+- 2 if element > D
+
+Find D that maximizes (A_score - B_score).
+
+### Input Format
+```
+Array A (size up to 10^5)
+Array B (size up to 10^5)
+```
+
+### Constraints
+- 0 ≤ D ≤ 10^9
+- 1 ≤ A[i], B[i] ≤ 10^8
+
+### Topics & Hints
+- **Topics:** Sorting, Sweep Line, Greedy
+- **Key Insight:**
+  - Score_A(D) = (count of A[i]≤D) × 1 + (count of A[i]>D) × 2
+  - Score_A(D) = |A| + (count of A[i]>D)
+  - Difference = |A| + count(A[i]>D) - |B| - count(B[i]>D)
+  - = const + count(A[i]>D) - count(B[i]>D)
+- **Approach:**
+  1. Merge and sort all values from A and B
+  2. Try each unique value as D
+  3. Maintain running count of elements > D from each array
+  4. Track maximum difference
+- **Complexity:** O(N log N)
+
+### Similar Problems
+- LeetCode: Maximum Sum of Two Non-Overlapping Subarrays (1031)
+- LeetCode: Maximize Score After N Operations (1799)
+
+---
+
+## **Problem 14: Partition Array Into Two Arrays to Minimize Sum Difference**
+**Source:** LeetCode 2035 (Hard)
+
+### Problem Statement
+Given array of 2N integers, partition into two arrays of size N each. Minimize |sum(arr1) - sum(arr2)|.
+
+### Input Format
+```
+Array nums of size 2*N
+```
+
+### Examples
+```
+Input: [3,9,7,3]
+Output: 2
+Explanation: [3,9] and [7,3] → |12-10| = 2
+
+Input: [-36,36]
+Output: 72
+Explanation: [-36] and [36] → |-36-36| = 72
+
+Input: [2,-1,0,4,-2,-9]
+Output: 0
+Explanation: [2,4,-9] and [-1,0,-2] → |-3-(-3)| = 0
+```
+
+### Topics & Hints
+- **Topics:** Meet in the Middle, Bitmask, Binary Search
+- **Key Insight:**
+  - Total sum S is fixed
+  - If one partition has sum X, other has S-X
+  - Difference = |X - (S-X)| = |2X - S|
+  - Want X closest to S/2
+  - Constraint: each partition has exactly N elements
+- **Approach (Meet in Middle):**
+  1. Split array into two halves of size N each
+  2. For left half: generate all possible sums with k elements (0≤k≤N)
+  3. For right half: generate all possible sums with (N-k) elements
+  4. For each k, combine left[k] with right[N-k] using binary search
+  5. Find combination closest to S/2
+- **Complexity:** O(2^N × N)
+- **Why it works:** 2^N is feasible for N≤15 (typical constraint)
+
+### Similar Problems
+- LeetCode: Closest Subsequence Sum (1755) - Very similar
+- LeetCode: Split Array with Same Average (805)
+- LeetCode: Tallest Billboard (956)
+
+---
+
+## **Problem 15: Traveling Salesman Problem (TSP)**
+**Source:** Classic NP-Hard Problem
+
+### Problem Statement
+Given N cities and distances between each pair, find the shortest tour that:
+- Visits each city exactly once
+- Returns to starting city
+
+### Input Format (Typical)
+```
+N (number of cities)
+Distance matrix D[N][N]
+where D[i][j] = distance from city i to city j
+```
+
+### Example
+```
+N = 4
+Distances:
+  0  10  15  20
+ 10   0  35  25
+ 15  35   0  30
+ 20  25  30   0
+
+One possible tour: 0→1→3→2→0
+Cost: 10 + 25 + 30 + 15 = 80
+```
+
+### Topics & Hints
+- **Topics:** Dynamic Programming, Bitmask DP, Graph Theory
+- **Approach (Held-Karp Algorithm):**
+  - **State:** dp[mask][i] = min cost to visit cities in 'mask', ending at city i
+  - **Base:** dp[1<<start][start] = 0
+  - **Transition:** dp[mask | (1<<j)][j] = min(dp[mask][i] + dist[i][j])
+  - **Answer:** min over all i of (dp[all_visited][i] + dist[i][start])
+- **Complexity:** O(N² × 2^N)
+- **Feasible for:** N ≤ 20
+
+### Optimizations & Variants
+1. **Approximation Algorithms:**
+   - Nearest Neighbor: O(N²), 2× optimal
+   - Christofides: O(N³), 1.5× optimal
+   
+2. **Heuristics for Large N:**
+   - Genetic Algorithms
+   - Simulated Annealing
+   - Ant Colony Optimization
+
+### Similar Problems
+- LeetCode: Find the Shortest Superstring (943) - Similar DP structure
+- LeetCode: Shortest Path Visiting All Nodes (847)
+- LeetCode: Minimum Cost to Connect All Points (1584)
+
+### Special Cases
+- **Metric TSP:** Distances satisfy triangle inequality
+- **Euclidean TSP:** Cities on 2D plane, Euclidean distance
+- **Asymmetric TSP:** dist[i][j] ≠ dist[j][i]
+
+---
+
+## Summary Table
+
+| # | Problem | Core Topic | Difficulty | Time Complexity |
+|---|---------|-----------|------------|-----------------|
+| 1 | Logging Trees | DP + State Space | Hard | O(N × states) |
+| 2 | Stone Pulling | Interval DP | Medium | O(N³) |
+| 3 | Card Selection | DP/Optimization | Medium | O(N × K × 4^K) |
+| 4 | Lattice Path | Geometry | Easy | O(N × M) |
+| 5 | Warehouse Stock | Binary Search | Medium | O(N log N) |
+| 6 | Red Blue Necklace | Prefix Sum | Medium | O(N) |
+| 7 | City Logistics | Graph + Bitmask | Hard | O(2^W × H × W) |
+| 8 | Tile Selection | Binary Search | Medium | O(N² log MAX) |
+| 9 | String Chain | DP on Graph | Medium | O(N²) |
+| 10 | Car Parking | Math/Greedy | Medium | O(N log M) |
+| 11 | Robot Garbage | DP | Hard | O(N²) |
+| 12 | Gift Certificates | Digit DP | Hard | O(len(A) × S) |
+| 13 | Array D Score | Sorting | Medium | O(N log N) |
+| 14 | Partition Array | Meet in Middle | Hard | O(2^N × N) |
+| 15 | TSP | Bitmask DP | Hard | O(N² × 2^N) |
+
+---
+
+## Study Strategy
+
+1. **Start with Easy/Medium:** Problems 4, 5, 6, 8, 13
+2. **Master DP:** Problems 2, 3, 9, 11, 12
+3. **Advanced Techniques:** Problems 1, 7, 14, 15
+4. **Practice Similar on LeetCode** for each problem type
