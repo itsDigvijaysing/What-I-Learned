@@ -687,3 +687,5 @@ Cost: 10 + 25 + 30 + 15 = 80
 2. **Master DP:** Problems 2, 3, 9, 11, 12
 3. **Advanced Techniques:** Problems 1, 7, 14, 15
 4. **Practice Similar on LeetCode** for each problem type
+
+Good luck with your exam preparation! 🚀
